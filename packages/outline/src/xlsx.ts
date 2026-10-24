@@ -1,10 +1,10 @@
-import ExcelJS from 'exceljs';
-
 /**
  * Reads the first worksheet of an XLSX file into rows of cell text, the same
  * shape parseCsv produces. Rich text and line breaks inside cells are kept.
  */
 export async function readXlsxRows(data: ArrayBuffer | Uint8Array): Promise<string[][]> {
+  // Loaded on demand: exceljs is large and only needed when a file is uploaded.
+  const { default: ExcelJS } = await import('exceljs');
   const workbook = new ExcelJS.Workbook();
   await workbook.xlsx.load(data instanceof Uint8Array ? toArrayBuffer(data) : data);
   const sheet = workbook.worksheets[0];

@@ -13,7 +13,6 @@ export default defineWorkspace([
     test: {
       name: 'integration',
       include: ['packages/*/src/**/*.int.test.ts', 'apps/*/src/**/*.int.test.ts'],
-      fileParallelism: false,
       testTimeout: 30_000,
     },
   },

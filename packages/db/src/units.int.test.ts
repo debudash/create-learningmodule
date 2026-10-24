@@ -1,12 +1,8 @@
-import { confirmImport, parseOutlineCsv, type Resolution } from '@lcg/outline';
-import { sampleOutlineCsv } from '@lcg/outline/testing';
 import { asc, eq } from 'drizzle-orm';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { arcs, guidanceVersions, lessons, units } from './schema.js';
-import { freshDatabase } from './testing.js';
+import { confirmedSampleOutline, freshDatabase } from './testing.js';
 import { importUnit } from './units.js';
-
-const SAMPLE = sampleOutlineCsv();
 
 let database: Awaited<ReturnType<typeof freshDatabase>>;
 beforeAll(async () => {
@@ -14,21 +10,11 @@ beforeAll(async () => {
 });
 afterAll(() => database.close());
 
-function confirmedSample() {
-  const proposal = parseOutlineCsv(SAMPLE);
-  const resolutions: Resolution[] = proposal.issues
-    .filter((i) => i.severity === 'blocking')
-    .map((i) => ({ issueId: i.id, action: 'accept-suggestion' }));
-  const result = confirmImport(proposal, resolutions);
-  if (!result.ok) throw new Error(result.errors.join('; '));
-  return result.confirmed;
-}
-
 describe('importUnit', () => {
   it('creates the Unit, its Arcs, 47 Outlined Lessons and Guidance v1 together', async () => {
     const { db, editorId } = database;
     const unitId = await importUnit(db, {
-      confirmed: confirmedSample(),
+      confirmed: confirmedSampleOutline(),
       source: { kind: 'google-sheets', reference: 'https://docs.google.com/spreadsheets/d/x' },
       actorId: editorId,
       guidance: 'Default guidance',
@@ -60,7 +46,7 @@ describe('importUnit', () => {
     const before = await db.select({ id: units.id }).from(units);
     await expect(
       importUnit(db, {
-        confirmed: confirmedSample(),
+        confirmed: confirmedSampleOutline(),
         source: { kind: 'file', reference: 'x.csv' },
         actorId: '00000000-0000-0000-0000-000000000000',
         guidance: 'g',

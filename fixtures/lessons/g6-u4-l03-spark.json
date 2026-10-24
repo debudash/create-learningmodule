@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "title": "Rick Riordan as a Myth Adapter",
+  "lessonType": "spark",
+  "header": {
+    "focusStandards": ["L.6.4.b", "RI.6.4"],
+    "supportingStandards": ["SL.6.1"],
+    "eldStandards": ["ELD.PI.6.7", "ELD.PI.6.6", "ELD.PII.6.4"],
+    "mediaLiteracyStandards": [],
+    "objectives": [
+      { "kind": "content", "text": "Students will determine what an author believes about myths by analyzing word choice in an interview excerpt." },
+      { "kind": "language", "text": "Students will use the comparison structures *while*, *whereas*, *unlike* and *both…and* to explain how a myth changes when it is retold." },
+      { "kind": "foundational-skills", "text": "Students will use the affixes *trans-* and *-tion* to determine the meaning of **transform** and **modernization**." }
+    ],
+    "essentialQuestions": [
+      "How do myths reflect cultural values?",
+      "How do retellings change across cultures and generations?"
+    ],
+    "connections": {
+      "knowledgeBuilding": "Students learn how an author decides what to keep and what to change when he retells an ancient story for modern readers.",
+      "enduringUnderstanding": "Retellings keep a story alive by connecting old ideas to a new audience.",
+      "futureLessons": "Tonight students begin *The Lightning Thief*, Chapter 1, and will look for the first signs of Riordan's choices.",
+      "performanceTask": "The comparison language introduced today is the grammar of the culminating explanatory essay."
+    },
+    "vocabulary": [
+      { "word": "modernization", "definition": "the act of making something fit the present day", "tier": "addressed" },
+      { "word": "transform", "definition": "to change something completely in form or appearance", "tier": "addressed" },
+      { "word": "traditional", "definition": "handed down from the past and done the same way for a long time", "tier": "addressed" },
+      { "word": "adapter", "definition": "a person who changes a story so it suits a new audience or form", "tier": "addressed" }
+    ],
+    "texts": [
+      { "title": "\"I'm hardly the first to modernise Greek myths\" (interview excerpt)", "author": "Rick Riordan" }
+    ]
+  },
+  "sections": [
+    {
+      "kind": "launch",
+      "title": "Launch",
+      "purpose": "Activate what students already know about myths and hook them on the idea of an old story set in New York City.",
+      "activities": [
+        {
+          "id": "launch-turn-and-talk",
+          "title": "Turn and Talk: Monsters in Manhattan",
+          "minutes": 10,
+          "standards": ["SL.6.1"],
+          "routine": "Turn and Talk",
+          "blocks": [
+            { "type": "teacher-script", "move": "say", "text": "Imagine a Greek god living in an apartment in New York City. What would he do for work? What would make him angry?" },
+            { "type": "directions", "text": "With your partner, take one minute each to describe a god or monster you know and how it might show up in a modern city." },
+            { "type": "sample-response", "text": "Medusa could run a garden-statue shop, because anyone who looks at her turns to stone." },
+            { "type": "teacher-note", "variant": "note", "text": "Listen for two or three playful answers to share aloud. Do not correct mythological details yet." }
+          ]
+        },
+        {
+          "id": "launch-connection",
+          "title": "Connection to Today's Learning",
+          "minutes": 5,
+          "standards": [],
+          "blocks": [
+            { "type": "teacher-script", "move": "say", "text": "Today we will read what Rick Riordan says about doing exactly this, and we will look closely at the **words** he uses to explain why." }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "learning-in-action",
+      "title": "Learning in Action",
+      "purpose": "Analyze how Riordan's word choice reveals what he believes myths do for readers.",
+      "activities": [
+        {
+          "id": "lia-part-a",
+          "title": "Part A: Reading Riordan's Interview",
+          "minutes": 15,
+          "standards": ["RI.6.4", "L.6.4.b"],
+          "routine": "Annotation",
+          "blocks": [
+            { "type": "teacher-script", "move": "teach", "text": "Writers choose words on purpose. When Riordan calls himself an *adapter*, the suffix *-er* tells us he is a person who adapts. Let's find other words that show what he does to old stories." },
+            { "type": "directions", "text": "Read the interview excerpt. Underline words Riordan uses to describe changing a myth, and write a question mark next to one word you would like to understand better." },
+            { "type": "teacher-script", "move": "ask", "text": "What does the word *transform* suggest about how much Riordan changes a myth?" },
+            { "type": "sample-response", "text": "It suggests he changes a lot, not just small details, because transform means to change completely." },
+            {
+              "type": "pulse-check",
+              "standards": ["L.6.4.b"],
+              "stem": "The prefix *trans-* means \"across\" or \"change.\" Which meaning of **transform** fits Riordan's interview?",
+              "choices": [
+                { "text": "to copy a story exactly", "correct": false, "rationale": "Copying keeps a story the same; *trans-* signals change." },
+                { "text": "to change a story into a new form", "correct": true, "rationale": "*Trans-* plus *form* means to change the form of something, which is what an adapter does." },
+                { "text": "to translate a story into Greek", "correct": false, "rationale": "Translation is one kind of change, but Riordan writes in English for modern readers." },
+                { "text": "to shorten a story", "correct": false, "rationale": "Shortening is not what *trans-* means." }
+              ]
+            },
+            {
+              "type": "eld-panel",
+              "purpose": "Language focus: using word parts to unlock meaning. Before reading, preview *trans-*, *-tion* and *-er* with one familiar example each.",
+              "sayAsk": "Use the frame: \"The word ___ has the part ___, which means ___, so the word means ___.\" Students may discuss in their home language first, then share in English.",
+              "watchFor": "If students guess meanings from the whole word only → Prompt: \"Cover the prefix. What word is left?\" Success: students explain one word using its parts."
+            }
+          ]
+        },
+        {
+          "id": "lia-part-b",
+          "title": "Part B: Old Story, New City",
+          "minutes": 15,
+          "standards": ["RI.6.4", "SL.6.1"],
+          "routine": "Think-Pair-Share",
+          "blocks": [
+            { "type": "directions", "text": "Think about one way Riordan says he modernizes myths. Then compare it with the original myth using *while*, *whereas*, *unlike* or *both…and*." },
+            { "type": "paragraph", "audience": "shared", "text": "Sentence frame: *While* the ancient myth ___, Riordan's version ___." },
+            { "type": "sample-response", "text": "While the ancient myth takes place on Mount Olympus, Riordan's version puts Olympus above the Empire State Building." },
+            {
+              "type": "support-table",
+              "rows": [
+                { "situation": "Struggling with: finding a change to compare", "tryThis": "Point to the interview line about setting and ask, \"Where did the old story happen? Where does his happen?\"" },
+                { "situation": "Ready for extension", "tryThis": "Ask students to explain *why* Riordan might make that change for readers today." }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "look-back",
+      "title": "Look Back",
+      "purpose": "Students explain in writing what Riordan believes myths do for people.",
+      "activities": [
+        {
+          "id": "look-back-quick-write",
+          "title": "Quick Write",
+          "minutes": 5,
+          "standards": ["RI.6.4"],
+          "routine": "Quick Write",
+          "blocks": [
+            { "type": "directions", "text": "In two or three sentences, explain one word Riordan uses that shows what he believes myths do for readers." }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "homework",
+      "title": "Homework",
+      "purpose": "Begin the anchor text.",
+      "activities": [
+        {
+          "id": "homework-reading",
+          "title": "Read and annotate",
+          "minutes": 0,
+          "standards": [],
+          "blocks": [
+            { "type": "directions", "text": "Read and annotate *The Lightning Thief* Chapter 1 (pp. 1–8). Mark one place where something ancient appears in the modern world." }
+          ]
+        }
+      ]
+    }
+  ]
+}

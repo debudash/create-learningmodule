@@ -1,0 +1,36 @@
+{
+  "name": "@lcg/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hocuspocus/provider": "2.15.0",
+    "@lcg/db": "workspace:*",
+    "@lcg/domain": "workspace:*",
+    "@lcg/lesson-schema": "workspace:*",
+    "@lcg/outline": "workspace:*",
+    "@lcg/session": "workspace:*",
+    "@tiptap/extension-collaboration": "2.10.3",
+    "@tiptap/extension-collaboration-cursor": "2.10.3",
+    "@tiptap/pm": "2.10.3",
+    "@tiptap/react": "2.10.3",
+    "next": "15.1.3",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "y-prosemirror": "1.2.15",
+    "yjs": "13.6.20"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.2",
+    "@types/react-dom": "19.0.2",
+    "autoprefixer": "10.4.20",
+    "postcss": "8.4.49",
+    "tailwindcss": "3.4.17"
+  }
+}

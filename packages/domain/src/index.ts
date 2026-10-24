@@ -7,3 +7,4 @@ export {
   type Role,
   type VersionReason,
 } from './vocabulary.js';
+export { EDITABLE_STATUSES, isEditable } from './editing.js';

@@ -16,6 +16,11 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
+    // Plain JavaScript config files run in Node.
+    files: ['**/*.{js,mjs}'],
+    languageOptions: { globals: { process: 'readonly', URL: 'readonly', console: 'readonly' } },
+  },
+  {
     rules: {
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
       '@typescript-eslint/consistent-type-imports': 'error',

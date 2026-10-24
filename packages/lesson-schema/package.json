@@ -3,5 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "exports": { ".": "./src/index.ts" }
+  "exports": {
+    ".": "./src/index.ts",
+    "./testing": "./src/testing.ts"
+  },
+  "dependencies": {
+    "@tiptap/core": "2.10.3",
+    "@tiptap/pm": "2.10.3",
+    "y-prosemirror": "1.2.15",
+    "yjs": "13.6.20",
+    "zod": "3.23.8"
+  }
 }

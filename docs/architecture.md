@@ -63,6 +63,7 @@ packages/
   generation/   prompt builder, LLM client (live/replay/fake), AI Review, AI editing
   db/           Drizzle schema, migrations, repositories, document persistence, seed
   queue/        job-queue interface + pg-boss implementation
+  session/      signs and verifies the identity cookie (web and collab)
 fixtures/       sample outline, recorded AI responses, seed Unit
 e2e/            Playwright main-path test
 ```

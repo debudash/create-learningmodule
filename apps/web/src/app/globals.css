@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-paper text-ink antialiased;
+}
+
+/* ---------- Lesson editor ---------- */
+
+.lesson-editor .ProseMirror {
+  @apply outline-none;
+}
+
+.lesson-editor .ProseMirror p,
+.lesson-editor [data-type='directions'],
+.lesson-editor [data-type='paragraph'],
+.lesson-editor [data-type='teacherScript'],
+.lesson-editor [data-type='sampleResponse'],
+.lesson-editor [data-type='teacherNote'] {
+  @apply my-2 rounded-md px-3 py-2 leading-relaxed;
+}
+
+.lesson-editor [data-type='directions'] {
+  @apply bg-paper-sunk;
+}
+.lesson-editor [data-type='directions']::before {
+  content: 'Directions: ';
+  @apply font-semibold text-ink;
+}
+
+.lesson-editor [data-type='paragraph'][audience='teacher'] {
+  @apply italic text-ink-soft;
+}
+
+.lesson-editor [data-type='teacherScript'] {
+  @apply border-l-4 border-teacher bg-teacher-soft text-teacher;
+}
+.lesson-editor [data-type='teacherScript']::before {
+  @apply mr-1 font-semibold;
+}
+.lesson-editor [data-type='teacherScript'][move='say']::before {
+  content: 'Say:';
+}
+.lesson-editor [data-type='teacherScript'][move='ask']::before {
+  content: 'Ask:';
+}
+.lesson-editor [data-type='teacherScript'][move='teach']::before {
+  content: 'Teach:';
+}
+
+.lesson-editor [data-type='sampleResponse'] {
+  @apply ml-6 border-l-4 border-sample bg-sample-soft text-sample;
+}
+.lesson-editor [data-type='sampleResponse']::before {
+  content: 'Sample response: ';
+  @apply font-semibold;
+}
+
+.lesson-editor [data-type='teacherNote'] {
+  @apply italic text-ink-soft;
+}
+.lesson-editor [data-type='teacherNote'][variant='tip'] {
+  @apply border border-line bg-paper-raised not-italic text-ink;
+}
+.lesson-editor [data-type='teacherNote'][variant='tip']::before {
+  content: 'Teacher Tip: ';
+  @apply font-semibold;
+}
+
+.lesson-editor .is-empty::after {
+  content: 'Type here…';
+  @apply text-ink-faint;
+}
+
+/* Collaboration cursors */
+.collaboration-cursor__caret {
+  @apply pointer-events-none relative -mx-px border-x;
+  word-break: normal;
+}
+.collaboration-cursor__label {
+  @apply absolute -top-5 left-[-1px] select-none whitespace-nowrap rounded px-1.5 py-0.5 text-xs font-semibold text-white;
+}

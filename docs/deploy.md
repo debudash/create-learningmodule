@@ -8,9 +8,11 @@ Requirements: Docker Desktop, Node 22, pnpm.
 
 | Command | What it does |
 |---|---|
-| `docker compose up` | Starts Postgres, runs migrations and the seed, then starts `web`, `worker` and `collab`. Opens at http://localhost:3000 |
-| `pnpm dev` | Same processes with hot reload, against the Compose Postgres |
-| `pnpm db:reset` | Drops, migrates and re-seeds the database |
+| `cp .env.example .env` | Local settings (no secrets needed for the demo) |
+| `pnpm db:up` | Starts Postgres in Docker Compose |
+| `pnpm db:reset` | Drops, migrates and seeds the database (demo users, sample Unit 4, Lesson 3 as a Draft) |
+| `pnpm dev` | Starts `web` (http://localhost:3000) and `collab` (ws://localhost:1234) with hot reload |
+| `docker compose up` | Planned: the whole stack in containers |
 | `pnpm check` | Lint, typecheck, unit, integration and end-to-end tests |
 
 ### Environment
