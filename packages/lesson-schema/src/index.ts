@@ -19,5 +19,11 @@ export {
   TeacherScriptNode,
 } from './editor-schema.js';
 export { studentView, type StudentBlock, type StudentLesson } from './student-view.js';
-export { LESSON_FRAGMENT, lessonToYState, yStateToLesson } from './ydoc.js';
+export {
+  LESSON_FRAGMENT,
+  lessonToYState,
+  mergeYStates,
+  replaceLessonInYState,
+  yStateToLesson,
+} from './ydoc.js';
 export { LessonStructureGuard, STRUCTURE_CHANGE_META, structureSignature } from './structure-guard.js';

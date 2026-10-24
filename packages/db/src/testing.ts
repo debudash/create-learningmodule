@@ -17,7 +17,7 @@ import { importUnit } from './units.js';
 /** The Postgres server integration tests run against (the Compose service by default). */
 const SERVER_URL = process.env.DATABASE_URL_TEST ?? 'postgres://lcg:lcg@localhost:5432/postgres';
 
-export type TestDatabase = Connection & { editorId: string; approverId: string };
+export type TestDatabase = Connection & { url: string; editorId: string; approverId: string };
 
 /**
  * For integration tests: a new, fully migrated database of its own, with one
@@ -42,6 +42,7 @@ export async function freshDatabase(): Promise<TestDatabase> {
 
   return {
     ...connection,
+    url: url.toString(),
     editorId: editor!.id,
     approverId: approver!.id,
     async close() {

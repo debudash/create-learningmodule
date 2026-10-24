@@ -1,6 +1,6 @@
 import { createServer } from 'node:net';
 import { HocuspocusProvider } from '@hocuspocus/provider';
-import { readLessonContent, workspaceLesson, writeLessonContent } from '@lcg/db';
+import { readLessonContent, replaceLessonContent, workspaceLesson, type LessonChangeListener } from '@lcg/db';
 import {
   freshDatabase,
   importSampleUnit,
@@ -13,12 +13,13 @@ import { sampleLesson } from '@lcg/lesson-schema/testing';
 import { signSession } from '@lcg/session';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import * as Y from 'yjs';
-import { createCollabServer, documentNameFor } from './server.js';
+import { createCollabServer, documentNameFor, followLessonChanges } from './server.js';
 
 const SECRET = 'test-secret';
 let database: TestDatabase;
 let server: ReturnType<typeof createCollabServer>;
 let url: string;
+let listener: LessonChangeListener;
 const lessonIds: Record<string, string> = {};
 
 async function freePort(): Promise<number> {
@@ -38,15 +39,17 @@ beforeAll(async () => {
     ['L4', 'approved'],
   ] as const) {
     lessonIds[key] = await setLessonStatus(database.db, unitId, key, status);
-    await writeLessonContent(database.db, lessonIds[key]!, sampleLesson());
+    await replaceLessonContent(database.db, lessonIds[key]!, sampleLesson());
   }
   const port = await freePort();
   url = `ws://127.0.0.1:${port}`;
   server = createCollabServer({ db: database.db, sessionSecret: SECRET, port, debounce: 20 });
+  listener = await followLessonChanges(server, database.url);
   await server.listen();
 });
 
 afterAll(async () => {
+  await listener.close();
   await server.destroy();
   await database.close();
 });
@@ -101,6 +104,25 @@ describe('collaboration server', () => {
     await eventually(async () => header().getAttribute('title') === 'Seen by both');
     a.provider.destroy();
     b.provider.destroy();
+  });
+
+  // LCG-7 regression. Found by: Phase 2 spec review (whole-Lesson writes bypassed the live document).
+  it('LCG-7: delivers a whole-Lesson replacement to open editors without losing or duplicating it', async () => {
+    const { document, provider, synced } = open(lessonIds.L3!, signSession(database.editorId, SECRET));
+    await synced;
+    const header = () => document.getXmlFragment(LESSON_FRAGMENT).get(0) as Y.XmlElement;
+
+    await replaceLessonContent(database.db, lessonIds.L3!, { ...sampleLesson(), title: 'Regenerated' });
+    await eventually(async () => header().getAttribute('title') === 'Regenerated');
+    expect(document.getXmlFragment(LESSON_FRAGMENT).length).toBe(sampleLesson().sections.length + 1);
+
+    // The editor keeps working on the replaced content, and the server's next save keeps both.
+    retitle(document, 'Regenerated, then edited');
+    await eventually(
+      async () => (await readLessonContent(database.db, lessonIds.L3!))?.title === 'Regenerated, then edited',
+    );
+    expect((await readLessonContent(database.db, lessonIds.L3!))?.sections).toEqual(sampleLesson().sections);
+    provider.destroy();
   });
 
   // LCG-6 regression. Found by: Phase 2 spec review (the board kept the old title after an edit).

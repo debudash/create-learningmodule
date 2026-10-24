@@ -2,7 +2,7 @@ import { fileURLToPath } from 'node:url';
 import { sampleLesson } from '@lcg/lesson-schema/testing';
 import { sql } from 'drizzle-orm';
 import { connect, type Database } from './client.js';
-import { writeLessonContent } from './documents.js';
+import { replaceLessonContent } from './documents.js';
 import { runMigrations } from './migrate.js';
 import { users } from './schema.js';
 import { importSampleUnit, setLessonStatus } from './testing.js';
@@ -21,7 +21,7 @@ export async function seedDemo(db: Database): Promise<void> {
   const seeded = await db.insert(users).values([...DEMO_USERS]).returning({ id: users.id });
   const unitId = await importSampleUnit(db, seeded[0]!.id);
   const lessonId = await setLessonStatus(db, unitId, 'L3', 'draft');
-  await writeLessonContent(db, lessonId, sampleLesson());
+  await replaceLessonContent(db, lessonId, sampleLesson());
 }
 
 /** Drops everything, migrates and seeds (pnpm db:reset). */

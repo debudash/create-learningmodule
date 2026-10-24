@@ -13,10 +13,10 @@
     "@lcg/db": "workspace:*",
     "@lcg/domain": "workspace:*",
     "@lcg/lesson-schema": "workspace:*",
-    "@lcg/session": "workspace:*"
+    "@lcg/session": "workspace:*",
+    "yjs": "13.6.20"
   },
   "devDependencies": {
-    "@hocuspocus/provider": "2.15.0",
-    "yjs": "13.6.20"
+    "@hocuspocus/provider": "2.15.0"
   }
 }

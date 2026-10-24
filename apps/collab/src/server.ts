@@ -1,23 +1,27 @@
 import { Database as DatabaseExtension } from '@hocuspocus/extension-database';
-import { Server, type Hocuspocus } from '@hocuspocus/server';
+import { Server, type Connection } from '@hocuspocus/server';
 import {
   findLessonStatus,
   findUser,
+  listenForLessonChanges,
   loadDocumentState,
-  storeLessonDocument,
+  saveLiveDocument,
   type Database,
+  type LessonChangeListener,
   type User,
 } from '@lcg/db';
 import { isEditable } from '@lcg/domain';
-import { yStateToLesson } from '@lcg/lesson-schema';
 import { verifySession } from '@lcg/session';
+import * as Y from 'yjs';
+
+const PREFIX = 'lesson:';
 
 /** Collaboration document names are "lesson:<lesson id>". */
-export const documentNameFor = (lessonId: string) => `lesson:${lessonId}`;
+export const documentNameFor = (lessonId: string) => `${PREFIX}${lessonId}`;
 
 function lessonIdOf(documentName: string): string {
-  if (!documentName.startsWith('lesson:')) throw new Error(`Unknown document ${documentName}`);
-  return documentName.slice('lesson:'.length);
+  if (!documentName.startsWith(PREFIX)) throw new Error(`Unknown document ${documentName}`);
+  return documentName.slice(PREFIX.length);
 }
 
 export interface CollabOptions {
@@ -26,6 +30,13 @@ export interface CollabOptions {
   port?: number;
   /** Milliseconds of quiet before a document is stored. */
   debounce?: number;
+}
+
+export interface CollabServer {
+  listen(): Promise<void>;
+  destroy(): Promise<void>;
+  /** Applies the stored document to every open copy of a Lesson (after a whole-Lesson replacement). */
+  refreshDocument(lessonId: string): Promise<void>;
 }
 
 interface ConnectionContext {
@@ -37,10 +48,15 @@ interface ConnectionContext {
  * session token, serves and stores Lesson documents, opens Approved Lessons
  * read-only, and remembers who edited each Lesson.
  */
-export function createCollabServer({ db, sessionSecret, port = 1234, debounce = 2000 }: CollabOptions): Hocuspocus {
+export function createCollabServer({ db, sessionSecret, port = 1234, debounce = 2000 }: CollabOptions): CollabServer {
   const editorsSinceStore = new Map<string, Set<string>>();
+  // Live connections per document, with the document each is attached to. Hocuspocus
+  // can unload a document while a new connection is attaching to it (the connection
+  // keeps that copy), so its own document map cannot be relied on to reach every
+  // open copy; this registry can.
+  const live = new Map<string, Map<string, Connection>>();
 
-  return Server.configure({
+  const server = Server.configure({
     port,
     quiet: true,
     debounce,
@@ -57,8 +73,20 @@ export function createCollabServer({ db, sessionSecret, port = 1234, debounce = 
       return { user } satisfies ConnectionContext;
     },
 
+    async connected({ documentName, socketId, connectionInstance }) {
+      const connections = live.get(documentName) ?? new Map<string, Connection>();
+      connections.set(socketId, connectionInstance);
+      live.set(documentName, connections);
+    },
+
+    async onDisconnect({ documentName, socketId }) {
+      live.get(documentName)?.delete(socketId);
+    },
+
     async onChange({ documentName, context }) {
-      const { user } = context as ConnectionContext;
+      // Changes applied by the server itself (a whole-Lesson replacement) have no editor.
+      const user = (context as ConnectionContext | undefined)?.user;
+      if (!user) return;
       const editors = editorsSinceStore.get(documentName) ?? new Set<string>();
       editors.add(user.id);
       editorsSinceStore.set(documentName, editors);
@@ -72,14 +100,43 @@ export function createCollabServer({ db, sessionSecret, port = 1234, debounce = 
           // A Lesson approved while editors were connected keeps its approved content.
           const status = await findLessonStatus(db, lessonId);
           if (!status || !isEditable(status)) return;
-          // LCG-5: only a valid Lesson is stored; a broken document keeps the last good one.
-          const parsed = yStateToLesson(state);
-          if (!parsed.ok) return;
           const editors = editorsSinceStore.get(documentName);
           editorsSinceStore.delete(documentName);
-          await storeLessonDocument(db, lessonId, state, parsed.lesson, [...(editors ?? [])]);
+          await saveLiveDocument(db, lessonId, state, [...(editors ?? [])]);
         },
       }),
     ],
+  });
+
+  const openCopies = (lessonId: string): Set<Y.Doc> => {
+    const name = documentNameFor(lessonId);
+    const copies = new Set<Y.Doc>([...(live.get(name)?.values() ?? [])].map((c) => c.document));
+    const loaded = server.documents.get(name);
+    if (loaded) copies.add(loaded);
+    return copies;
+  };
+
+  return {
+    listen: async () => {
+      await server.listen();
+    },
+    destroy: () => server.destroy(),
+    async refreshDocument(lessonId) {
+      const copies = openCopies(lessonId);
+      if (copies.size === 0) return;
+      const state = await loadDocumentState(db, lessonId);
+      if (state) for (const copy of copies) Y.applyUpdate(copy, state);
+    },
+  };
+}
+
+/**
+ * Applies Lesson changes made outside the collaboration server (a whole-Lesson
+ * replacement by the worker or API) to every open copy, which then reaches every
+ * connected editor. See LCG-7 in packages/db/src/documents.ts.
+ */
+export function followLessonChanges(collab: CollabServer, databaseUrl: string): Promise<LessonChangeListener> {
+  return listenForLessonChanges(databaseUrl, (channel, lessonId) => {
+    if (channel === 'document') void collab.refreshDocument(lessonId);
   });
 }

@@ -1,7 +1,7 @@
 import { sampleLesson } from '@lcg/lesson-schema/testing';
 import { and, eq } from 'drizzle-orm';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
-import { readLessonContent, writeLessonContent } from './documents.js';
+import { readLessonContent, replaceLessonContent } from './documents.js';
 import { lessons } from './schema.js';
 import { freshDatabase, importSampleUnit } from './testing.js';
 
@@ -26,13 +26,13 @@ describe('Lesson content persistence', () => {
 
   it('stores a whole Lesson and reads it back unchanged', async () => {
     const lesson = sampleLesson();
-    await writeLessonContent(database.db, lessonId, lesson);
+    await replaceLessonContent(database.db, lessonId, lesson);
     expect(await readLessonContent(database.db, lessonId)).toEqual(lesson);
   });
 
   it('replaces content on a second write', async () => {
     const lesson = { ...sampleLesson(), title: 'Second draft' };
-    await writeLessonContent(database.db, lessonId, lesson);
+    await replaceLessonContent(database.db, lessonId, lesson);
     expect((await readLessonContent(database.db, lessonId))?.title).toBe('Second draft');
   });
 });
