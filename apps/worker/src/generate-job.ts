@@ -4,13 +4,12 @@ import {
   loadGenerationContext,
   promptInputFor,
   recordGenerationFailure,
-  type AttemptRecord,
   type Database,
   type EnqueueGeneration,
   type GenerationContext,
   type GenerationJob,
 } from '@lcg/db';
-import { generateLesson, type GenerationRecord, type LlmClient } from '@lcg/generation';
+import { generateLesson, NO_USAGE, type GenerationAttemptRecord, type LlmClient } from '@lcg/generation';
 import type { LessonType } from '@lcg/lesson-schema';
 
 export interface GenerateJobDeps {
@@ -40,7 +39,7 @@ export async function handleGenerateJob(
     guidanceVersionId: context.guidance.id,
     ...(job.extraInstructions ? { extraInstructions: job.extraInstructions } : {}),
   };
-  let record: GenerationRecord;
+  let record: GenerationAttemptRecord;
   try {
     const result = await generateLesson(
       client,
@@ -52,7 +51,7 @@ export async function handleGenerateJob(
         lessonId: job.lessonId,
         lesson: result.lesson,
         digest: result.digest,
-        attempt: toAttempt(attemptBase, result.record),
+        attempt: { ...attemptBase, record: result.record },
         enqueue: deps.enqueue,
       });
       return;
@@ -64,37 +63,18 @@ export async function handleGenerateJob(
       model: client.model,
       mode: client.mode,
       promptVersion: 0,
-      usage: { inputTokens: 0, outputTokens: 0, cacheReadTokens: 0, cacheWriteTokens: 0 },
+      usage: NO_USAGE,
       costUsd: 0,
       durationMs: 0,
       failureReason: `Generation stopped with an unexpected error: ${error instanceof Error ? error.message : String(error)}`,
     };
   }
 
-  await recordGenerationFailure(deps.db, { lessonId: job.lessonId, attempt: toAttempt(attemptBase, record), final: finalAttempt });
+  await recordGenerationFailure(deps.db, { lessonId: job.lessonId, attempt: { ...attemptBase, record }, final: finalAttempt });
   if (!finalAttempt) throw new Error(record.failureReason ?? 'Generation failed');
 }
 
 /** "g6-u4/L22/attempt-2": stable names for recording a live run and replaying it. */
 export function recordingKey(context: GenerationContext): string {
   return `g${context.unit.grade}-u${context.unit.unitNumber}/${context.outline.key}/attempt-${context.attempts + 1}`;
-}
-
-function toAttempt(base: Pick<AttemptRecord, 'guidanceVersionId' | 'extraInstructions'>, record: GenerationRecord): AttemptRecord {
-  return {
-    ...base,
-    model: record.model,
-    mode: record.mode,
-    promptVersion: record.promptVersion,
-    outcome: record.outcome,
-    ...(record.failureReason ? { failureReason: record.failureReason } : {}),
-    ...(record.schemaViolations ? { schemaViolations: record.schemaViolations } : {}),
-    inputTokens: record.usage.inputTokens,
-    outputTokens: record.usage.outputTokens,
-    cacheReadTokens: record.usage.cacheReadTokens,
-    cacheWriteTokens: record.usage.cacheWriteTokens,
-    costUsd: record.costUsd,
-    durationMs: record.durationMs,
-    ...(record.rawOutput ? { rawOutput: record.rawOutput } : {}),
-  };
 }

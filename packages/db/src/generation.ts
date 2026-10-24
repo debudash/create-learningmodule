@@ -1,5 +1,5 @@
-import type { Actor, VersionReason } from '@lcg/domain';
-import type { LessonPromptInput } from '@lcg/generation';
+import { TRIAL_BATCH_SIZE, type Actor, type VersionReason } from '@lcg/domain';
+import type { GenerationAttemptRecord, LessonPromptInput } from '@lcg/generation';
 import type { Lesson } from '@lcg/lesson-schema';
 import type { OutlineLesson } from '@lcg/outline';
 import { and, asc, count, desc, eq, inArray, isNull, max, sql } from 'drizzle-orm';
@@ -51,7 +51,14 @@ export interface StartGenerationResult {
  */
 export async function startGeneration(
   db: Database,
-  input: { unitId: string; lessonIds?: string[]; actor: Actor; enqueue: EnqueueGeneration },
+  input: {
+    unitId: string;
+    lessonIds?: string[];
+    /** Only the first few Outlined Lessons (not Flex Days), to check quality before the rest. */
+    trial?: boolean;
+    actor: Actor;
+    enqueue: EnqueueGeneration;
+  },
 ): Promise<StartGenerationResult> {
   return db.transaction(async (tx) => {
     const candidates = await tx
@@ -62,9 +69,12 @@ export async function startGeneration(
           eq(lessons.unitId, input.unitId),
           inArray(lessons.status, ['outlined', 'generation-failed']),
           input.lessonIds ? inArray(lessons.id, input.lessonIds) : undefined,
+          input.trial ? eq(lessons.status, 'outlined') : undefined,
+          input.trial ? sql`${lessons.lessonType} <> 'flex-day'` : undefined,
         ),
       )
-      .orderBy(asc(lessons.position));
+      .orderBy(asc(lessons.position))
+      .limit(input.trial ? TRIAL_BATCH_SIZE : 10_000);
 
     let queued = 0;
     for (const { id } of candidates) {
@@ -252,43 +262,32 @@ export async function beginGenerating(db: Database, job: Pick<GenerationJob, 'le
   });
 }
 
-/** What a finished Generation Attempt records (GLOSSARY: Generation Attempt). */
-export interface AttemptRecord {
+/** A Generation Attempt to record: what the model call produced, plus the Unit settings it used. */
+export interface GenerationAttemptInput {
   guidanceVersionId: string;
   extraInstructions?: string;
-  model: string;
-  mode: 'live' | 'replay' | 'fake';
-  promptVersion: number;
-  outcome: 'succeeded' | 'repaired' | 'failed';
-  failureReason?: string;
-  schemaViolations?: string[];
-  inputTokens: number;
-  outputTokens: number;
-  cacheReadTokens: number;
-  cacheWriteTokens: number;
-  costUsd: number;
-  durationMs: number;
-  rawOutput?: string;
+  record: GenerationAttemptRecord;
 }
 
-async function recordAttempt(tx: Executor, lessonId: string, attempt: AttemptRecord): Promise<void> {
+async function recordAttempt(tx: Executor, lessonId: string, attempt: GenerationAttemptInput): Promise<void> {
+  const { record } = attempt;
   await tx.insert(generationAttempts).values({
     lessonId,
     guidanceVersionId: attempt.guidanceVersionId,
     extraInstructions: attempt.extraInstructions ?? null,
-    model: attempt.model,
-    mode: attempt.mode,
-    promptVersion: attempt.promptVersion,
-    outcome: attempt.outcome,
-    failureReason: attempt.failureReason ?? null,
-    schemaViolations: attempt.schemaViolations ?? null,
-    inputTokens: attempt.inputTokens,
-    outputTokens: attempt.outputTokens,
-    cacheReadTokens: attempt.cacheReadTokens,
-    cacheWriteTokens: attempt.cacheWriteTokens,
-    costUsd: attempt.costUsd.toFixed(4),
-    durationMs: attempt.durationMs,
-    rawOutput: attempt.rawOutput ?? null,
+    model: record.model,
+    mode: record.mode,
+    promptVersion: record.promptVersion,
+    outcome: record.outcome,
+    failureReason: record.failureReason ?? null,
+    schemaViolations: record.schemaViolations ?? null,
+    inputTokens: record.usage.inputTokens,
+    outputTokens: record.usage.outputTokens,
+    cacheReadTokens: record.usage.cacheReadTokens,
+    cacheWriteTokens: record.usage.cacheWriteTokens,
+    costUsd: record.costUsd.toFixed(4),
+    durationMs: record.durationMs,
+    rawOutput: record.rawOutput ?? null,
   });
 }
 
@@ -317,7 +316,7 @@ export async function captureVersion(
  */
 export async function completeGeneration(
   db: Database,
-  input: { lessonId: string; lesson: Lesson; digest: LessonDigest; attempt: AttemptRecord; enqueue: EnqueueGeneration },
+  input: { lessonId: string; lesson: Lesson; digest: LessonDigest; attempt: GenerationAttemptInput; enqueue: EnqueueGeneration },
 ): Promise<void> {
   await db.transaction(async (tx) => {
     const [previous] = await tx.select({ n: count() }).from(lessonVersions).where(eq(lessonVersions.lessonId, input.lessonId));
@@ -341,7 +340,7 @@ export async function completeGeneration(
 /** Records a failed attempt; on the final attempt the Lesson becomes Generation Failed. */
 export async function recordGenerationFailure(
   db: Database,
-  input: { lessonId: string; attempt: AttemptRecord; final: boolean },
+  input: { lessonId: string; attempt: GenerationAttemptInput; final: boolean },
 ): Promise<void> {
   await db.transaction(async (tx) => {
     await recordAttempt(tx, input.lessonId, input.attempt);
@@ -350,7 +349,7 @@ export async function recordGenerationFailure(
     await transitionLesson(tx, {
       lessonId: input.lessonId,
       actor: { kind: 'system' },
-      action: { type: 'fail-generating', reason: input.attempt.failureReason ?? 'Generation failed.' },
+      action: { type: 'fail-generating', reason: input.attempt.record.failureReason ?? 'Generation failed.' },
     });
   });
 }
@@ -414,4 +413,13 @@ export async function failStalledGenerations(db: Database, { olderThanMinutes }:
     }
     return stalled.length;
   });
+}
+
+/** Lessons sent to the live model today (for the hosted demo's daily cap). */
+export async function liveGenerationsToday(db: Executor): Promise<number> {
+  const [row] = await db
+    .select({ n: count() })
+    .from(generationAttempts)
+    .where(and(eq(generationAttempts.mode, 'live'), sql`${generationAttempts.createdAt} >= date_trunc('day', now())`));
+  return row?.n ?? 0;
 }

@@ -11,6 +11,15 @@ import {
 } from '@lcg/generation';
 
 export type LlmMode = 'live' | 'replay' | 'fake';
+const MODES: readonly LlmMode[] = ['live', 'replay', 'fake'];
+const EFFORTS: readonly Effort[] = ['low', 'medium', 'high', 'xhigh', 'max'];
+
+/** Reads one of a fixed set of values from the environment, refusing anything else. */
+function choice<T extends string>(name: string, value: string | undefined, allowed: readonly T[], fallback: T): T {
+  if (value === undefined || value === '') return fallback;
+  if ((allowed as readonly string[]).includes(value)) return value as T;
+  throw new Error(`${name} must be one of ${allowed.join(', ')}; got "${value}"`);
+}
 
 /**
  * Chooses the model client from the environment (ADR 0005):
@@ -20,11 +29,11 @@ export type LlmMode = 'live' | 'replay' | 'fake';
  * - fake: placeholder Lessons built from the Outline, for working offline.
  */
 export async function modelsFromEnv(env = process.env): Promise<(context: GenerationContext) => LlmClient> {
-  const mode = (env.LLM_MODE ?? 'replay') as LlmMode;
+  const mode = choice('LLM_MODE', env.LLM_MODE, MODES, 'replay');
   if (mode === 'live') {
     const live = await createLiveClient({
       model: env.LLM_MODEL ?? 'claude-sonnet-5-5',
-      effort: (env.LLM_EFFORT ?? 'medium') as Effort,
+      effort: choice('LLM_EFFORT', env.LLM_EFFORT, EFFORTS, 'medium'),
       tracing: env.LANGSMITH_TRACING === 'true',
       ...(env.LLM_RECORD === 'true' ? { onResult: (request, result) => writeRecording(request.key, result) } : {}),
     });

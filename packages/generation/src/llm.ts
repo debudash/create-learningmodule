@@ -16,7 +16,7 @@ export interface LlmResult {
   /** The reply's text: JSON matching the schema, unless the call was refused or cut off. */
   text: string;
   model: string;
-  stopReason: string | null;
+  stopReason: Anthropic.Beta.BetaStopReason | null;
   usage: TokenUsage;
   durationMs: number;
 }
@@ -28,7 +28,8 @@ export interface LlmClient {
   complete(request: LlmRequest): Promise<LlmResult>;
 }
 
-export type Effort = 'low' | 'medium' | 'high' | 'xhigh' | 'max';
+/** How hard the model thinks, as the SDK defines it. */
+export type Effort = NonNullable<Anthropic.Beta.BetaOutputConfig['effort']>;
 
 export interface LiveClientOptions {
   model: string;

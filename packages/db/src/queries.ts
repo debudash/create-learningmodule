@@ -180,10 +180,11 @@ export async function guidanceHistory(db: Executor, unitId: string): Promise<Gui
 export async function saveGuidance(
   db: Executor,
   input: { unitId: string; text: string; authorId: string },
-): Promise<number> {
+): Promise<{ ok: true; version: number } | { ok: false; message: string }> {
+  if (!input.text.trim()) return { ok: false, message: 'Generation Guidance cannot be empty.' };
   const [latest] = await guidanceHistory(db, input.unitId);
-  if (latest && latest.text === input.text) return latest.version;
+  if (latest && latest.text === input.text) return { ok: true, version: latest.version };
   const version = (latest?.version ?? 0) + 1;
   await db.insert(guidanceVersions).values({ unitId: input.unitId, version, text: input.text, authorId: input.authorId });
-  return version;
+  return { ok: true, version };
 }

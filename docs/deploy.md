@@ -27,7 +27,8 @@ Requirements: Docker Desktop, Node 22, pnpm.
 | `LLM_EFFORT` | `medium` | How hard the model thinks (`low` to `max`); higher costs more |
 | `LLM_RECORD` | `false` | With `LLM_MODE=live`, saves every result under `fixtures/recordings/` for replay |
 | `GENERATION_CONCURRENCY` | `5` | Lessons generated at once |
-| `GENERATION_DAILY_CAP` | unset (local) | Maximum live-generated Lessons per day (hosted demo) |
+| `GENERATION_DAILY_CAP` | unset (local) | Maximum Lessons sent to the live model per day (hosted demo) |
+| `LIVE_GENERATION_APPROVERS_ONLY` | `false` | `true` lets only Approvers start live generation (hosted demo) |
 | `LANGSMITH_TRACING` | `false` | `true` plus `LANGSMITH_API_KEY` enables tracing |
 | `COLLAB_URL` | `ws://localhost:1234` | Where browsers reach the collaboration server |
 

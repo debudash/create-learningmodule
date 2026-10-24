@@ -226,3 +226,17 @@ describe('regenerating a Flex Day', () => {
     expect((await lessonsByKey(['F5']))[0]!.status).toBe('draft');
   });
 });
+
+describe('a trial batch', () => {
+  it('queues only the first few Outlined Lessons, never Flex Days', async () => {
+    jobs.length = 0;
+    const result = await startGeneration(database.db, { unitId, trial: true, actor: editor(), enqueue });
+    expect(result.queued).toBe(3);
+    const queued = await database.db
+      .select({ key: schema.lessons.key })
+      .from(schema.lessons)
+      .where(and(eq(schema.lessons.unitId, unitId), eq(schema.lessons.status, 'queued')))
+      .orderBy(asc(schema.lessons.position));
+    expect(queued.map((l) => l.key)).toEqual(['L3', 'L4', 'L8']);
+  });
+});

@@ -30,7 +30,7 @@ export {
 export {
   generateLesson,
   type GenerationOutcome,
-  type GenerationRecord,
+  type GenerationAttemptRecord,
   type GenerationResult,
 } from './generate.js';
 export { placeholderOutput } from './placeholder.js';

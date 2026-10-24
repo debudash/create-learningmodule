@@ -125,7 +125,7 @@ describe('generateLesson', () => {
     const result = await generateLesson(fake, input('L3'), 'u4/L3');
     expect(result).toMatchObject({ ok: true, record: { outcome: 'repaired' } });
     expect(calls).toHaveLength(2);
-    expect(calls[1]!.messages.at(-1)!.content).toMatch(/does not pass validation[\s\S]*sections/);
+    expect(calls[1]!.messages.at(-1)!.content).toMatch(/does not match the Lesson schema[\s\S]*sections/);
   });
 
   it('gives up after one failed repair and says why', async () => {
@@ -147,7 +147,7 @@ describe('generateLesson', () => {
     const refusing = {
       mode: 'fake' as const,
       model: 'fake',
-      complete: async () => ({ text: '', model: 'fake', stopReason: 'refusal', usage: placeholderUsage(), durationMs: 1 }),
+      complete: async () => ({ text: '', model: 'fake', stopReason: 'refusal' as const, usage: placeholderUsage(), durationMs: 1 }),
     };
     const result = await generateLesson(refusing, input('L3'), 'u4/L3');
     expect(result).toMatchObject({ ok: false, record: { failureReason: 'The model declined to write this Lesson.' } });

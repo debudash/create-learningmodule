@@ -73,10 +73,10 @@ export default async function GuidancePage({
           <p className="mt-1 text-sm text-ink-soft">Exactly what the AI receives for this Lesson, with the current Guidance.</p>
           {prompt && (
             <div className="mt-3 space-y-3 text-sm">
-              <PromptPart title="Fixed instructions (not editable)" text={prompt.system[0]!.text} />
-              <PromptPart title="Unit context and Generation Guidance" text={prompt.system[1]!.text} open />
-              <PromptPart title="Example Lesson of the same type (from Units 1-3)" text={prompt.system[2]!.text} />
-              <PromptPart title="This Lesson" text={prompt.user} open />
+              <PromptPart title="Fixed instructions (not editable)" text={prompt.parts.locked} />
+              <PromptPart title="Unit context and Generation Guidance" text={prompt.parts.unit} open />
+              <PromptPart title="Example Lesson of the same type (from Units 1-3)" text={prompt.parts.example} />
+              <PromptPart title="This Lesson" text={prompt.parts.lesson} open />
             </div>
           )}
         </section>

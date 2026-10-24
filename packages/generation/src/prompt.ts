@@ -71,6 +71,8 @@ export interface LessonPromptInput {
 export interface LessonPrompt {
   system: Anthropic.Beta.BetaTextBlockParam[];
   user: string;
+  /** The same text by part, for showing the prompt to people. */
+  parts: { locked: string; unit: string; example: string; lesson: string };
 }
 
 const cached = { cache_control: { type: 'ephemeral' as const } };
@@ -81,13 +83,20 @@ const cached = { cache_control: { type: 'ephemeral' as const } };
  * identical across a Lesson Type, and only the final user message varies.
  */
 export function buildLessonPrompt(input: LessonPromptInput): LessonPrompt {
+  const parts = {
+    locked: LOCKED_INSTRUCTIONS,
+    unit: unitContext(input),
+    example: exampleSection(input.example),
+    lesson: lessonRequest(input),
+  };
   return {
     system: [
-      { type: 'text', text: LOCKED_INSTRUCTIONS },
-      { type: 'text', text: unitContext(input), ...cached },
-      { type: 'text', text: exampleSection(input.example), ...cached },
+      { type: 'text', text: parts.locked },
+      { type: 'text', text: parts.unit, ...cached },
+      { type: 'text', text: parts.example, ...cached },
     ],
-    user: lessonRequest(input),
+    user: parts.lesson,
+    parts,
   };
 }
 

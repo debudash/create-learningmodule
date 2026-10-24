@@ -18,3 +18,9 @@ export {
   type LessonActionType,
   type Refusal,
 } from './workflow.js';
+export {
+  generationAllowance,
+  TRIAL_BATCH_SIZE,
+  type Allowance,
+  type LiveGenerationLimits,
+} from './generation-policy.js';

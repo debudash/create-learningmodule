@@ -17,7 +17,7 @@ const MAX_TOKENS = 48_000;
 export type GenerationOutcome = 'succeeded' | 'repaired' | 'failed';
 
 /** What a Generation Attempt records (GLOSSARY: Generation Attempt). */
-export interface GenerationRecord {
+export interface GenerationAttemptRecord {
   outcome: GenerationOutcome;
   model: string;
   mode: LlmClient['mode'];
@@ -33,8 +33,8 @@ export interface GenerationRecord {
 }
 
 export type GenerationResult =
-  | { ok: true; lesson: Lesson; digest: LessonDigest; record: GenerationRecord }
-  | { ok: false; record: GenerationRecord };
+  | { ok: true; lesson: Lesson; digest: LessonDigest; record: GenerationAttemptRecord }
+  | { ok: false; record: GenerationAttemptRecord };
 
 /**
  * Generates one Lesson: one structured call, validated against the Lesson schema,
@@ -55,7 +55,7 @@ export async function generateLesson(
   let costUsd = 0;
   let durationMs = 0;
   let model = client.model;
-  const record = (outcome: GenerationOutcome, extra: Partial<GenerationRecord> = {}): GenerationRecord => ({
+  const record = (outcome: GenerationOutcome, extra: Partial<GenerationAttemptRecord> = {}): GenerationAttemptRecord => ({
     outcome,
     model,
     mode: client.mode,
@@ -72,7 +72,7 @@ export async function generateLesson(
     model = result.model;
   };
   /** Calls the model; an API failure becomes a failed record that keeps the spend so far. */
-  const call = async (request: LlmRequest): Promise<LlmResult | GenerationRecord> => {
+  const call = async (request: LlmRequest): Promise<LlmResult | GenerationAttemptRecord> => {
     try {
       const result = await client.complete(request);
       track(result);
@@ -105,7 +105,7 @@ export async function generateLesson(
       { role: 'assistant', content: first.text },
       {
         role: 'user',
-        content: `That Lesson does not pass validation:\n${checked.problems.map((p) => `- ${p}`).join('\n')}\n\nReturn the complete corrected JSON.`,
+        content: `That Lesson does not match the Lesson schema:\n${checked.problems.map((p) => `- ${p}`).join('\n')}\n\nReturn the complete corrected JSON.`,
       },
     ],
     schema,
@@ -121,7 +121,7 @@ export async function generateLesson(
   return {
     ok: false,
     record: record('failed', {
-      failureReason: 'The generated Lesson did not pass validation, even after one repair.',
+      failureReason: 'The generated Lesson does not match the Lesson schema, even after one repair.',
       schemaViolations: rechecked.problems,
       rawOutput: repair.text,
     }),
