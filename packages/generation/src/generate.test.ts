@@ -3,7 +3,8 @@ import { sampleLesson } from '@lcg/lesson-schema/testing';
 import { confirmImport, parseOutlineCsv, type OutlineLesson, type Resolution } from '@lcg/outline';
 import { describe, expect, it } from 'vitest';
 import { generateLesson } from './generate.js';
-import { createFakeClient, type LlmRequest } from './llm.js';
+import Anthropic from '@anthropic-ai/sdk';
+import { createFakeClient, type LlmClient, type LlmRequest, type LlmResult } from './llm.js';
 import { generationOutputJsonSchema } from './output.js';
 import { placeholderOutput } from './placeholder.js';
 import { buildLessonPrompt, LOCKED_INSTRUCTIONS, type LessonPromptInput } from './prompt.js';
@@ -163,3 +164,53 @@ describe('generateLesson', () => {
 function placeholderUsage() {
   return { inputTokens: 0, outputTokens: 0, cacheReadTokens: 0, cacheWriteTokens: 0 };
 }
+
+describe('what a Generation Attempt records', () => {
+  const valid = () => JSON.stringify({ lesson: sampleLesson(), digest: placeholderOutput(lesson('L3')).digest });
+  const scripted = (mode: 'live' | 'replay', steps: (() => LlmResult)[]): LlmClient => {
+    let call = 0;
+    return { mode, model: mode === 'live' ? 'claude-sonnet-5-5' : 'replay', complete: async () => steps[call++]!() };
+  };
+  const result = (model: string, text: string, input: number, output: number): LlmResult => ({
+    text,
+    model,
+    stopReason: 'end_turn',
+    usage: { inputTokens: input, outputTokens: output, cacheReadTokens: 0, cacheWriteTokens: 0 },
+    durationMs: 10,
+  });
+
+  // LCG-12 regressions. Found by: Phase 3 spec review (attempts recorded the wrong model and cost).
+  it('LCG-12: prices an answer by the model that gave it (a refusal fallback)', async () => {
+    const outcome = await generateLesson(
+      scripted('live', [() => result('claude-opus-5-5', valid(), 1000, 2000)]),
+      input('L3'),
+      'u4/L3',
+    );
+    expect(outcome.record).toMatchObject({ model: 'claude-opus-5-5', costUsd: 0.044 });
+  });
+
+  it('LCG-12: keeps the spend of earlier calls when a later call fails, saying why', async () => {
+    const outcome = await generateLesson(
+      scripted('live', [
+        () => result('claude-sonnet-5-5', 'not json', 1000, 1000),
+        () => {
+          throw new Anthropic.APIError(529, undefined, 'Overloaded', undefined);
+        },
+      ]),
+      input('L3'),
+      'u4/L3',
+    );
+    expect(outcome.ok).toBe(false);
+    expect(outcome.record.costUsd).toBeCloseTo(0.012, 6);
+    expect(outcome.record.failureReason).toMatch(/529/);
+  });
+
+  it('LCG-12: records what a replayed run originally cost, marked as a replay', async () => {
+    const outcome = await generateLesson(
+      scripted('replay', [() => result('claude-sonnet-5-5', valid(), 1000, 1000)]),
+      input('L3'),
+      'u4/L3',
+    );
+    expect(outcome.record).toMatchObject({ mode: 'replay', model: 'claude-sonnet-5-5', costUsd: 0.012 });
+  });
+});

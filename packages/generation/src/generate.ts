@@ -1,7 +1,8 @@
+import Anthropic from '@anthropic-ai/sdk';
 import type { Lesson } from '@lcg/lesson-schema';
 import type { OutlineLesson } from '@lcg/outline';
 import { addUsage, costOf, NO_USAGE, type TokenUsage } from './cost.js';
-import type { LlmClient, LlmResult } from './llm.js';
+import type { LlmClient, LlmRequest, LlmResult } from './llm.js';
 import {
   generationOutputJsonSchema,
   generationOutputSchema,
@@ -46,38 +47,57 @@ export async function generateLesson(
 ): Promise<GenerationResult> {
   const prompt = buildLessonPrompt(input);
   const schema = generationOutputJsonSchema();
+  // LCG-12: attempts were recorded with the requested model and priced from the
+  // total at the end, so a refusal fallback's answer was priced as the requested
+  // model and a call that threw lost the spend of the calls before it. Each call is
+  // now priced by the model that answered, as it returns.
   let usage = NO_USAGE;
+  let costUsd = 0;
   let durationMs = 0;
+  let model = client.model;
   const record = (outcome: GenerationOutcome, extra: Partial<GenerationRecord> = {}): GenerationRecord => ({
     outcome,
-    model: client.model,
+    model,
     mode: client.mode,
     promptVersion: PROMPT_VERSION,
     usage,
-    costUsd: costOf(client.model, usage),
+    costUsd,
     durationMs,
     ...extra,
   });
   const track = (result: LlmResult) => {
     usage = addUsage(usage, result.usage);
+    costUsd += costOf(result.model, result.usage);
     durationMs += result.durationMs;
+    model = result.model;
+  };
+  /** Calls the model; an API failure becomes a failed record that keeps the spend so far. */
+  const call = async (request: LlmRequest): Promise<LlmResult | GenerationRecord> => {
+    try {
+      const result = await client.complete(request);
+      track(result);
+      return result;
+    } catch (error) {
+      if (!(error instanceof Anthropic.APIError)) throw error;
+      return record('failed', { failureReason: `The Anthropic API returned an error (${error.status ?? 'no status'}): ${error.message}` });
+    }
   };
 
-  const first = await client.complete({
+  const first = await call({
     key: `${key}/first`,
     system: prompt.system,
     messages: [{ role: 'user', content: prompt.user }],
     schema,
     maxTokens: MAX_TOKENS,
   });
-  track(first);
+  if ('outcome' in first) return { ok: false, record: first };
   const refused = stopProblem(first);
   if (refused) return { ok: false, record: record('failed', { failureReason: refused, rawOutput: first.text }) };
 
   const checked = check(first.text, input.lesson);
   if (checked.ok) return { ok: true, ...checked.output, record: record('succeeded') };
 
-  const repair = await client.complete({
+  const repair = await call({
     key: `${key}/repair`,
     system: prompt.system,
     messages: [
@@ -91,7 +111,7 @@ export async function generateLesson(
     schema,
     maxTokens: MAX_TOKENS,
   });
-  track(repair);
+  if ('outcome' in repair) return { ok: false, record: repair };
   const repairRefused = stopProblem(repair);
   if (repairRefused) {
     return { ok: false, record: record('failed', { failureReason: repairRefused, rawOutput: repair.text }) };

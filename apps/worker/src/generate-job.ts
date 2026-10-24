@@ -67,7 +67,7 @@ export async function handleGenerateJob(
       usage: { inputTokens: 0, outputTokens: 0, cacheReadTokens: 0, cacheWriteTokens: 0 },
       costUsd: 0,
       durationMs: 0,
-      failureReason: `The model could not be reached: ${error instanceof Error ? error.message : String(error)}`,
+      failureReason: `Generation stopped with an unexpected error: ${error instanceof Error ? error.message : String(error)}`,
     };
   }
 

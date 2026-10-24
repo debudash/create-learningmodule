@@ -1,7 +1,7 @@
 import type { LessonStatus } from '@lcg/domain';
 import type { LessonType } from '@lcg/lesson-schema';
 import type { OutlineLesson } from '@lcg/outline';
-import { asc, count, desc, eq, sql, sum } from 'drizzle-orm';
+import { and, asc, count, desc, eq, sql, sum } from 'drizzle-orm';
 import type { Executor } from './client.js';
 import { arcs, generationAttempts, guidanceVersions, lessons, units, users, workflowEvents } from './schema.js';
 
@@ -61,7 +61,7 @@ export interface UnitBoard {
   unit: typeof units.$inferSelect;
   arcs: (typeof arcs.$inferSelect)[];
   lessons: BoardLesson[];
-  /** What generating this Unit has cost so far, in US dollars. */
+  /** What generating this Unit has cost so far (live calls only), in US dollars. */
   generationCostUsd: number;
 }
 
@@ -95,7 +95,8 @@ export async function unitBoard(db: Executor, unitId: string): Promise<UnitBoard
     .select({ total: sum(generationAttempts.costUsd) })
     .from(generationAttempts)
     .innerJoin(lessons, eq(lessons.id, generationAttempts.lessonId))
-    .where(eq(lessons.unitId, unitId));
+    // Only live calls cost money now; a replay records what its original run cost.
+    .where(and(eq(lessons.unitId, unitId), eq(generationAttempts.mode, 'live')));
   return {
     unit,
     arcs: arcRows,
