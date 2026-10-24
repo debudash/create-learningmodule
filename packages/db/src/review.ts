@@ -1,4 +1,4 @@
-import { isEditable, publishability, type Actor, type LessonAction } from '@lcg/domain';
+import { isEditable, parseReviewAction, publishability, type Actor, type ReviewAction } from '@lcg/domain';
 import type { Lesson, LessonType } from '@lcg/lesson-schema';
 import { and, asc, count, desc, eq, inArray, max } from 'drizzle-orm';
 import type { Database, Executor } from './client.js';
@@ -17,9 +17,6 @@ import {
 } from './schema.js';
 import { transitionLesson, type TransitionResult } from './workflow.js';
 
-/** The review actions a person takes on a Lesson in the workspace. */
-export type ReviewAction = Extract<LessonAction, { type: 'submit' | 'approve' | 'request-changes' | 'reopen' }>;
-
 /**
  * Applies a review action: the status change (with its workflow event), plus the
  * Lesson Version it captures. Submitting and approving freeze the content at that
@@ -30,17 +27,19 @@ export async function applyReviewAction(
   db: Database,
   input: { lessonId: string; actor: Actor; action: ReviewAction; expectedTransitionCount?: number },
 ): Promise<TransitionResult> {
+  const action = parseReviewAction(input.action);
+  if (!action) return { ok: false, refusal: 'not-permitted', message: 'That is not a review action.' };
   return db.transaction(async (tx) => {
-    const result = await transitionLesson(tx, input);
+    const result = await transitionLesson(tx, { ...input, action });
     if (!result.ok) return result;
     const actorId = input.actor.kind === 'user' ? input.actor.id : undefined;
     const freeze = async (reason: 'submitted' | 'approved') => {
       const content = await readLessonContent(tx, input.lessonId);
       if (content) await captureVersion(tx, { lessonId: input.lessonId, reason, content, ...(actorId ? { actorId } : {}) });
     };
-    if (input.action.type === 'submit') await freeze('submitted');
-    if (input.action.type === 'approve') await freeze('approved');
-    if (input.action.type === 'reopen') await markUnpublishedChanges(tx, input.lessonId);
+    if (action.type === 'submit') await freeze('submitted');
+    if (action.type === 'approve') await freeze('approved');
+    if (action.type === 'reopen') await markUnpublishedChanges(tx, input.lessonId);
     return result;
   });
 }

@@ -146,3 +146,17 @@ describe('publishing a Unit', () => {
     expect(unit!.flag).toBe(false);
   });
 });
+
+describe('requests from the browser', () => {
+  // LCG-15 regression. Found by: Phase 4 spec review (the review action type was trusted from the browser).
+  it('LCG-15: refuses an action that is not a review action, leaving the Lesson unchanged', async () => {
+    const id = await setLessonStatus(database.db, unitId, 'L5', 'draft');
+    const crafted = { type: 'regenerate' } as unknown as Parameters<typeof applyReviewAction>[1]['action'];
+    const result = await applyReviewAction(database.db, { lessonId: id, actor: editor(), action: crafted });
+    expect(result).toMatchObject({ ok: false, refusal: 'not-permitted' });
+    expect(await statusOf(id)).toBe('draft');
+
+    const badReason = { type: 'request-changes', reason: 42 } as unknown as Parameters<typeof applyReviewAction>[1]['action'];
+    expect(await applyReviewAction(database.db, { lessonId: id, actor: approver(), action: badReason })).toMatchObject({ ok: false });
+  });
+});

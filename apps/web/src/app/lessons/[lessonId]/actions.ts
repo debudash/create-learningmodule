@@ -1,6 +1,7 @@
 'use server';
 
-import { applyReviewAction, assignLesson, restoreVersion, type ReviewAction } from '@lcg/db';
+import { applyReviewAction, assignLesson, restoreVersion } from '@lcg/db';
+import type { ReviewAction } from '@lcg/domain';
 import { revalidatePath } from 'next/cache';
 import { db } from '@/server/db';
 import { requireUser } from '@/server/session';

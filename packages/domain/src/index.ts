@@ -11,12 +11,14 @@ export { EDITABLE_STATUSES, hasOpenableContent, isEditable } from './editing.js'
 export {
   availableActions,
   decide,
+  parseReviewAction,
   type Actor,
   type Decision,
   type DecisionContext,
   type LessonAction,
   type LessonActionType,
   type Refusal,
+  type ReviewAction,
 } from './workflow.js';
 export {
   generationAllowance,

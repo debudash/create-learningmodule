@@ -120,3 +120,23 @@ export function availableActions(status: LessonStatus, actor: Actor): LessonActi
     (type) => RULES[type].from.includes(status) && permits(RULES[type].by, actor),
   );
 }
+
+/** The actions a person takes from the Lesson workspace's review buttons. */
+export type ReviewAction = Extract<LessonAction, { type: 'submit' | 'approve' | 'request-changes' | 'reopen' }>;
+
+/**
+ * Reads a review action from untrusted input (a browser request), or returns
+ * undefined if it is not one.
+ *
+ * LCG-15: the review server action passed the browser's action object straight to
+ * the workflow, so a crafted { type: 'regenerate' } moved a Lesson to Queued with
+ * no job and skipped the generation limits. Only the four review actions, with a
+ * text reason where one is needed, are accepted now.
+ */
+export function parseReviewAction(input: unknown): ReviewAction | undefined {
+  if (!input || typeof input !== 'object') return undefined;
+  const { type, reason } = input as { type?: unknown; reason?: unknown };
+  if (type === 'submit' || type === 'approve') return { type };
+  if ((type === 'request-changes' || type === 'reopen') && typeof reason === 'string') return { type, reason };
+  return undefined;
+}
