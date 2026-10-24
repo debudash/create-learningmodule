@@ -1,3 +1,19 @@
+CREATE TABLE IF NOT EXISTS "ai_reviews" (
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
+	"lesson_id" uuid NOT NULL,
+	"content_digest" text NOT NULL,
+	"model" text NOT NULL,
+	"mode" text NOT NULL,
+	"outcome" text NOT NULL,
+	"input_tokens" integer DEFAULT 0 NOT NULL,
+	"output_tokens" integer DEFAULT 0 NOT NULL,
+	"cache_read_tokens" integer DEFAULT 0 NOT NULL,
+	"cache_write_tokens" integer DEFAULT 0 NOT NULL,
+	"cost_usd" numeric(10, 4) DEFAULT '0' NOT NULL,
+	"duration_ms" integer NOT NULL,
+	"created_at" timestamp with time zone DEFAULT now() NOT NULL
+);
+--> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "ai_suggestions" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"lesson_id" uuid NOT NULL,
@@ -147,6 +163,12 @@ CREATE TABLE IF NOT EXISTS "workflow_events" (
 );
 --> statement-breakpoint
 DO $$ BEGIN
+ ALTER TABLE "ai_reviews" ADD CONSTRAINT "ai_reviews_lesson_id_lessons_id_fk" FOREIGN KEY ("lesson_id") REFERENCES "public"."lessons"("id") ON DELETE cascade ON UPDATE no action;
+EXCEPTION
+ WHEN duplicate_object THEN null;
+END $$;
+--> statement-breakpoint
+DO $$ BEGIN
  ALTER TABLE "ai_suggestions" ADD CONSTRAINT "ai_suggestions_lesson_id_lessons_id_fk" FOREIGN KEY ("lesson_id") REFERENCES "public"."lessons"("id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
@@ -284,6 +306,7 @@ EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
 --> statement-breakpoint
+CREATE INDEX IF NOT EXISTS "ai_reviews_lesson" ON "ai_reviews" USING btree ("lesson_id","created_at");--> statement-breakpoint
 CREATE UNIQUE INDEX IF NOT EXISTS "arcs_unit_key" ON "arcs" USING btree ("unit_id","key");--> statement-breakpoint
 CREATE INDEX IF NOT EXISTS "generation_attempts_lesson" ON "generation_attempts" USING btree ("lesson_id","created_at");--> statement-breakpoint
 CREATE UNIQUE INDEX IF NOT EXISTS "guidance_unit_version" ON "guidance_versions" USING btree ("unit_id","version");--> statement-breakpoint

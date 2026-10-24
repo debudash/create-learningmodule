@@ -1,10 +1,11 @@
 import type { CheckOutlineFacts, QualityCheckResult } from '@lcg/domain';
 import type { Lesson } from '@lcg/lesson-schema';
+import type { ReviewCall } from '@lcg/generation';
 import type { OutlineLesson } from '@lcg/outline';
 import { and, asc, eq, inArray, sql } from 'drizzle-orm';
 import type { Executor } from './client.js';
 import { parseStoredContent } from './documents.js';
-import { lessonDocuments, lessons, qualityCheckResults, units } from './schema.js';
+import { aiReviews, lessonDocuments, lessons, qualityCheckResults, units } from './schema.js';
 
 /** The Outline facts the rule checks compare a Lesson with. */
 export function checkFactsOf(outline: OutlineLesson): CheckOutlineFacts {
@@ -53,15 +54,39 @@ export async function replaceCheckResults(
  * inserted their own, outside a transaction, so their statements interleaved and
  * both sets were kept. The replacement now runs in one transaction holding the
  * Lesson row's lock, so reviews that finish together replace one another in turn.
+ *
+ * LCG-22: the review's model, tokens and cost were computed and then dropped, so
+ * the Unit cost left out every review. Every call, readable or not, is now kept
+ * in ai_reviews, which the Unit cost sums.
  */
-export async function saveAiReview(
-  db: Executor,
-  review: { lessonId: string; contentDigest: string; results: QualityCheckResult[] },
-): Promise<void> {
+export async function saveAiReview(db: Executor, review: AiReviewRecord): Promise<void> {
   await db.transaction(async (tx) => {
     await tx.select({ id: lessons.id }).from(lessons).where(eq(lessons.id, review.lessonId)).for('update');
-    await replaceCheckResults(tx, review.lessonId, 'ai-review', review.results, review.contentDigest);
+    await tx.insert(aiReviews).values({
+      lessonId: review.lessonId,
+      contentDigest: review.contentDigest,
+      model: review.call.model,
+      mode: review.call.mode,
+      outcome: review.results ? 'reviewed' : 'unreadable',
+      inputTokens: review.call.usage.inputTokens,
+      outputTokens: review.call.usage.outputTokens,
+      cacheReadTokens: review.call.usage.cacheReadTokens,
+      cacheWriteTokens: review.call.usage.cacheWriteTokens,
+      costUsd: review.call.costUsd.toFixed(4),
+      durationMs: review.call.durationMs,
+    });
+    if (review.results) {
+      await replaceCheckResults(tx, review.lessonId, 'ai-review', review.results, review.contentDigest);
+    }
   });
+}
+
+/** One AI Review call; results are absent when the reply could not be read. */
+export interface AiReviewRecord {
+  lessonId: string;
+  contentDigest: string;
+  call: ReviewCall;
+  results?: QualityCheckResult[];
 }
 
 async function storedDigest(db: Executor, lessonId: string): Promise<string> {

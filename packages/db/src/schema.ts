@@ -235,6 +235,30 @@ export const qualityCheckResults = pgTable(
   (t) => [index('quality_check_results_lesson').on(t.lessonId)],
 );
 
+/** Every AI Review call, with what it cost; its results are in quality_check_results. */
+export const aiReviews = pgTable(
+  'ai_reviews',
+  {
+    id: id(),
+    lessonId: uuid('lesson_id')
+      .notNull()
+      .references(() => lessons.id, { onDelete: 'cascade' }),
+    /** Digest of the content reviewed. */
+    contentDigest: text('content_digest').notNull(),
+    model: text('model').notNull(),
+    mode: text('mode', { enum: ['live', 'replay', 'fake'] }).notNull(),
+    outcome: text('outcome', { enum: ['reviewed', 'unreadable'] }).notNull(),
+    inputTokens: integer('input_tokens').notNull().default(0),
+    outputTokens: integer('output_tokens').notNull().default(0),
+    cacheReadTokens: integer('cache_read_tokens').notNull().default(0),
+    cacheWriteTokens: integer('cache_write_tokens').notNull().default(0),
+    costUsd: numeric('cost_usd', { precision: 10, scale: 4 }).notNull().default('0'),
+    durationMs: integer('duration_ms').notNull(),
+    createdAt: createdAt(),
+  },
+  (t) => [index('ai_reviews_lesson').on(t.lessonId, t.createdAt)],
+);
+
 export const aiSuggestions = pgTable('ai_suggestions', {
   id: id(),
   lessonId: uuid('lesson_id')

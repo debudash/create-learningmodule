@@ -1,7 +1,8 @@
-import { currentFailingChecks, lessonChecks, replaceLessonContent } from '@lcg/db';
+import { currentFailingChecks, lessonChecks, replaceLessonContent, schema, unitBoard } from '@lcg/db';
 import { freshDatabase, importSampleUnit, setLessonStatus, type TestDatabase } from '@lcg/db/testing';
-import { createFakeClient, type LlmClient } from '@lcg/generation';
+import { createFakeClient, NO_USAGE, type LlmClient } from '@lcg/generation';
 import { sampleLesson } from '@lcg/lesson-schema/testing';
+import { eq } from 'drizzle-orm';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { handleReviewJob } from './review-job.js';
 
@@ -55,5 +56,30 @@ describe('the AI Review job', () => {
     const ai = (await lessonChecks(database.db, lessonId)).filter((r) => r.source === 'ai-review');
     const once = new Set(ai.map((r) => `${r.checkId}:${r.message}`)).size;
     expect(ai).toHaveLength(once);
+  });
+
+  // LCG-22, found by the Phase 5 standards review: the review's cost and model were thrown away.
+  it('LCG-22: records what a live review cost, and counts it in the Unit cost', async () => {
+    const lessonId = await lessonWithContent('L8');
+    const before = (await unitBoard(database.db, unitId))!.aiCostUsd;
+    const live: LlmClient = {
+      mode: 'live',
+      model: 'claude-haiku-5-5',
+      async complete() {
+        return {
+          text: failingVerdict,
+          model: 'claude-haiku-5-5',
+          stopReason: 'end_turn',
+          usage: { ...NO_USAGE, inputTokens: 1_000_000 },
+          durationMs: 1200,
+        };
+      },
+    };
+
+    await handleReviewJob({ db: database.db, clientFor: () => live }, { lessonId });
+
+    expect((await unitBoard(database.db, unitId))!.aiCostUsd).toBeCloseTo(before + 0.1, 4);
+    const [review] = await database.db.select().from(schema.aiReviews).where(eq(schema.aiReviews.lessonId, lessonId));
+    expect(review).toMatchObject({ model: 'claude-haiku-5-5', mode: 'live', inputTokens: 1_000_000, outcome: 'reviewed' });
   });
 });

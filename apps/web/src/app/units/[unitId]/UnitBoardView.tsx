@@ -68,9 +68,9 @@ export function UnitBoardView({ unitId, arcs, initialLessons, initialCost, user 
     const timer = setInterval(async () => {
       const response = await fetch(`/api/units/${unitId}/board`, { cache: 'no-store' });
       if (!response.ok) return;
-      const next = (await response.json()) as { lessons: BoardLesson[]; generationCostUsd: number };
+      const next = (await response.json()) as { lessons: BoardLesson[]; aiCostUsd: number };
       setLessons(next.lessons);
-      setCost(next.generationCostUsd);
+      setCost(next.aiCostUsd);
     }, 2000);
     return () => clearInterval(timer);
   }, [active, unitId]);

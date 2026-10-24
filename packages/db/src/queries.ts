@@ -4,7 +4,7 @@ import type { OutlineLesson } from '@lcg/outline';
 import { and, asc, count, desc, eq, sql, sum } from 'drizzle-orm';
 import { checkCounts } from './checks.js';
 import type { Executor } from './client.js';
-import { arcs, generationAttempts, guidanceVersions, lessons, units, users, workflowEvents } from './schema.js';
+import { aiReviews, arcs, generationAttempts, guidanceVersions, lessons, units, users, workflowEvents } from './schema.js';
 
 export interface UnitSummary {
   id: string;
@@ -66,8 +66,8 @@ export interface UnitBoard {
   unit: typeof units.$inferSelect;
   arcs: (typeof arcs.$inferSelect)[];
   lessons: BoardLesson[];
-  /** What generating this Unit has cost so far (live calls only), in US dollars. */
-  generationCostUsd: number;
+  /** What generating and reviewing this Unit has cost so far (live calls only), in US dollars. */
+  aiCostUsd: number;
 }
 
 /** A Unit with its Arcs and Lessons in Outline order, for the Unit board. */
@@ -98,12 +98,17 @@ export async function unitBoard(db: Executor, unitId: string): Promise<UnitBoard
     .leftJoin(users, eq(users.id, lessons.assigneeId))
     .where(eq(lessons.unitId, unitId))
     .orderBy(asc(lessons.position));
-  const [cost] = await db
+  // Only live calls cost money now; a replay records what its original run cost.
+  const [generationCost] = await db
     .select({ total: sum(generationAttempts.costUsd) })
     .from(generationAttempts)
     .innerJoin(lessons, eq(lessons.id, generationAttempts.lessonId))
-    // Only live calls cost money now; a replay records what its original run cost.
     .where(and(eq(lessons.unitId, unitId), eq(generationAttempts.mode, 'live')));
+  const [reviewCost] = await db
+    .select({ total: sum(aiReviews.costUsd) })
+    .from(aiReviews)
+    .innerJoin(lessons, eq(lessons.id, aiReviews.lessonId))
+    .where(and(eq(lessons.unitId, unitId), eq(aiReviews.mode, 'live')));
   const counts = await checkCounts(db, lessonRows.map((l) => l.id));
   return {
     unit,
@@ -114,7 +119,7 @@ export async function unitBoard(db: Executor, unitId: string): Promise<UnitBoard
       waitingForArc: lesson.status === 'queued' && lesson.lessonType === 'flex-day' && jobEnqueuedAt === null,
       failureReason: lesson.status === 'generation-failed' ? failureReason : null,
     })),
-    generationCostUsd: Number(cost?.total ?? 0),
+    aiCostUsd: Number(generationCost?.total ?? 0) + Number(reviewCost?.total ?? 0),
   };
 }
 

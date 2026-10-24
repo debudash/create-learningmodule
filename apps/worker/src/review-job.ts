@@ -17,6 +17,7 @@ export async function handleReviewJob(deps: ReviewJobDeps, job: { lessonId: stri
   if (!context) return;
   const key = `g${context.unit.grade}-u${context.unit.unitNumber}/${context.outline.key}/review`;
   const result = await reviewLesson(deps.clientFor(context), context, key);
+  const record = { lessonId: job.lessonId, contentDigest: context.contentDigest, call: result.call };
+  await saveAiReview(deps.db, result.ok ? { ...record, results: result.results } : record);
   if (!result.ok) throw new Error(result.reason);
-  await saveAiReview(deps.db, { lessonId: job.lessonId, contentDigest: context.contentDigest, results: result.results });
 }

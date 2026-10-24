@@ -37,7 +37,7 @@ export default async function UnitBoardPage({ params }: { params: Promise<{ unit
         unitId={board.unit.id}
         arcs={board.arcs.map(({ id, name, description }) => ({ id, name, description }))}
         initialLessons={board.lessons}
-        initialCost={board.generationCostUsd}
+        initialCost={board.aiCostUsd}
         user={{ id: user.id, role: user.role }}
       />
     </div>

@@ -8,5 +8,5 @@ export async function GET(_request: Request, { params }: { params: Promise<{ uni
   if (!(await currentUser())) return NextResponse.json({ error: 'Not signed in' }, { status: 401 });
   const board = await unitBoard(db, (await params).unitId);
   if (!board) return NextResponse.json({ error: 'No such Unit' }, { status: 404 });
-  return NextResponse.json({ lessons: board.lessons, generationCostUsd: board.generationCostUsd });
+  return NextResponse.json({ lessons: board.lessons, aiCostUsd: board.aiCostUsd });
 }

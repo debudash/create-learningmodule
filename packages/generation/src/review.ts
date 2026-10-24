@@ -3,7 +3,7 @@ import { lessonToLines, type Lesson } from '@lcg/lesson-schema';
 import type { OutlineLesson } from '@lcg/outline';
 import { getStandard } from '@lcg/standards';
 import { z } from 'zod';
-import { costOf } from './cost.js';
+import { costOf, type TokenUsage } from './cost.js';
 import type { LlmClient } from './llm.js';
 import { toOutputJsonSchema } from './output.js';
 
@@ -37,9 +37,18 @@ export interface ReviewInput {
   anchorTextTitle: string;
 }
 
+/** What one AI Review call used and cost, for the record. */
+export interface ReviewCall {
+  model: string;
+  mode: LlmClient['mode'];
+  usage: TokenUsage;
+  costUsd: number;
+  durationMs: number;
+}
+
 export type ReviewResult =
-  | { ok: true; results: QualityCheckResult[]; costUsd: number; model: string }
-  | { ok: false; reason: string; costUsd: number };
+  | { ok: true; results: QualityCheckResult[]; call: ReviewCall }
+  | { ok: false; reason: string; call: ReviewCall };
 
 /** Runs the AI Review of one Lesson: one structured call, turned into Quality Check results. */
 export async function reviewLesson(client: LlmClient, input: ReviewInput, key: string): Promise<ReviewResult> {
@@ -66,14 +75,20 @@ export async function reviewLesson(client: LlmClient, input: ReviewInput, key: s
     schema: toOutputJsonSchema(aiReviewSchema),
     maxTokens: 8000,
   });
-  const costUsd = costOf(result.model, result.usage);
+  const call: ReviewCall = {
+    model: result.model,
+    mode: client.mode,
+    usage: result.usage,
+    costUsd: costOf(result.model, result.usage),
+    durationMs: result.durationMs,
+  };
   let parsed: AiReview;
   try {
     parsed = aiReviewSchema.parse(JSON.parse(result.text));
   } catch {
-    return { ok: false, reason: 'The AI Review did not return a readable verdict.', costUsd };
+    return { ok: false, reason: 'The AI Review did not return a readable verdict.', call };
   }
-  return { ok: true, results: toCheckResults(parsed, focus), costUsd, model: result.model };
+  return { ok: true, results: toCheckResults(parsed, focus), call };
 }
 
 const STANDARD_OUTCOME = { taught: 'pass', partly: 'warn', 'not-taught': 'fail' } as const;
