@@ -129,4 +129,28 @@ describe('confirmImport: issue kinds outside the sample', () => {
     const invalid = confirmImport(odd, [{ issueId: issue.id, action: 'replace', value: 'seminar' }]);
     expect(invalid.ok).toBe(false);
   });
+
+  // LCG-2 regression. Found by: Phase 1 spec review (a mistyped ELD code was stored as a Designer Note).
+  it('LCG-2: blocks on a malformed ELD code instead of keeping it as a note', () => {
+    const odd = parseOutlineCsv(
+      miniOutline({
+        eld: [
+          '• ELD.P1.6.6 – Read closely',
+          '• ELD.PI.6.1 – Participate in discussions',
+          'Keep ELD light today',
+        ].join('\n'),
+      }),
+    );
+    const lesson = odd.lessons[0]!;
+    const malformed = odd.issues.filter((i) => i.kind === 'malformed-standard');
+    expect(malformed).toMatchObject([
+      { severity: 'blocking', field: 'eldStandards', raw: 'ELD.P1.6.6 – Read closely' },
+    ]);
+    expect(lesson.designerNotes).toEqual(['Keep ELD light today']);
+    expect(lesson.eldStandards.map((e) => e.code)).toEqual(['ELD.P1.6.6', 'ELD.PI.6.1']);
+
+    const fixed = confirmImport(odd, [{ issueId: malformed[0]!.id, action: 'replace', value: 'ELD.PI.6.6' }]);
+    expect(fixed.ok).toBe(true);
+    if (fixed.ok) expect(fixed.confirmed.lessons[0]!.eldStandards.map((e) => e.code)).toContain('ELD.PI.6.6');
+  });
 });

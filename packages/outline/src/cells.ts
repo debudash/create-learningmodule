@@ -136,6 +136,9 @@ function suggestForBareNumber(
   return candidate.ok && hasStandard(candidate.code) ? candidate.code : undefined;
 }
 
+/** "ELD.PI.6.7 – Analyze author purpose": a code-like first word, a dash, a description. */
+const ELD_LINE = new RegExp(`^([A-Za-z]+[.\\w]*\\d\\S*)\\s*${DASH.source}\\s*(.+)$`);
+
 export interface ParsedEld {
   refs: EldStandardRef[];
   issues: OutlineIssue[];
@@ -155,14 +158,31 @@ export function parseEldCell(cell: string, lessonKey: string): ParsedEld {
   const notes: string[] = items.length > 0 ? [...others] : [];
 
   for (const line of lines) {
-    const match = new RegExp(`^(\\S+)\\s*${DASH.source}\\s*(.+)$`).exec(line);
-    const normalized = match ? normalizeCode(match[1]!, 'ELD') : undefined;
-    if (!match || !normalized?.ok) {
+    const match = ELD_LINE.exec(line);
+    if (!match) {
       notes.push(line);
       continue;
     }
-    const code = normalized.code;
     const description = clean(match[2]);
+    const normalized = normalizeCode(match[1]!, 'ELD');
+    // LCG-2: a line shaped "code – description" whose code does not normalise was
+    // treated like free text and kept as a Designer Note, so a mistyped code vanished
+    // without an issue. The shape marks it as a standard, so it is Blocking (ADR 0008).
+    if (!normalized.ok) {
+      refs.push({ code: match[1]!, raw: line, description });
+      issues.push({
+        id: `${lessonKey}.${field}.${match[1]}`,
+        severity: 'blocking',
+        kind: 'malformed-standard',
+        message: `"${match[1]}" is not a complete ELD code (${normalized.reason}).`,
+        lessonKey,
+        field,
+        raw: line,
+        code: match[1]!,
+      });
+      continue;
+    }
+    const code = normalized.code;
     refs.push({ code, raw: line, description });
 
     if (!hasStandard(code)) {
