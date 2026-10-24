@@ -6,16 +6,17 @@ import {
   schema,
   startGeneration,
   type EnqueueGeneration,
+  type GenerationJob,
 } from '@lcg/db';
 import { freshDatabase, importSampleUnit, type TestDatabase } from '@lcg/db/testing';
-import { createFakeClient, placeholderOutput, type LlmRequest } from '@lcg/generation';
+import { createFakeClient, NO_USAGE, placeholderOutput, type LlmRequest } from '@lcg/generation';
 import { and, asc, eq, inArray } from 'drizzle-orm';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
-import { handleGenerateJob, type GenerateJob, type GenerateJobDeps } from './generate-job.js';
+import { handleGenerateJob, type GenerateJobDeps } from './generate-job.js';
 
 let database: TestDatabase;
 let unitId: string;
-const jobs: GenerateJob[] = [];
+const jobs: GenerationJob[] = [];
 const prompts = new Map<string, LlmRequest>();
 const enqueue: EnqueueGeneration = async (_tx, job) => {
   jobs.push(job);
@@ -148,5 +149,43 @@ describe('regenerating a Lesson', () => {
       .orderBy(asc(schema.lessonVersions.number));
     expect(versions.map((v) => v.reason)).toEqual(['generated', 'replaced', 'regenerated']);
     expect((versions[1]!.content as { title: string }).title).toBe('Edited by an Editor');
+  });
+});
+
+describe('stale generation jobs', () => {
+  // LCG-10 regression. Found by: Phase 3 spec review (cancel then restart could generate a Lesson twice).
+  it('LCG-10: a job sent before a cancel does not generate the Lesson again', async () => {
+    const [l5] = await lessonsByKey(['L5']);
+    await startGeneration(database.db, { unitId, lessonIds: [l5!.id], actor: editor(), enqueue });
+    const stale = jobs.shift()!;
+    await cancelGeneration(database.db, { unitId, actor: editor() });
+    await startGeneration(database.db, { unitId, lessonIds: [l5!.id], actor: editor(), enqueue });
+    const current = jobs.shift()!;
+
+    // Hold the stale job inside its model call while the current job runs to the end.
+    let release!: () => void;
+    const gate = new Promise<void>((resolve) => (release = resolve));
+    const held: GenerateJobDeps = {
+      ...deps(),
+      clientFor: (context) => ({
+        mode: 'fake',
+        model: 'fake',
+        complete: async () => {
+          await gate;
+          return { text: JSON.stringify(placeholderOutput(context.outline)), model: 'fake', stopReason: 'end_turn', usage: NO_USAGE, durationMs: 0 };
+        },
+      }),
+    };
+    const staleRun = handleGenerateJob(held, stale, { finalAttempt: true });
+    await new Promise((r) => setTimeout(r, 300));
+    await handleGenerateJob(deps(), current, { finalAttempt: true });
+    release();
+    await staleRun;
+
+    const attempts = await database.db.select().from(schema.generationAttempts).where(eq(schema.generationAttempts.lessonId, l5!.id));
+    const versions = await database.db.select().from(schema.lessonVersions).where(eq(schema.lessonVersions.lessonId, l5!.id));
+    expect(attempts).toHaveLength(1);
+    expect(versions).toHaveLength(1);
+    expect((await lessonsByKey(['L5']))[0]!.status).toBe('draft');
   });
 });

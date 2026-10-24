@@ -49,7 +49,7 @@ describe('job queue', () => {
       attempts.push(finalAttempt);
       throw new Error('model unavailable');
     });
-    await database.db.transaction((tx) => queue.enqueue(tx, 'generate-lesson', { lessonId: 'flaky' }));
+    await database.db.transaction((tx) => queue.enqueue(tx, 'generate-lesson', { lessonId: 'flaky', queuedAt: new Date().toISOString() }));
 
     await eventually(() => attempts.length === ATTEMPTS, 30_000);
     expect(attempts).toEqual([false, false, true]);

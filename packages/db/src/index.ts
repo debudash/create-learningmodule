@@ -44,6 +44,7 @@ export {
   startGeneration,
   type AttemptRecord,
   type EnqueueGeneration,
+  type GenerationJob,
   type GenerationContext,
   type StartGenerationResult,
 } from './generation.js';

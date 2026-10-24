@@ -8,6 +8,7 @@ import {
   type Database,
   type EnqueueGeneration,
   type GenerationContext,
+  type GenerationJob,
 } from '@lcg/db';
 import { generateLesson, type GenerationRecord, type LlmClient } from '@lcg/generation';
 import type { LessonType } from '@lcg/lesson-schema';
@@ -21,21 +22,16 @@ export interface GenerateJobDeps {
   exampleFor: (lessonType: LessonType) => string;
 }
 
-export interface GenerateJob {
-  lessonId: string;
-  extraInstructions?: string;
-}
-
 /**
  * Generates one Lesson. A failure before the last attempt is recorded and thrown so
  * the queue retries it; a failure on the last attempt marks the Lesson Generation Failed.
  */
 export async function handleGenerateJob(
   deps: GenerateJobDeps,
-  job: GenerateJob,
+  job: GenerationJob,
   { finalAttempt }: { finalAttempt: boolean },
 ): Promise<void> {
-  if (!(await beginGenerating(deps.db, job.lessonId))) return;
+  if (!(await beginGenerating(deps.db, job))) return;
   const context = await loadGenerationContext(deps.db, job.lessonId);
   if (!context) return;
   const client = deps.clientFor(context);

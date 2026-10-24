@@ -1,4 +1,4 @@
-import type { Executor } from '@lcg/db';
+import type { Executor, GenerationJob } from '@lcg/db';
 import { sql, type SQL } from 'drizzle-orm';
 import PgBoss from 'pg-boss';
 
@@ -8,20 +8,13 @@ import PgBoss from 'pg-boss';
  * changing only this module.
  */
 
-/** Generate (or regenerate) one Lesson. */
-export interface GenerateLessonJob {
-  lessonId: string;
-  /** One-off instructions an Editor gave when regenerating. */
-  extraInstructions?: string;
-}
-
 /** Run the AI Review of one Lesson. */
 export interface ReviewLessonJob {
   lessonId: string;
 }
 
 export interface Jobs {
-  'generate-lesson': GenerateLessonJob;
+  'generate-lesson': GenerationJob;
   'review-lesson': ReviewLessonJob;
 }
 

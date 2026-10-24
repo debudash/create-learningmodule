@@ -16,8 +16,24 @@ import {
 } from './schema.js';
 import { transitionLesson, type TransitionResult } from './workflow.js';
 
+/** A request to generate one Lesson, as the job queue carries it. */
+export interface GenerationJob {
+  lessonId: string;
+  /** When the Lesson was queued for this job; a job whose Lesson was queued again later is stale. */
+  queuedAt: string;
+  /** One-off instructions an Editor gave when regenerating. */
+  extraInstructions?: string;
+}
+
 /** Adds a generation job for a Lesson inside the caller's transaction (see @lcg/queue). */
-export type EnqueueGeneration = (tx: Executor, job: { lessonId: string; extraInstructions?: string }) => Promise<void>;
+export type EnqueueGeneration = (tx: Executor, job: GenerationJob) => Promise<void>;
+
+/** Sends a Lesson's generation job and stamps the Lesson with the time it was queued. */
+async function sendJob(tx: Executor, lessonId: string, enqueue: EnqueueGeneration, extraInstructions?: string) {
+  const queuedAt = new Date();
+  await tx.update(lessons).set({ jobEnqueuedAt: queuedAt }).where(eq(lessons.id, lessonId));
+  await enqueue(tx, { lessonId, queuedAt: queuedAt.toISOString(), ...(extraInstructions ? { extraInstructions } : {}) });
+}
 
 /** Statuses in which a Lesson has content. */
 const HAS_CONTENT = ['draft', 'in-review', 'changes-requested', 'approved'] as const;
@@ -104,8 +120,7 @@ export async function regenerateLesson(
         ...(input.actor.kind === 'user' ? { actorId: input.actor.id } : {}),
       });
     }
-    await input.enqueue(tx, { lessonId: input.lessonId, ...(instructions ? { extraInstructions: instructions } : {}) });
-    await tx.update(lessons).set({ jobEnqueuedAt: sql`now()` }).where(eq(lessons.id, input.lessonId));
+    await sendJob(tx, input.lessonId, input.enqueue, instructions);
     return result;
   });
 }
@@ -130,8 +145,7 @@ export async function enqueueReadyLessons(tx: Executor, unitId: string, enqueue:
   for (const row of rows) {
     if (row.status !== 'queued' || row.jobEnqueuedAt) continue;
     if (row.lessonType === 'flex-day' && !arcReady(row.arcId)) continue;
-    await enqueue(tx, { lessonId: row.id });
-    await tx.update(lessons).set({ jobEnqueuedAt: sql`now()` }).where(eq(lessons.id, row.id));
+    await sendJob(tx, row.id, enqueue);
   }
 }
 
@@ -194,14 +208,27 @@ export async function loadGenerationContext(db: Executor, lessonId: string): Pro
   };
 }
 
-/** Moves a Queued Lesson to Generating. Returns false when the job should stop (cancelled or already done). */
-export async function beginGenerating(db: Database, lessonId: string): Promise<boolean> {
+/**
+ * Moves a Queued Lesson to Generating for this job. Returns false when the job
+ * should stop: the Lesson was cancelled, already generated, or queued again since.
+ *
+ * LCG-10: any job for a Generating Lesson was allowed to continue, so a job sent
+ * before a cancel ran alongside the job sent after the restart and the Lesson was
+ * generated twice. A job now runs only while the Lesson carries the queue stamp it
+ * was sent with; retries of the same job carry the same stamp.
+ */
+export async function beginGenerating(db: Database, job: Pick<GenerationJob, 'lessonId' | 'queuedAt'>): Promise<boolean> {
   return db.transaction(async (tx) => {
-    const [row] = await tx.select({ status: lessons.status }).from(lessons).where(eq(lessons.id, lessonId));
-    if (row?.status === 'generating') return true; // a retry of an attempt that failed part-way
-    if (row?.status !== 'queued') return false;
+    const [row] = await tx
+      .select({ status: lessons.status, jobEnqueuedAt: lessons.jobEnqueuedAt })
+      .from(lessons)
+      .where(eq(lessons.id, job.lessonId))
+      .for('update');
+    if (!row?.jobEnqueuedAt || row.jobEnqueuedAt.toISOString() !== job.queuedAt) return false;
+    if (row.status === 'generating') return true; // a retry of this job after a failed attempt
+    if (row.status !== 'queued') return false;
     const result = await transitionLesson(tx, {
-      lessonId,
+      lessonId: job.lessonId,
       actor: { kind: 'system' },
       action: { type: 'start-generating' },
     });
