@@ -6,6 +6,7 @@ export {
   loadDocumentState,
   readLessonContent,
   storeDocumentState,
+  storeLessonDocument,
   writeLessonContent,
 } from './documents.js';
 export { findLessonStatus, findUser, recordEditors, type User } from './lessons.js';

@@ -1,6 +1,6 @@
 import { createServer } from 'node:net';
 import { HocuspocusProvider } from '@hocuspocus/provider';
-import { readLessonContent, writeLessonContent } from '@lcg/db';
+import { readLessonContent, workspaceLesson, writeLessonContent } from '@lcg/db';
 import {
   freshDatabase,
   importSampleUnit,
@@ -101,6 +101,15 @@ describe('collaboration server', () => {
     await eventually(async () => header().getAttribute('title') === 'Seen by both');
     a.provider.destroy();
     b.provider.destroy();
+  });
+
+  // LCG-6 regression. Found by: Phase 2 spec review (the board kept the old title after an edit).
+  it('LCG-6: keeps the Lesson title shown on the board in step with the document', async () => {
+    const { document, provider, synced } = open(lessonIds.L3!, signSession(database.editorId, SECRET));
+    await synced;
+    retitle(document, 'Renamed in the editor');
+    await eventually(async () => (await workspaceLesson(database.db, lessonIds.L3!))?.title === 'Renamed in the editor');
+    provider.destroy();
   });
 
   // LCG-5 regression. Found by: Phase 2 spec review (the server stored any document a client sent).

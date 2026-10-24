@@ -4,8 +4,7 @@ import {
   findLessonStatus,
   findUser,
   loadDocumentState,
-  recordEditors,
-  storeDocumentState,
+  storeLessonDocument,
   type Database,
   type User,
 } from '@lcg/db';
@@ -74,11 +73,11 @@ export function createCollabServer({ db, sessionSecret, port = 1234, debounce = 
           const status = await findLessonStatus(db, lessonId);
           if (!status || !isEditable(status)) return;
           // LCG-5: only a valid Lesson is stored; a broken document keeps the last good one.
-          if (!yStateToLesson(state).ok) return;
-          await storeDocumentState(db, lessonId, state);
+          const parsed = yStateToLesson(state);
+          if (!parsed.ok) return;
           const editors = editorsSinceStore.get(documentName);
           editorsSinceStore.delete(documentName);
-          await recordEditors(db, lessonId, [...(editors ?? [])]);
+          await storeLessonDocument(db, lessonId, state, parsed.lesson, [...(editors ?? [])]);
         },
       }),
     ],
