@@ -1,0 +1,12 @@
+{
+  "name": "@lcg/generation",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {
+    "@lcg/lesson-schema": "workspace:*",
+    "@lcg/outline": "workspace:*",
+    "@lcg/standards": "workspace:*"
+  }
+}

@@ -167,6 +167,18 @@ importers:
         specifier: workspace:*
         version: link:../lesson-schema
 
+  packages/generation:
+    dependencies:
+      '@lcg/lesson-schema':
+        specifier: workspace:*
+        version: link:../lesson-schema
+      '@lcg/outline':
+        specifier: workspace:*
+        version: link:../outline
+      '@lcg/standards':
+        specifier: workspace:*
+        version: link:../standards
+
   packages/lesson-schema:
     dependencies:
       '@tiptap/core':
