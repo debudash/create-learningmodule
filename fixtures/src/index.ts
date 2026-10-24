@@ -1,4 +1,5 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 /**
@@ -22,6 +23,20 @@ export function sampleLessonJson(): unknown {
   return JSON.parse(read('lessons/g6-u4-l03-spark.json'));
 }
 
+/**
+ * The few-shot example Lesson for a Lesson Type, as Markdown (the Teacher View of a published
+ * Units 1–3 Lesson, built by packages/generation/scripts/build-examples.ts). Never Unit 4.
+ */
+export function exampleLessonMarkdown(lessonType: string): string {
+  if (!/^[a-z-]+$/.test(lessonType)) throw new Error(`not a Lesson Type: ${lessonType}`);
+  return read(`examples/${lessonType}.md`);
+}
+
+/** Which published Lesson each example came from, as unvalidated JSON. */
+export function exampleManifest(): unknown {
+  return JSON.parse(read('examples/manifest.json'));
+}
+
 const HEADERS = [
   'Filename', 'Lesson', 'Lesson #', 'Type of Lesson', 'Days', 'Text Dependent Question tied to the EQ',
   'Lesson Description', 'Text Set Choice', 'Homework', 'Focus Standards (assessed)',
@@ -40,4 +55,24 @@ export function miniOutlineCsv(lesson: Partial<Record<'type' | 'eld' | 'supporti
   return [csv(['G6, U4: The Lightning Thief by Rick Riordan']), csv(HEADERS), csv(['', 'Spark']), csv(row)].join(
     '\n',
   );
+}
+
+const RECORDING_KEY = /^[a-z0-9-]+(\/[A-Za-z0-9-]+)*$/;
+
+function recordingFile(key: string): string {
+  if (!RECORDING_KEY.test(key)) throw new Error(`Not a recording key: ${key}`);
+  return fileURLToPath(new URL(`../recordings/${key}.json`, import.meta.url));
+}
+
+/** A recorded model result saved by a live run, for replay mode; undefined if none was recorded. */
+export function readRecording(key: string): unknown {
+  const file = recordingFile(key);
+  return existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : undefined;
+}
+
+/** Saves a model result from a live run so replay mode can serve it later. */
+export function writeRecording(key: string, value: unknown): void {
+  const file = recordingFile(key);
+  mkdirSync(dirname(file), { recursive: true });
+  writeFileSync(file, `${JSON.stringify(value, null, 2)}\n`);
 }

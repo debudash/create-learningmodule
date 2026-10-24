@@ -1,0 +1,21 @@
+{
+  "name": "@lcg/worker",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --env-file=../../.env src/main.ts",
+    "start": "tsx --env-file=../../.env src/main.ts"
+  },
+  "dependencies": {
+    "@lcg/db": "workspace:*",
+    "@lcg/fixtures": "workspace:*",
+    "@lcg/generation": "workspace:*",
+    "@lcg/lesson-schema": "workspace:*",
+    "@lcg/outline": "workspace:*",
+    "@lcg/queue": "workspace:*"
+  },
+  "devDependencies": {
+    "drizzle-orm": "0.36.4"
+  }
+}

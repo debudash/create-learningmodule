@@ -1,9 +1,9 @@
 import type { LessonStatus } from '@lcg/domain';
 import type { LessonType } from '@lcg/lesson-schema';
 import type { OutlineLesson } from '@lcg/outline';
-import { asc, count, eq } from 'drizzle-orm';
+import { asc, count, desc, eq, sql, sum } from 'drizzle-orm';
 import type { Executor } from './client.js';
-import { arcs, lessons, units, users } from './schema.js';
+import { arcs, generationAttempts, guidanceVersions, lessons, units, users } from './schema.js';
 
 export interface UnitSummary {
   id: string;
@@ -51,12 +51,18 @@ export interface BoardLesson {
   status: LessonStatus;
   arcId: string;
   assigneeName: string | null;
+  /** A Queued Flex Day without a job is waiting for the rest of its Arc. */
+  waitingForArc: boolean;
+  /** Why the latest Generation Attempt failed, when the Lesson is Generation Failed. */
+  failureReason: string | null;
 }
 
 export interface UnitBoard {
   unit: typeof units.$inferSelect;
   arcs: (typeof arcs.$inferSelect)[];
   lessons: BoardLesson[];
+  /** What generating this Unit has cost so far, in US dollars. */
+  generationCostUsd: number;
 }
 
 /** A Unit with its Arcs and Lessons in Outline order, for the Unit board. */
@@ -75,12 +81,31 @@ export async function unitBoard(db: Executor, unitId: string): Promise<UnitBoard
       status: lessons.status,
       arcId: lessons.arcId,
       assigneeName: users.name,
+      jobEnqueuedAt: lessons.jobEnqueuedAt,
+      failureReason: sql<string | null>`(
+        SELECT ${generationAttempts.failureReason} FROM ${generationAttempts}
+        WHERE ${generationAttempts.lessonId} = ${lessons.id}
+        ORDER BY ${generationAttempts.createdAt} DESC LIMIT 1)`,
     })
     .from(lessons)
     .leftJoin(users, eq(users.id, lessons.assigneeId))
     .where(eq(lessons.unitId, unitId))
     .orderBy(asc(lessons.position));
-  return { unit, arcs: arcRows, lessons: lessonRows };
+  const [cost] = await db
+    .select({ total: sum(generationAttempts.costUsd) })
+    .from(generationAttempts)
+    .innerJoin(lessons, eq(lessons.id, generationAttempts.lessonId))
+    .where(eq(lessons.unitId, unitId));
+  return {
+    unit,
+    arcs: arcRows,
+    lessons: lessonRows.map(({ jobEnqueuedAt, failureReason, ...lesson }) => ({
+      ...lesson,
+      waitingForArc: lesson.status === 'queued' && lesson.lessonType === 'flex-day' && jobEnqueuedAt === null,
+      failureReason: lesson.status === 'generation-failed' ? failureReason : null,
+    })),
+    generationCostUsd: Number(cost?.total ?? 0),
+  };
 }
 
 export interface WorkspaceLesson {
@@ -124,4 +149,40 @@ export async function workspaceLesson(db: Executor, lessonId: string): Promise<W
 
 export async function listUsers(db: Executor) {
   return db.select().from(users).orderBy(asc(users.role), asc(users.name));
+}
+
+export interface GuidanceVersion {
+  id: string;
+  version: number;
+  text: string;
+  authorName: string;
+  createdAt: Date;
+}
+
+/** A Unit's Generation Guidance versions, newest first. */
+export async function guidanceHistory(db: Executor, unitId: string): Promise<GuidanceVersion[]> {
+  return db
+    .select({
+      id: guidanceVersions.id,
+      version: guidanceVersions.version,
+      text: guidanceVersions.text,
+      authorName: users.name,
+      createdAt: guidanceVersions.createdAt,
+    })
+    .from(guidanceVersions)
+    .innerJoin(users, eq(users.id, guidanceVersions.authorId))
+    .where(eq(guidanceVersions.unitId, unitId))
+    .orderBy(desc(guidanceVersions.version));
+}
+
+/** Saves edited Generation Guidance as the Unit's next version; unchanged text saves nothing. */
+export async function saveGuidance(
+  db: Executor,
+  input: { unitId: string; text: string; authorId: string },
+): Promise<number> {
+  const [latest] = await guidanceHistory(db, input.unitId);
+  if (latest && latest.text === input.text) return latest.version;
+  const version = (latest?.version ?? 0) + 1;
+  await db.insert(guidanceVersions).values({ unitId: input.unitId, version, text: input.text, authorId: input.authorId });
+  return version;
 }

@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": { "rootDir": "src", "outDir": "dist", "types": ["node"] },
+  "include": ["src"],
+  "references": [
+    { "path": "../../packages/db" },
+    { "path": "../../fixtures" },
+    { "path": "../../packages/generation" },
+    { "path": "../../packages/lesson-schema" },
+    { "path": "../../packages/outline" },
+    { "path": "../../packages/queue" }
+  ]
+}

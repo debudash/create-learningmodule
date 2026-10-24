@@ -11,7 +11,7 @@ Requirements: Docker Desktop, Node 22, pnpm.
 | `cp .env.example .env` | Local settings (no secrets needed for the demo) |
 | `pnpm db:up` | Starts Postgres in Docker Compose |
 | `pnpm db:reset` | Drops, migrates and seeds the database (demo users, sample Unit 4, Lesson 3 as a Draft) |
-| `pnpm dev` | Starts `web` (http://localhost:3000) and `collab` (ws://localhost:1234) with hot reload |
+| `pnpm dev` | Starts `web` (http://localhost:3000), `collab` (ws://localhost:1234) and the generation `worker`, with hot reload |
 | `docker compose up` | Planned: the whole stack in containers |
 | `pnpm check` | Lint, typecheck, unit, integration and end-to-end tests |
 
@@ -21,9 +21,11 @@ Requirements: Docker Desktop, Node 22, pnpm.
 |---|---|---|
 | `DATABASE_URL` | Compose Postgres | Connection string |
 | `SESSION_SECRET` | dev value | Signs the session cookie (web and collab) |
-| `LLM_MODE` | `replay` | `live` calls Anthropic; `replay` serves recorded responses; `fake` serves fixed fixtures (tests) |
+| `LLM_MODE` | `replay` | `live` calls Anthropic; `replay` serves recorded responses; `fake` writes placeholder Lessons from the Outline (offline work, tests) |
 | `ANTHROPIC_API_KEY` | unset | Required only for `LLM_MODE=live` |
 | `LLM_MODEL` | `claude-sonnet-5-5` | Model for generation, AI Review and AI editing |
+| `LLM_EFFORT` | `medium` | How hard the model thinks (`low` to `max`); higher costs more |
+| `LLM_RECORD` | `false` | With `LLM_MODE=live`, saves every result under `fixtures/recordings/` for replay |
 | `GENERATION_CONCURRENCY` | `5` | Lessons generated at once |
 | `GENERATION_DAILY_CAP` | unset (local) | Maximum live-generated Lessons per day (hosted demo) |
 | `LANGSMITH_TRACING` | `false` | `true` plus `LANGSMITH_API_KEY` enables tracing |

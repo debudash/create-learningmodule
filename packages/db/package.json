@@ -16,6 +16,7 @@
   "dependencies": {
     "@lcg/domain": "workspace:*",
     "@lcg/fixtures": "workspace:*",
+    "@lcg/generation": "workspace:*",
     "@lcg/lesson-schema": "workspace:*",
     "@lcg/outline": "workspace:*",
     "drizzle-orm": "0.36.4",

@@ -1,4 +1,5 @@
 import { sampleLessonJson, sampleOutlineCsv } from '@lcg/fixtures';
+import { DEFAULT_GENERATION_GUIDANCE } from '@lcg/generation';
 import { lessonSchema } from '@lcg/lesson-schema';
 import { confirmImport, parseOutlineCsv, type ConfirmedImport, type Resolution } from '@lcg/outline';
 import { and, eq } from 'drizzle-orm';
@@ -33,7 +34,7 @@ export function importSampleUnit(db: Database, actorId: string): Promise<string>
     confirmed: confirmedSampleOutline(),
     source: { kind: 'file', reference: 'g6-u4-lightning-thief.csv' },
     actorId,
-    guidance: 'Default guidance',
+    guidance: DEFAULT_GENERATION_GUIDANCE,
   });
 }
 

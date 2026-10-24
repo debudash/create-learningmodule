@@ -1,10 +1,29 @@
 {
   "extends": "../../tsconfig.base.json",
-  "compilerOptions": { "rootDir": ".", "outDir": "dist", "types": ["node"] },
-  "include": ["src", "scripts"],
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "dist",
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    "src",
+    "scripts",
+    "data/*.json"
+  ],
   "references": [
-    { "path": "../lesson-schema" },
-    { "path": "../outline" },
-    { "path": "../standards" }
+    {
+      "path": "../lesson-schema"
+    },
+    {
+      "path": "../outline"
+    },
+    {
+      "path": "../standards"
+    },
+    {
+      "path": "../../fixtures"
+    }
   ]
 }

@@ -9,6 +9,8 @@
     { "path": "packages/db" },
     { "path": "packages/session" },
     { "path": "packages/generation" },
-    { "path": "apps/collab" }
+    { "path": "packages/queue" },
+    { "path": "apps/collab" },
+    { "path": "apps/worker" }
   ]
 }

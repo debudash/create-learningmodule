@@ -16,7 +16,12 @@ export default async function UnitsPage() {
   const units = await listUnits(db);
   return (
     <div>
-      <h1 className="font-serif text-3xl font-semibold">Units</h1>
+      <div className="flex items-center justify-between">
+        <h1 className="font-serif text-3xl font-semibold">Units</h1>
+        <Link href="/units/new" className="rounded-lg bg-accent px-4 py-2 font-medium text-white hover:opacity-90">
+          New Unit
+        </Link>
+      </div>
       <ul className="mt-6 grid gap-4 md:grid-cols-2">
         {units.map((unit) => (
           <li key={unit.id}>

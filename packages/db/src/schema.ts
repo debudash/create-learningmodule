@@ -124,6 +124,8 @@ export const lessons = pgTable(
     /** The confirmed Outline row this Lesson was generated from. */
     outline: jsonb('outline').$type<OutlineLesson>().notNull(),
     digest: jsonb('digest').$type<LessonDigest>(),
+    /** When this Lesson's generation job was sent; a Queued Flex Day without one is waiting for its Arc. */
+    jobEnqueuedAt: timestamp('job_enqueued_at', { withTimezone: true }),
     /** Users who have edited the Lesson since it was last generated (for Self-Approval). */
     editorIds: uuid('editor_ids').array().notNull().default(sql`'{}'::uuid[]`),
     updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
@@ -190,6 +192,8 @@ export const generationAttempts = pgTable(
     extraInstructions: text('extra_instructions'),
     model: text('model').notNull(),
     mode: text('mode', { enum: ['live', 'replay', 'fake'] }).notNull(),
+    /** Version of the locked prompt instructions used. */
+    promptVersion: integer('prompt_version').notNull(),
     outcome: text('outcome', { enum: ['succeeded', 'repaired', 'failed'] }).notNull(),
     /** Why the attempt failed, in words a person can act on. */
     failureReason: text('failure_reason'),

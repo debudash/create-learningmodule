@@ -1,5 +1,5 @@
 {
-  "id": "f090d7bf-43ef-4268-9f52-4dd1feeb67db",
+  "id": "d572a5cc-2b69-4351-bbc5-5dc1a57e11ea",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -218,6 +218,12 @@
         "mode": {
           "name": "mode",
           "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "prompt_version": {
+          "name": "prompt_version",
+          "type": "integer",
           "primaryKey": false,
           "notNull": true
         },
@@ -684,6 +690,12 @@
         "digest": {
           "name": "digest",
           "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "job_enqueued_at": {
+          "name": "job_enqueued_at",
+          "type": "timestamp with time zone",
           "primaryKey": false,
           "notNull": false
         },

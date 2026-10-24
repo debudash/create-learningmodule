@@ -16,7 +16,7 @@
     "db:up": "docker compose up -d postgres",
     "format": "prettier --write .",
     "db:reset": "pnpm --filter @lcg/db reset",
-    "dev": "pnpm --parallel --filter @lcg/web --filter @lcg/collab dev"
+    "dev": "pnpm --parallel --filter @lcg/web --filter @lcg/collab --filter @lcg/worker dev"
   },
   "devDependencies": {
     "@eslint/js": "9.17.0",

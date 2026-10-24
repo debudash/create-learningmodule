@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS "generation_attempts" (
 	"extra_instructions" text,
 	"model" text NOT NULL,
 	"mode" text NOT NULL,
+	"prompt_version" integer NOT NULL,
 	"outcome" text NOT NULL,
 	"failure_reason" text,
 	"schema_violations" jsonb,
@@ -77,6 +78,7 @@ CREATE TABLE IF NOT EXISTS "lessons" (
 	"assignee_id" uuid,
 	"outline" jsonb NOT NULL,
 	"digest" jsonb,
+	"job_enqueued_at" timestamp with time zone,
 	"editor_ids" uuid[] DEFAULT '{}'::uuid[] NOT NULL,
 	"updated_at" timestamp with time zone DEFAULT now() NOT NULL
 );

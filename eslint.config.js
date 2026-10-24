@@ -9,7 +9,7 @@ export default tseslint.config(
       '**/.next/**',
       '**/coverage/**',
       'docs/**',
-      'fixtures/**',
+      '.claude/**',
       '**/*.d.ts',
     ],
   },

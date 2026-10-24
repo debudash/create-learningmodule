@@ -18,8 +18,11 @@ export {
 } from './channels.js';
 export { findLessonStatus, findUser, recordEditors, type User } from './lessons.js';
 export {
+  guidanceHistory,
   listUnits,
   listUsers,
+  saveGuidance,
+  type GuidanceVersion,
   unitBoard,
   workspaceLesson,
   type BoardLesson,
@@ -27,3 +30,20 @@ export {
   type UnitSummary,
   type WorkspaceLesson,
 } from './queries.js';
+export { transitionLesson, type TransitionRequest, type TransitionResult } from './workflow.js';
+export {
+  beginGenerating,
+  cancelGeneration,
+  captureVersion,
+  completeGeneration,
+  enqueueReadyLessons,
+  loadGenerationContext,
+  promptInputFor,
+  recordGenerationFailure,
+  regenerateLesson,
+  startGeneration,
+  type AttemptRecord,
+  type EnqueueGeneration,
+  type GenerationContext,
+  type StartGenerationResult,
+} from './generation.js';
