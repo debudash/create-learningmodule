@@ -4,6 +4,7 @@ import { and, asc, count, desc, eq, inArray, max } from 'drizzle-orm';
 import type { Database, Executor } from './client.js';
 import { readLessonContent, replaceLessonContent } from './documents.js';
 import { captureVersion } from './generation.js';
+import { recordEditors } from './lessons.js';
 import {
   generationAttempts,
   guidanceVersions,
@@ -169,6 +170,10 @@ export async function restoreVersion(
     if (!content) return { ok: false, message: 'No such Lesson Version.' };
     await replaceLessonContent(tx, input.lessonId, content);
     await captureVersion(tx, { lessonId: input.lessonId, reason: 'restored', content, actorId: input.actor.id });
+    // LCG-16: a Restore changes the Lesson's content but was not recorded as an
+    // edit, so an Approver who restored and then approved was not flagged for
+    // Self-Approval. The restoring person now counts as an editor.
+    await recordEditors(tx, input.lessonId, [input.actor.id]);
     return { ok: true };
   });
 }

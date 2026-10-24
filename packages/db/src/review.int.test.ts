@@ -160,3 +160,19 @@ describe('requests from the browser', () => {
     expect(await applyReviewAction(database.db, { lessonId: id, actor: approver(), action: badReason })).toMatchObject({ ok: false });
   });
 });
+
+describe('Self-Approval after a Restore', () => {
+  // LCG-16 regression. Found by: Phase 4 spec review (restoring a Version was not counted as editing the Lesson).
+  it('LCG-16: flags an approval as Self-Approval when the Approver restored the content', async () => {
+    const id = await setLessonStatus(database.db, unitId, 'L6', 'draft');
+    await replaceLessonContent(database.db, id, sampleLesson());
+    await captureVersion(database.db, { lessonId: id, reason: 'generated', content: sampleLesson() });
+    const [version] = (await lessonHistory(database.db, id)).versions;
+
+    expect(await restoreVersion(database.db, { lessonId: id, versionId: version!.id, actor: approver() })).toEqual({ ok: true });
+    await applyReviewAction(database.db, { lessonId: id, actor: editor(), action: { type: 'submit' } });
+    await applyReviewAction(database.db, { lessonId: id, actor: approver(), action: { type: 'approve' } });
+    const [event] = (await lessonHistory(database.db, id)).events;
+    expect(event).toMatchObject({ action: 'approve', selfApproval: true });
+  });
+});
