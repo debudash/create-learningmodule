@@ -210,3 +210,19 @@ describe('stalled generations', () => {
     expect(board!.lessons.find((l) => l.key === 'L6')!.failureReason).toMatch(/stopped/);
   });
 });
+
+describe('regenerating a Flex Day', () => {
+  // LCG-14 regression. Found by: Phase 3 spec review (a regenerated Flex Day skipped the wait for its Arc).
+  it('LCG-14: waits until the Lessons of its Arc being regenerated have content, keeping its instructions', async () => {
+    const [l36, f5] = await lessonsByKey(['L36', 'F5']);
+    jobs.length = 0;
+    await regenerateLesson(database.db, { lessonId: l36!.id, actor: editor(), enqueue });
+    await regenerateLesson(database.db, { lessonId: f5!.id, actor: editor(), instructions: 'More reteaching', enqueue });
+    expect(jobs.map((j) => j.lessonId)).toEqual([l36!.id]);
+
+    await handleGenerateJob(deps(), jobs.shift()!, { finalAttempt: true });
+    expect(jobs).toMatchObject([{ lessonId: f5!.id, extraInstructions: 'More reteaching' }]);
+    await drain(deps());
+    expect((await lessonsByKey(['F5']))[0]!.status).toBe('draft');
+  });
+});

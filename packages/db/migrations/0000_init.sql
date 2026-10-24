@@ -79,6 +79,7 @@ CREATE TABLE IF NOT EXISTS "lessons" (
 	"outline" jsonb NOT NULL,
 	"digest" jsonb,
 	"job_enqueued_at" timestamp with time zone,
+	"pending_instructions" text,
 	"editor_ids" uuid[] DEFAULT '{}'::uuid[] NOT NULL,
 	"updated_at" timestamp with time zone DEFAULT now() NOT NULL
 );

@@ -28,10 +28,10 @@ export interface GenerationJob {
 /** Adds a generation job for a Lesson inside the caller's transaction (see @lcg/queue). */
 export type EnqueueGeneration = (tx: Executor, job: GenerationJob) => Promise<void>;
 
-/** Sends a Lesson's generation job and stamps the Lesson with the time it was queued. */
-async function sendJob(tx: Executor, lessonId: string, enqueue: EnqueueGeneration, extraInstructions?: string) {
+/** Sends a Lesson's generation job, with any pending instructions, and stamps the Lesson with the time it was queued. */
+async function sendJob(tx: Executor, lessonId: string, enqueue: EnqueueGeneration, extraInstructions?: string | null) {
   const queuedAt = new Date();
-  await tx.update(lessons).set({ jobEnqueuedAt: queuedAt }).where(eq(lessons.id, lessonId));
+  await tx.update(lessons).set({ jobEnqueuedAt: queuedAt, pendingInstructions: null }).where(eq(lessons.id, lessonId));
   await enqueue(tx, { lessonId, queuedAt: queuedAt.toISOString(), ...(extraInstructions ? { extraInstructions } : {}) });
 }
 
@@ -120,7 +120,16 @@ export async function regenerateLesson(
         ...(input.actor.kind === 'user' ? { actorId: input.actor.id } : {}),
       });
     }
-    await sendJob(tx, input.lessonId, input.enqueue, instructions);
+    // LCG-14: the job was sent at once, so a regenerated Flex Day could run before
+    // other Lessons of its Arc being regenerated had content. Regenerated Lessons now
+    // go through the same readiness check as everything else, keeping their
+    // instructions on the Lesson until the job is sent.
+    await tx
+      .update(lessons)
+      .set({ jobEnqueuedAt: null, pendingInstructions: instructions ?? null })
+      .where(eq(lessons.id, input.lessonId));
+    const [lesson] = await tx.select({ unitId: lessons.unitId }).from(lessons).where(eq(lessons.id, input.lessonId));
+    await enqueueReadyLessons(tx, lesson!.unitId, input.enqueue);
     return result;
   });
 }
@@ -133,7 +142,14 @@ export async function regenerateLesson(
 export async function enqueueReadyLessons(tx: Executor, unitId: string, enqueue: EnqueueGeneration): Promise<void> {
   await tx.execute(sql`SELECT pg_advisory_xact_lock(hashtext(${unitId}))`);
   const rows = await tx
-    .select({ id: lessons.id, arcId: lessons.arcId, lessonType: lessons.lessonType, status: lessons.status, jobEnqueuedAt: lessons.jobEnqueuedAt })
+    .select({
+      id: lessons.id,
+      arcId: lessons.arcId,
+      lessonType: lessons.lessonType,
+      status: lessons.status,
+      jobEnqueuedAt: lessons.jobEnqueuedAt,
+      pendingInstructions: lessons.pendingInstructions,
+    })
     .from(lessons)
     .where(eq(lessons.unitId, unitId));
 
@@ -145,7 +161,7 @@ export async function enqueueReadyLessons(tx: Executor, unitId: string, enqueue:
   for (const row of rows) {
     if (row.status !== 'queued' || row.jobEnqueuedAt) continue;
     if (row.lessonType === 'flex-day' && !arcReady(row.arcId)) continue;
-    await sendJob(tx, row.id, enqueue);
+    await sendJob(tx, row.id, enqueue, row.pendingInstructions);
   }
 }
 

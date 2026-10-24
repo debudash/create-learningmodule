@@ -1,5 +1,5 @@
 {
-  "id": "2d069e47-e4c9-4a15-ab90-f6eb208b4178",
+  "id": "7bf0d6fb-1eed-4152-9f30-d79efbe0b67f",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -696,6 +696,12 @@
         "job_enqueued_at": {
           "name": "job_enqueued_at",
           "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pending_instructions": {
+          "name": "pending_instructions",
+          "type": "text",
           "primaryKey": false,
           "notNull": false
         },

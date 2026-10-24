@@ -126,6 +126,8 @@ export const lessons = pgTable(
     digest: jsonb('digest').$type<LessonDigest>(),
     /** When this Lesson's generation job was sent; a Queued Flex Day without one is waiting for its Arc. */
     jobEnqueuedAt: timestamp('job_enqueued_at', { withTimezone: true }),
+    /** An Editor's one-off Regenerate instructions, kept until the Lesson's job is sent. */
+    pendingInstructions: text('pending_instructions'),
     /** Users who have edited the Lesson since it was last generated (for Self-Approval). */
     editorIds: uuid('editor_ids').array().notNull().default(sql`'{}'::uuid[]`),
     updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
