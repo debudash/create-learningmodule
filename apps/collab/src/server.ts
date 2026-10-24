@@ -37,6 +37,8 @@ export interface CollabServer {
   destroy(): Promise<void>;
   /** Applies the stored document to every open copy of a Lesson (after a whole-Lesson replacement). */
   refreshDocument(lessonId: string): Promise<void>;
+  /** Closes every live connection to a Lesson so editors reconnect under its current status. */
+  reconnectEditors(lessonId: string): void;
 }
 
 interface ConnectionContext {
@@ -127,16 +129,25 @@ export function createCollabServer({ db, sessionSecret, port = 1234, debounce = 
       const state = await loadDocumentState(db, lessonId);
       if (state) for (const copy of copies) Y.applyUpdate(copy, state);
     },
+    reconnectEditors(lessonId) {
+      for (const connection of live.get(documentNameFor(lessonId))?.values() ?? []) connection.close();
+    },
   };
 }
 
 /**
- * Applies Lesson changes made outside the collaboration server (a whole-Lesson
- * replacement by the worker or API) to every open copy, which then reaches every
- * connected editor. See LCG-7 in packages/db/src/documents.ts.
+ * Follows Lesson changes made outside the collaboration server:
+ * - a whole-Lesson replacement is applied to every open copy (LCG-7, see
+ *   packages/db/src/documents.ts);
+ * - LCG-8: read-only was decided only when a connection was authenticated, so
+ *   editors who had a Lesson open when it was Approved could keep editing it. A
+ *   status change now closes their connections; providers reconnect and are
+ *   authenticated again against the new status (read-only once Approved,
+ *   editable again after Reopen).
  */
 export function followLessonChanges(collab: CollabServer, databaseUrl: string): Promise<LessonChangeListener> {
   return listenForLessonChanges(databaseUrl, (channel, lessonId) => {
     if (channel === 'document') void collab.refreshDocument(lessonId);
+    else collab.reconnectEditors(lessonId);
   });
 }

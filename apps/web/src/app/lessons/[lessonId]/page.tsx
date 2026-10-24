@@ -1,5 +1,4 @@
 import { workspaceLesson } from '@lcg/db';
-import { isEditable } from '@lcg/domain';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { StatusBadge } from '@/components/StatusBadge';
@@ -35,7 +34,6 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
         lessonId={lesson.id}
         token={await collaborationToken()}
         user={{ name: user.name }}
-        editable={isEditable(lesson.status)}
         outline={lesson.outline}
       />
     </div>

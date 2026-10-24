@@ -17,8 +17,6 @@ interface Props {
   lessonId: string;
   token: string;
   user: { name: string };
-  /** The Lesson's workflow status allows editing (the server decides too). */
-  editable: boolean;
   onLessonChange?: (lesson: Lesson | undefined) => void;
   onPresenceChange?: (people: Presence[]) => void;
 }
@@ -33,8 +31,9 @@ export function LessonEditor(props: Props) {
   return <BoundEditor {...props} session={session} />;
 }
 
-function BoundEditor({ session, user, editable, onLessonChange, onPresenceChange }: Props & { session: Session }) {
-  const canEdit = editable && !session.readOnly;
+function BoundEditor({ session, user, onLessonChange, onPresenceChange }: Props & { session: Session }) {
+  // The collaboration server decides, and re-decides whenever the Lesson's status changes (LCG-8).
+  const canEdit = !session.readOnly;
   const editor = useEditor({
     immediatelyRender: false,
     editable: canEdit,

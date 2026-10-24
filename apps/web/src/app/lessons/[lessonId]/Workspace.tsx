@@ -10,13 +10,12 @@ interface Props {
   lessonId: string;
   token: string;
   user: { name: string };
-  editable: boolean;
   outline: OutlineLesson;
 }
 
 type View = 'teacher' | 'student';
 
-export function Workspace({ lessonId, token, user, editable, outline }: Props) {
+export function Workspace({ lessonId, token, user, outline }: Props) {
   const [view, setView] = useState<View>('teacher');
   const [lesson, setLesson] = useState<Lesson>();
   const [people, setPeople] = useState<Presence[]>([]);
@@ -84,7 +83,6 @@ export function Workspace({ lessonId, token, user, editable, outline }: Props) {
             lessonId={lessonId}
             token={token}
             user={user}
-            editable={editable}
             onLessonChange={onLessonChange}
             onPresenceChange={setPeople}
           />

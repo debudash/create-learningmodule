@@ -1,11 +1,18 @@
 import { createServer } from 'node:net';
 import { HocuspocusProvider } from '@hocuspocus/provider';
-import { readLessonContent, replaceLessonContent, workspaceLesson, type LessonChangeListener } from '@lcg/db';
+import {
+  notifyLessonChange,
+  readLessonContent,
+  replaceLessonContent,
+  workspaceLesson,
+  type LessonChangeListener,
+} from '@lcg/db';
 import {
   freshDatabase,
   importSampleUnit,
   lessonEditors,
   setLessonStatus,
+  setLessonStatusById,
   type TestDatabase,
 } from '@lcg/db/testing';
 import { LESSON_FRAGMENT } from '@lcg/lesson-schema';
@@ -104,6 +111,30 @@ describe('collaboration server', () => {
     await eventually(async () => header().getAttribute('title') === 'Seen by both');
     a.provider.destroy();
     b.provider.destroy();
+  });
+
+  // LCG-8 regression. Found by: Phase 2 spec review (read-only was decided only when a connection opened).
+  it('LCG-8: makes open editors read-only when a Lesson is Approved, and editable again after Reopen', async () => {
+    const lessonId = lessonIds.L3!;
+    const { document, provider, synced } = open(lessonId, signSession(database.editorId, SECRET));
+    await synced;
+    const changeStatus = async (status: 'approved' | 'in-review') => {
+      await setLessonStatusById(database.db, lessonId, status);
+      await notifyLessonChange(database.db, 'status', lessonId);
+    };
+
+    await changeStatus('approved');
+    await eventually(async () => provider.authorizedScope === 'readonly');
+    const approved = await readLessonContent(database.db, lessonId);
+    retitle(document, 'Edited after approval');
+    await new Promise((r) => setTimeout(r, 300));
+    expect(await readLessonContent(database.db, lessonId)).toEqual(approved);
+
+    await changeStatus('in-review');
+    await eventually(async () => provider.authorizedScope === 'read-write');
+    retitle(document, 'Edited after Reopen');
+    await eventually(async () => (await readLessonContent(database.db, lessonId))?.title === 'Edited after Reopen');
+    provider.destroy();
   });
 
   // LCG-7 regression. Found by: Phase 2 spec review (whole-Lesson writes bypassed the live document).

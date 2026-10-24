@@ -104,3 +104,8 @@ export async function lessonEditors(db: Connection['db'], lessonId: string): Pro
   const [row] = await db.select({ editorIds: lessons.editorIds }).from(lessons).where(eq(lessons.id, lessonId));
   return row?.editorIds ?? [];
 }
+
+/** Puts a Lesson into a status directly, as a workflow transition would. */
+export async function setLessonStatusById(db: Connection['db'], lessonId: string, status: LessonStatus): Promise<void> {
+  await db.update(lessons).set({ status }).where(eq(lessons.id, lessonId));
+}
