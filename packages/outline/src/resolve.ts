@@ -1,3 +1,4 @@
+import { LESSON_TYPES, type LessonType } from '@lcg/lesson-schema';
 import { hasStandard, normalizeCode } from '@lcg/standards';
 import { FRAMEWORK_OF } from './cells.js';
 import type {
@@ -60,6 +61,19 @@ function applyResolution(issue: OutlineIssue, resolution: Resolution, lessons: O
   }
 
   const lesson = lessons.find((l) => l.key === issue.lessonKey);
+
+  // LCG-1: an unknown Lesson Type is Blocking but names no standards field, so the
+  // field-based resolution below refused every action and confirm could never
+  // succeed. It is resolved by replacing it with a valid Lesson Type instead.
+  if (issue.kind === 'unknown-lesson-type' && lesson) {
+    const value = resolution.action === 'replace' ? resolution.value : undefined;
+    if (!isLessonType(value)) {
+      return { error: `${issue.id} needs one of these Lesson Types: ${LESSON_TYPES.join(', ')}.` };
+    }
+    lesson.lessonType = value;
+    return { resolved: { ...issue, resolution: 'replace', resolvedValue: value } };
+  }
+
   const field = issue.field;
   if (!lesson || !field) {
     return { error: `${issue.id} can only be accepted; it does not refer to a standard.` };
@@ -83,6 +97,10 @@ function applyResolution(issue: OutlineIssue, resolution: Resolution, lessons: O
   }
   refs[index] = { ...refs[index]!, code: normalized.code };
   return { resolved: { ...issue, resolution: resolution.action, resolvedValue: normalized.code } };
+}
+
+function isLessonType(value: string | undefined): value is LessonType {
+  return (LESSON_TYPES as readonly string[]).includes(value ?? '');
 }
 
 function dedupeStandards(lesson: OutlineLesson): void {

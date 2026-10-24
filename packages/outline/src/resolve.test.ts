@@ -97,3 +97,36 @@ describe('confirmImport', () => {
     expect(result.ok).toBe(false);
   });
 });
+
+/** A minimal Outline with the sample's columns, for issue cases the sample does not contain. */
+function miniOutline(lessonRow: Partial<Record<'type' | 'eld' | 'supporting', string>>): string {
+  const headers = [
+    'Filename', 'Lesson', 'Lesson #', 'Type of Lesson', 'Days', 'Text Dependent Question tied to the EQ',
+    'Lesson Description', 'Text Set Choice', 'Homework', 'Focus Standards (assessed)',
+    'Additional Supported CA ELA Standards', 'CA Media Literacy Standards',
+    'Skill or content that will be needed for Performance Task', 'Foundational Skills Focus',
+    'Vocabulary', 'Designated ELD Standards',
+  ];
+  const row = [
+    'L1_ELA_TE_G6_U4_CA_Core', 'Spark', 'Lesson 1', lessonRow.type ?? 'Spark 1', '1', 'N/A',
+    'Opening', '', '', 'RL.6.1', lessonRow.supporting ?? '', '', '', '', '', lessonRow.eld ?? '',
+  ];
+  const csv = (cells: string[]) => cells.map((c) => `"${c.replace(/"/g, '""')}"`).join(',');
+  return [csv(['G6, U4: The Lightning Thief by Rick Riordan']), csv(headers), csv(['', 'Spark']), csv(row)].join('\n');
+}
+
+describe('confirmImport: issue kinds outside the sample', () => {
+  // LCG-1 regression. Found by: Phase 1 spec review (an unknown Lesson Type could never be resolved).
+  it('LCG-1: resolves an unknown Lesson Type by choosing a type', () => {
+    const odd = parseOutlineCsv(miniOutline({ type: 'Seminar' }));
+    const issue = odd.issues.find((i) => i.kind === 'unknown-lesson-type')!;
+    expect(issue.severity).toBe('blocking');
+
+    const chosen = confirmImport(odd, [{ issueId: issue.id, action: 'replace', value: 'academic-discussion' }]);
+    expect(chosen.ok).toBe(true);
+    if (chosen.ok) expect(chosen.confirmed.lessons[0]!.lessonType).toBe('academic-discussion');
+
+    const invalid = confirmImport(odd, [{ issueId: issue.id, action: 'replace', value: 'seminar' }]);
+    expect(invalid.ok).toBe(false);
+  });
+});
