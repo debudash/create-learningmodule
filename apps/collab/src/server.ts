@@ -10,6 +10,7 @@ import {
   type User,
 } from '@lcg/db';
 import { isEditable } from '@lcg/domain';
+import { yStateToLesson } from '@lcg/lesson-schema';
 import { verifySession } from '@lcg/session';
 
 /** Collaboration document names are "lesson:<lesson id>". */
@@ -72,6 +73,8 @@ export function createCollabServer({ db, sessionSecret, port = 1234, debounce = 
           // A Lesson approved while editors were connected keeps its approved content.
           const status = await findLessonStatus(db, lessonId);
           if (!status || !isEditable(status)) return;
+          // LCG-5: only a valid Lesson is stored; a broken document keeps the last good one.
+          if (!yStateToLesson(state).ok) return;
           await storeDocumentState(db, lessonId, state);
           const editors = editorsSinceStore.get(documentName);
           editorsSinceStore.delete(documentName);

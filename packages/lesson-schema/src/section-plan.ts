@@ -40,3 +40,22 @@ export const SECTION_PLANS: Record<LessonType, PlannedSection[]> = {
     { kind: 'look-back', minutes: 5, required: true },
   ],
 };
+
+/**
+ * Why a sequence of Sections does not fit a Lesson Type's plan: a required Section
+ * missing, a Section the type does not use, or Sections out of order.
+ */
+export function sectionPlanProblems(lessonType: LessonType, kinds: SectionKind[]): string[] {
+  const plan = SECTION_PLANS[lessonType].map((p) => p.kind);
+  const problems = SECTION_PLANS[lessonType]
+    .filter((p) => p.required && !kinds.includes(p.kind))
+    .map((p) => `A ${lessonType} Lesson needs a ${p.kind} Section.`);
+  for (const kind of kinds) {
+    if (!plan.includes(kind)) problems.push(`A ${lessonType} Lesson has no ${kind} Section.`);
+  }
+  const order = kinds.map((k) => plan.indexOf(k)).filter((i) => i >= 0);
+  if (order.some((index, i) => i > 0 && index <= order[i - 1]!)) {
+    problems.push(`Sections must appear in the order ${plan.join(', ')}.`);
+  }
+  return problems;
+}

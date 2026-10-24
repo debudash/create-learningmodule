@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { LESSON_TYPES } from './lesson-type.js';
+import { sectionPlanProblems } from './section-plan.js';
 
 /**
  * Lesson JSON: the canonical content of a Lesson (ADR 0001). The AI generates it,
@@ -154,5 +155,13 @@ export const lessonSchema = z.object({
   lessonType: z.enum(LESSON_TYPES),
   header: lessonHeaderSchema,
   sections: z.array(sectionSchema).min(1),
-});
+})
+  // LCG-5: any array of Sections was a valid Lesson, so a client that bypassed the
+  // editor's structure guard could delete or reorder Sections and the server would
+  // store it. A Lesson's Sections must now follow its Lesson Type's plan.
+  .superRefine((lesson, ctx) => {
+    for (const message of sectionPlanProblems(lesson.lessonType, lesson.sections.map((s) => s.kind))) {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, path: ['sections'], message });
+    }
+  });
 export type Lesson = z.infer<typeof lessonSchema>;

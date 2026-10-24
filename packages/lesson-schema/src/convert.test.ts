@@ -76,4 +76,23 @@ describe('Lesson schema rules', () => {
     expect(withChoices([false, false]).ok).toBe(false);
     expect(withChoices([true, true]).ok).toBe(false);
   });
+
+  // LCG-5 regression. Found by: Phase 2 spec review (any array of Sections was a valid Lesson).
+  it('LCG-5: requires the Sections of the Lesson Type, in order', () => {
+    const problems = (change: (lesson: Lesson) => void) => {
+      const lesson = sampleLesson();
+      change(lesson);
+      const result = documentToLesson(lessonToDocument(lesson));
+      return result.ok ? [] : result.problems;
+    };
+    expect(problems(() => undefined)).toEqual([]);
+    expect(problems((l) => l.sections.shift())).toEqual([
+      'sections: A spark Lesson needs a launch Section.',
+    ]);
+    expect(problems((l) => l.sections.reverse()).join(' ')).toMatch(/order/);
+    expect(problems((l) => l.sections.splice(1, 0, { ...l.sections[0]!, kind: 'literacy-lab' })).join(' ')).toMatch(
+      /no literacy-lab Section/,
+    );
+    expect(problems((l) => l.sections.pop())).toEqual([]);
+  });
 });

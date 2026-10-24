@@ -12,11 +12,11 @@
     "@hocuspocus/server": "2.15.0",
     "@lcg/db": "workspace:*",
     "@lcg/domain": "workspace:*",
+    "@lcg/lesson-schema": "workspace:*",
     "@lcg/session": "workspace:*"
   },
   "devDependencies": {
     "@hocuspocus/provider": "2.15.0",
-    "@lcg/lesson-schema": "workspace:*",
     "yjs": "13.6.20"
   }
 }

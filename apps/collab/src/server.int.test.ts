@@ -103,6 +103,18 @@ describe('collaboration server', () => {
     b.provider.destroy();
   });
 
+  // LCG-5 regression. Found by: Phase 2 spec review (the server stored any document a client sent).
+  it('LCG-5: does not store a document that is no longer a valid Lesson', async () => {
+    const { document, provider, synced } = open(lessonIds.L3!, signSession(database.editorId, SECRET));
+    await synced;
+    const before = await readLessonContent(database.db, lessonIds.L3!);
+    // A crafted client bypasses the editor's structure guard and deletes the Launch Section.
+    document.getXmlFragment(LESSON_FRAGMENT).delete(1, 1);
+    await new Promise((r) => setTimeout(r, 300));
+    expect(await readLessonContent(database.db, lessonIds.L3!)).toEqual(before);
+    provider.destroy();
+  });
+
   it('refuses a connection without a valid session', async () => {
     const { provider, synced } = open(lessonIds.L3!, 'forged.token');
     await expect(synced).rejects.toThrow();
