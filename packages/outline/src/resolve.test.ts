@@ -130,6 +130,18 @@ describe('confirmImport: issue kinds outside the sample', () => {
     expect(invalid.ok).toBe(false);
   });
 
+  // LCG-3 regression. Found by: Phase 1 spec review (spaced-hyphen ranges were split into tokens).
+  it('LCG-3: expands ranges written with spaced hyphens or dashes', () => {
+    const lesson = parseOutlineCsv(miniOutline({ supporting: 'W.6.3.a - c, SL.6.1.a – b' })).lessons[0]!;
+    expect(lesson.supportingStandards.map((s) => s.code)).toEqual([
+      'W.6.3.a',
+      'W.6.3.b',
+      'W.6.3.c',
+      'SL.6.1.a',
+      'SL.6.1.b',
+    ]);
+  });
+
   // LCG-2 regression. Found by: Phase 1 spec review (a mistyped ELD code was stored as a Designer Note).
   it('LCG-2: blocks on a malformed ELD code instead of keeping it as a note', () => {
     const odd = parseOutlineCsv(

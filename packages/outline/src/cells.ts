@@ -57,8 +57,11 @@ export function parseStandardsCell(
   lessonKey: string,
 ): ParsedStandards {
   const framework = FRAMEWORK_OF[field];
+  // LCG-3: only en and em dashes had their surrounding spaces removed, so a range
+  // written "W.6.3.a - c" was split at the spaces into three tokens and never expanded.
+  // Spaces around any dash between a sub-standard letter and a letter are now removed.
   const tokens = clean(cell)
-    .replace(/\s*([–—])\s*/g, '$1')
+    .replace(/([a-z])\s*([–—-])\s*([a-z])\b/g, '$1$2$3')
     .split(/[,;\n]+|\s+/)
     .map(clean)
     .filter(Boolean);
