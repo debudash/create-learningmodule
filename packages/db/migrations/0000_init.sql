@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS "lessons" (
 	"lesson_type" text NOT NULL,
 	"title" text NOT NULL,
 	"status" text NOT NULL,
-	"revision" integer DEFAULT 0 NOT NULL,
+	"transition_count" integer DEFAULT 0 NOT NULL,
 	"assignee_id" uuid,
 	"outline" jsonb NOT NULL,
 	"digest" jsonb,

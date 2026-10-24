@@ -1,15 +1,15 @@
 'use client';
 
-import { SECTION_PLANS, SECTION_TITLES, type LessonType, type SectionKind } from '@lcg/lesson-schema';
+import { SECTION_TITLES, targetMinutes, type LessonType, type SectionKind } from '@lcg/lesson-schema';
 import { NodeViewContent, NodeViewWrapper, type NodeViewProps } from '@tiptap/react';
 import { SmallButton, TextInput } from './fields';
-import { newActivity } from './templates';
+import { newActivity } from './block-menu';
 
 /** A fixed Section of the Lesson: its heading, purpose, minutes against target, and Activities. */
 export function SectionView({ node, updateAttributes, editor, getPos }: NodeViewProps) {
   const kind = node.attrs.kind as SectionKind;
   const lessonType = editor.state.doc.firstChild?.attrs.lessonType as LessonType;
-  const target = SECTION_PLANS[lessonType]?.find((p) => p.kind === kind)?.minutes;
+  const target = lessonType ? targetMinutes(lessonType, kind) : undefined;
   let minutes = 0;
   node.forEach((activity) => (minutes += Number(activity.attrs.minutes) || 0));
   const readOnly = !editor.isEditable;

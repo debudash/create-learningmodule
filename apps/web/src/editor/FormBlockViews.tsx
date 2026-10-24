@@ -4,6 +4,7 @@ import type { Block } from '@lcg/lesson-schema';
 import { NodeViewWrapper, type NodeViewProps } from '@tiptap/react';
 import type { ReactNode } from 'react';
 import { CodesInput, Label, SmallButton, TextArea, TextInput } from './fields';
+import { moveNode } from './move';
 
 type PulseCheck = Extract<Block, { type: 'pulse-check' }>;
 type SupportTable = Extract<Block, { type: 'support-table' }>;
@@ -11,24 +12,27 @@ type SupportTable = Extract<Block, { type: 'support-table' }>;
 function BlockFrame({
   title,
   tone,
-  readOnly,
-  onDelete,
+  view,
   children,
 }: {
   title: string;
   tone: string;
-  readOnly: boolean;
-  onDelete: () => void;
+  view: NodeViewProps;
   children: ReactNode;
 }) {
+  const { editor, getPos, deleteNode } = view;
   return (
     <NodeViewWrapper contentEditable={false} className={`my-3 rounded-md border px-3 py-2 ${tone}`}>
       <div className="flex items-center justify-between">
         <span className="text-xs font-semibold uppercase tracking-wide">{title}</span>
-        {!readOnly && (
-          <SmallButton tone="danger" onClick={onDelete}>
-            Delete
-          </SmallButton>
+        {editor.isEditable && (
+          <span>
+            <SmallButton onClick={() => moveNode(editor, getPos() ?? 0, -1)}>Up</SmallButton>
+            <SmallButton onClick={() => moveNode(editor, getPos() ?? 0, 1)}>Down</SmallButton>
+            <SmallButton tone="danger" onClick={deleteNode}>
+              Delete
+            </SmallButton>
+          </span>
         )}
       </div>
       <div className="mt-1 space-y-2 text-ink">{children}</div>
@@ -36,7 +40,8 @@ function BlockFrame({
   );
 }
 
-export function PulseCheckView({ node, updateAttributes, editor, deleteNode }: NodeViewProps) {
+export function PulseCheckView(view: NodeViewProps) {
+  const { node, updateAttributes, editor } = view;
   const attrs = node.attrs as Omit<PulseCheck, 'type'>;
   const readOnly = !editor.isEditable;
   const setChoice = (index: number, patch: Partial<PulseCheck['choices'][number]>) =>
@@ -51,7 +56,7 @@ export function PulseCheckView({ node, updateAttributes, editor, deleteNode }: N
     });
 
   return (
-    <BlockFrame title="Pulse Check" tone="border-accent bg-accent-soft text-accent" readOnly={readOnly} onDelete={deleteNode}>
+    <BlockFrame title="Pulse Check" tone="border-accent bg-accent-soft text-accent" view={view}>
       <div className="flex items-center gap-2 text-sm">
         <span className="text-ink-soft">Checks</span>
         <CodesInput value={attrs.standards} disabled={readOnly} onChange={(standards) => updateAttributes({ standards })} />
@@ -104,7 +109,8 @@ export function PulseCheckView({ node, updateAttributes, editor, deleteNode }: N
   );
 }
 
-export function EldPanelView({ node, updateAttributes, editor, deleteNode }: NodeViewProps) {
+export function EldPanelView(view: NodeViewProps) {
+  const { node, updateAttributes, editor } = view;
   const readOnly = !editor.isEditable;
   const parts = [
     ['purpose', 'Purpose'],
@@ -112,7 +118,7 @@ export function EldPanelView({ node, updateAttributes, editor, deleteNode }: Nod
     ['watchFor', 'Watch for'],
   ] as const;
   return (
-    <BlockFrame title="Integrated ELD Instructions" tone="border-eld bg-eld-soft text-eld" readOnly={readOnly} onDelete={deleteNode}>
+    <BlockFrame title="Integrated ELD Instructions" tone="border-eld bg-eld-soft text-eld" view={view}>
       {parts.map(([key, label]) => (
         <div key={key}>
           <Label>{label}</Label>
@@ -123,14 +129,15 @@ export function EldPanelView({ node, updateAttributes, editor, deleteNode }: Nod
   );
 }
 
-export function SupportTableView({ node, updateAttributes, editor, deleteNode }: NodeViewProps) {
+export function SupportTableView(view: NodeViewProps) {
+  const { node, updateAttributes, editor } = view;
   const readOnly = !editor.isEditable;
   const rows = node.attrs.rows as SupportTable['rows'];
   const setRow = (index: number, patch: Partial<SupportTable['rows'][number]>) =>
     updateAttributes({ rows: rows.map((row, i) => (i === index ? { ...row, ...patch } : row)) });
 
   return (
-    <BlockFrame title="Additional Student Support" tone="border-support bg-support-soft text-support" readOnly={readOnly} onDelete={deleteNode}>
+    <BlockFrame title="Additional Student Support" tone="border-support bg-support-soft text-support" view={view}>
       <table className="w-full text-sm">
         <thead>
           <tr className="text-left text-xs uppercase tracking-wide text-ink-soft">
@@ -154,6 +161,31 @@ export function SupportTableView({ node, updateAttributes, editor, deleteNode }:
       {!readOnly && (
         <SmallButton onClick={() => updateAttributes({ rows: [...rows, { situation: '', tryThis: '' }] })}>+ Row</SmallButton>
       )}
+    </BlockFrame>
+  );
+}
+
+export function TextReferenceView(view: NodeViewProps) {
+  const { node, updateAttributes, editor } = view;
+  const readOnly = !editor.isEditable;
+  return (
+    <BlockFrame title="Text" tone="border-line bg-paper-sunk text-ink-soft" view={view}>
+      <div className="flex gap-2">
+        <TextInput
+          value={node.attrs.title}
+          disabled={readOnly}
+          placeholder="Text title"
+          onChange={(title) => updateAttributes({ title })}
+          className="font-medium"
+        />
+        <TextInput
+          value={node.attrs.pages}
+          disabled={readOnly}
+          placeholder="Pages or part"
+          onChange={(pages) => updateAttributes({ pages })}
+          className="max-w-48"
+        />
+      </div>
     </BlockFrame>
   );
 }

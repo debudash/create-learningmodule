@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { parseOutlineCsv } from './parse.js';
 import { confirmImport } from './resolve.js';
-import { miniOutlineCsv, sampleOutlineCsv } from './testing.js';
+import { miniOutlineCsv, sampleOutlineCsv } from '@lcg/fixtures';
 import type { Resolution } from './types.js';
 
 const SAMPLE = sampleOutlineCsv();

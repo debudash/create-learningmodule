@@ -1,9 +1,19 @@
 export { LESSON_TYPES, LESSON_TYPE_LABELS, type LessonType } from './lesson-type.js';
 export * from './lesson.js';
-export { LESSON_MINUTES, SECTION_PLANS, type PlannedSection } from './section-plan.js';
+export {
+  LESSON_MINUTES,
+  SECTION_PLANS,
+  lessonMinutes,
+  sectionMinutes,
+  sectionPlanProblems,
+  targetMinutes,
+  type PlannedSection,
+} from './section-plan.js';
 export { documentToLesson, lessonToDocument, type DocumentToLessonResult } from './convert.js';
 export { inlineToNodes, nodesToInline } from './inline.js';
 export {
+  BLOCK_TYPE_OF_NODE,
+  isTeacherOnlyNode,
   lessonDocumentExtensions,
   lessonEditorSchema,
   ActivityNode,
@@ -17,6 +27,7 @@ export {
   SupportTableNode,
   TeacherNoteNode,
   TeacherScriptNode,
+  TextReferenceNode,
 } from './editor-schema.js';
 export { studentView, type StudentBlock, type StudentLesson } from './student-view.js';
 export {

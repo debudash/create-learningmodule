@@ -5,7 +5,8 @@ import type { LessonType } from './lesson-type.js';
 export type StudentBlock =
   | { type: 'directions'; text: string }
   | { type: 'paragraph'; text: string }
-  | { type: 'pulse-check'; stem: string; choices: string[] };
+  | { type: 'pulse-check'; stem: string; choices: string[] }
+  | { type: 'text-reference'; title: string; pages?: string };
 
 export interface StudentLesson {
   title: string;
@@ -56,6 +57,8 @@ function toStudentBlock(block: Block): StudentBlock[] {
       return block.audience === 'shared' ? [{ type: 'paragraph', text: block.text }] : [];
     case 'pulse-check':
       return [{ type: 'pulse-check', stem: block.stem, choices: block.choices.map((c) => c.text) }];
+    case 'text-reference':
+      return [block];
     default:
       return [];
   }

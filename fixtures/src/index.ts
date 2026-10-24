@@ -1,13 +1,25 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
-const SAMPLE_PATH = fileURLToPath(
-  new URL('../../../fixtures/outlines/g6-u4-lightning-thief.csv', import.meta.url),
-);
+/**
+ * Sample data for tests and the demo seed. This package is the only place that
+ * reads fixture files, so the pure packages stay free of I/O.
+ */
+
+const read = (path: string) => readFileSync(fileURLToPath(new URL(`../${path}`, import.meta.url)), 'utf8');
 
 /** The sample Unit 4 Outline (The Lightning Thief), as exported from Google Sheets. */
 export function sampleOutlineCsv(): string {
-  return readFileSync(SAMPLE_PATH, 'utf8');
+  return read('outlines/g6-u4-lightning-thief.csv');
+}
+
+/**
+ * A hand-written Spark Lesson for Unit 4, Lesson 3, as unvalidated Lesson JSON.
+ * Written for this project from the Outline row; it is not Newsela's published
+ * Lesson (the Answer Key, ADR 0007) and must never be used as a few-shot example.
+ */
+export function sampleLessonJson(): unknown {
+  return JSON.parse(read('lessons/g6-u4-l03-spark.json'));
 }
 
 const HEADERS = [

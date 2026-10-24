@@ -1,6 +1,6 @@
 'use client';
 
-import { SECTION_TITLES, type Lesson } from '@lcg/lesson-schema';
+import { LESSON_MINUTES, SECTION_TITLES, lessonMinutes, sectionMinutes, type Lesson } from '@lcg/lesson-schema';
 import type { OutlineLesson } from '@lcg/outline';
 import { useCallback, useState } from 'react';
 import { StudentViewPanel } from '@/components/StudentViewPanel';
@@ -30,20 +30,14 @@ export function Workspace({ lessonId, token, user, outline }: Props) {
             <li key={section.kind}>
               <a href={`#section-${section.kind}`} className="flex justify-between rounded px-2 py-1 hover:bg-paper-sunk">
                 <span>{section.title || SECTION_TITLES[section.kind]}</span>
-                <span className="tabular-nums text-ink-faint">
-                  {section.activities.reduce((sum, a) => sum + a.minutes, 0)}
-                </span>
+                <span className="tabular-nums text-ink-faint">{sectionMinutes(section)}</span>
               </a>
             </li>
           ))}
         </ul>
         {lesson && (
           <div className="mt-3 border-t border-line px-2 pt-2 text-ink-soft">
-            Total{' '}
-            <span className="tabular-nums">
-              {lesson.sections.flatMap((s) => s.activities).reduce((sum, a) => sum + a.minutes, 0)}
-            </span>{' '}
-            / 50 min
+            Total <span className="tabular-nums">{lessonMinutes(lesson)}</span> / {LESSON_MINUTES} min
           </div>
         )}
       </nav>

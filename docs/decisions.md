@@ -37,3 +37,6 @@ Every design decision made while scoping this project (design interview, 2026-10
 | 31 | Anchored comments | Not built; lesson-level reason only; first addition if time allows | Budget | |
 | 32 | ELD description check | Deterministic word matching against the official item text instead of an AI call at import | Free, instant, testable, works without an API key; calibrated on the sample's 117 ELD entries and pinned by a test | |
 | 33 | Outlined state | Imported Lessons start Outlined; starting generation queues them; cancelling returns them to Outlined | Trial batches leave the rest ungenerated (gap found while building) | |
+| 34 | Block audience | Teacher-only is fixed by block type; only paragraphs choose | A sample answer can never leak to students by a wrong flag | |
+| 35 | Changes made outside the editor | Whole-Lesson replacements are Yjs changes plus a Postgres NOTIFY; status changes reconnect open editors; collaboration saves merge with what is stored | Open editors, Regenerate and Restore can never overwrite each other | [0004](adr/0004-hocuspocus-yjs-live-collaboration.md) |
+| 36 | Offline editing | Browser keeps the document in IndexedDB; a status pill shows Saved / Saving / Offline | Story 85; CRDT merge makes it safe | |

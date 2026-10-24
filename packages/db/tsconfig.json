@@ -1,6 +1,25 @@
 {
   "extends": "../../tsconfig.base.json",
-  "compilerOptions": { "rootDir": ".", "outDir": "dist" },
-  "include": ["src", "drizzle.config.ts"],
-  "references": [{ "path": "../domain" }, { "path": "../lesson-schema" }, { "path": "../outline" }]
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "dist"
+  },
+  "include": [
+    "src",
+    "drizzle.config.ts"
+  ],
+  "references": [
+    {
+      "path": "../domain"
+    },
+    {
+      "path": "../lesson-schema"
+    },
+    {
+      "path": "../outline"
+    },
+    {
+      "path": "../../fixtures"
+    }
+  ]
 }

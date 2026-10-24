@@ -88,7 +88,7 @@ export interface WorkspaceLesson {
   key: string;
   title: string;
   status: LessonStatus;
-  revision: number;
+  transitionCount: number;
   lessonType: LessonType;
   outline: OutlineLesson;
   unit: { id: string; title: string; grade: number; unitNumber: number };
@@ -114,7 +114,7 @@ export async function workspaceLesson(db: Executor, lessonId: string): Promise<W
     key: lesson.key,
     title: lesson.title,
     status: lesson.status,
-    revision: lesson.revision,
+    transitionCount: lesson.transitionCount,
     lessonType: lesson.lessonType,
     outline: lesson.outline,
     unit: row.unit,

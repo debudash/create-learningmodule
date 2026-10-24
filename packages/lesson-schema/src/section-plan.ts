@@ -59,3 +59,18 @@ export function sectionPlanProblems(lessonType: LessonType, kinds: SectionKind[]
   }
   return problems;
 }
+
+/** Minutes of a Section: the sum of its Activities. */
+export function sectionMinutes(section: { activities: { minutes: number }[] }): number {
+  return section.activities.reduce((sum, activity) => sum + activity.minutes, 0);
+}
+
+/** Minutes of a whole Lesson. */
+export function lessonMinutes(lesson: { sections: { activities: { minutes: number }[] }[] }): number {
+  return lesson.sections.reduce((sum, section) => sum + sectionMinutes(section), 0);
+}
+
+/** The target minutes of a Section in a Lesson of this type, if the type uses it. */
+export function targetMinutes(lessonType: LessonType, kind: SectionKind): number | undefined {
+  return SECTION_PLANS[lessonType].find((p) => p.kind === kind)?.minutes;
+}

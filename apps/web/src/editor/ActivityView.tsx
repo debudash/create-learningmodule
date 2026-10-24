@@ -3,7 +3,8 @@
 import { NodeViewContent, NodeViewWrapper, type NodeViewProps } from '@tiptap/react';
 import { useState } from 'react';
 import { CodesInput, SmallButton, TextInput } from './fields';
-import { BLOCK_CHOICES } from './templates';
+import { BLOCK_CHOICES } from './block-menu';
+import { moveNode } from './move';
 
 /** A timed Activity: title, minutes, standards and routine, then its blocks. */
 export function ActivityView({ node, updateAttributes, editor, getPos, deleteNode }: NodeViewProps) {
@@ -41,9 +42,13 @@ export function ActivityView({ node, updateAttributes, editor, getPos, deleteNod
           min
         </label>
         {!readOnly && (
-          <SmallButton tone="danger" onClick={deleteNode}>
-            Delete
-          </SmallButton>
+          <>
+            <SmallButton onClick={() => moveNode(editor, getPos() ?? 0, -1)}>Up</SmallButton>
+            <SmallButton onClick={() => moveNode(editor, getPos() ?? 0, 1)}>Down</SmallButton>
+            <SmallButton tone="danger" onClick={deleteNode}>
+              Delete
+            </SmallButton>
+          </>
         )}
       </div>
       <div contentEditable={false} className="flex flex-wrap items-center gap-3 px-2 text-sm">

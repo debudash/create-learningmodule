@@ -1,7 +1,15 @@
 'use client';
 
-import { LESSON_TYPE_LABELS, type LessonHeader, type LessonType } from '@lcg/lesson-schema';
-import { NodeViewWrapper, type NodeViewProps } from '@tiptap/react';
+import {
+  LESSON_MINUTES,
+  LESSON_TYPE_LABELS,
+  SECTION_TITLES,
+  targetMinutes,
+  type LessonHeader,
+  type LessonType,
+  type SectionKind,
+} from '@lcg/lesson-schema';
+import { NodeViewWrapper, useEditorState, type Editor, type NodeViewProps } from '@tiptap/react';
 import { CodesInput, Label, SmallButton, TextArea, TextInput } from './fields';
 
 const OBJECTIVE_LABELS = {
@@ -35,7 +43,9 @@ export function HeaderView({ node, updateAttributes, editor }: NodeViewProps) {
 
   return (
     <NodeViewWrapper contentEditable={false} className="mb-8 rounded-xl border border-line bg-paper-raised p-6">
-      <div className="text-sm font-medium text-accent">{LESSON_TYPE_LABELS[attrs.lessonType]} · 50 min</div>
+      <div className="text-sm font-medium text-accent">
+        {LESSON_TYPE_LABELS[attrs.lessonType]} · {LESSON_MINUTES} min
+      </div>
       <TextInput
         value={attrs.title}
         disabled={readOnly}
@@ -104,6 +114,8 @@ export function HeaderView({ node, updateAttributes, editor }: NodeViewProps) {
         )}
       </div>
 
+      <Pacing editor={editor} lessonType={attrs.lessonType} />
+
       <details className="mt-6">
         <summary className="cursor-pointer text-sm font-semibold text-ink-soft">Connections to</summary>
         <div className="mt-3 grid gap-3 md:grid-cols-2">
@@ -170,5 +182,57 @@ export function HeaderView({ node, updateAttributes, editor }: NodeViewProps) {
         </div>
       </details>
     </NodeViewWrapper>
+  );
+}
+
+interface PacingRow {
+  kind: SectionKind;
+  minutes: number;
+}
+
+/** Lesson Pacing: each Section's minutes against its target, kept current as Activities change. */
+function Pacing({ editor, lessonType }: { editor: Editor; lessonType: LessonType }) {
+  const rows = useEditorState({
+    editor,
+    selector: ({ editor: current }): PacingRow[] => {
+      const result: PacingRow[] = [];
+      current.state.doc.forEach((child) => {
+        if (child.type.name !== 'section') return;
+        let minutes = 0;
+        child.forEach((activity) => (minutes += Number(activity.attrs.minutes) || 0));
+        result.push({ kind: child.attrs.kind as SectionKind, minutes });
+      });
+      return result;
+    },
+    equalityFn: (a, b) => JSON.stringify(a) === JSON.stringify(b),
+  });
+  const total = rows.reduce((sum, row) => sum + row.minutes, 0);
+  return (
+    <div className="mt-6">
+      <Label>Lesson Pacing</Label>
+      <table className="w-full max-w-md text-sm">
+        <tbody>
+          {rows.map((row) => {
+            const target = targetMinutes(lessonType, row.kind);
+            const off = target !== undefined && row.minutes !== target;
+            return (
+              <tr key={row.kind}>
+                <td className="py-0.5">{SECTION_TITLES[row.kind]}</td>
+                <td className={`py-0.5 text-right tabular-nums ${off ? 'font-semibold text-danger' : 'text-ink-soft'}`}>
+                  {row.minutes}
+                  {target !== undefined && ` / ${target}`} min
+                </td>
+              </tr>
+            );
+          })}
+          <tr className="border-t border-line font-medium">
+            <td className="py-0.5">Total</td>
+            <td className={`py-0.5 text-right tabular-nums ${total !== LESSON_MINUTES ? 'text-danger' : ''}`}>
+              {total} / {LESSON_MINUTES} min
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   );
 }

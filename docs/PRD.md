@@ -248,8 +248,8 @@ The tool ships with a pre-generated sample Unit (Grade 6, Unit 4, *The Lightning
 ### Lesson content model
 
 - A Lesson is one structured document (see ADR 0001). Top-level nodes are fixed and ordered: Lesson header, then the Sections required by the Lesson Type (Launch, Literacy Lab, Learning in Action, Look Back, Homework; Flex Days use Huddles inside Learning in Action).
-- Block types inside Sections include: Activity (title, minutes, standard tags), teacher script (Say/Ask/Teach), directions, sample student response, teacher note or tip, Pulse Check (stem, choices, correct choice, rationale per choice), Integrated ELD panel (purpose, say/ask, watch for), Additional Support table, text reference, and ordinary rich text.
-- Each block is marked teacher-only or shared. The Student View is the document with teacher-only blocks removed.
+- Block types inside Sections include: Activity (title, minutes, standard tags), teacher script (Say/Ask/Teach), directions, sample student response, teacher note or tip, Pulse Check (stem, choices, exactly one correct choice, rationale per choice), Integrated ELD panel (purpose, say/ask, watch for), Additional Support table, text reference, and ordinary rich text. Flex Day Huddles are Activities whose routine is "Huddle".
+- Whether a block is teacher-only follows from its type; only a plain paragraph chooses its audience. The Student View is the document with teacher-only blocks and answer keys removed, and objectives reworded for students.
 - Lesson Type determines the required Sections and their target minutes, as observed in Newsela's published Lessons (typically Launch 5, Literacy Lab 10, Learning in Action 30, Look Back 5 for core Lessons; Spark and Flex Day variants differ).
 
 ### Lesson workflow

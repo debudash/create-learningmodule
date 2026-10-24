@@ -7,10 +7,12 @@ import {
   PulseCheckNode,
   SectionNode,
   SupportTableNode,
+  TextReferenceNode,
 } from '@lcg/lesson-schema';
 import { Extension, ReactNodeViewRenderer, type AnyExtension } from '@tiptap/react';
 import { ActivityView } from './ActivityView';
-import { EldPanelView, PulseCheckView, SupportTableView } from './FormBlockViews';
+import { EldPanelView, PulseCheckView, SupportTableView, TextReferenceView } from './FormBlockViews';
+import { BlockMoveShortcuts } from './move';
 import { HeaderView } from './HeaderView';
 import { SectionView } from './SectionView';
 
@@ -22,6 +24,7 @@ const VIEWS = new Map<AnyExtension, AnyExtension>([
   [PulseCheckNode, PulseCheckNode.extend({ addNodeView: () => ReactNodeViewRenderer(PulseCheckView) })],
   [EldPanelNode, EldPanelNode.extend({ addNodeView: () => ReactNodeViewRenderer(EldPanelView) })],
   [SupportTableNode, SupportTableNode.extend({ addNodeView: () => ReactNodeViewRenderer(SupportTableView) })],
+  [TextReferenceNode, TextReferenceNode.extend({ addNodeView: () => ReactNodeViewRenderer(TextReferenceView) })],
 ]);
 
 const MarkShortcuts = Extension.create({
@@ -35,5 +38,5 @@ const MarkShortcuts = Extension.create({
 });
 
 export function lessonEditorExtensions(): AnyExtension[] {
-  return [...lessonDocumentExtensions.map((ext) => VIEWS.get(ext) ?? ext), LessonStructureGuard, MarkShortcuts];
+  return [...lessonDocumentExtensions.map((ext) => VIEWS.get(ext) ?? ext), LessonStructureGuard, MarkShortcuts, BlockMoveShortcuts];
 }

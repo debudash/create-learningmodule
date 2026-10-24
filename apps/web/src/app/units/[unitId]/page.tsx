@@ -1,5 +1,5 @@
 import { unitBoard } from '@lcg/db';
-import { isEditable } from '@lcg/domain';
+import { hasOpenableContent } from '@lcg/domain';
 import { LESSON_TYPE_LABELS } from '@lcg/lesson-schema';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -32,7 +32,7 @@ export default async function UnitBoardPage({ params }: { params: Promise<{ unit
             {board.lessons
               .filter((lesson) => lesson.arcId === arc.id)
               .map((lesson) => {
-                const opens = isEditable(lesson.status) || lesson.status === 'approved';
+                const opens = hasOpenableContent(lesson.status);
                 const row = (
                   <div className="flex items-center gap-4 px-4 py-3">
                     <span className="w-10 text-sm tabular-nums text-ink-faint">{lesson.key}</span>

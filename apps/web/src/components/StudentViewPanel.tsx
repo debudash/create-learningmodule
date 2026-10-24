@@ -40,7 +40,13 @@ export function StudentViewPanel({ lesson }: { lesson: Lesson }) {
                 {activity.routine && <span className="ml-2 text-sm font-normal text-ink-soft">{activity.routine}</span>}
               </h3>
               {activity.blocks.map((block, i) =>
-                block.type === 'pulse-check' ? (
+                block.type === 'text-reference' ? (
+                  <p key={i} className="mt-2 rounded-md bg-paper-sunk px-3 py-2 text-sm">
+                    <strong>Text: </strong>
+                    {block.title}
+                    {block.pages && <span className="text-ink-soft"> ({block.pages})</span>}
+                  </p>
+                ) : block.type === 'pulse-check' ? (
                   <div key={i} className="mt-2 rounded-md border border-line p-3">
                     <div className="font-medium">
                       <Inline text={block.stem} />

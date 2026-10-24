@@ -1,5 +1,6 @@
 import { getSchema, Mark, Node, type AnyExtension } from '@tiptap/core';
 import type { Schema } from '@tiptap/pm/model';
+import { TEACHER_ONLY, TEACHER_ONLY_BLOCKS, type BlockType } from './lesson.js';
 
 /**
  * The Lesson document schema (ADR 0001) as Tiptap extensions with no UI.
@@ -148,6 +149,7 @@ export const EldPanelNode = formBlock('eldPanel', {
   watchFor: jsonAttr(''),
 });
 export const SupportTableNode = formBlock('supportTable', { rows: jsonAttr([]) });
+export const TextReferenceNode = formBlock('textReference', { title: jsonAttr(''), pages: jsonAttr('') });
 
 /** Every extension that defines the Lesson document, in schema order. */
 export const lessonDocumentExtensions: AnyExtension[] = [
@@ -166,6 +168,7 @@ export const lessonDocumentExtensions: AnyExtension[] = [
   PulseCheckNode,
   EldPanelNode,
   SupportTableNode,
+  TextReferenceNode,
 ];
 
 let schema: Schema | undefined;
@@ -174,4 +177,23 @@ let schema: Schema | undefined;
 export function lessonEditorSchema(): Schema {
   schema ??= getSchema(lessonDocumentExtensions);
   return schema;
+}
+
+/** The Lesson JSON block type each editor block node stores. */
+export const BLOCK_TYPE_OF_NODE = {
+  directions: 'directions',
+  paragraph: 'paragraph',
+  teacherScript: 'teacher-script',
+  sampleResponse: 'sample-response',
+  teacherNote: 'teacher-note',
+  pulseCheck: 'pulse-check',
+  eldPanel: 'eld-panel',
+  supportTable: 'support-table',
+  textReference: 'text-reference',
+} as const satisfies Record<string, BlockType>;
+
+/** Whether an editor block node holds teacher-only material (removed from the Student View). */
+export function isTeacherOnlyNode(nodeName: keyof typeof BLOCK_TYPE_OF_NODE, attrs: { audience?: string } = {}): boolean {
+  if (nodeName === 'paragraph') return attrs.audience === TEACHER_ONLY;
+  return TEACHER_ONLY_BLOCKS.has(BLOCK_TYPE_OF_NODE[nodeName]);
 }

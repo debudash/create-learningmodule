@@ -1,4 +1,4 @@
-import type { LessonStatus } from '@lcg/domain';
+import type { LessonStatus, Role } from '@lcg/domain';
 import { eq, sql } from 'drizzle-orm';
 import type { Executor } from './client.js';
 import { lessons, users } from './schema.js';
@@ -6,7 +6,7 @@ import { lessons, users } from './schema.js';
 export interface User {
   id: string;
   name: string;
-  role: 'editor' | 'approver';
+  role: Role;
 }
 
 export async function findUser(db: Executor, userId: string): Promise<User | undefined> {

@@ -70,6 +70,8 @@ function blockToNode(block: Block): JSONContent {
       return { type: 'eldPanel', attrs: { purpose: block.purpose, sayAsk: block.sayAsk, watchFor: block.watchFor } };
     case 'support-table':
       return { type: 'supportTable', attrs: { rows: block.rows } };
+    case 'text-reference':
+      return { type: 'textReference', attrs: { title: block.title, pages: block.pages ?? '' } };
   }
 }
 
@@ -140,6 +142,8 @@ function nodeToBlock(node: JSONContent): Block | undefined {
       return { type: 'eld-panel', purpose: attrs.purpose ?? '', sayAsk: attrs.sayAsk ?? '', watchFor: attrs.watchFor ?? '' };
     case 'supportTable':
       return { type: 'support-table', rows: attrs.rows ?? [] };
+    case 'textReference':
+      return { type: 'text-reference', title: attrs.title ?? '', ...(attrs.pages ? { pages: attrs.pages } : {}) };
     default:
       return undefined;
   }

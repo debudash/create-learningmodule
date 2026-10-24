@@ -1,5 +1,5 @@
 {
-  "id": "07d1359b-6fd7-48fd-9a9b-678e666de7d3",
+  "id": "f090d7bf-43ef-4268-9f52-4dd1feeb67db",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -662,8 +662,8 @@
           "primaryKey": false,
           "notNull": true
         },
-        "revision": {
-          "name": "revision",
+        "transition_count": {
+          "name": "transition_count",
           "type": "integer",
           "primaryKey": false,
           "notNull": true,

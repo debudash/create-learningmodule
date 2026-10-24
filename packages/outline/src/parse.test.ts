@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { parseOutlineCsv } from './parse.js';
-import { sampleOutlineCsv } from './testing.js';
+import { sampleOutlineCsv } from '@lcg/fixtures';
 import type { ImportProposal, OutlineLesson } from './types.js';
 
 const SAMPLE = sampleOutlineCsv();

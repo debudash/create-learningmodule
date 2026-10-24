@@ -27,8 +27,13 @@ export function LessonEditor(props: Props) {
   if (session?.failure) {
     return <p className="rounded-md bg-danger-soft p-4 text-danger">Could not open this Lesson: {session.failure}</p>;
   }
-  if (!session?.synced) return <p className="p-4 text-ink-soft">Opening the Lesson…</p>;
-  return <BoundEditor {...props} session={session} />;
+  if (!session?.ready) return <p className="p-4 text-ink-soft">Opening the Lesson…</p>;
+  return (
+    <>
+      <SaveStatus session={session} />
+      <BoundEditor {...props} session={session} />
+    </>
+  );
 }
 
 function BoundEditor({ session, user, onLessonChange, onPresenceChange }: Props & { session: Session }) {
@@ -84,4 +89,23 @@ function usePresence(session: Session, onPresenceChange?: (people: Presence[]) =
     awareness.on('change', report);
     return () => awareness.off('change', report);
   }, [session, onPresenceChange]);
+}
+
+/** Whether this person's changes have reached the server. */
+function SaveStatus({ session }: { session: Session }) {
+  const [label, tone] =
+    session.connection !== 'connected'
+      ? ['Offline: changes are kept on this device and sent when you reconnect', 'bg-eld-soft text-eld']
+      : session.unsyncedChanges > 0
+        ? ['Saving…', 'bg-paper-sunk text-ink-soft']
+        : session.readOnly
+          ? ['Read-only', 'bg-paper-sunk text-ink-soft']
+          : ['All changes saved', 'bg-support-soft text-support'];
+  return (
+    <div className="mb-3 flex justify-end">
+      <span role="status" className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${tone}`}>
+        {label}
+      </span>
+    </div>
+  );
 }

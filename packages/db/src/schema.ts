@@ -118,8 +118,8 @@ export const lessons = pgTable(
     lessonType: text('lesson_type', { enum: LESSON_TYPES }).notNull(),
     title: text('title').notNull(),
     status: text('status', { enum: LESSON_STATUSES }).notNull(),
-    /** Incremented on every status change; transitions name the revision they expect. */
-    revision: integer('revision').notNull().default(0),
+    /** Incremented on every status change; a transition names the count it expects (optimistic concurrency). */
+    transitionCount: integer('transition_count').notNull().default(0),
     assigneeId: uuid('assignee_id').references(() => users.id),
     /** The confirmed Outline row this Lesson was generated from. */
     outline: jsonb('outline').$type<OutlineLesson>().notNull(),

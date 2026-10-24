@@ -6,3 +6,8 @@ export const EDITABLE_STATUSES: ReadonlySet<LessonStatus> = new Set(['draft', 'i
 export function isEditable(status: LessonStatus): boolean {
   return EDITABLE_STATUSES.has(status);
 }
+
+/** Whether a Lesson has content to open in the workspace (editable, or Approved and read-only). */
+export function hasOpenableContent(status: LessonStatus): boolean {
+  return isEditable(status) || status === 'approved';
+}

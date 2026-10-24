@@ -8,4 +8,6 @@ Lessons are edited with Tiptap (ProseMirror) bound to a Yjs document synced by a
 
 ## Consequences
 
+- Changes made elsewhere reach the collaboration server through Postgres LISTEN/NOTIFY: whole-Lesson replacements are written as Yjs changes and applied to every open copy, and status changes close open connections so they reconnect under the new status. Saves merge with the stored document under a row lock.
+
 - Lesson content changes only through the document persistence module: live edits via the collaboration server, and seeding a generated document or restoring a version via the same module from the worker or API.

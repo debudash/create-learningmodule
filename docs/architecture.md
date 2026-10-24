@@ -150,7 +150,7 @@ lesson
 └── section[homework]
 ```
 
-Every block carries an `audience` attribute (`teacher` or `shared`); the Student View removes `teacher` blocks.
+Whether a block is teacher-only is fixed by its type (scripts, sample responses, notes, ELD panels and support tables are always teacher-only), so a sample answer can never be marked shared by mistake. Only a plain paragraph chooses its audience. The Student View removes teacher-only blocks and Pulse Check answers. A `textReference` block points students at a Lesson Text and the pages or part used. Flex Day Huddles are Activities whose routine is "Huddle".
 
 ### 2.6 Prompt assembly (generation)
 
@@ -230,6 +230,8 @@ sequenceDiagram
 On error the job is retried with backoff; when retries are exhausted the Lesson becomes Generation Failed with the reason recorded on the attempt.
 
 ### 3.3 Co-editing a Lesson
+
+Whole-Lesson replacements (generation, Regenerate, Restore) are written as Yjs changes on top of the stored document and announced on the `lesson_document` channel; status changes are announced on `lesson_status`. The collaboration server applies replacements to every open copy and closes connections on a status change so editors reconnect under the new status. Its own saves merge with what is stored. The browser also keeps the document in IndexedDB, so offline edits survive a reload.
 
 ```mermaid
 sequenceDiagram

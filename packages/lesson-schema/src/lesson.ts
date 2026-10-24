@@ -27,6 +27,8 @@ export const TEACHER_MOVES = ['say', 'ask', 'teach'] as const;
 export const blockSchema = z.discriminatedUnion('type', [
   /** Instructions students follow ("Directions: ..."). */
   z.object({ type: z.literal('directions'), text }),
+  /** Points students to a Lesson Text and the part of it the Activity uses. */
+  z.object({ type: z.literal('text-reference'), title: z.string().min(1), pages: z.string().optional() }),
   /** Ordinary content: a question, a prompt, a passage. */
   z.object({ type: z.literal('paragraph'), audience, text }),
   /** Scripted teacher speech: Say / Ask / Teach. */

@@ -1,18 +1,11 @@
 import { randomBytes } from 'node:crypto';
-import {
-  confirmImport,
-  parseOutlineCsv,
-  type ConfirmedImport,
-  type Resolution,
-} from '@lcg/outline';
-import { sampleOutlineCsv } from '@lcg/outline/testing';
 import type { LessonStatus } from '@lcg/domain';
 import { and, eq } from 'drizzle-orm';
 import pg from 'pg';
 import { connect, type Connection } from './client.js';
 import { runMigrations } from './migrate.js';
 import { lessons, users } from './schema.js';
-import { importUnit } from './units.js';
+export { confirmedSampleOutline, importSampleUnit } from './demo.js';
 
 /** The Postgres server integration tests run against (the Compose service by default). */
 const SERVER_URL = process.env.DATABASE_URL_TEST ?? 'postgres://lcg:lcg@localhost:5432/postgres';
@@ -60,27 +53,6 @@ async function admin(run: (client: pg.Client) => Promise<unknown>): Promise<void
   } finally {
     await client.end();
   }
-}
-
-/** The sample Outline with every Blocking issue resolved by its suggestion. */
-export function confirmedSampleOutline(): ConfirmedImport {
-  const proposal = parseOutlineCsv(sampleOutlineCsv());
-  const resolutions: Resolution[] = proposal.issues
-    .filter((i) => i.severity === 'blocking')
-    .map((i) => ({ issueId: i.id, action: 'accept-suggestion' }));
-  const result = confirmImport(proposal, resolutions);
-  if (!result.ok) throw new Error(`sample Outline did not confirm: ${result.errors.join('; ')}`);
-  return result.confirmed;
-}
-
-/** Imports the sample Unit and returns its id. */
-export function importSampleUnit(db: Connection['db'], actorId: string): Promise<string> {
-  return importUnit(db, {
-    confirmed: confirmedSampleOutline(),
-    source: { kind: 'file', reference: 'g6-u4-lightning-thief.csv' },
-    actorId,
-    guidance: 'Default guidance',
-  });
 }
 
 /** Puts one of a Unit's Lessons into a status and returns the Lesson's id. */

@@ -2,7 +2,7 @@ import ExcelJS from 'exceljs';
 import { describe, expect, it } from 'vitest';
 import { parseCsv } from './csv.js';
 import { parseOutlineCsv, parseOutlineRows } from './parse.js';
-import { sampleOutlineCsv } from './testing.js';
+import { sampleOutlineCsv } from '@lcg/fixtures';
 import { readXlsxRows } from './xlsx.js';
 
 async function sampleAsXlsx(): Promise<ArrayBuffer> {

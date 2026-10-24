@@ -42,6 +42,17 @@ describe('LessonStructureGuard', () => {
     expect(structureSignature(next.doc)).toBe(structureSignature(s.doc));
   });
 
+  it('refuses to move a Section', () => {
+    const s = state();
+    const launch = child(s, 1);
+    const lookBack = child(s, 3);
+    // Move Launch after Look Back: insert a copy there, then delete the original.
+    const tr = s.tr.insert(lookBack.pos + lookBack.node.nodeSize, launch.node);
+    tr.delete(launch.pos, launch.pos + launch.node.nodeSize);
+    const { state: next } = s.applyTransaction(tr);
+    expect(structureSignature(next.doc)).toBe(structureSignature(s.doc));
+  });
+
   it('refuses to change a Section into another kind', () => {
     const s = state();
     const { pos } = child(s, 1);
