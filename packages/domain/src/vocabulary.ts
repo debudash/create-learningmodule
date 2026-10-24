@@ -30,6 +30,8 @@ export type Role = (typeof ROLES)[number];
 export const VERSION_REASONS = [
   'generated',
   'regenerated',
+  /** The content a Regenerate is about to replace. */
+  'replaced',
   'submitted',
   'approved',
   'published',

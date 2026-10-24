@@ -4,7 +4,7 @@ import type { Lesson } from '@lcg/lesson-schema';
 import type { OutlineLesson } from '@lcg/outline';
 import { and, asc, count, desc, eq, inArray, isNull, max, sql } from 'drizzle-orm';
 import type { Database, Executor } from './client.js';
-import { replaceLessonContent } from './documents.js';
+import { readLessonContent, replaceLessonContent } from './documents.js';
 import {
   arcs,
   generationAttempts,
@@ -93,6 +93,17 @@ export async function regenerateLesson(
       ...(input.expectedTransitionCount !== undefined ? { expectedTransitionCount: input.expectedTransitionCount } : {}),
     });
     if (!result.ok) return result;
+    // LCG-9: the content being replaced was dropped from history, so an Editor's
+    // changes since generation were lost. It is now kept as a Lesson Version first.
+    const current = await readLessonContent(tx, input.lessonId);
+    if (current) {
+      await captureVersion(tx, {
+        lessonId: input.lessonId,
+        reason: 'replaced',
+        content: current,
+        ...(input.actor.kind === 'user' ? { actorId: input.actor.id } : {}),
+      });
+    }
     await input.enqueue(tx, { lessonId: input.lessonId, ...(instructions ? { extraInstructions: instructions } : {}) });
     await tx.update(lessons).set({ jobEnqueuedAt: sql`now()` }).where(eq(lessons.id, input.lessonId));
     return result;

@@ -1,4 +1,12 @@
-import { readLessonContent, schema, startGeneration, cancelGeneration, type EnqueueGeneration } from '@lcg/db';
+import {
+  cancelGeneration,
+  readLessonContent,
+  regenerateLesson,
+  replaceLessonContent,
+  schema,
+  startGeneration,
+  type EnqueueGeneration,
+} from '@lcg/db';
 import { freshDatabase, importSampleUnit, type TestDatabase } from '@lcg/db/testing';
 import { createFakeClient, placeholderOutput, type LlmRequest } from '@lcg/generation';
 import { and, asc, eq, inArray } from 'drizzle-orm';
@@ -114,5 +122,31 @@ describe('generating a Unit', () => {
     expect(await cancelGeneration(database.db, { unitId, actor: editor() })).toBe(1);
     await drain(deps());
     expect((await lessonsByKey(['L3']))[0]!.status).toBe('outlined');
+  });
+});
+
+describe('regenerating a Lesson', () => {
+  // LCG-9 regression. Found by: Phase 3 spec review (Regenerate discarded the edited content from history).
+  it('LCG-9: keeps the content it replaces as a Lesson Version', async () => {
+    const [l2] = await lessonsByKey(['L2']);
+    const edited = { ...(await readLessonContent(database.db, l2!.id))!, title: 'Edited by an Editor' };
+    await replaceLessonContent(database.db, l2!.id, edited);
+
+    const result = await regenerateLesson(database.db, {
+      lessonId: l2!.id,
+      actor: editor(),
+      instructions: 'Shorter Launch',
+      enqueue,
+    });
+    expect(result.ok).toBe(true);
+    await drain(deps());
+
+    const versions = await database.db
+      .select({ number: schema.lessonVersions.number, reason: schema.lessonVersions.reason, content: schema.lessonVersions.content })
+      .from(schema.lessonVersions)
+      .where(eq(schema.lessonVersions.lessonId, l2!.id))
+      .orderBy(asc(schema.lessonVersions.number));
+    expect(versions.map((v) => v.reason)).toEqual(['generated', 'replaced', 'regenerated']);
+    expect((versions[1]!.content as { title: string }).title).toBe('Edited by an Editor');
   });
 });
