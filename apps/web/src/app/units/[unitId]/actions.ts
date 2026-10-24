@@ -91,9 +91,12 @@ export async function regenerateLessonAction(
 }
 
 /** Approves the selected In Review Lessons (Approvers only; each Lesson succeeds or is refused on its own). */
-export async function approveLessonsAction(unitId: string, lessonIds: string[]): Promise<ActionResult> {
+export async function approveLessonsAction(
+  unitId: string,
+  selected: { id: string; expectedTransitionCount: number }[],
+): Promise<ActionResult> {
   const { actor } = await actorAndEnqueue();
-  const result = await approveLessons(db, { lessonIds, actor });
+  const result = await approveLessons(db, { unitId, lessons: selected, actor });
   revalidatePath(`/units/${unitId}`);
   if (result.refused.length === 0) return { ok: true, message: `${result.approved.length} Lessons Approved.` };
   return {

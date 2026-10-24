@@ -56,13 +56,35 @@ export interface BulkResult {
   refused: { lessonId: string; message: string }[];
 }
 
-/** Approves several In Review Lessons; each succeeds or is refused on its own. */
-export async function approveLessons(db: Database, input: { lessonIds: string[]; actor: Actor }): Promise<BulkResult> {
+/**
+ * Approves several In Review Lessons of a Unit; each succeeds or is refused on its own.
+ *
+ * LCG-18: bulk approval approved whatever ids it was given, with no stale-state
+ * check and no check that they belonged to the Unit, so a Lesson changed since the
+ * board loaded could be approved unseen. Each Lesson now carries the transition
+ * count the board showed, and Lessons of other Units are refused.
+ */
+export async function approveLessons(
+  db: Database,
+  input: { unitId: string; lessons: { id: string; expectedTransitionCount: number }[]; actor: Actor },
+): Promise<BulkResult> {
   const result: BulkResult = { approved: [], refused: [] };
-  for (const lessonId of input.lessonIds) {
-    const outcome = await applyReviewAction(db, { lessonId, actor: input.actor, action: { type: 'approve' } });
-    if (outcome.ok) result.approved.push(lessonId);
-    else result.refused.push({ lessonId, message: outcome.message });
+  const inUnit = new Set(
+    (
+      await db
+        .select({ id: lessons.id })
+        .from(lessons)
+        .where(and(eq(lessons.unitId, input.unitId), inArray(lessons.id, input.lessons.map((l) => l.id))))
+    ).map((l) => l.id),
+  );
+  for (const { id, expectedTransitionCount } of input.lessons) {
+    if (!inUnit.has(id)) {
+      result.refused.push({ lessonId: id, message: 'This Lesson is not part of the Unit.' });
+      continue;
+    }
+    const outcome = await applyReviewAction(db, { lessonId: id, actor: input.actor, action: { type: 'approve' }, expectedTransitionCount });
+    if (outcome.ok) result.approved.push(id);
+    else result.refused.push({ lessonId: id, message: outcome.message });
   }
   return result;
 }

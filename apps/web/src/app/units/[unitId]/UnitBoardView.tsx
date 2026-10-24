@@ -185,7 +185,16 @@ export function UnitBoardView({ unitId, arcs, initialLessons, initialCost, user 
           <button
             type="button"
             disabled={pending}
-            onClick={() => run(() => approveLessonsAction(unitId, selected))}
+            onClick={() =>
+              run(() =>
+                approveLessonsAction(
+                  unitId,
+                  lessons
+                    .filter((l) => selected.includes(l.id))
+                    .map((l) => ({ id: l.id, expectedTransitionCount: l.transitionCount })),
+                ),
+              )
+            }
             className="rounded-lg bg-support px-3 py-1.5 text-sm font-medium text-white hover:opacity-90 disabled:opacity-50"
           >
             Approve {selected.length} selected

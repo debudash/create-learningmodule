@@ -49,6 +49,7 @@ export interface BoardLesson {
   title: string;
   lessonType: LessonType;
   status: LessonStatus;
+  transitionCount: number;
   arcId: string;
   assigneeId: string | null;
   assigneeName: string | null;
@@ -80,6 +81,7 @@ export async function unitBoard(db: Executor, unitId: string): Promise<UnitBoard
       title: lessons.title,
       lessonType: lessons.lessonType,
       status: lessons.status,
+      transitionCount: lessons.transitionCount,
       arcId: lessons.arcId,
       assigneeId: lessons.assigneeId,
       assigneeName: users.name,

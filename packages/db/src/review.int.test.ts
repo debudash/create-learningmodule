@@ -114,7 +114,11 @@ describe('publishing a Unit', () => {
       await replaceLessonContent(database.db, id, sampleLesson());
     }
     await applyReviewAction(database.db, { lessonId: l3, actor: editor(), action: { type: 'submit' } });
-    const bulk = await approveLessons(database.db, { lessonIds: all.map((l) => l.id), actor: approver() });
+    const counts = await database.db
+      .select({ id: lessons.id, expectedTransitionCount: lessons.transitionCount })
+      .from(lessons)
+      .where(eq(lessons.unitId, unitId));
+    const bulk = await approveLessons(database.db, { unitId, lessons: counts.map(({ id, expectedTransitionCount }) => ({ id, expectedTransitionCount })), actor: approver() });
     expect(bulk.approved).toHaveLength(47);
 
     expect(await publishUnit(database.db, { unitId, actor: approver() })).toEqual({ ok: true, releaseNumber: 1 });
@@ -174,5 +178,30 @@ describe('Self-Approval after a Restore', () => {
     await applyReviewAction(database.db, { lessonId: id, actor: approver(), action: { type: 'approve' } });
     const [event] = (await lessonHistory(database.db, id)).events;
     expect(event).toMatchObject({ action: 'approve', selfApproval: true });
+  });
+});
+
+describe('bulk approval', () => {
+  // LCG-18 regression. Found by: Phase 4 spec review (bulk approve skipped the stale-state and Unit checks).
+  it('LCG-18: refuses Lessons changed since the board loaded, and Lessons of another Unit', async () => {
+    const otherUnit = await importSampleUnit(database.db, database.editorId);
+    const fresh = await setLessonStatus(database.db, unitId, 'L7', 'in-review');
+    const stale = await setLessonStatus(database.db, unitId, 'L8', 'in-review');
+    const foreign = await setLessonStatus(database.db, otherUnit, 'L7', 'in-review');
+    const countOf = async (id: string) =>
+      (await database.db.select({ n: lessons.transitionCount }).from(lessons).where(eq(lessons.id, id)))[0]!.n;
+
+    const result = await approveLessons(database.db, {
+      unitId,
+      actor: approver(),
+      lessons: [
+        { id: fresh, expectedTransitionCount: await countOf(fresh) },
+        { id: stale, expectedTransitionCount: (await countOf(stale)) - 1 },
+        { id: foreign, expectedTransitionCount: await countOf(foreign) },
+      ],
+    });
+    expect(result.approved).toEqual([fresh]);
+    expect(result.refused.map((r) => r.lessonId).sort()).toEqual([stale, foreign].sort());
+    expect(await statusOf(foreign)).toBe('in-review');
   });
 });
