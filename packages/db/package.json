@@ -1,0 +1,22 @@
+{
+  "name": "@lcg/db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts", "./testing": "./src/testing.ts" },
+  "scripts": {
+    "generate": "tsx ./node_modules/drizzle-kit/bin.cjs generate",
+    "migrate": "tsx src/migrate.ts"
+  },
+  "dependencies": {
+    "@lcg/domain": "workspace:*",
+    "@lcg/lesson-schema": "workspace:*",
+    "@lcg/outline": "workspace:*",
+    "drizzle-orm": "0.36.4",
+    "pg": "8.13.1"
+  },
+  "devDependencies": {
+    "@types/pg": "8.11.10",
+    "drizzle-kit": "0.28.1"
+  }
+}

@@ -112,7 +112,9 @@ erDiagram
 
 ```mermaid
 stateDiagram-v2
-  [*] --> Queued
+  [*] --> Outlined: import
+  Outlined --> Queued: start generation
+  Queued --> Outlined: cancel
   Queued --> Generating: worker picks up
   Generating --> Draft: valid content
   Generating --> GenerationFailed: retries exhausted

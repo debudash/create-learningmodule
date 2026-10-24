@@ -254,8 +254,8 @@ The tool ships with a pre-generated sample Unit (Grade 6, Unit 4, *The Lightning
 
 ### Lesson workflow
 
-- States: Queued, Generating, Generation Failed, Draft, In Review, Changes Requested, Approved.
-- Transitions: Queued → Generating (worker); Generating → Draft or Generation Failed (worker); Generation Failed → Queued (retry); Draft or Changes Requested → In Review (submit; Editor or Approver); In Review → Approved (Approver); In Review → Changes Requested (Approver, reason required); Approved → In Review (Reopen; Approver, reason required); Draft or Changes Requested → Queued (Regenerate; Editor or Approver; confirmation in the UI).
+- States: Outlined, Queued, Generating, Generation Failed, Draft, In Review, Changes Requested, Approved.
+- Transitions: Outlined → Queued (start generation; Editor or Approver); Queued → Outlined (cancel generation); Queued → Generating (worker); Generating → Draft or Generation Failed (worker); Generation Failed → Queued (retry); Draft or Changes Requested → In Review (submit; Editor or Approver); In Review → Approved (Approver); In Review → Changes Requested (Approver, reason required); Approved → In Review (Reopen; Approver, reason required); Draft or Changes Requested → Queued (Regenerate; Editor or Approver; confirmation in the UI).
 - Editing is allowed in Draft, In Review and Changes Requested; Approved is read-only, enforced by the collaboration server as well as the UI.
 - Status changes use optimistic concurrency: each request names the state it expects, and a request based on a stale state is refused with a clear message.
 - Approval records Self-Approval (the Approver contributed edits to the Lesson since its last generation) and approval over failing Quality Checks.

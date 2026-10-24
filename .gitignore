@@ -13,3 +13,6 @@ test-results/
 # Raw page dumps of the reference lessons: redundant with the extracted *_data.json files
 docs/source/example-lessons/*_raw.html
 docs/source/example-lessons/*_rsc_payload.txt
+
+# Agent worktrees
+.claude/worktrees/

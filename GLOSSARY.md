@@ -112,6 +112,10 @@ _Avoid_: Auto-approval
 
 ### Workflow
 
+**Outlined**:
+The state of a Lesson that exists from its Unit Outline row but has not yet been generated.
+_Avoid_: Pending, not started, empty
+
 **Generation Failed**:
 The state of a Lesson whose AI generation did not produce valid content; it can be retried.
 _Avoid_: Error, broken

@@ -1,0 +1,1645 @@
+{
+  "attribution": {
+    "source": "Common Standards Project (https://commonstandardsproject.com)",
+    "license": "CC BY 3.0 US",
+    "licenseUrl": "http://creativecommons.org/licenses/by/3.0/us/",
+    "rightsHolder": "D2L Corporation (formerly Desire2Learn Incorporated)",
+    "note": "Derived from CSP data and corrected against the California Department of Education PDFs, which are the authority.",
+    "documents": [
+      {
+        "framework": "CCSS-ELA",
+        "title": "California Common Core State Standards: English Language Arts and Literacy",
+        "asnIdentifier": "D2515047",
+        "cspFile": "csp_CA_D2515047_grade-06.json",
+        "authority": "http://www.cde.ca.gov/be/st/ss/documents/finalelaccssstandards.pdf",
+        "license": "CC BY 3.0 US",
+        "rightsHolder": "D2L Corporation"
+      },
+      {
+        "framework": "ELD",
+        "title": "California English Language Development Standards",
+        "asnIdentifier": "D2659716",
+        "cspFile": "csp_CA_D2659716_grade-06.json",
+        "authority": "http://www.cde.ca.gov/sp/el/er/documents/eldstndspublication14.pdf",
+        "license": "CC BY 3.0 US",
+        "rightsHolder": "Desire2Learn Incorporated"
+      },
+      {
+        "framework": "MSLS",
+        "title": "Model School Library Standards for California Public Schools, Kindergarten Through Grade Twelve",
+        "asnIdentifier": "D2622356",
+        "cspFile": "csp_CA_D2622356_grade-06.json",
+        "authority": "http://www.cde.ca.gov/be/st/ss/documents/librarystandards.pdf",
+        "license": "CC BY 3.0 US",
+        "rightsHolder": "Desire2Learn Incorporated"
+      }
+    ],
+    "corrections": [
+      "ELD Part II item 2 (\"Understanding cohesion\") is coded ELD.PII.6.1a/1b in CSP; built as ELD.PII.6.2.a/b from the CSP hierarchy, matching the CDE PDF.",
+      "ELD item titles use the short Grade 6 chart titles from the CDE PDF (e.g. \"Reading/viewing closely\"); CSP carries the longer Part I overview wording.",
+      "ELD.PII.6.7 Expanding: stray \")\" before \"→\" removed, matching the CDE PDF.",
+      "ELD.PI.6.11.b Bridging: missing final period restored, matching the CDE PDF.",
+      "CCSS ELA: grade bands written \"6—8\" (em dash) in CSP restored to \"6–8\" (en dash), matching the CDE PDF.",
+      "All text: whitespace normalised."
+    ]
+  },
+  "standards": [
+    {
+      "code": "RL.6.1",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Cite textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text.",
+      "children": []
+    },
+    {
+      "code": "RL.6.2",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Determine a theme or central idea of a text and how it is conveyed through particular details; provide a summary of the text distinct from personal opinions or judgments.",
+      "children": []
+    },
+    {
+      "code": "RL.6.3",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Describe how a particular story's or drama's plot unfolds in a series of episodes as well as how the characters respond or change as the plot moves toward a resolution.",
+      "children": []
+    },
+    {
+      "code": "RL.6.4",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Determine the meaning of words and phrases as they are used in a text, including figurative and connotative meanings; analyze the impact of a specific word choice on meaning and tone. (See grade 6 Language standards 4–6 for additional expectations.)",
+      "children": []
+    },
+    {
+      "code": "RL.6.5",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Analyze how a particular sentence, chapter, scene, or stanza fits into the overall structure of a text and contributes to the development of the theme, setting, or plot.",
+      "children": []
+    },
+    {
+      "code": "RL.6.6",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Explain how an author develops the point of view of the narrator or speaker in a text.",
+      "children": []
+    },
+    {
+      "code": "RL.6.7",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Compare and contrast the experience of reading a story, drama, or poem to listening to or viewing an audio, video, or live version of the text, including contrasting what they \"see\" and \"hear\" when reading the text to what they perceive when they listen or watch.",
+      "children": []
+    },
+    {
+      "code": "RL.6.9",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Compare and contrast texts in different forms or genres (e.g., stories and poems; historical novels and fantasy stories) in terms of their approaches to similar themes and topics.",
+      "children": []
+    },
+    {
+      "code": "RL.6.10",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "By the end of the year, read and comprehend literature, including stories, dramas, and poems, in the grades 6–8 text complexity band proficiently, with scaffolding as needed at the high end of the range.",
+      "children": []
+    },
+    {
+      "code": "RI.6.1",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Cite textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text.",
+      "children": []
+    },
+    {
+      "code": "RI.6.2",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Determine a central idea of a text and how it is conveyed through particular details; provide a summary of the text distinct from personal opinions or judgments.",
+      "children": []
+    },
+    {
+      "code": "RI.6.3",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Analyze in detail how a key individual, event, or idea is introduced, illustrated, and elaborated in a text (e.g., through examples or anecdotes).",
+      "children": []
+    },
+    {
+      "code": "RI.6.4",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Determine the meaning of words and phrases as they are used in a text, including figurative, connotative, and technical meanings. (See grade 6 Language standards 4–6 for additional expectations.)",
+      "children": []
+    },
+    {
+      "code": "RI.6.5",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Analyze how a particular sentence, paragraph, chapter, or section fits into the overall structure of a text and contributes to the development of the ideas.",
+      "children": [
+        "RI.6.5.a"
+      ]
+    },
+    {
+      "code": "RI.6.5.a",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Analyze the use of text features (e.g., graphics, headers, captions) in popular media.",
+      "parent": "RI.6.5",
+      "children": []
+    },
+    {
+      "code": "RI.6.6",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Determine an author's point of view or purpose in a text and explain how it is conveyed in the text.",
+      "children": []
+    },
+    {
+      "code": "RI.6.7",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Integrate information presented in different media or formats (e.g., visually, quantitatively) as well as in words to develop a coherent understanding of a topic or issue.",
+      "children": []
+    },
+    {
+      "code": "RI.6.8",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Trace and evaluate the argument and specific claims in a text, distinguishing claims that are supported by reasons and evidence from claims that are not.",
+      "children": []
+    },
+    {
+      "code": "RI.6.9",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Compare and contrast one author's presentation of events with that of another (e.g., a memoir written by and a biography on the same person).",
+      "children": []
+    },
+    {
+      "code": "RI.6.10",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "By the end of the year, read and comprehend literary nonfiction in the grades 6–8 text complexity band proficiently, with scaffolding as needed at the high end of the range.",
+      "children": []
+    },
+    {
+      "code": "W.6.1",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Write arguments to support claims with clear reasons and relevant evidence.",
+      "children": [
+        "W.6.1.a",
+        "W.6.1.b",
+        "W.6.1.c",
+        "W.6.1.d",
+        "W.6.1.e"
+      ]
+    },
+    {
+      "code": "W.6.1.a",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Introduce claim(s) and organize the reasons and evidence clearly.",
+      "parent": "W.6.1",
+      "children": []
+    },
+    {
+      "code": "W.6.1.b",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Support claim(s) with clear reasons and relevant evidence, using credible sources and demonstrating an understanding of the topic or text.",
+      "parent": "W.6.1",
+      "children": []
+    },
+    {
+      "code": "W.6.1.c",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Use words, phrases, and clauses to clarify the relationships among claim(s) and reasons.",
+      "parent": "W.6.1",
+      "children": []
+    },
+    {
+      "code": "W.6.1.d",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Establish and maintain a formal style.",
+      "parent": "W.6.1",
+      "children": []
+    },
+    {
+      "code": "W.6.1.e",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Provide a concluding statement or section that follows from the argument presented.",
+      "parent": "W.6.1",
+      "children": []
+    },
+    {
+      "code": "W.6.2",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Write informative/explanatory texts to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content",
+      "children": [
+        "W.6.2.a",
+        "W.6.2.b",
+        "W.6.2.c",
+        "W.6.2.d",
+        "W.6.2.e",
+        "W.6.2.f"
+      ]
+    },
+    {
+      "code": "W.6.2.a",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Introduce a topic or thesis statement; organize ideas, concepts, and information, using strategies such as definition, classification, comparison/contrast, and cause/effect; include formatting (e.g., headings), graphics (e.g., charts, tables), and multimedia when useful to aiding comprehension.",
+      "parent": "W.6.2",
+      "children": []
+    },
+    {
+      "code": "W.6.2.b",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Develop the topic with relevant facts, definitions, concrete details, quotations, or other information and examples.",
+      "parent": "W.6.2",
+      "children": []
+    },
+    {
+      "code": "W.6.2.c",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Use appropriate transitions to clarify the relationships among ideas and concepts.",
+      "parent": "W.6.2",
+      "children": []
+    },
+    {
+      "code": "W.6.2.d",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Use precise language and domain-specific vocabulary to inform about or explain the topic.",
+      "parent": "W.6.2",
+      "children": []
+    },
+    {
+      "code": "W.6.2.e",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Establish and maintain a formal style.",
+      "parent": "W.6.2",
+      "children": []
+    },
+    {
+      "code": "W.6.2.f",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Provide a concluding statement or section that follows from the information or explanation presented.",
+      "parent": "W.6.2",
+      "children": []
+    },
+    {
+      "code": "W.6.3",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Write narratives to develop real or imagined experiences or events using effective technique, relevant descriptive details, and well-structured event sequences.",
+      "children": [
+        "W.6.3.a",
+        "W.6.3.b",
+        "W.6.3.c",
+        "W.6.3.d",
+        "W.6.3.e"
+      ]
+    },
+    {
+      "code": "W.6.3.a",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Engage and orient the reader by establishing a context and introducing a narrator and/or characters; organize an event sequence that unfolds naturally and logically.",
+      "parent": "W.6.3",
+      "children": []
+    },
+    {
+      "code": "W.6.3.b",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Use narrative techniques, such as dialogue, pacing, and description, to develop experiences, events, and/or characters.",
+      "parent": "W.6.3",
+      "children": []
+    },
+    {
+      "code": "W.6.3.c",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Use a variety of transition words, phrases, and clauses to convey sequence and signal shifts from one time frame or setting to another.",
+      "parent": "W.6.3",
+      "children": []
+    },
+    {
+      "code": "W.6.3.d",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Use precise words and phrases, relevant descriptive details, and sensory language to convey experiences and events.",
+      "parent": "W.6.3",
+      "children": []
+    },
+    {
+      "code": "W.6.3.e",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Provide a conclusion that follows from the narrated experiences or events.",
+      "parent": "W.6.3",
+      "children": []
+    },
+    {
+      "code": "W.6.4",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Produce clear and coherent writing in which the development, organization, and style are appropriate to task, purpose, and audience.",
+      "children": []
+    },
+    {
+      "code": "W.6.5",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "With some guidance and support from peers and adults, develop and strengthen writing as needed by planning, revising, editing, rewriting, or trying a new approach.",
+      "children": []
+    },
+    {
+      "code": "W.6.6",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Use technology, including the Internet, to produce and publish writing as well as to interact and collaborate with others; demonstrate sufficient command of keyboarding skills to type a minimum of three pages in a single sitting.",
+      "children": []
+    },
+    {
+      "code": "W.6.7",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Conduct short research projects to answer a question, drawing on several sources and refocusing the inquiry when appropriate.",
+      "children": []
+    },
+    {
+      "code": "W.6.8",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Gather relevant information from multiple print and digital sources; assess the credibility of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and providing basic bibliographic information for sources.",
+      "children": []
+    },
+    {
+      "code": "W.6.9",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Draw evidence from literary or informational texts to support analysis, reflection, and research.",
+      "children": [
+        "W.6.9.a",
+        "W.6.9.b"
+      ]
+    },
+    {
+      "code": "W.6.9.a",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Apply grade 6 Reading standards to literature (e.g., \"Compare and contrast texts in different forms or genres [e.g., stories and poems; historical novels and fantasy stories] in terms of their approaches to similar themes and topics\").",
+      "parent": "W.6.9",
+      "children": []
+    },
+    {
+      "code": "W.6.9.b",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Apply grade 6 Reading standards to literary nonfiction (e.g., \"Trace and evaluate the argument and specific claims in a text, distinguishing claims that are supported by reasons and evidence from claims that are not\").",
+      "parent": "W.6.9",
+      "children": []
+    },
+    {
+      "code": "W.6.10",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Write routinely over extended time frames (time for research, reflection, and revision) and shorter time frames (a single sitting or a day or two) for a range of discipline-specific tasks, purposes, and audiences.",
+      "children": []
+    },
+    {
+      "code": "SL.6.1",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Engage effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grade 6 topics, texts, and issues, building on others' ideas and expressing their own clearly.",
+      "children": [
+        "SL.6.1.a",
+        "SL.6.1.b",
+        "SL.6.1.c",
+        "SL.6.1.d"
+      ]
+    },
+    {
+      "code": "SL.6.1.a",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Come to discussions prepared, having read or studied required material; explicitly draw on that preparation by referring to evidence on the topic, text, or issue to probe and reflect on ideas under discussion.",
+      "parent": "SL.6.1",
+      "children": []
+    },
+    {
+      "code": "SL.6.1.b",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Follow rules for collegial discussions, set specific goals and deadlines, and define individual roles as needed.",
+      "parent": "SL.6.1",
+      "children": []
+    },
+    {
+      "code": "SL.6.1.c",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Pose and respond to specific questions with elaboration and detail by making comments that contribute to the topic, text, or issue under discussion.",
+      "parent": "SL.6.1",
+      "children": []
+    },
+    {
+      "code": "SL.6.1.d",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Review the key ideas expressed and demonstrate understanding of multiple perspectives through reflection and paraphrasing.",
+      "parent": "SL.6.1",
+      "children": []
+    },
+    {
+      "code": "SL.6.2",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Interpret information presented in diverse media and formats (e.g., visually, quantitatively, orally) and explain how it contributes to a topic, text, or issue under study.",
+      "children": []
+    },
+    {
+      "code": "SL.6.3",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Delineate a speaker's argument and specific claims, distinguishing claims that are supported by reasons and evidence from claims that are not.",
+      "children": []
+    },
+    {
+      "code": "SL.6.4",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Present claims and findings (e.g., argument, narrative, informative, response to literature presentations), sequencing ideas logically and using pertinent descriptions, facts, and details to accentuate main ideas or themes; use appropriate eye contact, adequate volume, and clear pronunciation.",
+      "children": [
+        "SL.6.4.a"
+      ]
+    },
+    {
+      "code": "SL.6.4.a",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Plan and deliver an informative/explanatory presentation that: develops a topic with relevant facts, definitions, and concrete details; uses appropriate transitions to clarify relationships; uses precise language and domain specific vocabulary; and provides a strong conclusion.",
+      "parent": "SL.6.4",
+      "children": []
+    },
+    {
+      "code": "SL.6.5",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Include multimedia components (e.g., graphics, images, music, sound) and visual displays in presentations to clarify information.",
+      "children": []
+    },
+    {
+      "code": "SL.6.6",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Adapt speech to a variety of contexts and tasks, demonstrating command of formal English when indicated or appropriate.",
+      "children": []
+    },
+    {
+      "code": "L.6.1",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking.",
+      "children": [
+        "L.6.1.a",
+        "L.6.1.b",
+        "L.6.1.c",
+        "L.6.1.d",
+        "L.6.1.e"
+      ]
+    },
+    {
+      "code": "L.6.1.a",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Ensure that pronouns are in the proper case (subjective, objective, possessive).",
+      "parent": "L.6.1",
+      "children": []
+    },
+    {
+      "code": "L.6.1.b",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Use all pronouns, including intensive pronouns (e.g., myself, ourselves) correctly.",
+      "parent": "L.6.1",
+      "children": []
+    },
+    {
+      "code": "L.6.1.c",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Recognize and correct inappropriate shifts in pronoun number and person.",
+      "parent": "L.6.1",
+      "children": []
+    },
+    {
+      "code": "L.6.1.d",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Recognize and correct vague pronouns (i.e., ones with unclear or ambiguous antecedents).",
+      "parent": "L.6.1",
+      "children": []
+    },
+    {
+      "code": "L.6.1.e",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Recognize variations from standard English in their own and others' writing and speaking, and identify and use strategies to improve expression in conventional language.",
+      "parent": "L.6.1",
+      "children": []
+    },
+    {
+      "code": "L.6.2",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Demonstrate command of the conventions of standard English capitalization, punctuation, and spelling when writing.",
+      "children": [
+        "L.6.2.a",
+        "L.6.2.b"
+      ]
+    },
+    {
+      "code": "L.6.2.a",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Use punctuation (commas, parentheses, dashes) to set off nonrestrictive/parenthetical elements.",
+      "parent": "L.6.2",
+      "children": []
+    },
+    {
+      "code": "L.6.2.b",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Spell correctly.",
+      "parent": "L.6.2",
+      "children": []
+    },
+    {
+      "code": "L.6.3",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Use knowledge of language and its conventions when writing, speaking, reading, or listening.",
+      "children": [
+        "L.6.3.a",
+        "L.6.3.b"
+      ]
+    },
+    {
+      "code": "L.6.3.a",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Vary sentence patterns for meaning, reader/listener interest, and style.",
+      "parent": "L.6.3",
+      "children": []
+    },
+    {
+      "code": "L.6.3.b",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Maintain consistency in style and tone.",
+      "parent": "L.6.3",
+      "children": []
+    },
+    {
+      "code": "L.6.4",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 6 reading and content, choosing flexibly from a range of strategies.",
+      "children": [
+        "L.6.4.a",
+        "L.6.4.b",
+        "L.6.4.c",
+        "L.6.4.d"
+      ]
+    },
+    {
+      "code": "L.6.4.a",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Use context (e.g., the overall meaning of a sentence or paragraph; a word's position or function in a sentence) as a clue to the meaning of a word or phrase.",
+      "parent": "L.6.4",
+      "children": []
+    },
+    {
+      "code": "L.6.4.b",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Use common, grade-appropriate Greek or Latin affixes and roots as clues to the meaning of a word (e.g., audience, auditory, audible).",
+      "parent": "L.6.4",
+      "children": []
+    },
+    {
+      "code": "L.6.4.c",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Consult reference materials (e.g., dictionaries, glossaries, thesauruses), both print and digital, to find the pronunciation of a word or determine or clarify its precise meaning or its part of speech.",
+      "parent": "L.6.4",
+      "children": []
+    },
+    {
+      "code": "L.6.4.d",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary).",
+      "parent": "L.6.4",
+      "children": []
+    },
+    {
+      "code": "L.6.5",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Demonstrate understanding of figurative language, word relationships, and nuances in word meanings.",
+      "children": [
+        "L.6.5.a",
+        "L.6.5.b",
+        "L.6.5.c"
+      ]
+    },
+    {
+      "code": "L.6.5.a",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Interpret figures of speech (e.g., personification) in context.",
+      "parent": "L.6.5",
+      "children": []
+    },
+    {
+      "code": "L.6.5.b",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Use the relationship between particular words (e.g., cause/effect, part/whole, item/category) to better understand each of the words.",
+      "parent": "L.6.5",
+      "children": []
+    },
+    {
+      "code": "L.6.5.c",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Distinguish among the connotations (associations) of words with similar denotations (definitions) (e.g., stingy, scrimping, economical, unwasteful, thrifty).",
+      "parent": "L.6.5",
+      "children": []
+    },
+    {
+      "code": "L.6.6",
+      "framework": "CCSS-ELA",
+      "grade": 6,
+      "text": "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; gather vocabulary knowledge when considering a word or phrase important to comprehension or expression.",
+      "children": []
+    },
+    {
+      "code": "ELD.PI.6.1",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Exchanging information/ideas",
+      "levels": {
+        "emerging": "Engage in conversational exchanges and express ideas on familiar topics by asking and answering yes-no and wh- questions and responding using simple phrases.",
+        "expanding": "Contribute to class, group, and partner discussions by following turn-taking rules, asking relevant questions, affirming others, adding relevant information, and paraphrasing key ideas.",
+        "bridging": "Contribute to class, group, and partner discussions by following turn-taking rules, asking relevant questions, affirming others, adding relevant information and evidence, paraphrasing key ideas, building on responses, and providing useful feedback."
+      },
+      "children": []
+    },
+    {
+      "code": "ELD.PI.6.2",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Interacting via written English",
+      "levels": {
+        "emerging": "Engage in short written exchanges with peers and collaborate on simple written texts on familiar topics, using technology when appropriate.",
+        "expanding": "Engage in longer written exchanges with peers and collaborate on more detailed written texts on a variety of topics, using technology when appropriate.",
+        "bridging": "Engage in extended written exchanges with peers and collaborate on complex written texts on a variety of topics, using technology when appropriate."
+      },
+      "children": []
+    },
+    {
+      "code": "ELD.PI.6.3",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Supporting opinions and persuading others",
+      "levels": {
+        "emerging": "Negotiate with or persuade others in conversations (e.g., to gain and hold the floor or ask for clarification) using basic learned phrases (e.g., I think…, Would you please repeat that?), as well as open responses.",
+        "expanding": "Negotiate with or persuade others in conversations (e.g., to provide counterarguments) using an expanded set of learned phrases (I agree with X, but…), as well as open responses.",
+        "bridging": "Negotiate with or persuade others in conversations using appropriate register (e.g., to reflect on multiple perspectives) using a variety of learned phrases, indirect reported speech (e.g., I heard you say X, and Gabriel just pointed out Y), as well as open responses."
+      },
+      "children": []
+    },
+    {
+      "code": "ELD.PI.6.4",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Adapting language choices",
+      "levels": {
+        "emerging": "Adjust language choices according to social setting (e.g., classroom, break time) and audience (e.g., peers, teacher).",
+        "expanding": "Adjust language choices according to purpose (e.g., explaining, persuading, entertaining), task, and audience.",
+        "bridging": "Adjust language choices according to task (e.g., facilitating a science experiment, providing peer feedback on a writing assignment), purpose, task, and audience."
+      },
+      "children": []
+    },
+    {
+      "code": "ELD.PI.6.5",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Listening actively",
+      "levels": {
+        "emerging": "Demonstrate active listening in oral presentation activities by asking and answering basic questions, with prompting and substantial support.",
+        "expanding": "Demonstrate active listening in oral presentation activities by asking and answering detailed questions, with occasional prompting and moderate support.",
+        "bridging": "Demonstrate active listening in oral presentation activities by asking and answering detailed questions, with minimal prompting and support."
+      },
+      "children": []
+    },
+    {
+      "code": "ELD.PI.6.6",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Reading/viewing closely",
+      "children": [
+        "ELD.PI.6.6.a",
+        "ELD.PI.6.6.b",
+        "ELD.PI.6.6.c"
+      ]
+    },
+    {
+      "code": "ELD.PI.6.6.a",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Reading/viewing closely",
+      "levels": {
+        "emerging": "Explain ideas, phenomena, processes, and text relationships (e.g., compare/contrast, cause/effect, problem/solution) based on close reading of a variety of grade-level texts and viewing of multimedia, with substantial support.",
+        "expanding": "Explain ideas, phenomena, processes, and text relationships (e.g., compare/contrast, cause/effect, problem/solution) based on close reading of a variety of grade-level texts and viewing of multimedia, with moderate support.",
+        "bridging": "Explain ideas, phenomena, processes, and text relationships (e.g., compare/contrast, cause/effect, problem/solution) based on close reading of a variety of grade-level texts and viewing of multimedia, with light support."
+      },
+      "parent": "ELD.PI.6.6",
+      "children": []
+    },
+    {
+      "code": "ELD.PI.6.6.b",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Reading/viewing closely",
+      "levels": {
+        "emerging": "Express inferences and conclusions drawn based on close reading of grade-level texts and viewing of multimedia using some frequently used verbs (e.g., shows that, based on).",
+        "expanding": "Express inferences and conclusions drawn based on close reading of grade-level texts and viewing of multimedia using a variety of verbs (e.g., suggests that, leads to).",
+        "bridging": "Express inferences and conclusions drawn based on close reading of grade-level texts and viewing of multimedia using a variety of precise academic verbs (e.g., indicates that, influences)."
+      },
+      "parent": "ELD.PI.6.6",
+      "children": []
+    },
+    {
+      "code": "ELD.PI.6.6.c",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Reading/viewing closely",
+      "levels": {
+        "emerging": "Use knowledge of morphology (e.g., affixes, roots, and base words), context, reference materials, and visual cues to determine the meaning of unknown and multiple-meaning words on familiar topics.",
+        "expanding": "Use knowledge of morphology (e.g., affixes, roots, and base words), context, reference materials, and visual cues to determine the meaning of unknown and multiple-meaning words on familiar and new topics.",
+        "bridging": "Use knowledge of morphology (e.g., affixes, roots, and base words), context, reference materials, and visual cues to determine the meaning, including figurative and connotative meanings, of unknown and multiple-meaning words on a variety of new topics."
+      },
+      "parent": "ELD.PI.6.6",
+      "children": []
+    },
+    {
+      "code": "ELD.PI.6.7",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Evaluating language choices",
+      "levels": {
+        "emerging": "Explain how well writers and speakers use language to support ideas and arguments with detailed evidence (e.g., identifying the precise vocabulary used to present evidence, or the phrasing used to signal a shift in meaning) with substantial support.",
+        "expanding": "Explain how well writers and speakers use specific language to present ideas or support arguments and provide detailed evidence (e.g., showing the clarity of the phrasing used to present an argument) with moderate support.",
+        "bridging": "Explain how well writers and speakers use specific language resources to present ideas or support arguments and provide detailed evidence (e.g., identifying the specific language used to present ideas and claims that are well supported and distinguishing them from those that are not) with light support."
+      },
+      "children": []
+    },
+    {
+      "code": "ELD.PI.6.8",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Analyzing language choices",
+      "levels": {
+        "emerging": "Explain how phrasing or different common words with similar meaning (e.g., choosing to use the word cheap versus the phrase a good saver) produce different effects on the audience.",
+        "expanding": "Explain how phrasing, different words with similar meaning (e.g., describing a character as stingy versus economical), or figurative language (e.g., The room was like a dank cave, littered with food wrappers, soda cans, and piles of laundry) produce shades of meaning and different effects on the audience.",
+        "bridging": "Explain how phrasing, different words with similar meaning (e.g., stingy, economical, frugal, thrifty), or figurative language (e.g., The room was depressed and gloomy. The room was like a dank cave, littered with food wrappers, soda cans, and piles of laundry) produce shades of meaning, nuances, and different effects on the audience."
+      },
+      "children": []
+    },
+    {
+      "code": "ELD.PI.6.9",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Presenting",
+      "levels": {
+        "emerging": "Plan and deliver brief oral presentations on a variety of topics and content areas.",
+        "expanding": "Plan and deliver longer oral presentations on a variety of topics and content areas, using details and evidence to support ideas.",
+        "bridging": "Plan and deliver longer oral presentations on a variety of topics and content areas, using reasoning and evidence to support ideas, as well as growing understanding of register."
+      },
+      "children": []
+    },
+    {
+      "code": "ELD.PI.6.10",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Writing",
+      "children": [
+        "ELD.PI.6.10.a",
+        "ELD.PI.6.10.b"
+      ]
+    },
+    {
+      "code": "ELD.PI.6.10.a",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Writing",
+      "levels": {
+        "emerging": "Write short literary and informational texts (e.g., an argument for protecting the rain forests) collaboratively (e.g., with peers) and independently.",
+        "expanding": "Write longer literary and informational texts (e.g., an argument for protecting the rain forests) collaboratively (e.g., with peers) and independently using appropriate text organization.",
+        "bridging": "Write longer and more detailed literary and informational texts (e.g., an argument for protecting the rain forests) collaboratively (e.g., with peers) and independently using appropriate text organization and growing understanding of register."
+      },
+      "parent": "ELD.PI.6.10",
+      "children": []
+    },
+    {
+      "code": "ELD.PI.6.10.b",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Writing",
+      "levels": {
+        "emerging": "Write brief summaries of texts and experiences using complete sentences and key words (e.g., from notes or graphic organizers).",
+        "expanding": "Write increasingly concise summaries of texts and experiences using complete sentences and key words (e.g., from notes or graphic organizers).",
+        "bridging": "Write clear and coherent summaries of texts and experiences using complete and concise sentences and key words (e.g., from notes or graphic organizers)."
+      },
+      "parent": "ELD.PI.6.10",
+      "children": []
+    },
+    {
+      "code": "ELD.PI.6.11",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Justifying/arguing",
+      "children": [
+        "ELD.PI.6.11.a",
+        "ELD.PI.6.11.b"
+      ]
+    },
+    {
+      "code": "ELD.PI.6.11.a",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Justifying/arguing",
+      "levels": {
+        "emerging": "Justify opinions by providing some textual evidence (e.g., quoting from the text) or relevant background knowledge, with substantial support.",
+        "expanding": "Justify opinions or persuade others by providing relevant textual evidence (e.g., quoting from the text or referring to what the text says) or relevant background knowledge, with moderate support.",
+        "bridging": "Justify opinions or persuade others by providing detailed and relevant textual evidence (e.g., quoting from the text directly or referring to specific textual evidence) or relevant background knowledge, with light support."
+      },
+      "parent": "ELD.PI.6.11",
+      "children": []
+    },
+    {
+      "code": "ELD.PI.6.11.b",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Justifying/arguing",
+      "levels": {
+        "emerging": "Express attitude and opinions or temper statements with some basic modal expressions (e.g., can, has to).",
+        "expanding": "Express attitude and opinions or temper statements with a variety of familiar modal expressions (e.g., maybe/probably, can/could, must).",
+        "bridging": "Express attitude and opinions or temper statements with nuanced modal expressions (e.g., probably/certainly/definitely, should/would, might) and phrasing (e.g., In my opinion…)."
+      },
+      "parent": "ELD.PI.6.11",
+      "children": []
+    },
+    {
+      "code": "ELD.PI.6.12",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Selecting language resources",
+      "children": [
+        "ELD.PI.6.12.a",
+        "ELD.PI.6.12.b"
+      ]
+    },
+    {
+      "code": "ELD.PI.6.12.a",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Selecting language resources",
+      "levels": {
+        "emerging": "Use a select number of general academic words (e.g., author, chart) and domain-specific words (e.g., scene, cell, fraction) to create some precision while speaking and writing.",
+        "expanding": "Use a growing set of academic words (e.g., author, chart, global, affect), domain-specific words (e.g., scene, setting, plot, point of view, fraction, cell membrane, democracy), synonyms, and antonyms to create precision and shades of meaning while speaking and writing.",
+        "bridging": "Use an expanded set of general academic words (e.g., affect, evidence, demonstrate, reluctantly), domain-specific words (e.g., scene, setting, plot, point of view, fraction, cell membrane, democracy), synonyms, antonyms, and figurative language to create precision and shades of meaning while speaking and writing."
+      },
+      "parent": "ELD.PI.6.12",
+      "children": []
+    },
+    {
+      "code": "ELD.PI.6.12.b",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Selecting language resources",
+      "levels": {
+        "emerging": "Use knowledge of morphology to appropriately select affixes in basic ways (e.g., She likes X).",
+        "expanding": "Use knowledge of morphology to appropriately select affixes in a growing number of ways to manipulate language (e.g., She likes X. That's impossible).",
+        "bridging": "Use knowledge of morphology to appropriately select affixes in a variety of ways to manipulate language (e.g., changing observe → observation, reluctant → reluctantly, produce → production, and so on)."
+      },
+      "parent": "ELD.PI.6.12",
+      "children": []
+    },
+    {
+      "code": "ELD.PII.6.1",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Understanding text structure",
+      "levels": {
+        "emerging": "Apply basic understanding of how different text types are organized to express ideas (e.g., how a narrative is organized sequentially with predictable stages versus how arguments are organized around ideas) to comprehending texts and writing basic texts.",
+        "expanding": "Apply growing understanding of how different text types are organized to express ideas (e.g., how a narrative is organized sequentially with predictable stages versus how arguments are structured logically around reasons and evidence) to comprehending texts and writing texts with increasing cohesion.",
+        "bridging": "Apply increasing understanding of how different text types are organized to express ideas (e.g., how a historical account is organized chronologically versus how arguments are structured logically around reasons and evidence) to comprehending texts and writing cohesive texts."
+      },
+      "children": []
+    },
+    {
+      "code": "ELD.PII.6.2",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Understanding cohesion",
+      "children": [
+        "ELD.PII.6.2.a",
+        "ELD.PII.6.2.b"
+      ]
+    },
+    {
+      "code": "ELD.PII.6.2.a",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Understanding cohesion",
+      "levels": {
+        "emerging": "Apply basic understanding of language resources for referring the reader back or forward in text (e.g., how pronouns refer back to nouns in text) to comprehending texts and writing basic texts.",
+        "expanding": "Apply growing understanding of language resources for referring the reader back or forward in text (e.g., how pronouns or synonyms refer back to nouns in text) to comprehending texts and writing texts with increasing cohesion.",
+        "bridging": "Apply increasing understanding of language resources for referring the reader back or forward in text (e.g., how pronouns, synonyms, or nominalizations refer back to nouns in text) to comprehending texts and writing cohesive texts."
+      },
+      "parent": "ELD.PII.6.2",
+      "children": []
+    },
+    {
+      "code": "ELD.PII.6.2.b",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Understanding cohesion",
+      "levels": {
+        "emerging": "Apply basic understanding of how ideas, events, or reasons are linked throughout a text using a select set of everyday connecting words or phrases (e.g., first/next, at the beginning) to comprehending texts and writing basic texts.",
+        "expanding": "Apply growing understanding of how ideas, events, or reasons are linked throughout a text using a variety of connecting words or phrases (e.g., for example, in the first place, as a result, on the other hand) to comprehending texts and writing texts with increasing cohesion.",
+        "bridging": "Apply increasing understanding of how ideas, events, or reasons are linked throughout a text using an increasing variety of academic connecting and transitional words or phrases (e.g., consequently, specifically, however, moreover) to comprehending texts and writing cohesive texts."
+      },
+      "parent": "ELD.PII.6.2",
+      "children": []
+    },
+    {
+      "code": "ELD.PII.6.3",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Using verbs and verb phrases",
+      "levels": {
+        "emerging": "Use a variety of verb types (e.g., doing, saying, being/having, thinking/feeling), tenses (e.g., present, past, future, simple, progressive) appropriate to the text type and discipline (e.g., simple past and past progressive for recounting an experience) on familiar topics.",
+        "expanding": "Use various verb types (e.g., doing, saying, being/having, thinking/feeling, reporting), tenses (e.g., present, past, future, simple, progressive, perfect) appropriate to the task, text type, and discipline (e.g., simple present for literary analysis) on an increasing variety of topics.",
+        "bridging": "Use various verb types (e.g., doing, saying, being/having, thinking/feeling, reporting), tenses (e.g., present, past, future, simple, progressive, perfect) appropriate to the task, text type, and discipline (e.g., the present perfect to describe previously made claims or conclusions) on a variety of topics."
+      },
+      "children": []
+    },
+    {
+      "code": "ELD.PII.6.4",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Using nouns and noun phrases",
+      "levels": {
+        "emerging": "Expand noun phrases in simple ways (e.g., adding a sensory adjective to a noun) in order to enrich the meaning of sentences and add details about ideas, people, things, and the like.",
+        "expanding": "Expand noun phrases in a variety of ways (e.g., adding comparative/superlative adjectives to noun phrases or simple clause embedding) in order to enrich the meaning of sentences and add details about ideas, people, things, and the like.",
+        "bridging": "Expand noun phrases in an increasing variety of ways (e.g., adding comparative/superlative and general academic adjectives to noun phrases or more complex clause embedding) in order to enrich the meaning of sentences and add details about ideas, people, things, and the like."
+      },
+      "children": []
+    },
+    {
+      "code": "ELD.PII.6.5",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Modifying to add details",
+      "levels": {
+        "emerging": "Expand sentences with simple adverbials (e.g., adverbs, adverb phrases, prepositional phrases) to provide details (e.g., time, manner, place, cause) about a familiar activity or process.",
+        "expanding": "Expand sentences with an increasing variety of adverbials (e.g., adverbs, adverb phrases, prepositional phrases) to provide details (e.g., time, manner, place, cause) about a familiar or new activity or process.",
+        "bridging": "Expand sentences with a variety of adverbials (e.g., adverbs, adverb phrases and clauses, prepositional phrases) to provide details (e.g., time, manner, place, cause) about a variety of familiar and new activities and processes."
+      },
+      "children": []
+    },
+    {
+      "code": "ELD.PII.6.6",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Connecting ideas",
+      "levels": {
+        "emerging": "Combine clauses in a few basic ways to make connections between and join ideas (e.g., creating compound sentences using and, but, so).",
+        "expanding": "Combine clauses in an increasing variety of ways (e.g., creating compound and complex sentences) to make connections between and join ideas, for example, to express a reason (e.g., He stayed at home on Sunday to study for Monday's exam) or to make a concession (e.g., She studied all night even though she wasn't feeling well).",
+        "bridging": "Combine clauses in a wide variety of ways (e.g., creating compound and complex sentences) to make connections between and join ideas, for example, to express a reason (e.g., He stayed at home on Sunday because he had an exam on Monday), to make a concession (e.g., She studied all night even though she wasn't feeling well), or to link two ideas that happen at the same time (e.g., The students worked in groups while their teacher walked around the room)."
+      },
+      "children": []
+    },
+    {
+      "code": "ELD.PII.6.7",
+      "framework": "ELD",
+      "grade": 6,
+      "text": "Condensing ideas",
+      "levels": {
+        "emerging": "Condense ideas in simple ways (e.g., by compounding verbs, adding prepositional phrases, or through simple embedded clauses or other ways of condensing as in, This is a story about a girl. The girl changed the world. → This is a story about a girl who changed the world) to create precise and detailed sentences.",
+        "expanding": "Condense ideas in an increasing variety of ways (e.g., through various types of embedded clauses and other ways of condensing, as in, Organic vegetables are food. They're made without chemical fertilizers. They're made without chemical insecticides → Organic vegetables are foods that are made without chemical fertilizers or insecticides) to create precise and detailed sentences.",
+        "bridging": "Condense ideas in a variety of ways (e.g., through various types of embedded clauses, ways of condensing, and nominalization as in, They destroyed the rain forest. Lots of animals died → The destruction of the rain forest led to the death of many animals) to create precise and detailed sentences."
+      },
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Students access information.",
+      "children": [
+        "MSLS.6.1.1",
+        "MSLS.6.1.2",
+        "MSLS.6.1.3",
+        "MSLS.6.1.4"
+      ]
+    },
+    {
+      "code": "MSLS.6.1.1",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Recognize the need for information:",
+      "parent": "MSLS.6.1",
+      "children": [
+        "MSLS.6.1.1.a",
+        "MSLS.6.1.1.b"
+      ]
+    },
+    {
+      "code": "MSLS.6.1.1.a",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Recognize that accurate and comprehensive information is the basis of informed decision making.",
+      "parent": "MSLS.6.1.1",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.1.b",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Determine and use appropriate \"pre-search\" strategies (e.g., brainstorming, recall of prior knowledge).",
+      "parent": "MSLS.6.1.1",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.2",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Formulate appropriate questions:",
+      "parent": "MSLS.6.1",
+      "children": [
+        "MSLS.6.1.2.a",
+        "MSLS.6.1.2.b"
+      ]
+    },
+    {
+      "code": "MSLS.6.1.2.a",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Identify related key words, terms, and synonyms for the research topic and information needed.",
+      "parent": "MSLS.6.1.2",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.2.b",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Demonstrate the ability to create effective searches in print and online by identifying appropriate key words.",
+      "parent": "MSLS.6.1.2",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.3",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Identify and locate a variety of resources online and in other formats by using effective search strategies:",
+      "parent": "MSLS.6.1",
+      "children": [
+        "MSLS.6.1.3.a",
+        "MSLS.6.1.3.b",
+        "MSLS.6.1.3.c",
+        "MSLS.6.1.3.d",
+        "MSLS.6.1.3.e",
+        "MSLS.6.1.3.f",
+        "MSLS.6.1.3.g",
+        "MSLS.6.1.3.h",
+        "MSLS.6.1.3.i",
+        "MSLS.6.1.3.j",
+        "MSLS.6.1.3.k",
+        "MSLS.6.1.3.l",
+        "MSLS.6.1.3.m"
+      ]
+    },
+    {
+      "code": "MSLS.6.1.3.a",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Identify and locate multiple sources of information that provide a broad view of research topics and questions (e.g., books, reference materials, online sources, periodicals).",
+      "parent": "MSLS.6.1.3",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.3.b",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Perform a search of the automated library catalog to locate resources for a particular purpose.",
+      "parent": "MSLS.6.1.3",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.3.c",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Use the automated library catalog to locate resources in other libraries and use interlibrary loan, if available.",
+      "parent": "MSLS.6.1.3",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.3.d",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Use the World Wide Web, including search engines and browsers, to locate information.",
+      "parent": "MSLS.6.1.3",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.3.e",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Demonstrate proper and responsible use of technology and other library materials.",
+      "parent": "MSLS.6.1.3",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.3.f",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Demonstrate use of outside sources to obtain information (e.g., Web sites of public libraries and colleges, online databases).",
+      "parent": "MSLS.6.1.3",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.3.g",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Compare and contrast the benefits of using open-source media, subscription databases, print media, and visual media to answer a research question.",
+      "parent": "MSLS.6.1.3",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.3.h",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Demonstrate knowledge of current applications available online (e.g., photo organizer, presentation generator, document creator, video conferencing).",
+      "parent": "MSLS.6.1.3",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.3.i",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Recognize that specialized encyclopedias differ in arrangement, emphasis, and indexing.",
+      "parent": "MSLS.6.1.3",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.3.j",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Use Boolean search techniques and other limiters or expanders to locate appropriate resources.",
+      "parent": "MSLS.6.1.3",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.3.k",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Identify the authority of an author or sponsoring organization in print and online materials.",
+      "parent": "MSLS.6.1.3",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.3.l",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Identify information that supports the question but may not directly answer it.",
+      "parent": "MSLS.6.1.3",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.3.m",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Describe how articles and publications in print may appear different digitally.",
+      "parent": "MSLS.6.1.3",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.4",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Retrieve information in a timely, safe, and responsible manner:",
+      "parent": "MSLS.6.1",
+      "children": [
+        "MSLS.6.1.4.a",
+        "MSLS.6.1.4.b",
+        "MSLS.6.1.4.c",
+        "MSLS.6.1.4.d"
+      ]
+    },
+    {
+      "code": "MSLS.6.1.4.a",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Understand and practice the basics of safe use of the Internet.",
+      "parent": "MSLS.6.1.4",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.4.b",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Accurately record citation information for each type of resource used.",
+      "parent": "MSLS.6.1.4",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.4.c",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Use several facts from visual or audio media to support a hypothesis.",
+      "parent": "MSLS.6.1.4",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.1.4.d",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Restate facts and details taken from an information source (print, nonprint, or digital) and organize those ideas for notetaking by using techniques such as outlining, webbing, flowcharting, and so on.",
+      "parent": "MSLS.6.1.4",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.2",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Students evaluate information.",
+      "children": [
+        "MSLS.6.2.1",
+        "MSLS.6.2.2",
+        "MSLS.6.2.3"
+      ]
+    },
+    {
+      "code": "MSLS.6.2.1",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Determine the relevance of the information:",
+      "parent": "MSLS.6.2",
+      "children": [
+        "MSLS.6.2.1.a",
+        "MSLS.6.2.1.b",
+        "MSLS.6.2.1.c"
+      ]
+    },
+    {
+      "code": "MSLS.6.2.1.a",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Analyze information from illustrations, photographs, charts, graphs, maps, tables, and captions.",
+      "parent": "MSLS.6.2.1",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.2.1.b",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Analyze evidence to support a research question.",
+      "parent": "MSLS.6.2.1",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.2.1.c",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Identify unsupported statements in resources used.",
+      "parent": "MSLS.6.2.1",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.2.2",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Assess the comprehensiveness, currency, credibility, authority, and accuracy of resources:",
+      "parent": "MSLS.6.2",
+      "children": [
+        "MSLS.6.2.2.a",
+        "MSLS.6.2.2.b",
+        "MSLS.6.2.2.c"
+      ]
+    },
+    {
+      "code": "MSLS.6.2.2.a",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Identify how visual language creates an impression for the viewer (e.g., angle, lighting, special effects, camera movement).",
+      "parent": "MSLS.6.2.2",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.2.2.b",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Recognize the importance of the publication date as an indicator of information currency.",
+      "parent": "MSLS.6.2.2",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.2.2.c",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Explain the authority, timeliness, and/or accuracy of specific information resources.",
+      "parent": "MSLS.6.2.2",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.2.3",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Consider the need for additional information:",
+      "parent": "MSLS.6.2",
+      "children": [
+        "MSLS.6.2.3.a"
+      ]
+    },
+    {
+      "code": "MSLS.6.2.3.a",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Evaluate whether the information is sufficient to answer the question.",
+      "parent": "MSLS.6.2.3",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.3",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Students use information.",
+      "children": [
+        "MSLS.6.3.1",
+        "MSLS.6.3.2",
+        "MSLS.6.3.3"
+      ]
+    },
+    {
+      "code": "MSLS.6.3.1",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Demonstrate ethical, legal, and safe use of information in print, media, and online resources:",
+      "parent": "MSLS.6.3",
+      "children": [
+        "MSLS.6.3.1.a",
+        "MSLS.6.3.1.b",
+        "MSLS.6.3.1.c",
+        "MSLS.6.3.1.d",
+        "MSLS.6.3.1.e",
+        "MSLS.6.3.1.f",
+        "MSLS.6.3.1.g",
+        "MSLS.6.3.1.h"
+      ]
+    },
+    {
+      "code": "MSLS.6.3.1.a",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Practice safe handling of personal information online.",
+      "parent": "MSLS.6.3.1",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.3.1.b",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Recognize academic uses of social networking sites and understand how to use them safely (e.g., know how to adjust privacy settings).",
+      "parent": "MSLS.6.3.1",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.3.1.c",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Articulate and follow the rules for online use at school.",
+      "parent": "MSLS.6.3.1",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.3.1.d",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Identify types of programs that can damage a computer (e.g., virus, worm, Trojan horse, spyware).",
+      "parent": "MSLS.6.3.1",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.3.1.e",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Practice ethical behavior in online interactions.",
+      "parent": "MSLS.6.3.1",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.3.1.f",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Identify what constitutes an \"uncomfortable\" interaction online and how to handle it effectively.",
+      "parent": "MSLS.6.3.1",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.3.1.g",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Identify urban legends and hoaxes spread through e-mail and the Internet.",
+      "parent": "MSLS.6.3.1",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.3.1.h",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Understand how to provide limited copyright and authorize use of original works (e.g., Creative Commons).",
+      "parent": "MSLS.6.3.1",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.3.2",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Draw conclusions and make informed decisions:",
+      "parent": "MSLS.6.3",
+      "children": [
+        "MSLS.6.3.2.a"
+      ]
+    },
+    {
+      "code": "MSLS.6.3.2.a",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Analyze evidence to support a research question.",
+      "parent": "MSLS.6.3.2",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.3.3",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Use information and technology creatively to answer a question, solve a problem, or enrich understanding:",
+      "parent": "MSLS.6.3",
+      "children": [
+        "MSLS.6.3.3.a"
+      ]
+    },
+    {
+      "code": "MSLS.6.3.3.a",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Choose an appropriate format to produce, communicate, and present information (e.g., written report, multimedia presentation, graphic presentation).",
+      "parent": "MSLS.6.3.3",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.4",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Students integrate information literacy skills into all areas of learning.",
+      "children": [
+        "MSLS.6.4.1",
+        "MSLS.6.4.2",
+        "MSLS.6.4.3"
+      ]
+    },
+    {
+      "code": "MSLS.6.4.1",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Read widely and use various media for information, personal interest, and lifelong learning:",
+      "parent": "MSLS.6.4",
+      "children": [
+        "MSLS.6.4.1.a",
+        "MSLS.6.4.1.b"
+      ]
+    },
+    {
+      "code": "MSLS.6.4.1.a",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Read a good representation of grade-level-appropriate text, making progress toward the goal of reading one million words annually by grade eight (e.g., classic and contemporary literature, magazines, newspapers, online information).",
+      "parent": "MSLS.6.4.1",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.4.1.b",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Participate in activities that reflect interests, talents, or desires.",
+      "parent": "MSLS.6.4.1",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.4.2",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Seek, produce, and share information:",
+      "parent": "MSLS.6.4",
+      "children": [
+        "MSLS.6.4.2.a",
+        "MSLS.6.4.2.b",
+        "MSLS.6.4.2.c"
+      ]
+    },
+    {
+      "code": "MSLS.6.4.2.a",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Respect others' right to freedom of speech.",
+      "parent": "MSLS.6.4.2",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.4.2.b",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Pursue information related to personal well-being (e.g., career interests, community involvement, health matters, recreation).",
+      "parent": "MSLS.6.4.2",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.4.2.c",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Collaborate in person and through technology to identify problems and seek solutions.",
+      "parent": "MSLS.6.4.2",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.4.3",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Appreciate and respond to creative expressions of information:",
+      "parent": "MSLS.6.4",
+      "children": [
+        "MSLS.6.4.3.a",
+        "MSLS.6.4.3.b",
+        "MSLS.6.4.3.c"
+      ]
+    },
+    {
+      "code": "MSLS.6.4.3.a",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Demonstrate a variety of methods to engage the audience when presenting information (e.g., voice modulation, gestures, questions).",
+      "parent": "MSLS.6.4.3",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.4.3.b",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Appreciate a range of creative forms of expression (e.g., poetry, drama, film, literature, visual arts).",
+      "parent": "MSLS.6.4.3",
+      "children": []
+    },
+    {
+      "code": "MSLS.6.4.3.c",
+      "framework": "MSLS",
+      "grade": 6,
+      "text": "Evaluate one's own research process and that of others in a respectful, cooperative, and productive way.",
+      "parent": "MSLS.6.4.3",
+      "children": []
+    }
+  ]
+}
