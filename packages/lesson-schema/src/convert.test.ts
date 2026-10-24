@@ -61,3 +61,19 @@ describe('Lesson JSON to editor document and back', () => {
     expect(() => schema.nodeFromJSON({ type: 'doc', content: [{ type: 'lessonHeader' }] }).check()).toThrow();
   });
 });
+
+describe('Lesson schema rules', () => {
+  // LCG-4 regression. Found by: Phase 2 spec review (a Pulse Check could have no or several correct choices).
+  it('LCG-4: requires exactly one correct choice in a Pulse Check', () => {
+    const withChoices = (correct: boolean[]) => {
+      const lesson = sampleLesson();
+      const pulse = lesson.sections[1]!.activities[0]!.blocks.find((b) => b.type === 'pulse-check')!;
+      if (pulse.type !== 'pulse-check') throw new Error('fixture has no Pulse Check');
+      pulse.choices = correct.map((c, i) => ({ text: `choice ${i}`, correct: c, rationale: 'because' }));
+      return documentToLesson(lessonToDocument(lesson));
+    };
+    expect(withChoices([true, false]).ok).toBe(true);
+    expect(withChoices([false, false]).ok).toBe(false);
+    expect(withChoices([true, true]).ok).toBe(false);
+  });
+});

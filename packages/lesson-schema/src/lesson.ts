@@ -56,7 +56,19 @@ export const blockSchema = z.discriminatedUnion('type', [
     type: z.literal('support-table'),
     rows: z.array(z.object({ situation: text, tryThis: text })).min(1),
   }),
-]);
+])
+  // LCG-4: choices were validated one by one, so a Pulse Check with no correct
+  // choice, or several, passed as valid Lesson JSON (and AI output could arrive that
+  // way). The block as a whole now must have exactly one correct choice.
+  .superRefine((block, ctx) => {
+    if (block.type === 'pulse-check' && block.choices.filter((c) => c.correct).length !== 1) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ['choices'],
+        message: 'A Pulse Check needs exactly one correct choice.',
+      });
+    }
+  });
 export type Block = z.infer<typeof blockSchema>;
 export type BlockType = Block['type'];
 
