@@ -35,3 +35,16 @@ export function sessionSecret(): string {
   if (process.env.NODE_ENV === 'production') throw new Error('SESSION_SECRET is not set');
   return 'dev-only-session-secret';
 }
+
+/** A seal over data the server hands to the browser and expects back unchanged. */
+export function sealPayload(payload: string, secret: string): string {
+  return signature(payload, secret);
+}
+
+/** Whether data came back exactly as the server sealed it. */
+export function isSealed(payload: string, seal: string | undefined, secret: string): boolean {
+  if (!seal) return false;
+  const given = Buffer.from(seal);
+  const expected = Buffer.from(signature(payload, secret));
+  return given.length === expected.length && timingSafeEqual(given, expected);
+}

@@ -15,6 +15,8 @@ const STEPS = ['Unit Outline', 'Import preview', 'Generation Guidance'] as const
 interface Imported {
   proposal: ImportProposal;
   source: OutlineSource;
+  /** The server's seal over the proposal; it refuses a proposal changed in the browser. */
+  seal: string;
 }
 
 /**
@@ -40,6 +42,8 @@ export function NewUnitWizard({ defaultGuidance }: { defaultGuidance: string }) 
 
   const decisions = () => ({
     proposal: imported!.proposal,
+    source: imported!.source,
+    seal: imported!.seal,
     resolutions,
     unitEdits: toUnitEdits(fields!),
   });
@@ -53,7 +57,7 @@ export function NewUnitWizard({ defaultGuidance }: { defaultGuidance: string }) 
 
   const onCreate = () =>
     startTransition(async () => {
-      const result = await createUnitAction({ ...decisions(), source: imported!.source, guidance });
+      const result = await createUnitAction({ ...decisions(), guidance });
       setErrors(result.errors);
     });
 

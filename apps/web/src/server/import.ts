@@ -1,4 +1,5 @@
 import type { ImportUnitInput, OutlineSource } from '@lcg/db';
+import { isSealed, sealPayload, sessionSecret } from '@lcg/session';
 import {
   confirmImport,
   fetchGoogleSheetCsv,
@@ -17,7 +18,7 @@ export type OutlineInput =
   | { kind: 'file'; name: string; bytes: Uint8Array };
 
 export type ReadOutlineResult =
-  | { ok: true; proposal: ImportProposal; source: OutlineSource }
+  | { ok: true; proposal: ImportProposal; source: OutlineSource; seal: string }
   | { ok: false; message: string };
 
 const MAX_FILE_BYTES = 5 * 1024 * 1024;
@@ -94,11 +95,26 @@ function toProposal(proposal: ImportProposal, source: OutlineSource): ReadOutlin
         'The Outline has its columns but no Lesson rows ("Lesson 1", "Lesson 2", …) were found.',
     };
   }
-  return { ok: true, proposal, source };
+  return { ok: true, proposal, source, seal: sealPayload(sealedText(proposal, source), sessionSecret()) };
 }
+
+/**
+ * LCG-13: the proposal travels through the browser between the wizard's steps, and
+ * the server confirmed whatever came back, so a client could delete its Blocking
+ * Outline Issues or add codes that do not exist. The server now seals the proposal
+ * (and its source) when it reads the Outline and refuses anything that changed.
+ */
+function sealedText(proposal: ImportProposal, source: OutlineSource): string {
+  return JSON.stringify({ proposal, source });
+}
+
+const CHANGED = 'This import changed after the Outline was read. Read the Outline again to continue.';
 
 export interface ImportDecisions {
   proposal: ImportProposal;
+  source: OutlineSource;
+  /** The seal readOutline returned with the proposal. */
+  seal: string;
   resolutions: Resolution[];
   unitEdits: UnitEdits;
 }
@@ -106,7 +122,8 @@ export interface ImportDecisions {
 export type CheckResult = { ok: true } | { ok: false; errors: string[] };
 
 /** Runs the same confirmation the import will, and explains in plain words what is still in the way. */
-export function checkImport({ proposal, resolutions, unitEdits }: ImportDecisions): CheckResult {
+export function checkImport({ proposal, source, seal, resolutions, unitEdits }: ImportDecisions): CheckResult {
+  if (!isSealed(sealedText(proposal, source), seal, sessionSecret())) return { ok: false, errors: [CHANGED] };
   const result = confirmImport(proposal, resolutions, unitEdits);
   return result.ok ? { ok: true } : { ok: false, errors: confirmErrors(result) };
 }
@@ -123,7 +140,6 @@ function confirmErrors(result: {
 }
 
 export interface CreateUnitInput extends ImportDecisions {
-  source: OutlineSource;
   guidance: string;
   actorId: string;
 }
@@ -140,6 +156,9 @@ export async function createUnitFromImport(
 ): Promise<CreateUnitResult> {
   const guidance = input.guidance.trim();
   if (!guidance) return { ok: false, errors: ['Generation Guidance cannot be empty.'] };
+  if (!isSealed(sealedText(input.proposal, input.source), input.seal, sessionSecret())) {
+    return { ok: false, errors: [CHANGED] };
+  }
   const result = confirmImport(input.proposal, input.resolutions, input.unitEdits);
   if (!result.ok) return { ok: false, errors: confirmErrors(result) };
   const source: OutlineSource = {

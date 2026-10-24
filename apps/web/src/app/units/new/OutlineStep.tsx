@@ -10,7 +10,7 @@ import { readOutlineAction } from './actions';
 export function OutlineStep({
   onRead,
 }: {
-  onRead: (read: { proposal: ImportProposal; source: OutlineSource }) => void;
+  onRead: (read: { proposal: ImportProposal; source: OutlineSource; seal: string }) => void;
 }) {
   const [message, setMessage] = useState<string>();
   const [pending, startTransition] = useTransition();

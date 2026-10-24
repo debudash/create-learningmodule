@@ -3,6 +3,7 @@ import { miniOutlineCsv, sampleOutlineCsv } from '@lcg/fixtures';
 import type { ImportUnitInput } from '@lcg/db';
 import { parseCsv, parseOutlineCsv, type Resolution } from '@lcg/outline';
 import { describe, expect, it, vi } from 'vitest';
+import { sealPayload, sessionSecret } from '@lcg/session';
 import { checkImport, createUnitFromImport, outlineInputFromForm, readOutline } from './import';
 
 const LINK =
@@ -138,10 +139,12 @@ describe('createUnitFromImport', () => {
     issueId: i.id,
     action: 'accept-suggestion',
   }));
+  const source = { kind: 'file' as const, reference: 'g6-u4.csv' };
   const base = {
     proposal,
     unitEdits: {},
-    source: { kind: 'file' as const, reference: 'g6-u4.csv' },
+    source,
+    seal: sealPayload(JSON.stringify({ proposal, source }), sessionSecret()),
     guidance: 'Keep it warm.',
     actorId: 'user-1',
   };
@@ -203,10 +206,28 @@ describe('createUnitFromImport', () => {
 describe('checkImport', () => {
   it('agrees with the final import', () => {
     const proposal = parseOutlineCsv(sampleOutlineCsv());
-    expect(checkImport({ proposal, resolutions: [], unitEdits: {} }).ok).toBe(false);
+    const source = { kind: 'file' as const, reference: 'g6-u4.csv' };
+    const seal = sealPayload(JSON.stringify({ proposal, source }), sessionSecret());
+    expect(checkImport({ proposal, source, seal, resolutions: [], unitEdits: {} }).ok).toBe(false);
     const all: Resolution[] = proposal.issues
       .filter((i) => i.severity === 'blocking')
       .map((i) => ({ issueId: i.id, action: 'remove' }));
-    expect(checkImport({ proposal, resolutions: all, unitEdits: {} })).toEqual({ ok: true });
+    expect(checkImport({ proposal, source, seal, resolutions: all, unitEdits: {} })).toEqual({ ok: true });
+  });
+});
+
+describe('the import proposal seal', () => {
+  // LCG-13 regression. Found by: Phase 3 spec review (the server trusted the proposal sent back by the browser).
+  it('LCG-13: refuses a proposal changed in the browser, such as one with its Blocking issues deleted', async () => {
+    const read = await readOutline({ kind: 'file', name: 'g6-u4.csv', bytes: bytes(sampleOutlineCsv()) });
+    if (!read.ok) throw new Error(read.message);
+    const tampered = { ...read.proposal, issues: read.proposal.issues.filter((i) => i.severity !== 'blocking') };
+    const decisions = { proposal: tampered, source: read.source, seal: read.seal, resolutions: [], unitEdits: {} };
+
+    expect(checkImport(decisions)).toEqual({ ok: false, errors: [expect.stringMatching(/Read the Outline again/)] });
+    const save = vi.fn(async () => 'unit-1');
+    const created = await createUnitFromImport({ ...decisions, guidance: 'g', actorId: 'user-1' }, save);
+    expect(created.ok).toBe(false);
+    expect(save).not.toHaveBeenCalled();
   });
 });
