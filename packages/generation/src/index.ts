@@ -34,3 +34,4 @@ export {
   type GenerationResult,
 } from './generate.js';
 export { placeholderOutput } from './placeholder.js';
+export { aiReviewSchema, reviewLesson, toCheckResults, type AiReview, type ReviewInput, type ReviewResult } from './review.js';

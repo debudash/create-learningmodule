@@ -18,6 +18,8 @@ interface Props {
   colleagues: { id: string; name: string }[];
   /** This Approver edited the Lesson; approving it will be recorded as Self-Approval. */
   selfApproval: boolean;
+  /** Quality Checks failing as last stored; approving anyway is allowed and recorded. */
+  failingChecks: number;
 }
 
 type Dialog = 'request-changes' | 'reopen' | 'regenerate' | undefined;
@@ -26,7 +28,16 @@ const PRIMARY = 'rounded-lg bg-accent px-3 py-1.5 text-sm font-medium text-white
 const SECONDARY = 'rounded-lg border border-line px-3 py-1.5 text-sm font-medium hover:border-accent disabled:opacity-50';
 
 /** The workflow buttons for one Lesson: only what this person may do now. */
-export function WorkflowBar({ lessonId, transitionCount, actions, assignee, userId, colleagues, selfApproval }: Props) {
+export function WorkflowBar({
+  lessonId,
+  transitionCount,
+  actions,
+  assignee,
+  userId,
+  colleagues,
+  selfApproval,
+  failingChecks,
+}: Props) {
   const router = useRouter();
   const [dialog, setDialog] = useState<Dialog>();
   const [text, setText] = useState('');
@@ -110,6 +121,11 @@ export function WorkflowBar({ lessonId, transitionCount, actions, assignee, user
         )}
       </div>
 
+      {can('approve') && failingChecks > 0 && (
+        <p className="text-xs text-danger">
+          {failingChecks} Quality Check{failingChecks === 1 ? ' is' : 's are'} failing. You can still approve; it will be recorded.
+        </p>
+      )}
       {dialog && (
         <div className="w-full max-w-lg rounded-lg border border-line bg-paper-raised p-3 text-sm shadow-sm">
           <label className="block font-medium">

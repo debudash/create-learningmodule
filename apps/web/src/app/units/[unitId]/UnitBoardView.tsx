@@ -17,12 +17,13 @@ interface Props {
   user: { id: string; role: Role };
 }
 
-type Filter = 'all' | 'in-review' | 'changes-requested' | 'mine';
+type Filter = 'all' | 'in-review' | 'changes-requested' | 'failing' | 'mine';
 
 const FILTERS: { id: Filter; label: string; matches: (lesson: BoardLesson, userId: string) => boolean }[] = [
   { id: 'all', label: 'All', matches: () => true },
   { id: 'in-review', label: 'In Review', matches: (l) => l.status === 'in-review' },
   { id: 'changes-requested', label: 'Changes Requested', matches: (l) => l.status === 'changes-requested' },
+  { id: 'failing', label: 'Failing checks', matches: (l) => l.checks.fail > 0 },
   { id: 'mine', label: 'Assigned to me', matches: (l, userId) => l.assigneeId === userId },
 ];
 
@@ -248,6 +249,14 @@ function LessonRow({ lesson, onRetry }: { lesson: BoardLesson; onRetry: () => vo
           {lesson.failureReason && <span className="text-danger"> · {lesson.failureReason}</span>}
         </span>
       </span>
+      {lesson.checks.fail + lesson.checks.warn > 0 && (
+        <span
+          className={`rounded px-1.5 py-0.5 text-xs font-medium ${lesson.checks.fail > 0 ? 'bg-danger-soft text-danger' : 'bg-eld-soft text-eld'}`}
+          title={`Quality Checks: ${lesson.checks.fail} failing, ${lesson.checks.warn} to look at, ${lesson.checks.pass} passing`}
+        >
+          {lesson.checks.fail > 0 ? `${lesson.checks.fail} failing` : `${lesson.checks.warn} to check`}
+        </span>
+      )}
       {lesson.status === 'generation-failed' && (
         <button
           type="button"

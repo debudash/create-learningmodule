@@ -47,13 +47,15 @@ function sanitize(node: unknown): unknown {
   return node;
 }
 
+/** A Zod schema as JSON Schema for structured outputs (constraints the API cannot enforce are removed). */
+export function toOutputJsonSchema(schema: z.ZodTypeAny): Record<string, unknown> {
+  return sanitize(zodToJsonSchema(schema, { $refStrategy: 'none' })) as Record<string, unknown>;
+}
+
 let jsonSchema: Record<string, unknown> | undefined;
 
-/** The generation output as JSON Schema for structured outputs (constraints the API cannot enforce are removed). */
+/** The generation output as JSON Schema for structured outputs. */
 export function generationOutputJsonSchema(): Record<string, unknown> {
-  jsonSchema ??= sanitize(zodToJsonSchema(generationOutputSchema, { $refStrategy: 'none' })) as Record<
-    string,
-    unknown
-  >;
+  jsonSchema ??= toOutputJsonSchema(generationOutputSchema);
   return jsonSchema;
 }

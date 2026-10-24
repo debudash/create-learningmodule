@@ -1,4 +1,4 @@
-import type { GenerationContext } from '@lcg/db';
+import type { GenerationContext, ReviewContext } from '@lcg/db';
 import { readRecording, writeRecording } from '@lcg/fixtures';
 import {
   createFakeClient,
@@ -49,4 +49,33 @@ export async function modelsFromEnv(env = process.env): Promise<(context: Genera
 /** A recording for this key, or for the first attempt when a later attempt was never recorded. */
 function replayLookup(key: string): LlmResult | undefined {
   return (readRecording(key) ?? readRecording(key.replace(/\/attempt-\d+\//, '/attempt-1/'))) as LlmResult | undefined;
+}
+
+/**
+ * Chooses the AI Review's model from the environment: live uses LLM_REVIEW_MODEL
+ * (a cheaper model by default), replay serves recorded reviews, and fake answers
+ * "taught" for every Focus Standard.
+ */
+export async function reviewModelsFromEnv(env = process.env): Promise<(context: ReviewContext) => LlmClient> {
+  const mode = choice('LLM_MODE', env.LLM_MODE, MODES, 'replay');
+  if (mode === 'live') {
+    const live = await createLiveClient({
+      model: env.LLM_REVIEW_MODEL ?? 'claude-haiku-5-5',
+      effort: choice('LLM_EFFORT', env.LLM_EFFORT, EFFORTS, 'medium'),
+      tracing: env.LANGSMITH_TRACING === 'true',
+      ...(env.LLM_RECORD === 'true' ? { onResult: (request, result) => writeRecording(request.key, result) } : {}),
+    });
+    return () => live;
+  }
+  if (mode === 'replay') {
+    const replay = createReplayClient(replayLookup);
+    return () => replay;
+  }
+  return (context) =>
+    createFakeClient(() =>
+      JSON.stringify({
+        standards: context.outline.focusStandards.map((s) => ({ code: s.code, verdict: 'taught', reason: '(fake review)' })),
+        anchorText: { verdict: 'uses', reason: '(fake review)' },
+      }),
+    );
 }

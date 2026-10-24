@@ -4,9 +4,11 @@ import {
   yStateToLesson,
   type Lesson,
 } from '@lcg/lesson-schema';
+import { runRuleChecks } from '@lcg/domain';
 import { eq, sql } from 'drizzle-orm';
 import { notifyLessonChange } from './channels.js';
 import type { Executor } from './client.js';
+import { checkFactsOf, replaceCheckResults } from './checks.js';
 import { recordEditors } from './lessons.js';
 import { lessonDocuments, lessons } from './schema.js';
 
@@ -37,7 +39,8 @@ async function lockedState(tx: Executor, lessonId: string): Promise<Uint8Array |
 }
 
 /**
- * Writes a document with the facts other screens read from it.
+ * Writes a document with the facts other screens read from it: the title and the
+ * Rule-Based Quality Checks, so stored results always describe the stored content.
  *
  * LCG-6: the title lived only inside the Yjs state while the Unit board read the
  * Lesson row, so a renamed Lesson kept its old title outside the editor. The row's
@@ -48,8 +51,13 @@ async function write(tx: Executor, lessonId: string, state: Uint8Array, lesson: 
     .insert(lessonDocuments)
     .values({ lessonId, state })
     .onConflictDoUpdate({ target: lessonDocuments.lessonId, set: { state, updatedAt: sql`now()` } });
-  await tx.update(lessons).set({ title: lesson.title, updatedAt: sql`now()` }).where(eq(lessons.id, lessonId));
+  const [row] = await tx
+    .update(lessons)
+    .set({ title: lesson.title, updatedAt: sql`now()` })
+    .where(eq(lessons.id, lessonId))
+    .returning({ outline: lessons.outline });
   await recordEditors(tx, lessonId, editorIds);
+  if (row) await replaceCheckResults(tx, lessonId, 'rule', runRuleChecks(lesson, checkFactsOf(row.outline)));
 }
 
 export type SaveOutcome = 'stored' | 'invalid';

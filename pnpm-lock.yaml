@@ -215,12 +215,19 @@ importers:
       '@lcg/lesson-schema':
         specifier: workspace:*
         version: link:../lesson-schema
+    devDependencies:
+      '@lcg/fixtures':
+        specifier: workspace:*
+        version: link:../../fixtures
 
   packages/generation:
     dependencies:
       '@anthropic-ai/sdk':
         specifier: 1.3.0
         version: 1.3.0(zod@3.23.8)
+      '@lcg/domain':
+        specifier: workspace:*
+        version: link:../domain
       '@lcg/lesson-schema':
         specifier: workspace:*
         version: link:../lesson-schema

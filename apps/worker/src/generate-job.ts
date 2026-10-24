@@ -19,6 +19,8 @@ export interface GenerateJobDeps {
   clientFor: (context: GenerationContext) => LlmClient;
   /** The rendered example Lesson for a Lesson Type (Units 1-3 only; ADR 0007). */
   exampleFor: (lessonType: LessonType) => string;
+  /** Asks for the AI Review of a freshly generated Lesson. */
+  requestReview?: (lessonId: string) => Promise<void>;
 }
 
 /**
@@ -54,6 +56,7 @@ export async function handleGenerateJob(
         attempt: { ...attemptBase, record: result.record },
         enqueue: deps.enqueue,
       });
+      await deps.requestReview?.(job.lessonId);
       return;
     }
     record = result.record;

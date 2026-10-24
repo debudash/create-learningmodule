@@ -2,6 +2,7 @@ import type { LessonStatus } from '@lcg/domain';
 import type { LessonType } from '@lcg/lesson-schema';
 import type { OutlineLesson } from '@lcg/outline';
 import { and, asc, count, desc, eq, sql, sum } from 'drizzle-orm';
+import { checkCounts } from './checks.js';
 import type { Executor } from './client.js';
 import { arcs, generationAttempts, guidanceVersions, lessons, units, users, workflowEvents } from './schema.js';
 
@@ -57,6 +58,8 @@ export interface BoardLesson {
   waitingForArc: boolean;
   /** Why the latest Generation Attempt failed, when the Lesson is Generation Failed. */
   failureReason: string | null;
+  /** Current Quality Check results, by outcome. */
+  checks: { pass: number; warn: number; fail: number };
 }
 
 export interface UnitBoard {
@@ -101,11 +104,13 @@ export async function unitBoard(db: Executor, unitId: string): Promise<UnitBoard
     .innerJoin(lessons, eq(lessons.id, generationAttempts.lessonId))
     // Only live calls cost money now; a replay records what its original run cost.
     .where(and(eq(lessons.unitId, unitId), eq(generationAttempts.mode, 'live')));
+  const counts = await checkCounts(db, lessonRows.map((l) => l.id));
   return {
     unit,
     arcs: arcRows,
     lessons: lessonRows.map(({ jobEnqueuedAt, failureReason, ...lesson }) => ({
       ...lesson,
+      checks: counts.get(lesson.id) ?? { pass: 0, warn: 0, fail: 0 },
       waitingForArc: lesson.status === 'queued' && lesson.lessonType === 'flex-day' && jobEnqueuedAt === null,
       failureReason: lesson.status === 'generation-failed' ? failureReason : null,
     })),

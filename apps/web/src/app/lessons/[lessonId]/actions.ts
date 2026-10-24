@@ -6,6 +6,7 @@ import { revalidatePath } from 'next/cache';
 import type { ActionResult } from '@/server/action-result';
 import { saveLessonNow } from '@/server/collab';
 import { db } from '@/server/db';
+import { jobQueue } from '@/server/queue';
 import { currentActor } from '@/server/session';
 
 /** Submit, approve, request changes or reopen, as the signed-in person. */
@@ -34,4 +35,12 @@ export async function restoreVersionAction(lessonId: string, versionId: string):
   const result = await restoreVersion(db, { lessonId, versionId, actor: await currentActor() });
   revalidatePath(`/lessons/${lessonId}`);
   return result;
+}
+
+/** Asks for a fresh AI Review of the Lesson; results appear when the worker has run it. */
+export async function requestReviewAction(lessonId: string): Promise<ActionResult> {
+  await currentActor();
+  const queue = await jobQueue();
+  await db.transaction((tx) => queue.enqueue(tx, 'review-lesson', { lessonId }));
+  return { ok: true, message: 'Review requested; reload in a minute to see it.' };
 }

@@ -28,3 +28,12 @@ export {
 } from './generation-policy.js';
 export { publishability, type Publishability } from './release.js';
 export { isSelfApproval, mayAssign, mayPublish, VERSION_REASON_LABELS } from './people.js';
+export {
+  CHECK_LABELS,
+  runRuleChecks,
+  summarizeChecks,
+  type CheckOutcome,
+  type CheckOutlineFacts,
+  type CheckSummary,
+  type QualityCheckResult,
+} from './quality.js';

@@ -1,4 +1,4 @@
-import { lessonHistory, listUsers, workspaceLesson } from '@lcg/db';
+import { lessonChecks, lessonHistory, listUsers, workspaceLesson } from '@lcg/db';
 import { availableActions, isEditable, isSelfApproval } from '@lcg/domain';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -14,6 +14,9 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
   const lesson = await workspaceLesson(db, (await params).lessonId);
   if (!lesson) notFound();
   const history = await lessonHistory(db, lesson.id);
+  const checks = await lessonChecks(db, lesson.id);
+  const aiChecks = checks.filter((c) => c.source === 'ai-review');
+  const failingChecks = checks.filter((c) => c.outcome === 'fail').length;
   const actor = { kind: 'user' as const, id: user.id, role: user.role };
   const colleagues = user.role === 'approver' ? (await listUsers(db)).map(({ id, name }) => ({ id, name })) : [];
 
@@ -41,6 +44,7 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
           userId={user.id}
           colleagues={colleagues}
           selfApproval={isSelfApproval(actor, lesson.editorIds)}
+          failingChecks={failingChecks}
         />
       </div>
       {lesson.changesRequested && (
@@ -58,6 +62,8 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
         token={await collaborationToken()}
         user={{ name: user.name }}
         outline={lesson.outline}
+        aiChecks={aiChecks.map(({ createdAt: _createdAt, ...result }) => result)}
+        {...(aiChecks[0] ? { reviewedAt: aiChecks[0].createdAt } : {})}
         history={<HistoryPanel lessonId={lesson.id} history={history} canRestore={isEditable(lesson.status)} />}
       />
     </div>

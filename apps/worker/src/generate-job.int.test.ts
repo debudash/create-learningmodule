@@ -1,5 +1,6 @@
 import {
   cancelGeneration,
+  lessonChecks,
   failStalledGenerations,
   unitBoard,
   readLessonContent,
@@ -15,6 +16,7 @@ import { createFakeClient, NO_USAGE, placeholderOutput, type LlmRequest } from '
 import { and, asc, eq, inArray } from 'drizzle-orm';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { handleGenerateJob, type GenerateJobDeps } from './generate-job.js';
+import { handleReviewJob } from './review-job.js';
 
 let database: TestDatabase;
 let unitId: string;
@@ -238,5 +240,43 @@ describe('a trial batch', () => {
       .where(and(eq(schema.lessons.unitId, unitId), eq(schema.lessons.status, 'queued')))
       .orderBy(asc(schema.lessons.position));
     expect(queued.map((l) => l.key)).toEqual(['L3', 'L4', 'L8']);
+  });
+});
+
+describe('Quality Checks', () => {
+  it('stores rule results with the generated content, requests a review, and stores its results', async () => {
+    const [l10] = await lessonsByKey(['L10']);
+    jobs.length = 0;
+    await startGeneration(database.db, { unitId, lessonIds: [l10!.id], actor: editor(), enqueue });
+    const reviews: string[] = [];
+    await drain({ ...deps(), requestReview: async (lessonId) => void reviews.push(lessonId) });
+    expect(reviews).toEqual([l10!.id]);
+
+    const rules = (await lessonChecks(database.db, l10!.id)).filter((r) => r.source === 'rule');
+    expect(rules.map((r) => r.checkId)).toContain('focus-standards-taught');
+    expect(rules.find((r) => r.checkId === 'pacing')).toMatchObject({ outcome: 'pass' });
+
+    await handleReviewJob(
+      {
+        db: database.db,
+        clientFor: () =>
+          createFakeClient(() =>
+            JSON.stringify({
+              standards: [{ code: 'RL.6.1', verdict: 'not-taught', reason: 'No Activity cites the text.' }],
+              anchorText: { verdict: 'uses', reason: 'Chapter 4.' },
+            }),
+          ),
+      },
+      { lessonId: l10!.id },
+    );
+    const ai = (await lessonChecks(database.db, l10!.id)).filter((r) => r.source === 'ai-review');
+    expect(ai.find((r) => r.message.startsWith('RL.6.1'))).toMatchObject({ outcome: 'fail' });
+    expect(ai.find((r) => r.checkId === 'ai-anchor-text')).toMatchObject({ outcome: 'pass' });
+  });
+
+  it('skips the review of a Lesson that has no content yet', async () => {
+    const [l11] = await lessonsByKey(['L11']);
+    await handleReviewJob({ db: database.db, clientFor: () => createFakeClient(() => 'unused') }, { lessonId: l11!.id });
+    expect(await lessonChecks(database.db, l11!.id)).toEqual([]);
   });
 });

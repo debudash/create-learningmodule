@@ -2,7 +2,8 @@ import { connect, failStalledGenerations } from '@lcg/db';
 import { exampleMarkdown } from '@lcg/generation';
 import { openJobQueue } from '@lcg/queue';
 import { handleGenerateJob } from './generate-job.js';
-import { modelsFromEnv } from './models.js';
+import { modelsFromEnv, reviewModelsFromEnv } from './models.js';
+import { handleReviewJob } from './review-job.js';
 
 const databaseUrl = process.env.DATABASE_URL;
 if (!databaseUrl) throw new Error('DATABASE_URL is not set');
@@ -10,6 +11,7 @@ if (!databaseUrl) throw new Error('DATABASE_URL is not set');
 const { db } = connect(databaseUrl);
 const queue = await openJobQueue(databaseUrl);
 const clientFor = await modelsFromEnv();
+const reviewClientFor = await reviewModelsFromEnv();
 const concurrency = Number(process.env.GENERATION_CONCURRENCY ?? 5);
 
 await queue.work('generate-lesson', concurrency, (job, context) =>
@@ -19,6 +21,7 @@ await queue.work('generate-lesson', concurrency, (job, context) =>
       enqueue: (tx, next) => queue.enqueue(tx, 'generate-lesson', next),
       clientFor,
       exampleFor: exampleMarkdown,
+      requestReview: (lessonId) => db.transaction((tx) => queue.enqueue(tx, 'review-lesson', { lessonId })),
     },
     job,
     context,
@@ -32,6 +35,8 @@ const sweep = setInterval(() => {
     console.error('[sweep]', error),
   );
 }, 60_000);
+
+await queue.work('review-lesson', concurrency, (job) => handleReviewJob({ db, clientFor: reviewClientFor }, job));
 
 console.log(`worker running: ${concurrency} Lessons at a time, model mode ${process.env.LLM_MODE ?? 'replay'}`);
 

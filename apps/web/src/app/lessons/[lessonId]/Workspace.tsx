@@ -1,10 +1,12 @@
 'use client';
 
 import { LESSON_MINUTES, SECTION_TITLES, lessonMinutes, sectionMinutes, type Lesson } from '@lcg/lesson-schema';
+import type { QualityCheckResult } from '@lcg/domain';
 import type { OutlineLesson } from '@lcg/outline';
-import { useCallback, useState, type ReactNode } from 'react';
+import { useCallback, useMemo, useState, type ReactNode } from 'react';
 import { StudentViewPanel } from '@/components/StudentViewPanel';
 import { LessonEditor, type Presence } from '@/editor/LessonEditor';
+import { ChecksPanel } from './ChecksPanel';
 
 interface Props {
   lessonId: string;
@@ -13,15 +15,22 @@ interface Props {
   outline: OutlineLesson;
   /** The History tab, rendered by the page. */
   history: ReactNode;
+  /** The latest AI Review results. */
+  aiChecks: QualityCheckResult[];
+  reviewedAt?: Date;
 }
 
 type View = 'teacher' | 'student';
 
-export function Workspace({ lessonId, token, user, outline, history }: Props) {
+export function Workspace({ lessonId, token, user, outline, history, aiChecks, reviewedAt }: Props) {
   const [view, setView] = useState<View>('teacher');
   const [lesson, setLesson] = useState<Lesson>();
   const [people, setPeople] = useState<Presence[]>([]);
-  const [tab, setTab] = useState<'outline' | 'history'>('outline');
+  const [tab, setTab] = useState<'outline' | 'checks' | 'history'>('outline');
+  const facts = useMemo(
+    () => ({ focusStandards: outline.focusStandards.map((s) => s.code), vocabulary: outline.vocabulary.map((v) => v.word) }),
+    [outline],
+  );
   const onLessonChange = useCallback((next: Lesson | undefined) => next && setLesson(next), []);
 
   return (
@@ -89,19 +98,27 @@ export function Workspace({ lessonId, token, user, outline, history }: Props) {
 
       <aside className="sticky top-6 max-h-[calc(100vh-3rem)] self-start overflow-y-auto rounded-xl border border-line bg-paper-raised p-4 text-sm">
         <div className="mb-3 flex gap-1 border-b border-line">
-          {(['outline', 'history'] as const).map((t) => (
+          {(['outline', 'checks', 'history'] as const).map((t) => (
             <button
               key={t}
               type="button"
               onClick={() => setTab(t)}
               className={`-mb-px border-b-2 px-2 py-1 font-medium ${tab === t ? 'border-accent text-accent' : 'border-transparent text-ink-soft'}`}
             >
-              {t === 'outline' ? 'Outline row' : 'History'}
+              {t === 'outline' ? 'Outline row' : t === 'checks' ? 'Checks' : 'History'}
             </button>
           ))}
         </div>
         {tab === 'history' ? (
           history
+        ) : tab === 'checks' ? (
+          <ChecksPanel
+            lessonId={lessonId}
+            lesson={lesson}
+            facts={facts}
+            aiResults={aiChecks}
+            {...(reviewedAt ? { reviewedAt } : {})}
+          />
         ) : (
           <>
             <p className="text-ink-soft">What the instructional designer asked for.</p>

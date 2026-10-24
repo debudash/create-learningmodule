@@ -69,3 +69,11 @@ export {
   type ReleaseSummary,
   type RestoreResult,
 } from './review.js';
+export {
+  checkCounts,
+  checkFactsOf,
+  lessonChecks,
+  loadReviewContext,
+  replaceCheckResults,
+  type ReviewContext,
+} from './checks.js';

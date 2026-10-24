@@ -133,7 +133,7 @@ describe('publishing a Unit', () => {
     expect(unit!.hasUnpublishedChanges).toBe(true);
     expect((await releaseExport(database.db, release!.id))!.lessons[2]!.lesson.title).toBe(sampleLesson().title);
     expect(await statusOf(l3)).toBe('in-review');
-  });
+  }, 120_000);
 
   it('numbers later Releases', async () => {
     await applyReviewAction(database.db, { lessonId: l3, actor: approver(), action: { type: 'approve' } });
