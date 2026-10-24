@@ -1,6 +1,7 @@
 'use server';
 
 import {
+  approveLessons,
   cancelGeneration,
   liveGenerationsToday,
   regenerateLesson,
@@ -87,4 +88,16 @@ export async function regenerateLessonAction(
   if (!allowed.ok) return allowed;
   const result = await regenerateLesson(db, { lessonId, actor, instructions, expectedTransitionCount, enqueue });
   return result.ok ? { ok: true, message: 'Regenerating. The Lesson updates when the new draft is ready.' } : result;
+}
+
+/** Approves the selected In Review Lessons (Approvers only; each Lesson succeeds or is refused on its own). */
+export async function approveLessonsAction(unitId: string, lessonIds: string[]): Promise<ActionResult> {
+  const { actor } = await actorAndEnqueue();
+  const result = await approveLessons(db, { lessonIds, actor });
+  revalidatePath(`/units/${unitId}`);
+  if (result.refused.length === 0) return { ok: true, message: `${result.approved.length} Lessons Approved.` };
+  return {
+    ok: result.approved.length > 0,
+    message: `${result.approved.length} Approved; ${result.refused.length} could not be: ${result.refused[0]!.message}`,
+  };
 }

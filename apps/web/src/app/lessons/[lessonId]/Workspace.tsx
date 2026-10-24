@@ -2,7 +2,7 @@
 
 import { LESSON_MINUTES, SECTION_TITLES, lessonMinutes, sectionMinutes, type Lesson } from '@lcg/lesson-schema';
 import type { OutlineLesson } from '@lcg/outline';
-import { useCallback, useState } from 'react';
+import { useCallback, useState, type ReactNode } from 'react';
 import { StudentViewPanel } from '@/components/StudentViewPanel';
 import { LessonEditor, type Presence } from '@/editor/LessonEditor';
 
@@ -11,14 +11,17 @@ interface Props {
   token: string;
   user: { name: string };
   outline: OutlineLesson;
+  /** The History tab, rendered by the page. */
+  history: ReactNode;
 }
 
 type View = 'teacher' | 'student';
 
-export function Workspace({ lessonId, token, user, outline }: Props) {
+export function Workspace({ lessonId, token, user, outline, history }: Props) {
   const [view, setView] = useState<View>('teacher');
   const [lesson, setLesson] = useState<Lesson>();
   const [people, setPeople] = useState<Presence[]>([]);
+  const [tab, setTab] = useState<'outline' | 'history'>('outline');
   const onLessonChange = useCallback((next: Lesson | undefined) => next && setLesson(next), []);
 
   return (
@@ -84,22 +87,39 @@ export function Workspace({ lessonId, token, user, outline }: Props) {
         {view === 'student' && lesson && <StudentViewPanel lesson={lesson} />}
       </div>
 
-      <aside className="sticky top-6 self-start rounded-xl border border-line bg-paper-raised p-4 text-sm">
-        <div className="text-xs font-semibold uppercase tracking-wide text-ink-soft">Outline row</div>
-        <p className="mt-1 text-ink-soft">What the instructional designer asked for.</p>
-        <dl className="mt-3 space-y-3">
-          {outline.textDependentQuestion && <OutlineField label="Question">{outline.textDependentQuestion}</OutlineField>}
-          <OutlineField label="Description">{outline.description}</OutlineField>
-          <OutlineField label="Focus Standards">{outline.focusStandards.map((s) => s.code).join(', ')}</OutlineField>
-          <OutlineField label="ELD Standards">
-            {outline.eldStandards.map((s) => `${s.code} (${s.description})`).join('; ')}
-          </OutlineField>
-          <OutlineField label="Vocabulary">{outline.vocabulary.map((v) => v.word).join(', ')}</OutlineField>
-          {outline.homework && <OutlineField label="Homework">{outline.homework}</OutlineField>}
-          {outline.designerNotes.length > 0 && (
-            <OutlineField label="Designer Notes">{outline.designerNotes.join(' ')}</OutlineField>
-          )}
-        </dl>
+      <aside className="sticky top-6 max-h-[calc(100vh-3rem)] self-start overflow-y-auto rounded-xl border border-line bg-paper-raised p-4 text-sm">
+        <div className="mb-3 flex gap-1 border-b border-line">
+          {(['outline', 'history'] as const).map((t) => (
+            <button
+              key={t}
+              type="button"
+              onClick={() => setTab(t)}
+              className={`-mb-px border-b-2 px-2 py-1 font-medium ${tab === t ? 'border-accent text-accent' : 'border-transparent text-ink-soft'}`}
+            >
+              {t === 'outline' ? 'Outline row' : 'History'}
+            </button>
+          ))}
+        </div>
+        {tab === 'history' ? (
+          history
+        ) : (
+          <>
+            <p className="text-ink-soft">What the instructional designer asked for.</p>
+            <dl className="mt-3 space-y-3">
+              {outline.textDependentQuestion && <OutlineField label="Question">{outline.textDependentQuestion}</OutlineField>}
+              <OutlineField label="Description">{outline.description}</OutlineField>
+              <OutlineField label="Focus Standards">{outline.focusStandards.map((s) => s.code).join(', ')}</OutlineField>
+              <OutlineField label="ELD Standards">
+                {outline.eldStandards.map((s) => `${s.code} (${s.description})`).join('; ')}
+              </OutlineField>
+              <OutlineField label="Vocabulary">{outline.vocabulary.map((v) => v.word).join(', ')}</OutlineField>
+              {outline.homework && <OutlineField label="Homework">{outline.homework}</OutlineField>}
+              {outline.designerNotes.length > 0 && (
+                <OutlineField label="Designer Notes">{outline.designerNotes.join(' ')}</OutlineField>
+              )}
+            </dl>
+          </>
+        )}
       </aside>
     </div>
   );

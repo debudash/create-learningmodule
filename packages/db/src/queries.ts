@@ -50,6 +50,7 @@ export interface BoardLesson {
   lessonType: LessonType;
   status: LessonStatus;
   arcId: string;
+  assigneeId: string | null;
   assigneeName: string | null;
   /** A Queued Flex Day without a job is waiting for the rest of its Arc. */
   waitingForArc: boolean;
@@ -80,6 +81,7 @@ export async function unitBoard(db: Executor, unitId: string): Promise<UnitBoard
       lessonType: lessons.lessonType,
       status: lessons.status,
       arcId: lessons.arcId,
+      assigneeId: lessons.assigneeId,
       assigneeName: users.name,
       jobEnqueuedAt: lessons.jobEnqueuedAt,
       failureReason: sql<string | null>`(
@@ -117,6 +119,9 @@ export interface WorkspaceLesson {
   transitionCount: number;
   lessonType: LessonType;
   outline: OutlineLesson;
+  assignee: { id: string; name: string } | null;
+  /** People who edited the Lesson since it was last generated. */
+  editorIds: string[];
   unit: { id: string; title: string; grade: number; unitNumber: number };
   arc: { name: string };
 }
@@ -128,10 +133,12 @@ export async function workspaceLesson(db: Executor, lessonId: string): Promise<W
       lesson: lessons,
       unit: { id: units.id, title: units.title, grade: units.grade, unitNumber: units.unitNumber },
       arc: { name: arcs.name },
+      assigneeName: users.name,
     })
     .from(lessons)
     .innerJoin(units, eq(units.id, lessons.unitId))
     .innerJoin(arcs, eq(arcs.id, lessons.arcId))
+    .leftJoin(users, eq(users.id, lessons.assigneeId))
     .where(eq(lessons.id, lessonId));
   if (!row) return undefined;
   const { lesson } = row;
@@ -143,6 +150,8 @@ export async function workspaceLesson(db: Executor, lessonId: string): Promise<W
     transitionCount: lesson.transitionCount,
     lessonType: lesson.lessonType,
     outline: lesson.outline,
+    assignee: lesson.assigneeId && row.assigneeName ? { id: lesson.assigneeId, name: row.assigneeName } : null,
+    editorIds: lesson.editorIds,
     unit: row.unit,
     arc: row.arc,
   };

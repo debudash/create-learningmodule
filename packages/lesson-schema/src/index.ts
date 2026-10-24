@@ -38,3 +38,4 @@ export {
   yStateToLesson,
 } from './ydoc.js';
 export { LessonStructureGuard, STRUCTURE_CHANGE_META, structureSignature } from './structure-guard.js';
+export { lessonToLines } from './lesson-text.js';

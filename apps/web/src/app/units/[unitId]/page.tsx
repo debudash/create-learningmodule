@@ -6,7 +6,7 @@ import { requireUser } from '@/server/session';
 import { UnitBoardView } from './UnitBoardView';
 
 export default async function UnitBoardPage({ params }: { params: Promise<{ unitId: string }> }) {
-  await requireUser();
+  const user = await requireUser();
   const board = await unitBoard(db, (await params).unitId);
   if (!board) notFound();
 
@@ -18,7 +18,18 @@ export default async function UnitBoardPage({ params }: { params: Promise<{ unit
         </Link>{' '}
         / Grade {board.unit.grade} · Unit {board.unit.unitNumber}
       </div>
-      <h1 className="mt-1 font-serif text-3xl font-semibold">{board.unit.title}</h1>
+      <div className="mt-1 flex flex-wrap items-center justify-between gap-3">
+        <h1 className="font-serif text-3xl font-semibold">{board.unit.title}</h1>
+        <Link
+          href={`/units/${board.unit.id}/publish`}
+          className="rounded-lg border border-line px-3 py-1.5 text-sm font-medium hover:border-accent"
+        >
+          {board.unit.latestReleaseId ? (board.unit.hasUnpublishedChanges ? 'Publish changes' : 'Published') : 'Publish'}
+        </Link>
+      </div>
+      {board.unit.hasUnpublishedChanges && (
+        <p className="mt-2 text-sm text-eld">This Unit has Unpublished Changes since its last Release.</p>
+      )}
       {board.unit.performanceTask && (
         <p className="mt-1 text-ink-soft">Performance Task: {board.unit.performanceTask}</p>
       )}
@@ -27,6 +38,7 @@ export default async function UnitBoardPage({ params }: { params: Promise<{ unit
         arcs={board.arcs.map(({ id, name, description }) => ({ id, name, description }))}
         initialLessons={board.lessons}
         initialCost={board.generationCostUsd}
+        user={{ id: user.id, role: user.role }}
       />
     </div>
   );

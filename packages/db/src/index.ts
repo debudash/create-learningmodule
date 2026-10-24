@@ -50,3 +50,23 @@ export {
   type GenerationContext,
   type StartGenerationResult,
 } from './generation.js';
+export {
+  applyReviewAction,
+  approveLessons,
+  assignLesson,
+  lessonHistory,
+  listReleases,
+  publishSummary,
+  publishUnit,
+  readVersion,
+  releaseExport,
+  restoreVersion,
+  type BulkResult,
+  type LessonHistory,
+  type PublishResult,
+  type PublishSummary,
+  type ReleaseExport,
+  type ReleaseSummary,
+  type RestoreResult,
+  type ReviewAction,
+} from './review.js';

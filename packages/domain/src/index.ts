@@ -24,3 +24,4 @@ export {
   type Allowance,
   type LiveGenerationLimits,
 } from './generation-policy.js';
+export { publishability, type Publishability } from './release.js';

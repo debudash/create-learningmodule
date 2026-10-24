@@ -13,6 +13,7 @@ const nextConfig = {
     '@lcg/domain',
     '@lcg/generation',
     '@lcg/lesson-schema',
+    '@lcg/newsela-format',
     '@lcg/outline',
     '@lcg/queue',
     '@lcg/session',

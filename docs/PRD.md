@@ -153,7 +153,7 @@ The tool ships with a pre-generated sample Unit (Grade 6, Unit 4, *The Lightning
 
 ### Versions and history
 
-99. As a content staff member, I want a Lesson Version captured automatically at generation, Regenerate, Submit, Approval and Publish, so that every meaningful state of the Lesson is preserved.
+99. As a content staff member, I want a Lesson Version captured automatically at generation, before and after Regenerate, at Submit, at Approval and at Restore (a Release points at the Approved Versions), so that every meaningful state of the Lesson is preserved.
 100. As a content staff member, I want a History tab listing versions, Generation Attempts, status changes and accepted AI Suggestions, so that I can see the Lesson's whole story.
 101. As a content staff member, I want to compare any two Lesson Versions side by side with changes highlighted, so that I can see exactly what was changed.
 102. As a content lead, I want to compare the AI's original against the Approved version, so that I can judge how much human effort the AI saved.
