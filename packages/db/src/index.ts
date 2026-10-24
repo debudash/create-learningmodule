@@ -76,5 +76,6 @@ export {
   lessonChecks,
   loadReviewContext,
   replaceCheckResults,
+  saveAiReview,
   type ReviewContext,
 } from './checks.js';

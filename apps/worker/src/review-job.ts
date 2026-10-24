@@ -1,4 +1,4 @@
-import { loadReviewContext, replaceCheckResults, type Database, type ReviewContext } from '@lcg/db';
+import { loadReviewContext, saveAiReview, type Database, type ReviewContext } from '@lcg/db';
 import { reviewLesson, type LlmClient } from '@lcg/generation';
 
 export interface ReviewJobDeps {
@@ -18,5 +18,5 @@ export async function handleReviewJob(deps: ReviewJobDeps, job: { lessonId: stri
   const key = `g${context.unit.grade}-u${context.unit.unitNumber}/${context.outline.key}/review`;
   const result = await reviewLesson(deps.clientFor(context), context, key);
   if (!result.ok) throw new Error(result.reason);
-  await replaceCheckResults(deps.db, job.lessonId, 'ai-review', result.results, context.contentDigest);
+  await saveAiReview(deps.db, { lessonId: job.lessonId, contentDigest: context.contentDigest, results: result.results });
 }

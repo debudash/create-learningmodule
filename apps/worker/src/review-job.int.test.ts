@@ -45,4 +45,15 @@ describe('the AI Review job', () => {
     expect(ai.length).toBeGreaterThan(0);
     expect(ai.every((r) => !r.current)).toBe(true);
   });
+
+  // LCG-21, found by the Phase 5 spec review: two reviews at once both deleted, then both inserted.
+  it('LCG-21: keeps one set of results when two reviews of a Lesson finish together', async () => {
+    const lessonId = await lessonWithContent('L4');
+    const review = () => handleReviewJob({ db: database.db, clientFor: () => createFakeClient(() => failingVerdict) }, { lessonId });
+    await Promise.all([review(), review(), review()]);
+
+    const ai = (await lessonChecks(database.db, lessonId)).filter((r) => r.source === 'ai-review');
+    const once = new Set(ai.map((r) => `${r.checkId}:${r.message}`)).size;
+    expect(ai).toHaveLength(once);
+  });
 });

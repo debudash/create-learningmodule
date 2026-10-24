@@ -46,6 +46,24 @@ export async function replaceCheckResults(
   );
 }
 
+/**
+ * Saves an AI Review's results for the content it judged.
+ *
+ * LCG-21: two review jobs for one Lesson each deleted the old results and then
+ * inserted their own, outside a transaction, so their statements interleaved and
+ * both sets were kept. The replacement now runs in one transaction holding the
+ * Lesson row's lock, so reviews that finish together replace one another in turn.
+ */
+export async function saveAiReview(
+  db: Executor,
+  review: { lessonId: string; contentDigest: string; results: QualityCheckResult[] },
+): Promise<void> {
+  await db.transaction(async (tx) => {
+    await tx.select({ id: lessons.id }).from(lessons).where(eq(lessons.id, review.lessonId)).for('update');
+    await replaceCheckResults(tx, review.lessonId, 'ai-review', review.results, review.contentDigest);
+  });
+}
+
 async function storedDigest(db: Executor, lessonId: string): Promise<string> {
   const [row] = await db.select({ digest: lessons.contentDigest }).from(lessons).where(eq(lessons.id, lessonId));
   return row?.digest ?? '';
