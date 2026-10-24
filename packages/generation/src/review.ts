@@ -3,8 +3,8 @@ import { lessonToLines, type Lesson } from '@lcg/lesson-schema';
 import type { OutlineLesson } from '@lcg/outline';
 import { getStandard } from '@lcg/standards';
 import { z } from 'zod';
-import { costOf, type TokenUsage } from './cost.js';
-import type { LlmClient } from './llm.js';
+import { costOf, NO_USAGE, type TokenUsage } from './cost.js';
+import { NoRecordingError, type LlmClient, type LlmResult } from './llm.js';
 import { toOutputJsonSchema } from './output.js';
 
 /** What the AI Review returns (GLOSSARY: Quality Check, AI Review). */
@@ -46,11 +46,36 @@ export interface ReviewCall {
   durationMs: number;
 }
 
+/**
+ * Why a review produced no results: the reply could not be read (worth retrying),
+ * or replay mode has no recording of a review of this content (not worth retrying).
+ */
+export type ReviewFailure = 'unreadable' | 'unavailable';
+
 export type ReviewResult =
   | { ok: true; results: QualityCheckResult[]; call: ReviewCall }
-  | { ok: false; reason: string; call: ReviewCall };
+  | { ok: false; failure: ReviewFailure; reason: string; call: ReviewCall };
 
-/** Runs the AI Review of one Lesson: one structured call, turned into Quality Check results. */
+/**
+ * The recording key of a review: one per Lesson content, so a replayed verdict
+ * always judged the content it is shown with.
+ */
+export function reviewKey(review: {
+  unit: { grade: number; unitNumber: number };
+  outline: OutlineLesson;
+  contentDigest: string;
+}): string {
+  return `g${review.unit.grade}-u${review.unit.unitNumber}/${review.outline.key}/review-${review.contentDigest.slice(0, 12)}`;
+}
+
+/**
+ * Runs the AI Review of one Lesson: one structured call, turned into Quality Check results.
+ *
+ * LCG-23: in replay mode, where there was no recording, every review threw, the
+ * queue retried it, and its replay key ignored the content. A missing recording
+ * is now an "unavailable" review, which the job records without retrying, and the
+ * key names the content (reviewKey).
+ */
 export async function reviewLesson(client: LlmClient, input: ReviewInput, key: string): Promise<ReviewResult> {
   const focus = input.outline.focusStandards.map((s) => s.code);
   const request = [
@@ -68,13 +93,24 @@ export async function reviewLesson(client: LlmClient, input: ReviewInput, key: s
     `</lesson>`,
   ].join('\n');
 
-  const result = await client.complete({
-    key,
-    system: [{ type: 'text', text: REVIEW_INSTRUCTIONS }],
-    messages: [{ role: 'user', content: request }],
-    schema: toOutputJsonSchema(aiReviewSchema),
-    maxTokens: 8000,
-  });
+  let result: LlmResult;
+  try {
+    result = await client.complete({
+      key,
+      system: [{ type: 'text', text: REVIEW_INSTRUCTIONS }],
+      messages: [{ role: 'user', content: request }],
+      schema: toOutputJsonSchema(aiReviewSchema),
+      maxTokens: 8000,
+    });
+  } catch (error) {
+    if (!(error instanceof NoRecordingError)) throw error;
+    return {
+      ok: false,
+      failure: 'unavailable',
+      reason: 'Replay mode has no recorded AI Review of this content.',
+      call: { model: client.model, mode: client.mode, usage: NO_USAGE, costUsd: 0, durationMs: 0 },
+    };
+  }
   const call: ReviewCall = {
     model: result.model,
     mode: client.mode,
@@ -86,7 +122,7 @@ export async function reviewLesson(client: LlmClient, input: ReviewInput, key: s
   try {
     parsed = aiReviewSchema.parse(JSON.parse(result.text));
   } catch {
-    return { ok: false, reason: 'The AI Review did not return a readable verdict.', call };
+    return { ok: false, failure: 'unreadable', reason: 'The AI Review did not return a readable verdict.', call };
   }
   return { ok: true, results: toCheckResults(parsed, focus), call };
 }

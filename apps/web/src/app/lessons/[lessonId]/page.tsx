@@ -1,4 +1,4 @@
-import { currentFailingChecks, lessonChecks, lessonHistory, listUsers, workspaceLesson } from '@lcg/db';
+import { currentFailingChecks, latestAiReview, lessonChecks, lessonHistory, listUsers, workspaceLesson } from '@lcg/db';
 import { availableActions, isEditable, isSelfApproval } from '@lcg/domain';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -16,7 +16,7 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
   const history = await lessonHistory(db, lesson.id);
   const checks = await lessonChecks(db, lesson.id);
   const aiChecks = checks.filter((c) => c.source === 'ai-review' && c.current);
-  const reviewedEarlierDraft = aiChecks.length === 0 && checks.some((c) => c.source === 'ai-review');
+  const lastReview = await latestAiReview(db, lesson.id);
   const failingChecks = await currentFailingChecks(db, lesson.id);
   const actor = { kind: 'user' as const, id: user.id, role: user.role };
   const colleagues = user.role === 'approver' ? (await listUsers(db)).map(({ id, name }) => ({ id, name })) : [];
@@ -64,8 +64,7 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
         user={{ name: user.name }}
         outline={lesson.outline}
         aiChecks={aiChecks.map(({ createdAt: _createdAt, current: _current, ...result }) => result)}
-        reviewedEarlierDraft={reviewedEarlierDraft}
-        {...(aiChecks[0] ? { reviewedAt: aiChecks[0].createdAt } : {})}
+        {...(lastReview ? { lastReview } : {})}
         history={<HistoryPanel lessonId={lesson.id} history={history} canRestore={isEditable(lesson.status)} />}
       />
     </div>

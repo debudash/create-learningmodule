@@ -1,6 +1,6 @@
 import { currentFailingChecks, lessonChecks, replaceLessonContent, schema, unitBoard } from '@lcg/db';
 import { freshDatabase, importSampleUnit, setLessonStatus, type TestDatabase } from '@lcg/db/testing';
-import { createFakeClient, NO_USAGE, type LlmClient } from '@lcg/generation';
+import { createFakeClient, createReplayClient, NO_USAGE, type LlmClient } from '@lcg/generation';
 import { sampleLesson } from '@lcg/lesson-schema/testing';
 import { eq } from 'drizzle-orm';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
@@ -81,5 +81,19 @@ describe('the AI Review job', () => {
     expect((await unitBoard(database.db, unitId))!.aiCostUsd).toBeCloseTo(before + 0.1, 4);
     const [review] = await database.db.select().from(schema.aiReviews).where(eq(schema.aiReviews.lessonId, lessonId));
     expect(review).toMatchObject({ model: 'claude-haiku-5-5', mode: 'live', inputTokens: 1_000_000, outcome: 'reviewed' });
+  });
+
+  // LCG-23, found by the Phase 5 spec review: in replay mode every review threw and was retried.
+  it('LCG-23: records a review with no recording as unavailable, without retrying, keyed by content', async () => {
+    const lessonId = await lessonWithContent('L9');
+    const asked: string[] = [];
+    const replay = createReplayClient((key) => void asked.push(key));
+
+    await expect(handleReviewJob({ db: database.db, clientFor: () => replay }, { lessonId })).resolves.toBeUndefined();
+
+    const [lesson] = await database.db.select().from(schema.lessons).where(eq(schema.lessons.id, lessonId));
+    expect(asked).toEqual([`g6-u4/L9/review-${lesson!.contentDigest!.slice(0, 12)}`]);
+    const [review] = await database.db.select().from(schema.aiReviews).where(eq(schema.aiReviews.lessonId, lessonId));
+    expect(review).toMatchObject({ mode: 'replay', outcome: 'unavailable' });
   });
 });

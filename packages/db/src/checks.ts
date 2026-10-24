@@ -1,8 +1,8 @@
 import type { CheckOutlineFacts, QualityCheckResult } from '@lcg/domain';
 import type { Lesson } from '@lcg/lesson-schema';
-import type { ReviewCall } from '@lcg/generation';
+import type { ReviewCall, ReviewFailure } from '@lcg/generation';
 import type { OutlineLesson } from '@lcg/outline';
-import { and, asc, eq, inArray, sql } from 'drizzle-orm';
+import { and, asc, desc, eq, inArray, sql } from 'drizzle-orm';
 import type { Executor } from './client.js';
 import { parseStoredContent } from './documents.js';
 import { aiReviews, lessonDocuments, lessons, qualityCheckResults, units } from './schema.js';
@@ -67,7 +67,7 @@ export async function saveAiReview(db: Executor, review: AiReviewRecord): Promis
       contentDigest: review.contentDigest,
       model: review.call.model,
       mode: review.call.mode,
-      outcome: review.results ? 'reviewed' : 'unreadable',
+      outcome: review.results ? 'reviewed' : review.failure,
       inputTokens: review.call.usage.inputTokens,
       outputTokens: review.call.usage.outputTokens,
       cacheReadTokens: review.call.usage.cacheReadTokens,
@@ -81,12 +81,32 @@ export async function saveAiReview(db: Executor, review: AiReviewRecord): Promis
   });
 }
 
-/** One AI Review call; results are absent when the reply could not be read. */
-export interface AiReviewRecord {
-  lessonId: string;
-  contentDigest: string;
-  call: ReviewCall;
-  results?: QualityCheckResult[];
+/** One AI Review call, with its results or why it has none. */
+export type AiReviewRecord = { lessonId: string; contentDigest: string; call: ReviewCall } & (
+  | { results: QualityCheckResult[]; failure?: never }
+  | { results?: never; failure: ReviewFailure }
+);
+
+/** The Lesson's most recent AI Review call, and whether it judged the stored content. */
+export async function latestAiReview(db: Executor, lessonId: string): Promise<LastAiReview | undefined> {
+  const [row] = await db
+    .select({
+      outcome: aiReviews.outcome,
+      at: aiReviews.createdAt,
+      current: sql<boolean>`${aiReviews.contentDigest} = ${lessons.contentDigest}`,
+    })
+    .from(aiReviews)
+    .innerJoin(lessons, eq(lessons.id, aiReviews.lessonId))
+    .where(eq(aiReviews.lessonId, lessonId))
+    .orderBy(desc(aiReviews.createdAt))
+    .limit(1);
+  return row;
+}
+
+export interface LastAiReview {
+  outcome: 'reviewed' | ReviewFailure;
+  at: Date;
+  current: boolean;
 }
 
 async function storedDigest(db: Executor, lessonId: string): Promise<string> {

@@ -5,6 +5,7 @@ export {
   createFakeClient,
   createLiveClient,
   createReplayClient,
+  NoRecordingError,
   type Effort,
   type LiveClientOptions,
   type LlmClient,
@@ -34,4 +35,9 @@ export {
   type GenerationResult,
 } from './generate.js';
 export { placeholderOutput } from './placeholder.js';
-export { aiReviewSchema, reviewLesson, toCheckResults, type AiReview, type ReviewCall, type ReviewInput, type ReviewResult } from './review.js';
+export {
+  aiReviewSchema,
+  reviewKey,
+  reviewLesson,
+  toCheckResults,
+  type ReviewFailure, type AiReview, type ReviewCall, type ReviewInput, type ReviewResult } from './review.js';

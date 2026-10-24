@@ -72,6 +72,8 @@ export {
 export {
   checkCounts,
   currentFailingChecks,
+  latestAiReview,
+  type LastAiReview,
   checkFactsOf,
   lessonChecks,
   loadReviewContext,

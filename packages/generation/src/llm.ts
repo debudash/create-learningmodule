@@ -88,6 +88,13 @@ export async function createLiveClient(options: LiveClientOptions): Promise<LlmC
   };
 }
 
+/** Replay mode was asked for a call nobody recorded. */
+export class NoRecordingError extends Error {
+  constructor(readonly key: string) {
+    super(`No recording for ${key}`);
+  }
+}
+
 /**
  * Serves recorded results by request key, at a realistic pace, so the whole flow
  * can be demonstrated without an API key or cost. Recorded usage is kept for
@@ -102,7 +109,7 @@ export function createReplayClient(
     model: 'replay',
     async complete(request) {
       const recorded = lookup(request.key);
-      if (!recorded) throw new Error(`No recording for ${request.key}`);
+      if (!recorded) throw new NoRecordingError(request.key);
       await new Promise((resolve) => setTimeout(resolve, Math.min(recorded.durationMs / 10, maxDelayMs)));
       return recorded;
     },

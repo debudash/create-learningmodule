@@ -247,7 +247,7 @@ export const aiReviews = pgTable(
     contentDigest: text('content_digest').notNull(),
     model: text('model').notNull(),
     mode: text('mode', { enum: ['live', 'replay', 'fake'] }).notNull(),
-    outcome: text('outcome', { enum: ['reviewed', 'unreadable'] }).notNull(),
+    outcome: text('outcome', { enum: ['reviewed', 'unreadable', 'unavailable'] }).notNull(),
     inputTokens: integer('input_tokens').notNull().default(0),
     outputTokens: integer('output_tokens').notNull().default(0),
     cacheReadTokens: integer('cache_read_tokens').notNull().default(0),

@@ -1,6 +1,7 @@
 'use client';
 
 import { CHECK_LABELS, runRuleChecks, summarizeChecks, type CheckOutlineFacts, type QualityCheckResult } from '@lcg/domain';
+import type { LastAiReview } from '@lcg/db';
 import type { Lesson } from '@lcg/lesson-schema';
 import { useMemo, useState, useTransition } from 'react';
 import { requestReviewAction } from './actions';
@@ -25,15 +26,13 @@ export function ChecksPanel({
   lesson,
   facts,
   aiResults,
-  reviewedAt,
-  reviewedEarlierDraft,
+  lastReview,
 }: {
   lessonId: string;
   lesson: Lesson | undefined;
   facts: CheckOutlineFacts;
   aiResults: QualityCheckResult[];
-  reviewedAt?: Date;
-  reviewedEarlierDraft: boolean;
+  lastReview?: LastAiReview;
 }) {
   const ruleResults = useMemo(() => (lesson ? runRuleChecks(lesson, facts) : []), [lesson, facts]);
   const [message, setMessage] = useState<string>();
@@ -67,11 +66,7 @@ export function ChecksPanel({
           </button>
         </div>
         <p className="text-xs text-ink-faint">
-          {reviewedAt
-            ? `Last reviewed ${new Date(reviewedAt).toLocaleString('en-US')}.`
-            : reviewedEarlierDraft
-              ? 'The last AI Review judged an earlier draft; re-check to review this one.'
-              : 'Not reviewed yet.'}
+          {reviewStatus(lastReview)}
           {message && ` ${message}`}
         </p>
         <ResultList results={aiResults} empty="No AI Review results yet." />
@@ -83,6 +78,14 @@ export function ChecksPanel({
       </details>
     </div>
   );
+}
+
+function reviewStatus(review: LastAiReview | undefined): string {
+  if (!review) return 'Not reviewed yet.';
+  if (!review.current) return 'The last AI Review judged an earlier draft; re-check to review this one.';
+  if (review.outcome === 'unavailable') return 'Replay mode has no recorded AI Review of this content.';
+  if (review.outcome === 'unreadable') return 'The last AI Review could not be read; it is being retried.';
+  return `Last reviewed ${new Date(review.at).toLocaleString('en-US')}.`;
 }
 
 function ResultList({ results, empty }: { results: QualityCheckResult[]; empty: string }) {
