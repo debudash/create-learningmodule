@@ -89,13 +89,10 @@ export interface OutlineArc {
   flexDescription?: string;
 }
 
-export type OutlineLessonKind = 'lesson' | 'flex-day';
-
 /** One Outline row that becomes a Lesson. */
 export interface OutlineLesson {
   /** "L1".."L41" for Lessons, "F1".."F6" for Flex Days, in Outline order. */
   key: string;
-  kind: OutlineLessonKind;
   /** 1-based day of instruction within the Unit (Lessons and Flex Days together). */
   position: number;
   /** The Outline's lesson number; Flex Days have none. */
@@ -108,6 +105,8 @@ export interface OutlineLesson {
   filename?: string;
   /** First line of the description when it reads as a heading (e.g. "Rick Riordan as a Myth Adapter"). */
   heading?: string;
+  /** Working title: the heading, else "Lesson 4" or "Flex Day 2". */
+  title: string;
   textDependentQuestion?: string;
   learningGoals: string[];
   description: string;
@@ -161,6 +160,15 @@ export interface ConfirmedImport {
   lessons: OutlineLesson[];
   /** Every issue found and how it was resolved, kept for the audit trail. */
   issues: ResolvedIssue[];
+}
+
+/** Corrections an Editor makes to the Unit's metadata in the import preview. */
+export interface UnitEdits {
+  title?: string;
+  grade?: number;
+  unitNumber?: number;
+  anchorText?: Partial<AnchorText>;
+  performanceTask?: string;
 }
 
 export type ConfirmResult =

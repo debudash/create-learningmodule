@@ -35,3 +35,5 @@ Every design decision made while scoping this project (design interview, 2026-10
 | 29 | Build order | Foundation → editor → generation → workflow → quality → AI editing → docs; cut list defined | Prove the riskiest piece (editor + Yjs) before spending on generation | |
 | 30 | Layout | Folder layout in [architecture.md](architecture.md); pure `domain` and `lesson-schema` | Rules testable without I/O | [0002](adr/0002-typescript-pnpm-monorepo.md) |
 | 31 | Anchored comments | Not built; lesson-level reason only; first addition if time allows | Budget | |
+| 32 | ELD description check | Deterministic word matching against the official item text instead of an AI call at import | Free, instant, testable, works without an API key; calibrated on the sample's 117 ELD entries and pinned by a test | |
+| 33 | Outlined state | Imported Lessons start Outlined; starting generation queues them; cancelling returns them to Outlined | Trial batches leave the rest ungenerated (gap found while building) | |

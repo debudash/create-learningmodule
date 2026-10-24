@@ -1,16 +1,12 @@
-import { readFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
 import { confirmImport, parseOutlineCsv, type Resolution } from '@lcg/outline';
+import { sampleOutlineCsv } from '@lcg/outline/testing';
 import { asc, eq } from 'drizzle-orm';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { arcs, guidanceVersions, lessons, units } from './schema.js';
 import { freshDatabase } from './testing.js';
 import { importUnit } from './units.js';
 
-const SAMPLE = readFileSync(
-  fileURLToPath(new URL('../../../fixtures/outlines/g6-u4-lightning-thief.csv', import.meta.url)),
-  'utf8',
-);
+const SAMPLE = sampleOutlineCsv();
 
 let database: Awaited<ReturnType<typeof freshDatabase>>;
 beforeAll(async () => {

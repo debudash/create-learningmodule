@@ -3,6 +3,7 @@ import { LESSON_TYPES } from '@lcg/lesson-schema';
 import type { AnchorText, OutlineLesson, ResolvedIssue } from '@lcg/outline';
 import { sql } from 'drizzle-orm';
 import {
+  type AnyPgColumn,
   boolean,
   customType,
   index,
@@ -49,7 +50,9 @@ export const units = pgTable('units', {
   outlineSource: jsonb('outline_source').$type<OutlineSource>().notNull(),
   /** Every Outline Issue found at import and how it was resolved. */
   importIssues: jsonb('import_issues').$type<ResolvedIssue[]>().notNull(),
-  latestReleaseId: uuid('latest_release_id'),
+  latestReleaseId: uuid('latest_release_id').references((): AnyPgColumn => unitReleases.id, {
+    onDelete: 'set null',
+  }),
   hasUnpublishedChanges: boolean('has_unpublished_changes').notNull().default(false),
   createdBy: uuid('created_by')
     .notNull()
@@ -188,8 +191,10 @@ export const generationAttempts = pgTable(
     model: text('model').notNull(),
     mode: text('mode', { enum: ['live', 'replay', 'fake'] }).notNull(),
     outcome: text('outcome', { enum: ['succeeded', 'repaired', 'failed'] }).notNull(),
-    error: text('error'),
-    validationErrors: jsonb('validation_errors').$type<string[]>(),
+    /** Why the attempt failed, in words a person can act on. */
+    failureReason: text('failure_reason'),
+    /** Where the model's output broke the Lesson JSON schema, if it did. */
+    schemaViolations: jsonb('schema_violations').$type<string[]>(),
     inputTokens: integer('input_tokens').notNull().default(0),
     outputTokens: integer('output_tokens').notNull().default(0),
     cacheReadTokens: integer('cache_read_tokens').notNull().default(0),

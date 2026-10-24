@@ -58,7 +58,7 @@ The tool ships with a pre-generated sample Unit (Grade 6, Unit 4, *The Lightning
 22. As an Editor, I want a standard code that does not exist (such as "RL.6.9.a") flagged as a Blocking Outline Issue, so that no Lesson is generated against a meaningless standard.
 23. As an Editor, I want a malformed entry (such as a stray "6.2") flagged as a Blocking Outline Issue with a suggested correction, so that I can fix typos in a click.
 24. As an Editor, I want a warning when an ELD code's written description does not match its official meaning, showing both side by side with a suggested code, so that I can decide which the designer intended.
-25. As an Editor, I want to resolve each Outline Issue inline by accepting a suggestion, editing the value, or accepting the code as written, so that I do not have to edit the spreadsheet and re-import.
+25. As an Editor, I want to resolve each Outline Issue inline by accepting a suggestion, editing the value, removing the entry, or accepting the code as written, so that I do not have to edit the spreadsheet and re-import.
 26. As an Editor, I want import to be impossible while Blocking Outline Issues remain, so that errors are fixed at the cheapest point.
 27. As an Editor, I want Designer Notes in Outline cells preserved and passed to generation as guidance, so that the designer's intent (such as "too many vocabulary words") is honoured.
 28. As an Editor, I want the Unit and its Lessons created only when I confirm the preview, so that abandoned imports leave nothing behind.
@@ -233,7 +233,7 @@ The tool ships with a pre-generated sample Unit (Grade 6, Unit 4, *The Lightning
 ### Data model (conceptual)
 
 - **User**: name, role (Editor or Approver). Seeded; sign-in selects one.
-- **Unit**: title, grade, unit number, anchor text (title, author, ISBN), Performance Task, source Outline reference, current Generation Guidance version, publication status, latest Unit Release.
+- **Unit**: title, grade, unit number, anchor text (title, author, ISBN), Performance Task, source Outline reference, Outline Issues and their resolutions, publication status (latest Unit Release, Unpublished Changes). The current Generation Guidance is its latest version.
 - **Arc**: belongs to a Unit; name, order, description, Performance Task skills.
 - **Lesson**: belongs to a Unit and an Arc; position, number, title, Lesson Type, the confirmed Outline row (stored as structured data plus the raw cells), status, Assignee, latest Quality Check results, Lesson Digest.
 - **Lesson document**: the live Yjs state of a Lesson, one per Lesson, written by the collaboration server.
@@ -266,7 +266,7 @@ The tool ships with a pre-generated sample Unit (Grade 6, Unit 4, *The Lightning
 - Prompt caching covers the locked instructions, Unit context and example Lessons, which are identical across a Unit.
 - Example Lessons come only from Newsela's published Units 1–3 (one per Lesson Type, selected in advance). Published Unit 4 is the Answer Key and never enters a prompt.
 - Each Lesson's context includes its Arc, the Performance Task, and the Outline rows (not the generated content) of the previous and next Lessons. Flex Days are queued only when every Lesson in their Arc has content, and include those Lessons' Digests.
-- Creating Lessons and enqueueing their generation jobs happens in one database transaction. Jobs are keyed by Lesson so duplicates are ignored. Progress is written to the database and pushed to open Unit boards.
+- Importing creates Outlined Lessons with no jobs. Starting generation sets Lessons to Queued and enqueues their jobs in one database transaction. Jobs are keyed by Lesson so duplicates are ignored. Progress is written to the database and pushed to open Unit boards.
 - Replay mode serves recorded responses keyed by Lesson and attempt, with realistic delays; fake mode serves fixed fixtures for tests. One real run of the sample Unit produces both the seed and the replay recordings.
 - The hosted demo restricts live generation to Approvers and enforces a daily Lesson cap.
 
@@ -299,7 +299,7 @@ The tool ships with a pre-generated sample Unit (Grade 6, Unit 4, *The Lightning
 - **domain**: every allowed and forbidden Lesson transition by role and state, required reasons, Self-Approval and failing-check flags, Unit publishability, Unit Release contents, Flex Day readiness, and each Rule-Based Quality Check against hand-written Lesson documents.
 - **lesson-schema**: round-trip conversion between Lesson JSON and the editor document loses nothing, across example Lessons of every Lesson Type; the Student View contains no teacher-only content.
 - **generation**: prompt assembly includes the required context and never includes Answer Key material; invalid output triggers exactly one repair; Generation Attempt records are complete. Uses the fake AI client.
-- **Integration tests** against a real Postgres in Docker: a confirmed import creates the Unit, Arcs, Lessons and their queued jobs together; the worker in replay mode takes Lessons from Queued to Draft and creates Lesson Versions and Digests; Flex Days wait for their Arc; stale status changes are refused; the collaboration server refuses edits to an Approved Lesson.
+- **Integration tests** against a real Postgres in Docker: a confirmed import creates the Unit, Arcs, Outlined Lessons and Generation Guidance v1 together; starting generation queues Lessons and their jobs together; the worker in replay mode takes Lessons from Queued to Draft and creates Lesson Versions and Digests; Flex Days wait for their Arc; stale status changes are refused; the collaboration server refuses edits to an Approved Lesson.
 - **One end-to-end browser test** (Playwright) of the main path: import the sample Outline, resolve Outline Issues, generate in replay mode, edit a Lesson in two browser contexts at once and see each other's changes, submit, approve, publish, and download the Release.
 - Prior art: the repository is new, so these tests set the patterns. Test fixtures come from the real reference material in the source docs (sample Outline, published example Lessons).
 - One command runs lint, type checking, unit, integration and end-to-end tests. There is no CI pipeline for this build; coverage is reported, not enforced.
@@ -323,7 +323,7 @@ The tool ships with a pre-generated sample Unit (Grade 6, Unit 4, *The Lightning
 
 - **Build order**: foundation (workspace, database, standards, outline import) → editor and collaboration (against a hand-written Lesson) → generation (then one real run of the sample Unit to create the seed and replay recordings) → workflow, versions and publishing → Quality Checks → AI editing → documentation, Answer Key report and end-to-end test. Each phase ends with a code review before the next begins.
 - **Cut order if time runs short**: remaining AI presets, the Newsela-format converter, bulk approve, assignment, the AI Review (Rule-Based checks remain), version restore. Never cut: the main path from Outline to Release, live co-editing, import preview with Outline Issues, Lesson Versions on approval, documentation.
-- The sample Outline contains real errors (a non-existent standard used four times, a malformed standards cell, seven ELD codes whose descriptions contradict their official meaning). Catching these at import is a deliberate headline capability.
+- The sample Outline contains real errors (a non-existent standard used four times, a malformed standards cell, 37 ELD entries across nine codes whose descriptions contradict their official meaning). Catching these at import is a deliberate headline capability.
 - Standards data derives from the Common Standards Project (CC BY 3.0 US, rights holder D2L) and must be attributed in the documentation.
 - Documentation deliverables: README (quickstart and demo walkthrough), architecture (high- and low-level, with sequence diagrams), test plan, deploy (local, Fly.io, and the AWS production path), users, AI usage, decisions, agents, AI log, quality (Answer Key report and per-Unit cost), the glossary, and ADRs.
 - The production story (not built) covers: ECS/Fargate, RDS for Postgres, SQS in place of the Postgres queue, SSO, scaling the collaboration server, and an evaluation gate before generation changes ship.

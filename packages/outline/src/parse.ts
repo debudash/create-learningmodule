@@ -253,7 +253,6 @@ function readLesson(
 
   return {
     key,
-    kind: isFlex ? 'flex-day' : 'lesson',
     position,
     ...(lessonNumber ? { lessonNumber: Number(lessonNumber) } : {}),
     arcKey: arc.key,
@@ -262,6 +261,7 @@ function readLesson(
     isDoubleLesson: /double/i.test(outlineType),
     ...(filename ? { filename } : {}),
     ...(heading ? { heading } : {}),
+    title: heading ?? (isFlex ? `Flex Day ${key.slice(1)}` : `Lesson ${lessonNumber}`),
     ...(questionCell && !goalsCell && !/^n\/?a$/i.test(questionCell)
       ? { textDependentQuestion: questionCell }
       : {}),
@@ -300,7 +300,7 @@ function checkUnitConsistency(
       id: 'unit.title',
       severity: 'warning',
       kind: 'metadata-conflict',
-      message: 'The Outline title row was not recognised; enter the grade, unit and anchor text by hand.',
+      message: 'The Outline title row was not recognised; enter the grade, unit number and anchor text before confirming.',
       raw: titleCell,
     });
   }
@@ -320,7 +320,7 @@ function checkUnitConsistency(
       kind: 'metadata-conflict',
       message: `The title says ${fromTitle.replace(' ', ', ')}, but Lesson filenames say ${conflicting
         .map((v) => v.replace(' ', ', '))
-        .join(' and ')}. The title is used.`,
+        .join(' and ')}. The title's values are used unless you change them.`,
       raw: conflicting.join(', '),
     });
   }

@@ -175,8 +175,8 @@ describe('suggestEldCode', () => {
     const result = suggestEldCode('ELD.PII.6.5', 'Use transitions to connect ideas');
     expect(result.official).toBe(getStandard('ELD.PII.6.5'));
     expect(result.suggestion).toBe(getStandard('ELD.PII.6.2'));
+    expect(result.matches).toBe(false);
     expect(result.score).toBeGreaterThanOrEqual(0);
-    expect(result.score).toBeLessThan(0.18);
     const fit = suggestEldCode('ELD.PII.6.2', 'Use transitions to connect ideas');
     expect(fit).toMatchObject({ matches: true, score: expect.any(Number) });
     expect(fit.suggestion).toBeUndefined();

@@ -1,14 +1,10 @@
-import { readFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import { parseOutlineCsv } from './parse.js';
 import { confirmImport } from './resolve.js';
+import { miniOutlineCsv, sampleOutlineCsv } from './testing.js';
 import type { Resolution } from './types.js';
 
-const SAMPLE = readFileSync(
-  fileURLToPath(new URL('../../../fixtures/outlines/g6-u4-lightning-thief.csv', import.meta.url)),
-  'utf8',
-);
+const SAMPLE = sampleOutlineCsv();
 
 const proposal = parseOutlineCsv(SAMPLE);
 const blocking = proposal.issues.filter((i) => i.severity === 'blocking');
@@ -98,27 +94,10 @@ describe('confirmImport', () => {
   });
 });
 
-/** A minimal Outline with the sample's columns, for issue cases the sample does not contain. */
-function miniOutline(lessonRow: Partial<Record<'type' | 'eld' | 'supporting', string>>): string {
-  const headers = [
-    'Filename', 'Lesson', 'Lesson #', 'Type of Lesson', 'Days', 'Text Dependent Question tied to the EQ',
-    'Lesson Description', 'Text Set Choice', 'Homework', 'Focus Standards (assessed)',
-    'Additional Supported CA ELA Standards', 'CA Media Literacy Standards',
-    'Skill or content that will be needed for Performance Task', 'Foundational Skills Focus',
-    'Vocabulary', 'Designated ELD Standards',
-  ];
-  const row = [
-    'L1_ELA_TE_G6_U4_CA_Core', 'Spark', 'Lesson 1', lessonRow.type ?? 'Spark 1', '1', 'N/A',
-    'Opening', '', '', 'RL.6.1', lessonRow.supporting ?? '', '', '', '', '', lessonRow.eld ?? '',
-  ];
-  const csv = (cells: string[]) => cells.map((c) => `"${c.replace(/"/g, '""')}"`).join(',');
-  return [csv(['G6, U4: The Lightning Thief by Rick Riordan']), csv(headers), csv(['', 'Spark']), csv(row)].join('\n');
-}
-
 describe('confirmImport: issue kinds outside the sample', () => {
   // LCG-1 regression. Found by: Phase 1 spec review (an unknown Lesson Type could never be resolved).
   it('LCG-1: resolves an unknown Lesson Type by choosing a type', () => {
-    const odd = parseOutlineCsv(miniOutline({ type: 'Seminar' }));
+    const odd = parseOutlineCsv(miniOutlineCsv({ type: 'Seminar' }));
     const issue = odd.issues.find((i) => i.kind === 'unknown-lesson-type')!;
     expect(issue.severity).toBe('blocking');
 
@@ -132,7 +111,7 @@ describe('confirmImport: issue kinds outside the sample', () => {
 
   // LCG-3 regression. Found by: Phase 1 spec review (spaced-hyphen ranges were split into tokens).
   it('LCG-3: expands ranges written with spaced hyphens or dashes', () => {
-    const lesson = parseOutlineCsv(miniOutline({ supporting: 'W.6.3.a - c, SL.6.1.a – b' })).lessons[0]!;
+    const lesson = parseOutlineCsv(miniOutlineCsv({ supporting: 'W.6.3.a - c, SL.6.1.a – b' })).lessons[0]!;
     expect(lesson.supportingStandards.map((s) => s.code)).toEqual([
       'W.6.3.a',
       'W.6.3.b',
@@ -145,7 +124,7 @@ describe('confirmImport: issue kinds outside the sample', () => {
   // LCG-2 regression. Found by: Phase 1 spec review (a mistyped ELD code was stored as a Designer Note).
   it('LCG-2: blocks on a malformed ELD code instead of keeping it as a note', () => {
     const odd = parseOutlineCsv(
-      miniOutline({
+      miniOutlineCsv({
         eld: [
           '• ELD.P1.6.6 – Read closely',
           '• ELD.PI.6.1 – Participate in discussions',
@@ -164,5 +143,44 @@ describe('confirmImport: issue kinds outside the sample', () => {
     const fixed = confirmImport(odd, [{ issueId: malformed[0]!.id, action: 'replace', value: 'ELD.PI.6.6' }]);
     expect(fixed.ok).toBe(true);
     if (fixed.ok) expect(fixed.confirmed.lessons[0]!.eldStandards.map((e) => e.code)).toContain('ELD.PI.6.6');
+  });
+});
+
+describe('confirmImport: Unit edits', () => {
+  const proposal = parseOutlineCsv(sampleOutlineCsv());
+  const resolveBlocking: Resolution[] = proposal.issues
+    .filter((i) => i.severity === 'blocking')
+    .map((i) => ({ issueId: i.id, action: 'accept-suggestion' }));
+
+  it('applies the Editor corrections to the Unit metadata', () => {
+    const result = confirmImport(proposal, resolveBlocking, {
+      title: 'Myths, Monsters & Modern Stories',
+      unitNumber: 3,
+      anchorText: { isbn: '9781423103349' },
+    });
+    if (!result.ok) throw new Error(result.errors.join('; '));
+    expect(result.confirmed.unit).toMatchObject({
+      title: 'Myths, Monsters & Modern Stories',
+      grade: 6,
+      unitNumber: 3,
+      anchorText: { title: 'The Lightning Thief', author: 'Rick Riordan', isbn: '9781423103349' },
+    });
+  });
+
+  it('refuses an Outline whose title row was not recognised until the metadata is entered', () => {
+    const untitled = parseOutlineCsv(miniOutlineCsv().replace('G6, U4: The Lightning Thief by Rick Riordan', 'Unit plan'));
+    expect(untitled.issues.map((i) => i.id)).toContain('unit.title');
+
+    const bare = confirmImport(untitled, []);
+    expect(bare.ok).toBe(false);
+    if (!bare.ok) expect(bare.errors.join(' ')).toMatch(/grade/);
+
+    const entered = confirmImport(untitled, [], {
+      title: 'The Lightning Thief',
+      grade: 6,
+      unitNumber: 4,
+      anchorText: { title: 'The Lightning Thief', author: 'Rick Riordan' },
+    });
+    expect(entered.ok).toBe(true);
   });
 });

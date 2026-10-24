@@ -1,13 +1,9 @@
-import { readFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import { parseOutlineCsv } from './parse.js';
+import { sampleOutlineCsv } from './testing.js';
 import type { ImportProposal, OutlineLesson } from './types.js';
 
-const SAMPLE = readFileSync(
-  fileURLToPath(new URL('../../../fixtures/outlines/g6-u4-lightning-thief.csv', import.meta.url)),
-  'utf8',
-);
+const SAMPLE = sampleOutlineCsv();
 
 const proposal: ImportProposal = parseOutlineCsv(SAMPLE);
 
@@ -23,8 +19,8 @@ const issuesOf = (kind: string) => proposal.issues.filter((i) => i.kind === kind
 describe('parseOutlineCsv: the sample Unit 4 Outline', () => {
   describe('row classification', () => {
     it('finds 41 Lessons and 6 Flex Days, 47 days in Outline order', () => {
-      expect(proposal.lessons.filter((l) => l.kind === 'lesson')).toHaveLength(41);
-      expect(proposal.lessons.filter((l) => l.kind === 'flex-day')).toHaveLength(6);
+      expect(proposal.lessons.filter((l) => l.lessonType !== 'flex-day')).toHaveLength(41);
+      expect(proposal.lessons.filter((l) => l.lessonType === 'flex-day')).toHaveLength(6);
       expect(proposal.lessons.map((l) => l.position)).toEqual(
         Array.from({ length: 47 }, (_, i) => i + 1),
       );
@@ -35,7 +31,7 @@ describe('parseOutlineCsv: the sample Unit 4 Outline', () => {
     it('numbers Lessons from the Outline and keys Flex Days in order', () => {
       expect(lesson('L1').lessonNumber).toBe(1);
       expect(lesson('L41').lessonNumber).toBe(41);
-      expect(proposal.lessons.filter((l) => l.kind === 'flex-day').map((l) => l.key)).toEqual([
+      expect(proposal.lessons.filter((l) => l.lessonType === 'flex-day').map((l) => l.key)).toEqual([
         'F1',
         'F2',
         'F3',
@@ -124,6 +120,12 @@ describe('parseOutlineCsv: the sample Unit 4 Outline', () => {
       expect(lesson('F1').heading).toBe('Meaning-Making Huddle');
     });
 
+    it('titles each Lesson by its heading, else by number', () => {
+      expect(lesson('L3').title).toBe('Rick Riordan as a Myth Adapter');
+      const untitled = proposal.lessons.find((l) => !l.heading);
+      if (untitled) expect(untitled.title).toMatch(/^(Lesson \d+|Flex Day \d+)$/);
+    });
+
     it('reads the focus pages named in the description', () => {
       expect(lesson('L22').focusPages).toEqual({ from: 224, to: 233 });
       expect(lesson('L4').focusPages).toEqual({ from: 1, to: 8 });
@@ -197,6 +199,24 @@ describe('parseOutlineCsv: the sample Unit 4 Outline', () => {
       );
       expect(mismatch).toMatchObject({ severity: 'warning', field: 'eldStandards', suggestion: 'ELD.PII.6.2' });
       expect(mismatch!.message).toMatch(/Use transitions to connect ideas/);
+    });
+
+    it('flags exactly the nine ELD codes whose descriptions miss their official meaning', () => {
+      // Seven mismatches found by research, plus PI.6.6, PII.6.4 and PII.6.6 uses the
+      // matcher judged wrong (see eld-match.test.ts). Any new code here is a false positive.
+      const flagged = new Set(issuesOf('eld-description-mismatch').map((i) => i.code));
+      expect([...flagged].sort()).toEqual([
+        'ELD.PI.6.2',
+        'ELD.PI.6.4',
+        'ELD.PI.6.5',
+        'ELD.PI.6.6',
+        'ELD.PII.6.1',
+        'ELD.PII.6.3',
+        'ELD.PII.6.4',
+        'ELD.PII.6.5',
+        'ELD.PII.6.6',
+      ]);
+      expect(issuesOf('eld-description-mismatch')).toHaveLength(37);
     });
 
     it('gives every issue a unique, stable id', () => {

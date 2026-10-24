@@ -7,19 +7,27 @@ import type {
   OutlineIssue,
   OutlineLesson,
   Resolution,
+  OutlineUnit,
   ResolvedIssue,
   StandardRef,
+  UnitEdits,
 } from './types.js';
 
 /**
- * Applies an Editor's resolutions to an import proposal. Succeeds only when
- * every Blocking issue has a valid resolution; unresolved Warnings are kept
- * as written (and recorded as accepted by default).
+ * Applies an Editor's resolutions and Unit edits to an import proposal. Succeeds
+ * only when every Blocking issue has a valid resolution and the Unit's metadata
+ * is complete; unresolved Warnings are kept as written (recorded as accepted by
+ * default).
  */
-export function confirmImport(proposal: ImportProposal, resolutions: Resolution[]): ConfirmResult {
+export function confirmImport(
+  proposal: ImportProposal,
+  resolutions: Resolution[],
+  unitEdits: UnitEdits = {},
+): ConfirmResult {
   const issuesById = new Map(proposal.issues.map((i) => [i.id, i]));
   const lessons: OutlineLesson[] = structuredClone(proposal.lessons);
-  const errors: string[] = [];
+  const unit = applyUnitEdits(proposal.unit, unitEdits);
+  const errors: string[] = unitProblems(unit);
   const resolved = new Map<string, ResolvedIssue>();
 
   for (const resolution of resolutions) {
@@ -41,7 +49,7 @@ export function confirmImport(proposal: ImportProposal, resolutions: Resolution[
   return {
     ok: true,
     confirmed: {
-      unit: structuredClone(proposal.unit),
+      unit,
       arcs: structuredClone(proposal.arcs),
       lessons,
       issues: proposal.issues.map(
@@ -97,6 +105,24 @@ function applyResolution(issue: OutlineIssue, resolution: Resolution, lessons: O
   }
   refs[index] = { ...refs[index]!, code: normalized.code };
   return { resolved: { ...issue, resolution: resolution.action, resolvedValue: normalized.code } };
+}
+
+function applyUnitEdits(unit: OutlineUnit, edits: UnitEdits): OutlineUnit {
+  const { anchorText, ...rest } = edits;
+  return {
+    ...structuredClone(unit),
+    ...rest,
+    anchorText: { ...unit.anchorText, ...anchorText },
+  };
+}
+
+function unitProblems(unit: OutlineUnit): string[] {
+  const problems: string[] = [];
+  if (!Number.isInteger(unit.grade) || unit.grade < 1 || unit.grade > 12) problems.push('The Unit needs a grade from 1 to 12.');
+  if (!Number.isInteger(unit.unitNumber) || unit.unitNumber < 1) problems.push('The Unit needs a unit number.');
+  if (!unit.anchorText.title.trim() || unit.anchorText.title === 'Untitled') problems.push('The Unit needs an anchor text title.');
+  if (!unit.title.trim()) problems.push('The Unit needs a title.');
+  return problems;
 }
 
 function isLessonType(value: string | undefined): value is LessonType {

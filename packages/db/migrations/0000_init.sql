@@ -26,8 +26,8 @@ CREATE TABLE IF NOT EXISTS "generation_attempts" (
 	"model" text NOT NULL,
 	"mode" text NOT NULL,
 	"outcome" text NOT NULL,
-	"error" text,
-	"validation_errors" jsonb,
+	"failure_reason" text,
+	"schema_violations" jsonb,
 	"input_tokens" integer DEFAULT 0 NOT NULL,
 	"output_tokens" integer DEFAULT 0 NOT NULL,
 	"cache_read_tokens" integer DEFAULT 0 NOT NULL,
@@ -251,6 +251,12 @@ END $$;
 --> statement-breakpoint
 DO $$ BEGIN
  ALTER TABLE "unit_releases" ADD CONSTRAINT "unit_releases_publisher_id_users_id_fk" FOREIGN KEY ("publisher_id") REFERENCES "public"."users"("id") ON DELETE no action ON UPDATE no action;
+EXCEPTION
+ WHEN duplicate_object THEN null;
+END $$;
+--> statement-breakpoint
+DO $$ BEGIN
+ ALTER TABLE "units" ADD CONSTRAINT "units_latest_release_id_unit_releases_id_fk" FOREIGN KEY ("latest_release_id") REFERENCES "public"."unit_releases"("id") ON DELETE set null ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;

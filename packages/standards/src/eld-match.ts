@@ -165,19 +165,19 @@ interface Profile {
   weights: Map<string, number>;
 }
 
-interface Model {
+interface EldProfileIndex {
   profiles: Profile[];
   idf: Map<string, number>;
 }
 
-let model: Model | undefined;
+let profileIndex: EldProfileIndex | undefined;
 
 function itemKey(item: Standard): string {
   const [, part, , num] = item.code.split('.'); // "ELD.PI.6.6" -> "PI.6"
   return `${part}.${num}`;
 }
 
-function buildModel(): Model {
+function buildProfileIndex(): EldProfileIndex {
   const eld = listStandards('ELD');
   const profiles = eld
     .filter((s) => !s.parent)
@@ -199,7 +199,7 @@ function buildModel(): Model {
   return { profiles, idf };
 }
 
-function scoreItem(description: Set<string>, profile: Profile, m: Model): number {
+function scoreItem(description: Set<string>, profile: Profile, m: EldProfileIndex): number {
   let total = 0;
   let hit = 0;
   for (const w of description) {
@@ -217,8 +217,8 @@ function scoreItem(description: Set<string>, profile: Profile, m: Model): number
  * official item's fit, 0 to 1. A sub-item code is judged by its item.
  */
 export function suggestEldCode(code: string, description: string): EldDescriptionMatch {
-  model ??= buildModel();
-  const m = model;
+  profileIndex ??= buildProfileIndex();
+  const m = profileIndex;
   const official = getStandard(code);
   const officialItem = official?.parent ? getStandard(official.parent) : official;
   const d = words(description);

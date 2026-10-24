@@ -1,5 +1,5 @@
 {
-  "id": "69ba396f-d0a2-47c8-8865-18dc72ac2aaa",
+  "id": "07d1359b-6fd7-48fd-9a9b-678e666de7d3",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -227,14 +227,14 @@
           "primaryKey": false,
           "notNull": true
         },
-        "error": {
-          "name": "error",
+        "failure_reason": {
+          "name": "failure_reason",
           "type": "text",
           "primaryKey": false,
           "notNull": false
         },
-        "validation_errors": {
-          "name": "validation_errors",
+        "schema_violations": {
+          "name": "schema_violations",
           "type": "jsonb",
           "primaryKey": false,
           "notNull": false
@@ -1141,6 +1141,19 @@
       },
       "indexes": {},
       "foreignKeys": {
+        "units_latest_release_id_unit_releases_id_fk": {
+          "name": "units_latest_release_id_unit_releases_id_fk",
+          "tableFrom": "units",
+          "tableTo": "unit_releases",
+          "columnsFrom": [
+            "latest_release_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "no action"
+        },
         "units_created_by_users_id_fk": {
           "name": "units_created_by_users_id_fk",
           "tableFrom": "units",

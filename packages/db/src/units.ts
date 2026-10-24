@@ -47,7 +47,6 @@ export async function importUnit(db: Database, input: ImportUnitInput): Promise<
       .returning({ id: arcs.id, key: arcs.key });
     const arcId = new Map(arcRows.map((a) => [a.key, a.id]));
 
-    let flexNumber = 0;
     await tx.insert(lessons).values(
       confirmed.lessons.map((lesson) => ({
         unitId: unit!.id,
@@ -56,9 +55,7 @@ export async function importUnit(db: Database, input: ImportUnitInput): Promise<
         position: lesson.position,
         lessonNumber: lesson.lessonNumber ?? null,
         lessonType: lesson.lessonType,
-        title:
-          lesson.heading ??
-          (lesson.kind === 'flex-day' ? `Flex Day ${++flexNumber}` : `Lesson ${lesson.lessonNumber}`),
+        title: lesson.title,
         status: 'outlined' as const,
         outline: lesson,
       })),
