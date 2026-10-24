@@ -1,5 +1,5 @@
 {
-  "id": "7bf0d6fb-1eed-4152-9f30-d79efbe0b67f",
+  "id": "f0727369-4ba8-4492-b261-5393feebc682",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -705,6 +705,12 @@
           "primaryKey": false,
           "notNull": false
         },
+        "content_digest": {
+          "name": "content_digest",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
         "editor_ids": {
           "name": "editor_ids",
           "type": "uuid[]",
@@ -857,6 +863,12 @@
           "type": "text",
           "primaryKey": false,
           "notNull": false
+        },
+        "content_digest": {
+          "name": "content_digest",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
         },
         "created_at": {
           "name": "created_at",

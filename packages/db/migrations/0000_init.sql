@@ -80,6 +80,7 @@ CREATE TABLE IF NOT EXISTS "lessons" (
 	"digest" jsonb,
 	"job_enqueued_at" timestamp with time zone,
 	"pending_instructions" text,
+	"content_digest" text,
 	"editor_ids" uuid[] DEFAULT '{}'::uuid[] NOT NULL,
 	"updated_at" timestamp with time zone DEFAULT now() NOT NULL
 );
@@ -92,6 +93,7 @@ CREATE TABLE IF NOT EXISTS "quality_check_results" (
 	"outcome" text NOT NULL,
 	"message" text NOT NULL,
 	"location" text,
+	"content_digest" text NOT NULL,
 	"created_at" timestamp with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint

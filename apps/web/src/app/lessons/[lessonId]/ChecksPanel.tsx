@@ -26,12 +26,14 @@ export function ChecksPanel({
   facts,
   aiResults,
   reviewedAt,
+  reviewedEarlierDraft,
 }: {
   lessonId: string;
   lesson: Lesson | undefined;
   facts: CheckOutlineFacts;
   aiResults: QualityCheckResult[];
   reviewedAt?: Date;
+  reviewedEarlierDraft: boolean;
 }) {
   const ruleResults = useMemo(() => (lesson ? runRuleChecks(lesson, facts) : []), [lesson, facts]);
   const [message, setMessage] = useState<string>();
@@ -65,7 +67,11 @@ export function ChecksPanel({
           </button>
         </div>
         <p className="text-xs text-ink-faint">
-          {reviewedAt ? `Last reviewed ${new Date(reviewedAt).toLocaleString('en-US')}.` : 'Not reviewed yet.'}
+          {reviewedAt
+            ? `Last reviewed ${new Date(reviewedAt).toLocaleString('en-US')}.`
+            : reviewedEarlierDraft
+              ? 'The last AI Review judged an earlier draft; re-check to review this one.'
+              : 'Not reviewed yet.'}
           {message && ` ${message}`}
         </p>
         <ResultList results={aiResults} empty="No AI Review results yet." />

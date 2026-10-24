@@ -5,6 +5,7 @@ import {
   type Lesson,
 } from '@lcg/lesson-schema';
 import { runRuleChecks } from '@lcg/domain';
+import { createHash } from 'node:crypto';
 import { eq, sql } from 'drizzle-orm';
 import { notifyLessonChange } from './channels.js';
 import type { Executor } from './client.js';
@@ -19,6 +20,11 @@ import { lessonDocuments, lessons } from './schema.js';
  * replaceLessonContent. Both merge with what is stored, so neither can overwrite
  * the other's changes.
  */
+
+/** A digest of a Lesson's content, stored with it so results can say which content they judged. */
+export function contentDigestOf(lesson: Lesson): string {
+  return createHash('sha256').update(JSON.stringify(lesson)).digest('hex');
+}
 
 export async function loadDocumentState(db: Executor, lessonId: string): Promise<Uint8Array | undefined> {
   const [row] = await db
@@ -45,19 +51,27 @@ async function lockedState(tx: Executor, lessonId: string): Promise<Uint8Array |
  * LCG-6: the title lived only inside the Yjs state while the Unit board read the
  * Lesson row, so a renamed Lesson kept its old title outside the editor. The row's
  * title is written with every store, in the same transaction.
+ *
+ * LCG-19: AI Review results outlived the content they judged, so the board, the
+ * approval warning and the failing filter counted verdicts on old content. Every
+ * store now writes the content's digest; a result counts only while it judged the
+ * stored digest (see currentResult in checks.ts).
  */
 async function write(tx: Executor, lessonId: string, state: Uint8Array, lesson: Lesson, editorIds: string[]) {
   await tx
     .insert(lessonDocuments)
     .values({ lessonId, state })
     .onConflictDoUpdate({ target: lessonDocuments.lessonId, set: { state, updatedAt: sql`now()` } });
+  const contentDigest = contentDigestOf(lesson);
   const [row] = await tx
     .update(lessons)
-    .set({ title: lesson.title, updatedAt: sql`now()` })
+    .set({ title: lesson.title, contentDigest, updatedAt: sql`now()` })
     .where(eq(lessons.id, lessonId))
     .returning({ outline: lessons.outline });
   await recordEditors(tx, lessonId, editorIds);
-  if (row) await replaceCheckResults(tx, lessonId, 'rule', runRuleChecks(lesson, checkFactsOf(row.outline)));
+  if (row) {
+    await replaceCheckResults(tx, lessonId, 'rule', runRuleChecks(lesson, checkFactsOf(row.outline)), contentDigest);
+  }
 }
 
 export type SaveOutcome = 'stored' | 'invalid';

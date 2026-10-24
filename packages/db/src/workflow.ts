@@ -1,8 +1,9 @@
 import { decide, type Actor, type LessonAction, type LessonStatus, type Refusal } from '@lcg/domain';
-import { and, count, eq, sql } from 'drizzle-orm';
+import { eq, sql } from 'drizzle-orm';
 import { notifyLessonChange } from './channels.js';
+import { currentFailingChecks } from './checks.js';
 import type { Executor } from './client.js';
-import { lessons, qualityCheckResults, workflowEvents } from './schema.js';
+import { lessons, workflowEvents } from './schema.js';
 
 export type TransitionResult =
   | { ok: true; from: LessonStatus; to: LessonStatus }
@@ -38,11 +39,8 @@ export async function transitionLesson(tx: Executor, request: TransitionRequest)
     };
   }
 
-  const [failing] = await tx
-    .select({ n: count() })
-    .from(qualityCheckResults)
-    .where(and(eq(qualityCheckResults.lessonId, lessonId), eq(qualityCheckResults.outcome, 'fail')));
-  const decision = decide(lesson.status, actor, action, { editorIds: lesson.editorIds, failingChecks: failing?.n ?? 0 });
+  const failingChecks = await currentFailingChecks(tx, lessonId);
+  const decision = decide(lesson.status, actor, action, { editorIds: lesson.editorIds, failingChecks });
   if (!decision.ok) return { ok: false, refusal: decision.refusal, message: decision.message };
 
   await tx

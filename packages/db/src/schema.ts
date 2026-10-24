@@ -128,6 +128,8 @@ export const lessons = pgTable(
     jobEnqueuedAt: timestamp('job_enqueued_at', { withTimezone: true }),
     /** An Editor's one-off Regenerate instructions, kept until the Lesson's job is sent. */
     pendingInstructions: text('pending_instructions'),
+    /** Digest of the stored content; a Quality Check result is current while it judged this digest. */
+    contentDigest: text('content_digest'),
     /** Users who have edited the Lesson since it was last generated (for Self-Approval). */
     editorIds: uuid('editor_ids').array().notNull().default(sql`'{}'::uuid[]`),
     updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
@@ -226,6 +228,8 @@ export const qualityCheckResults = pgTable(
     message: text('message').notNull(),
     /** Where in the Lesson document the result points (block id), if anywhere. */
     location: text('location'),
+    /** Digest of the content the result judged (the Lesson's content_digest when it was made). */
+    contentDigest: text('content_digest').notNull(),
     createdAt: createdAt(),
   },
   (t) => [index('quality_check_results_lesson').on(t.lessonId)],

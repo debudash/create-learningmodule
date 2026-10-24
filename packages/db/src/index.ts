@@ -71,6 +71,7 @@ export {
 } from './review.js';
 export {
   checkCounts,
+  currentFailingChecks,
   checkFactsOf,
   lessonChecks,
   loadReviewContext,

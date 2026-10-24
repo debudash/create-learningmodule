@@ -18,11 +18,13 @@ interface Props {
   /** The latest AI Review results. */
   aiChecks: QualityCheckResult[];
   reviewedAt?: Date;
+  /** The last AI Review judged content that has since changed. */
+  reviewedEarlierDraft: boolean;
 }
 
 type View = 'teacher' | 'student';
 
-export function Workspace({ lessonId, token, user, outline, history, aiChecks, reviewedAt }: Props) {
+export function Workspace({ lessonId, token, user, outline, history, aiChecks, reviewedAt, reviewedEarlierDraft }: Props) {
   const [view, setView] = useState<View>('teacher');
   const [lesson, setLesson] = useState<Lesson>();
   const [people, setPeople] = useState<Presence[]>([]);
@@ -117,6 +119,7 @@ export function Workspace({ lessonId, token, user, outline, history, aiChecks, r
             lesson={lesson}
             facts={facts}
             aiResults={aiChecks}
+            reviewedEarlierDraft={reviewedEarlierDraft}
             {...(reviewedAt ? { reviewedAt } : {})}
           />
         ) : (
