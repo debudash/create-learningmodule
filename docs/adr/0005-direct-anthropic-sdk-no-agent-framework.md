@@ -5,3 +5,4 @@ Generation, AI Review and AI editing each use the Anthropic TypeScript SDK (Clau
 ## Consequences
 
 - The LLM client has three modes (live, replay, fake) selected by environment; tests and the demo never need an API key.
+- Amended in Phase 5: the AI Review is a judging task, so it runs on a cheaper model (`LLM_REVIEW_MODEL`, Claude Haiku by default) rather than Sonnet. Each review call is kept with its tokens and cost, like a Generation Attempt, and counts in the Unit's cost. Replay mode serves a review only for content it has a recording of; otherwise the review is recorded as unavailable.

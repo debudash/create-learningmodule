@@ -23,7 +23,7 @@ Requirements: Docker Desktop, Node 22, pnpm.
 | `SESSION_SECRET` | dev value | Signs the session cookie (web and collab) |
 | `LLM_MODE` | `replay` | `live` calls Anthropic; `replay` serves recorded responses; `fake` writes placeholder Lessons from the Outline (offline work, tests) |
 | `ANTHROPIC_API_KEY` | unset | Required only for `LLM_MODE=live` |
-| `LLM_MODEL` | `claude-sonnet-5-5` | Model for generation, AI Review and AI editing |
+| `LLM_MODEL` | `claude-sonnet-5-5` | Model for generation and AI editing |
 | `LLM_REVIEW_MODEL` | `claude-haiku-5-5` | Model for the AI Review (a judging task, so a cheaper model) |
 | `LLM_EFFORT` | `medium` | How hard the model thinks (`low` to `max`); higher costs more |
 | `LLM_RECORD` | `false` | With `LLM_MODE=live`, saves every result under `fixtures/recordings/` for replay |

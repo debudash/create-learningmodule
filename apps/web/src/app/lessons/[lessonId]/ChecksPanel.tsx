@@ -1,16 +1,12 @@
 'use client';
 
-import { CHECK_LABELS, runRuleChecks, summarizeChecks, type CheckOutlineFacts, type QualityCheckResult } from '@lcg/domain';
+import { CHECK_LABELS, countChecks, runRuleChecks, type CheckOutlineFacts, type QualityCheckResult } from '@lcg/domain';
 import type { LastAiReview } from '@lcg/db';
 import type { Lesson } from '@lcg/lesson-schema';
 import { useMemo, useState, useTransition } from 'react';
+import { describeCounts, OUTCOME_BADGE } from '@/components/CheckBadge';
 import { requestReviewAction } from './actions';
 
-const BADGE = {
-  pass: 'bg-support-soft text-support',
-  warn: 'bg-eld-soft text-eld',
-  fail: 'bg-danger-soft text-danger',
-} as const;
 
 function scrollToActivity(id: string | undefined) {
   if (!id) return;
@@ -18,7 +14,7 @@ function scrollToActivity(id: string | undefined) {
 }
 
 /**
- * The Lesson's Quality Checks: the rule checks, recomputed live from what is in the
+ * The Lesson's Quality Checks: the Rule-Based checks, recomputed live from what is in the
  * editor, and the latest AI Review, which can be run again on demand.
  */
 export function ChecksPanel({
@@ -38,15 +34,14 @@ export function ChecksPanel({
   const [message, setMessage] = useState<string>();
   const [pending, startTransition] = useTransition();
   const notPassing = [...ruleResults, ...aiResults].filter((r) => r.outcome !== 'pass');
-  const summary = summarizeChecks([...ruleResults, ...aiResults]);
+  const counts = countChecks([...ruleResults, ...aiResults]);
 
   return (
     <div className="space-y-4">
       <p className="text-ink-soft">
-        {summary.fail} failing · {summary.warn} to look at · {summary.pass} passing. Checks inform the Approver; they never block
-        approval.
+        {describeCounts(counts)}. Checks inform the Approver; they never block approval.
       </p>
-      <ResultList results={notPassing.length > 0 ? notPassing : []} empty="Nothing needs attention." />
+      <ResultList results={notPassing} empty="Nothing needs attention." />
 
       <section>
         <div className="flex items-center justify-between">
@@ -73,7 +68,7 @@ export function ChecksPanel({
       </section>
 
       <details>
-        <summary className="cursor-pointer font-medium">All rule checks ({ruleResults.length})</summary>
+        <summary className="cursor-pointer font-medium">All Rule-Based checks ({ruleResults.length})</summary>
         <ResultList results={ruleResults} empty="Open the Lesson to run the checks." />
       </details>
     </div>
@@ -99,8 +94,8 @@ function ResultList({ results, empty }: { results: QualityCheckResult[]; empty: 
             onClick={() => scrollToActivity(result.location)}
             className={`w-full text-left ${result.location ? 'cursor-pointer hover:underline' : 'cursor-default'}`}
           >
-            <span className={`mr-2 rounded px-1.5 py-0.5 text-xs font-medium ${BADGE[result.outcome]}`}>{result.outcome}</span>
-            <span className="text-xs font-medium text-ink-soft">{CHECK_LABELS[result.checkId] ?? result.checkId}</span>
+            <span className={`mr-2 rounded px-1.5 py-0.5 text-xs font-medium ${OUTCOME_BADGE[result.outcome]}`}>{result.outcome}</span>
+            <span className="text-xs font-medium text-ink-soft">{CHECK_LABELS[result.checkId]}</span>
             <span className="mt-0.5 block text-sm">{result.message}</span>
           </button>
         </li>

@@ -1,10 +1,10 @@
 'use client';
 
 import { LESSON_MINUTES, SECTION_TITLES, lessonMinutes, sectionMinutes, type Lesson } from '@lcg/lesson-schema';
-import type { QualityCheckResult } from '@lcg/domain';
+import type { CheckOutlineFacts, QualityCheckResult } from '@lcg/domain';
 import type { LastAiReview } from '@lcg/db';
 import type { OutlineLesson } from '@lcg/outline';
-import { useCallback, useMemo, useState, type ReactNode } from 'react';
+import { useCallback, useState, type ReactNode } from 'react';
 import { StudentViewPanel } from '@/components/StudentViewPanel';
 import { LessonEditor, type Presence } from '@/editor/LessonEditor';
 import { ChecksPanel } from './ChecksPanel';
@@ -16,6 +16,8 @@ interface Props {
   outline: OutlineLesson;
   /** The History tab, rendered by the page. */
   history: ReactNode;
+  /** What the Rule-Based checks compare the Lesson with (checkFactsOf). */
+  facts: CheckOutlineFacts;
   /** The latest AI Review results. */
   aiChecks: QualityCheckResult[];
   lastReview?: LastAiReview;
@@ -23,15 +25,11 @@ interface Props {
 
 type View = 'teacher' | 'student';
 
-export function Workspace({ lessonId, token, user, outline, history, aiChecks, lastReview }: Props) {
+export function Workspace({ lessonId, token, user, outline, history, facts, aiChecks, lastReview }: Props) {
   const [view, setView] = useState<View>('teacher');
   const [lesson, setLesson] = useState<Lesson>();
   const [people, setPeople] = useState<Presence[]>([]);
   const [tab, setTab] = useState<'outline' | 'checks' | 'history'>('outline');
-  const facts = useMemo(
-    () => ({ focusStandards: outline.focusStandards.map((s) => s.code), vocabulary: outline.vocabulary.map((v) => v.word) }),
-    [outline],
-  );
   const onLessonChange = useCallback((next: Lesson | undefined) => next && setLesson(next), []);
 
   return (

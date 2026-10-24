@@ -1,4 +1,4 @@
-import type { CheckOutlineFacts, QualityCheckResult } from '@lcg/domain';
+import { NO_CHECKS, type CheckCounts, type CheckOutlineFacts, type QualityCheckResult } from '@lcg/domain';
 import type { Lesson } from '@lcg/lesson-schema';
 import type { ReviewCall, ReviewFailure } from '@lcg/generation';
 import type { OutlineLesson } from '@lcg/outline';
@@ -153,8 +153,8 @@ export async function lessonChecks(
 export async function checkCounts(
   db: Executor,
   lessonIds: string[],
-): Promise<Map<string, { pass: number; warn: number; fail: number }>> {
-  const counts = new Map<string, { pass: number; warn: number; fail: number }>();
+): Promise<Map<string, CheckCounts>> {
+  const counts = new Map<string, CheckCounts>();
   if (lessonIds.length === 0) return counts;
   const rows = await db
     .select({ lessonId: qualityCheckResults.lessonId, outcome: qualityCheckResults.outcome })
@@ -162,7 +162,7 @@ export async function checkCounts(
     .innerJoin(lessons, eq(lessons.id, qualityCheckResults.lessonId))
     .where(and(inArray(qualityCheckResults.lessonId, lessonIds), currentResult));
   for (const row of rows) {
-    const entry = counts.get(row.lessonId) ?? { pass: 0, warn: 0, fail: 0 };
+    const entry = counts.get(row.lessonId) ?? { ...NO_CHECKS };
     entry[row.outcome] += 1;
     counts.set(row.lessonId, entry);
   }

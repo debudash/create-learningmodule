@@ -3,18 +3,38 @@ import {
   LESSON_TYPE_LABELS,
   lessonMinutes,
   sectionMinutes,
+  sectionPlanProblems,
   studentView,
   targetMinutes,
   TEACHER_ONLY_BLOCKS,
+  type Block,
   type Lesson,
   type LessonType,
 } from '@lcg/lesson-schema';
+import { hasStandard } from '@lcg/standards';
 
 export type CheckOutcome = 'pass' | 'warn' | 'fail';
 
+/** People-facing names of the checks; the keys are every check there is. */
+export const CHECK_LABELS = {
+  sections: 'Sections',
+  pacing: 'Lesson pacing',
+  'section-pacing': 'Section pacing',
+  'focus-standards-taught': 'Focus Standards taught',
+  'known-standards': 'Standard tags',
+  vocabulary: 'Outline vocabulary',
+  'pulse-check': 'Pulse Check',
+  'eld-support': 'ELD support',
+  'student-view': 'Student View',
+  'ai-standard': 'AI Review: standard',
+  'ai-anchor-text': 'AI Review: anchor text',
+} as const;
+
+export type CheckId = keyof typeof CHECK_LABELS;
+
 /** One Quality Check result (GLOSSARY: Quality Check). */
 export interface QualityCheckResult {
-  checkId: string;
+  checkId: CheckId;
   source: 'rule' | 'ai-review';
   outcome: CheckOutcome;
   message: string;
@@ -28,27 +48,16 @@ export interface CheckOutlineFacts {
   vocabulary: string[];
 }
 
-/** People-facing names of the checks. */
-export const CHECK_LABELS: Record<string, string> = {
-  pacing: 'Lesson pacing',
-  'section-pacing': 'Section pacing',
-  'focus-standards-taught': 'Focus Standards taught',
-  'known-standards': 'Standard tags',
-  vocabulary: 'Outline vocabulary',
-  'pulse-check': 'Pulse Check',
-  'eld-support': 'ELD support',
-  'student-view': 'Student View',
-  'ai-standard': 'AI Review: standard',
-  'ai-anchor-text': 'AI Review: anchor text',
-};
-
-/** Minutes a whole Lesson may run off 50 before pacing fails rather than warns. */
+/** Minutes a whole Lesson may run off 50 and still pass. */
 const PACING_TOLERANCE = 5;
 
-/** Lesson Types whose Lessons must include a Pulse Check (Writing and Flex Day Lessons rarely do). */
-const NEEDS_PULSE_CHECK: ReadonlySet<LessonType> = new Set(['core-reading']);
+/**
+ * Lesson Types whose Lessons include a Pulse Check: the Lesson Types whose example
+ * Lessons (Units 1-3) have one. Writing and Flex Day examples have none.
+ */
+const NEEDS_PULSE_CHECK: ReadonlySet<LessonType> = new Set(['spark', 'core-reading', 'core-writing', 'academic-discussion']);
 
-const rule = (checkId: string, outcome: CheckOutcome, message: string, location?: string): QualityCheckResult => ({
+const rule = (checkId: CheckId, outcome: CheckOutcome, message: string, location?: string): QualityCheckResult => ({
   checkId,
   source: 'rule',
   outcome,
@@ -63,6 +72,7 @@ const rule = (checkId: string, outcome: CheckOutcome, message: string, location?
  */
 export function runRuleChecks(lesson: Lesson, outline: CheckOutlineFacts): QualityCheckResult[] {
   return [
+    ...sections(lesson),
     ...pacing(lesson),
     ...sectionPacing(lesson),
     ...focusStandardsTaught(lesson, outline),
@@ -74,17 +84,22 @@ export function runRuleChecks(lesson: Lesson, outline: CheckOutlineFacts): Quali
   ];
 }
 
+function sections(lesson: Lesson): QualityCheckResult[] {
+  const problems = sectionPlanProblems(
+    lesson.lessonType,
+    lesson.sections.map((s) => s.kind),
+  );
+  return problems.length === 0
+    ? [rule('sections', 'pass', `The Lesson has the Sections a ${LESSON_TYPE_LABELS[lesson.lessonType]} Lesson needs.`)]
+    : problems.map((problem) => rule('sections', 'fail', problem));
+}
+
 function pacing(lesson: Lesson): QualityCheckResult[] {
   const minutes = lessonMinutes(lesson);
   const off = Math.abs(minutes - LESSON_MINUTES);
   if (off === 0) return [rule('pacing', 'pass', `The Lesson runs ${LESSON_MINUTES} minutes.`)];
-  return [
-    rule(
-      'pacing',
-      off > PACING_TOLERANCE ? 'fail' : 'warn',
-      `The Lesson runs ${minutes} minutes; it should be ${LESSON_MINUTES}.`,
-    ),
-  ];
+  const message = `The Lesson runs ${minutes} minutes; it should be ${LESSON_MINUTES}.`;
+  return [rule('pacing', off > PACING_TOLERANCE ? 'fail' : 'pass', message)];
 }
 
 function sectionPacing(lesson: Lesson): QualityCheckResult[] {
@@ -97,6 +112,7 @@ function sectionPacing(lesson: Lesson): QualityCheckResult[] {
         'section-pacing',
         'warn',
         `${section.title} runs ${minutes} minutes; ${LESSON_TYPE_LABELS[lesson.lessonType]} Lessons give it ${target}.`,
+        section.activities[0]?.id,
       ),
     ];
   });
@@ -110,29 +126,34 @@ function focusStandardsTaught(lesson: Lesson, outline: CheckOutlineFacts): Quali
   return missing.map((code) => rule('focus-standards-taught', 'fail', `No Activity is tagged with the Focus Standard ${code}.`));
 }
 
+/** Every standard code is a real one, and every Activity tag is one of the Lesson's standards. */
 function knownStandards(lesson: Lesson): QualityCheckResult[] {
   const { header } = lesson;
-  const known = new Set([
+  const own = new Set([
     ...header.focusStandards,
     ...header.supportingStandards,
     ...header.eldStandards,
     ...header.mediaLiteracyStandards,
   ]);
-  const results = lesson.sections.flatMap((section) =>
-    section.activities.flatMap((activity) => {
-      const unknown = activity.standards.filter((code) => !known.has(code));
-      return unknown.length > 0
-        ? [
-            rule(
-              'known-standards',
-              'warn',
-              `${activity.title} is tagged with ${unknown.join(', ')}, which ${unknown.length === 1 ? 'is' : 'are'} not among this Lesson's standards.`,
-              activity.id,
-            ),
-          ]
-        : [];
-    }),
-  );
+  const unknownCodes = [...own].filter((code) => !hasStandard(code));
+  const results = [
+    ...unknownCodes.map((code) => rule('known-standards', 'fail', `${code} is not a Grade 6 standard code.`)),
+    ...lesson.sections.flatMap((section) =>
+      section.activities.flatMap((activity) => {
+        const stray = activity.standards.filter((code) => !own.has(code));
+        return stray.length > 0
+          ? [
+              rule(
+                'known-standards',
+                'warn',
+                `${activity.title} is tagged with ${stray.join(', ')}, which ${stray.length === 1 ? 'is' : 'are'} not among this Lesson's standards.`,
+                activity.id,
+              ),
+            ]
+          : [];
+      }),
+    ),
+  ];
   return results.length > 0 ? results : [rule('known-standards', 'pass', "Every tag is one of the Lesson's standards.")];
 }
 
@@ -143,6 +164,7 @@ function vocabulary(lesson: Lesson, outline: CheckOutlineFacts): QualityCheckRes
   return [rule('vocabulary', 'warn', `The Outline's vocabulary is not all defined: ${missing.join(', ')}.`)];
 }
 
+/** Lessons of the Lesson Types that call for one have a Pulse Check (the schema makes each one well-formed). */
 function pulseCheck(lesson: Lesson): QualityCheckResult[] {
   if (!NEEDS_PULSE_CHECK.has(lesson.lessonType)) return [rule('pulse-check', 'pass', 'This Lesson Type needs no Pulse Check.')];
   const has = lesson.sections.some((s) => s.activities.some((a) => a.blocks.some((b) => b.type === 'pulse-check')));
@@ -162,28 +184,47 @@ function eldSupport(lesson: Lesson): QualityCheckResult[] {
   );
 }
 
+/** Text shorter than this is too common ("Turn and talk.") to count as leaked when it appears twice. */
+const LEAK_MIN_LENGTH = 20;
+
+/**
+ * Nothing written for teachers reaches the Student View: no teacher-only block's
+ * text (scripts, sample responses, notes, ELD panels, support tables) and no
+ * Pulse Check answer or rationale.
+ */
 function studentViewClean(lesson: Lesson): QualityCheckResult[] {
   const visible = JSON.stringify(studentView(lesson));
-  const teacherTexts = lesson.sections.flatMap((s) =>
-    s.activities.flatMap((a) =>
-      a.blocks.flatMap((b) => (TEACHER_ONLY_BLOCKS.has(b.type) && 'text' in b && b.text.length > 20 ? [b.text] : [])),
-    ),
-  );
-  const leaked = teacherTexts.find((text) => visible.includes(JSON.stringify(text).slice(1, -1)));
-  return leaked
-    ? [rule('student-view', 'fail', 'Teacher-only material appears in the Student View.')]
-    : [rule('student-view', 'pass', 'The Student View holds no teacher-only material.')];
+  for (const activity of lesson.sections.flatMap((s) => s.activities)) {
+    const teacherTexts = activity.blocks.flatMap(teacherOnlyTexts).filter((text) => text.length > LEAK_MIN_LENGTH);
+    if (teacherTexts.some((text) => visible.includes(JSON.stringify(text).slice(1, -1)))) {
+      return [rule('student-view', 'fail', `Teacher-only material from ${activity.title} appears in the Student View.`, activity.id)];
+    }
+  }
+  return [rule('student-view', 'pass', 'The Student View holds no teacher-only material.')];
 }
 
-export interface CheckSummary {
+function teacherOnlyTexts(block: Block): string[] {
+  if (block.type === 'pulse-check') return block.choices.map((c) => c.rationale);
+  return TEACHER_ONLY_BLOCKS.has(block.type) ? stringsIn(block) : [];
+}
+
+function stringsIn(value: unknown): string[] {
+  if (typeof value === 'string') return [value];
+  if (Array.isArray(value)) return value.flatMap(stringsIn);
+  if (value && typeof value === 'object') return Object.values(value).flatMap(stringsIn);
+  return [];
+}
+
+/** How many results passed, warned and failed. */
+export interface CheckCounts {
   pass: number;
   warn: number;
   fail: number;
-  worst: CheckOutcome;
 }
 
-export function summarizeChecks(results: readonly { outcome: CheckOutcome }[]): CheckSummary {
+export const NO_CHECKS: CheckCounts = { pass: 0, warn: 0, fail: 0 };
+
+export function countChecks(results: readonly { outcome: CheckOutcome }[]): CheckCounts {
   const count = (outcome: CheckOutcome) => results.filter((r) => r.outcome === outcome).length;
-  const summary = { pass: count('pass'), warn: count('warn'), fail: count('fail') };
-  return { ...summary, worst: summary.fail > 0 ? 'fail' : summary.warn > 0 ? 'warn' : 'pass' };
+  return { pass: count('pass'), warn: count('warn'), fail: count('fail') };
 }

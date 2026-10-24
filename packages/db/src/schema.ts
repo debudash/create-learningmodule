@@ -1,4 +1,4 @@
-import { LESSON_STATUSES, ROLES, VERSION_REASONS } from '@lcg/domain';
+import { LESSON_STATUSES, ROLES, VERSION_REASONS, type CheckId } from '@lcg/domain';
 import { LESSON_TYPES } from '@lcg/lesson-schema';
 import type { AnchorText, OutlineLesson, ResolvedIssue } from '@lcg/outline';
 import { sql } from 'drizzle-orm';
@@ -222,7 +222,7 @@ export const qualityCheckResults = pgTable(
     lessonId: uuid('lesson_id')
       .notNull()
       .references(() => lessons.id, { onDelete: 'cascade' }),
-    checkId: text('check_id').notNull(),
+    checkId: text('check_id').$type<CheckId>().notNull(),
     source: text('source', { enum: ['rule', 'ai-review'] }).notNull(),
     outcome: text('outcome', { enum: ['pass', 'warn', 'fail'] }).notNull(),
     message: text('message').notNull(),

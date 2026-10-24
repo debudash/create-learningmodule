@@ -23,7 +23,7 @@ export const aiReviewSchema = z.object({
 });
 export type AiReview = z.infer<typeof aiReviewSchema>;
 
-const REVIEW_INSTRUCTIONS = `You review one Grade 6 ELA Lesson written for California's Core curriculum, before a lead approves it for state review.
+const REVIEW_INSTRUCTIONS = `You review one Grade 6 ELA Lesson written for California's Core curriculum, before an Approver approves it for state review.
 
 For each Focus Standard listed, judge whether the Lesson's Activities genuinely teach it, measured against its official text (not just whether it is tagged): "taught" when an Activity has students do what the standard describes, "partly" when it is touched on but not taught, "not-taught" otherwise. Give one plain sentence of reason naming the Activity.
 
@@ -80,7 +80,7 @@ export async function reviewLesson(client: LlmClient, input: ReviewInput, key: s
   const focus = input.outline.focusStandards.map((s) => s.code);
   const request = [
     `<focus_standards>`,
-    ...focus.map((code) => `${code}: ${getStandard(code)?.text ?? '(not found)'}`),
+    ...focus.map((code) => `${code}: ${officialText(code)}`),
     `</focus_standards>`,
     `<anchor_text>${asData(input.anchorTextTitle)}${
       input.outline.focusPages ? `, pages ${input.outline.focusPages.from}-${input.outline.focusPages.to}` : ''
@@ -125,6 +125,13 @@ export async function reviewLesson(client: LlmClient, input: ReviewInput, key: s
     return { ok: false, failure: 'unreadable', reason: 'The AI Review did not return a readable verdict.', call };
   }
   return { ok: true, results: toCheckResults(parsed, focus), call };
+}
+
+/** A Focus Standard's official text; the import resolves every code, so a missing one is a bug. */
+function officialText(code: string): string {
+  const standard = getStandard(code);
+  if (!standard) throw new Error(`Focus Standard ${code} is not in the standards dataset.`);
+  return standard.text;
 }
 
 /**

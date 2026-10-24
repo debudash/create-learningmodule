@@ -1,4 +1,4 @@
-import type { LessonStatus } from '@lcg/domain';
+import { NO_CHECKS, type CheckCounts, type LessonStatus } from '@lcg/domain';
 import type { LessonType } from '@lcg/lesson-schema';
 import type { OutlineLesson } from '@lcg/outline';
 import { and, asc, count, desc, eq, sql, sum } from 'drizzle-orm';
@@ -59,7 +59,7 @@ export interface BoardLesson {
   /** Why the latest Generation Attempt failed, when the Lesson is Generation Failed. */
   failureReason: string | null;
   /** Current Quality Check results, by outcome. */
-  checks: { pass: number; warn: number; fail: number };
+  checks: CheckCounts;
 }
 
 export interface UnitBoard {
@@ -115,7 +115,7 @@ export async function unitBoard(db: Executor, unitId: string): Promise<UnitBoard
     arcs: arcRows,
     lessons: lessonRows.map(({ jobEnqueuedAt, failureReason, ...lesson }) => ({
       ...lesson,
-      checks: counts.get(lesson.id) ?? { pass: 0, warn: 0, fail: 0 },
+      checks: counts.get(lesson.id) ?? NO_CHECKS,
       waitingForArc: lesson.status === 'queued' && lesson.lessonType === 'flex-day' && jobEnqueuedAt === null,
       failureReason: lesson.status === 'generation-failed' ? failureReason : null,
     })),

@@ -21,6 +21,19 @@ function choice<T extends string>(name: string, value: string | undefined, allow
   throw new Error(`${name} must be one of ${allowed.join(', ')}; got "${value}"`);
 }
 
+/** The mode, and a live client for a model, as the environment configures them (ADR 0005). */
+async function liveOrReplay(env: NodeJS.ProcessEnv, model: string): Promise<LlmClient | 'fake'> {
+  const mode = choice('LLM_MODE', env.LLM_MODE, MODES, 'replay');
+  if (mode === 'fake') return 'fake';
+  if (mode === 'replay') return createReplayClient(replayLookup);
+  return createLiveClient({
+    model,
+    effort: choice('LLM_EFFORT', env.LLM_EFFORT, EFFORTS, 'medium'),
+    tracing: env.LANGSMITH_TRACING === 'true',
+    ...(env.LLM_RECORD === 'true' ? { onResult: (request, result) => writeRecording(request.key, result) } : {}),
+  });
+}
+
 /**
  * Chooses the model client from the environment (ADR 0005):
  * - live: the Anthropic API (LLM_MODEL, LLM_EFFORT); LLM_RECORD=true saves results for replay;
@@ -29,20 +42,8 @@ function choice<T extends string>(name: string, value: string | undefined, allow
  * - fake: placeholder Lessons built from the Outline, for working offline.
  */
 export async function modelsFromEnv(env = process.env): Promise<(context: GenerationContext) => LlmClient> {
-  const mode = choice('LLM_MODE', env.LLM_MODE, MODES, 'replay');
-  if (mode === 'live') {
-    const live = await createLiveClient({
-      model: env.LLM_MODEL ?? 'claude-sonnet-5-5',
-      effort: choice('LLM_EFFORT', env.LLM_EFFORT, EFFORTS, 'medium'),
-      tracing: env.LANGSMITH_TRACING === 'true',
-      ...(env.LLM_RECORD === 'true' ? { onResult: (request, result) => writeRecording(request.key, result) } : {}),
-    });
-    return () => live;
-  }
-  if (mode === 'replay') {
-    const replay = createReplayClient(replayLookup);
-    return () => replay;
-  }
+  const client = await liveOrReplay(env, env.LLM_MODEL ?? 'claude-sonnet-5-5');
+  if (client !== 'fake') return () => client;
   return (context) => createFakeClient(() => JSON.stringify(placeholderOutput(context.outline)));
 }
 
@@ -57,20 +58,8 @@ function replayLookup(key: string): LlmResult | undefined {
  * "taught" for every Focus Standard.
  */
 export async function reviewModelsFromEnv(env = process.env): Promise<(context: ReviewContext) => LlmClient> {
-  const mode = choice('LLM_MODE', env.LLM_MODE, MODES, 'replay');
-  if (mode === 'live') {
-    const live = await createLiveClient({
-      model: env.LLM_REVIEW_MODEL ?? 'claude-haiku-5-5',
-      effort: choice('LLM_EFFORT', env.LLM_EFFORT, EFFORTS, 'medium'),
-      tracing: env.LANGSMITH_TRACING === 'true',
-      ...(env.LLM_RECORD === 'true' ? { onResult: (request, result) => writeRecording(request.key, result) } : {}),
-    });
-    return () => live;
-  }
-  if (mode === 'replay') {
-    const replay = createReplayClient(replayLookup);
-    return () => replay;
-  }
+  const client = await liveOrReplay(env, env.LLM_REVIEW_MODEL ?? 'claude-haiku-5-5');
+  if (client !== 'fake') return () => client;
   return (context) =>
     createFakeClient(() =>
       JSON.stringify({

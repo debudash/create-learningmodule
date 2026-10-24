@@ -106,6 +106,7 @@ describe('publishing a Unit', () => {
     });
   });
 
+  // Approves and versions all 47 Lessons one at a time, which takes about half a minute; allow two.
   it('freezes a Release of the Approved Versions; later edits do not change it', async () => {
     const all = await database.db.select({ id: lessons.id }).from(lessons).where(eq(lessons.unitId, unitId));
     for (const { id } of all) {

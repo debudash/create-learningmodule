@@ -30,10 +30,12 @@ export { publishability, type Publishability } from './release.js';
 export { isSelfApproval, mayAssign, mayPublish, VERSION_REASON_LABELS } from './people.js';
 export {
   CHECK_LABELS,
+  countChecks,
+  NO_CHECKS,
   runRuleChecks,
-  summarizeChecks,
+  type CheckCounts,
+  type CheckId,
   type CheckOutcome,
   type CheckOutlineFacts,
-  type CheckSummary,
   type QualityCheckResult,
 } from './quality.js';

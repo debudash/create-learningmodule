@@ -215,10 +215,9 @@ importers:
       '@lcg/lesson-schema':
         specifier: workspace:*
         version: link:../lesson-schema
-    devDependencies:
-      '@lcg/fixtures':
+      '@lcg/standards':
         specifier: workspace:*
-        version: link:../../fixtures
+        version: link:../standards
 
   packages/generation:
     dependencies:

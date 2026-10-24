@@ -5,6 +5,7 @@ import { availableActions, hasOpenableContent, LESSON_STATUS_LABELS, type Lesson
 import { LESSON_TYPE_LABELS } from '@lcg/lesson-schema';
 import Link from 'next/link';
 import { useEffect, useState, useTransition } from 'react';
+import { CheckBadge } from '@/components/CheckBadge';
 import { StatusBadge } from '@/components/StatusBadge';
 import type { ActionResult } from '@/server/action-result';
 import { approveLessonsAction, cancelGenerationAction, retryLessonAction, startGenerationAction } from './actions';
@@ -249,14 +250,7 @@ function LessonRow({ lesson, onRetry }: { lesson: BoardLesson; onRetry: () => vo
           {lesson.failureReason && <span className="text-danger"> · {lesson.failureReason}</span>}
         </span>
       </span>
-      {lesson.checks.fail + lesson.checks.warn > 0 && (
-        <span
-          className={`rounded px-1.5 py-0.5 text-xs font-medium ${lesson.checks.fail > 0 ? 'bg-danger-soft text-danger' : 'bg-eld-soft text-eld'}`}
-          title={`Quality Checks: ${lesson.checks.fail} failing, ${lesson.checks.warn} to look at, ${lesson.checks.pass} passing`}
-        >
-          {lesson.checks.fail > 0 ? `${lesson.checks.fail} failing` : `${lesson.checks.warn} to check`}
-        </span>
-      )}
+      <CheckBadge counts={lesson.checks} />
       {lesson.status === 'generation-failed' && (
         <button
           type="button"
