@@ -3,8 +3,8 @@ import type { Lesson } from '@lcg/lesson-schema';
 import type { OutlineLesson } from '@lcg/outline';
 import { and, asc, eq, inArray, sql } from 'drizzle-orm';
 import type { Executor } from './client.js';
-import { readLessonContent } from './documents.js';
-import { lessons, qualityCheckResults, units } from './schema.js';
+import { parseStoredContent } from './documents.js';
+import { lessonDocuments, lessons, qualityCheckResults, units } from './schema.js';
 
 /** The Outline facts the rule checks compare a Lesson with. */
 export function checkFactsOf(outline: OutlineLesson): CheckOutlineFacts {
@@ -111,19 +111,36 @@ export interface ReviewContext {
   outline: OutlineLesson;
   anchorTextTitle: string;
   unit: { grade: number; unitNumber: number };
+  /** Digest of the content under review; its results judge this content only. */
+  contentDigest: string;
 }
 
-/** What the AI Review of a Lesson needs, or undefined if the Lesson has no content yet. */
+/**
+ * What the AI Review of a Lesson needs, or undefined if the Lesson has no content yet.
+ *
+ * LCG-20: a review saved its results as judging whatever content was stored when
+ * it finished, so a review of content edited mid-review counted as current. The
+ * content and its digest are now read in one statement, and the review's results
+ * carry that digest.
+ */
 export async function loadReviewContext(db: Executor, lessonId: string): Promise<ReviewContext | undefined> {
   const [row] = await db
-    .select({ outline: lessons.outline, anchorText: units.anchorText, grade: units.grade, unitNumber: units.unitNumber })
+    .select({
+      outline: lessons.outline,
+      contentDigest: lessons.contentDigest,
+      state: lessonDocuments.state,
+      anchorText: units.anchorText,
+      grade: units.grade,
+      unitNumber: units.unitNumber,
+    })
     .from(lessons)
     .innerJoin(units, eq(units.id, lessons.unitId))
+    .innerJoin(lessonDocuments, eq(lessonDocuments.lessonId, lessons.id))
     .where(eq(lessons.id, lessonId));
-  const lesson = row ? await readLessonContent(db, lessonId) : undefined;
-  if (!row || !lesson) return undefined;
+  if (!row?.contentDigest) return undefined;
   return {
-    lesson,
+    lesson: parseStoredContent(lessonId, row.state),
+    contentDigest: row.contentDigest,
     outline: row.outline,
     anchorTextTitle: row.anchorText.title,
     unit: { grade: row.grade, unitNumber: row.unitNumber },

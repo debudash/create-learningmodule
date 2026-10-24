@@ -18,5 +18,5 @@ export async function handleReviewJob(deps: ReviewJobDeps, job: { lessonId: stri
   const key = `g${context.unit.grade}-u${context.unit.unitNumber}/${context.outline.key}/review`;
   const result = await reviewLesson(deps.clientFor(context), context, key);
   if (!result.ok) throw new Error(result.reason);
-  await replaceCheckResults(deps.db, job.lessonId, 'ai-review', result.results);
+  await replaceCheckResults(deps.db, job.lessonId, 'ai-review', result.results, context.contentDigest);
 }

@@ -117,7 +117,11 @@ export async function replaceLessonContent(db: Executor, lessonId: string, lesso
 /** The Lesson's current content as Lesson JSON, or undefined if it has none yet. */
 export async function readLessonContent(db: Executor, lessonId: string): Promise<Lesson | undefined> {
   const state = await loadDocumentState(db, lessonId);
-  if (!state) return undefined;
+  return state ? parseStoredContent(lessonId, state) : undefined;
+}
+
+/** Stored state as Lesson JSON; only valid Lessons are stored, so anything else is a bug. */
+export function parseStoredContent(lessonId: string, state: Uint8Array): Lesson {
   const result = yStateToLesson(state);
   if (!result.ok) throw new Error(`Lesson ${lessonId} content is invalid: ${result.problems.join('; ')}`);
   return result.lesson;
