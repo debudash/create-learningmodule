@@ -37,6 +37,7 @@ export {
   captureVersion,
   completeGeneration,
   enqueueReadyLessons,
+  failStalledGenerations,
   loadGenerationContext,
   promptInputFor,
   recordGenerationFailure,

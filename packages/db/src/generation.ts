@@ -370,3 +370,32 @@ export function promptInputFor(
     ...(extraInstructions ? { extraInstructions } : {}),
   };
 }
+
+/**
+ * Fails Lessons that have been Generating for longer than any generation takes.
+ *
+ * LCG-11: when the worker died during a Lesson's last attempt, the queue gave the
+ * job up and nothing moved the Lesson on, so it stayed Generating forever. The
+ * worker now sweeps for such Lessons and marks them Generation Failed with a
+ * reason, so an Editor can retry them.
+ */
+export async function failStalledGenerations(db: Database, { olderThanMinutes }: { olderThanMinutes: number }): Promise<number> {
+  return db.transaction(async (tx) => {
+    const stalled = await tx
+      .select({ id: lessons.id })
+      .from(lessons)
+      .where(and(eq(lessons.status, 'generating'), sql`${lessons.updatedAt} < now() - make_interval(mins => ${olderThanMinutes})`));
+    for (const { id } of stalled) {
+      await tx.update(lessons).set({ jobEnqueuedAt: null }).where(eq(lessons.id, id));
+      await transitionLesson(tx, {
+        lessonId: id,
+        actor: { kind: 'system' },
+        action: {
+          type: 'fail-generating',
+          reason: 'Generation stopped unexpectedly (the worker was interrupted). Retry to generate it again.',
+        },
+      });
+    }
+    return stalled.length;
+  });
+}

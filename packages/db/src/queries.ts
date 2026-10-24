@@ -3,7 +3,7 @@ import type { LessonType } from '@lcg/lesson-schema';
 import type { OutlineLesson } from '@lcg/outline';
 import { asc, count, desc, eq, sql, sum } from 'drizzle-orm';
 import type { Executor } from './client.js';
-import { arcs, generationAttempts, guidanceVersions, lessons, units, users } from './schema.js';
+import { arcs, generationAttempts, guidanceVersions, lessons, units, users, workflowEvents } from './schema.js';
 
 export interface UnitSummary {
   id: string;
@@ -83,9 +83,9 @@ export async function unitBoard(db: Executor, unitId: string): Promise<UnitBoard
       assigneeName: users.name,
       jobEnqueuedAt: lessons.jobEnqueuedAt,
       failureReason: sql<string | null>`(
-        SELECT ${generationAttempts.failureReason} FROM ${generationAttempts}
-        WHERE ${generationAttempts.lessonId} = ${lessons.id}
-        ORDER BY ${generationAttempts.createdAt} DESC LIMIT 1)`,
+        SELECT ${workflowEvents.reason} FROM ${workflowEvents}
+        WHERE ${workflowEvents.lessonId} = ${lessons.id} AND ${workflowEvents.toStatus} = 'generation-failed'
+        ORDER BY ${workflowEvents.createdAt} DESC LIMIT 1)`,
     })
     .from(lessons)
     .leftJoin(users, eq(users.id, lessons.assigneeId))

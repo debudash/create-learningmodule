@@ -1,5 +1,7 @@
 import {
   cancelGeneration,
+  failStalledGenerations,
+  unitBoard,
   readLessonContent,
   regenerateLesson,
   replaceLessonContent,
@@ -187,5 +189,24 @@ describe('stale generation jobs', () => {
     expect(attempts).toHaveLength(1);
     expect(versions).toHaveLength(1);
     expect((await lessonsByKey(['L5']))[0]!.status).toBe('draft');
+  });
+});
+
+describe('stalled generations', () => {
+  // LCG-11 regression. Found by: Phase 3 spec review (a crash on the last attempt left a Lesson Generating forever).
+  it('LCG-11: fails a Lesson left Generating long after its job stopped, and leaves recent ones alone', async () => {
+    const [l6, l7] = await lessonsByKey(['L6', 'L7']);
+    await database.db
+      .update(schema.lessons)
+      .set({ status: 'generating', updatedAt: new Date(Date.now() - 60 * 60 * 1000) })
+      .where(eq(schema.lessons.id, l6!.id));
+    await database.db.update(schema.lessons).set({ status: 'generating' }).where(eq(schema.lessons.id, l7!.id));
+
+    expect(await failStalledGenerations(database.db, { olderThanMinutes: 30 })).toBe(1);
+    const [after6, after7] = await lessonsByKey(['L6', 'L7']);
+    expect(after6!.status).toBe('generation-failed');
+    expect(after7!.status).toBe('generating');
+    const board = await unitBoard(database.db, unitId);
+    expect(board!.lessons.find((l) => l.key === 'L6')!.failureReason).toMatch(/stopped/);
   });
 });
