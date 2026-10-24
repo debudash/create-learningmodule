@@ -11,7 +11,7 @@ import {
   type User,
 } from '@lcg/db';
 import { isEditable } from '@lcg/domain';
-import { verifySession } from '@lcg/session';
+import { isSealed, verifySession } from '@lcg/session';
 import * as Y from 'yjs';
 
 const PREFIX = 'lesson:';
@@ -39,7 +39,13 @@ export interface CollabServer {
   refreshDocument(lessonId: string): Promise<void>;
   /** Closes every live connection to a Lesson so editors reconnect under its current status. */
   reconnectEditors(lessonId: string): void;
+  /** Saves every open copy of a Lesson now, instead of after the usual pause. */
+  saveNow(lessonId: string): Promise<void>;
 }
+
+/** The seal a caller sends to ask for an immediate save of a Lesson (see saveLessonNow in the web app). */
+export const saveNowSealText = (lessonId: string) => `flush:${lessonId}`;
+const SAVE_NOW_PATH = /^\/flush\/([0-9a-f-]{36})$/;
 
 interface ConnectionContext {
   user: User;
@@ -73,6 +79,26 @@ export function createCollabServer({ db, sessionSecret, port = 1234, debounce = 
       if (!status) throw new Error('No such Lesson');
       if (!isEditable(status)) connection.readOnly = true;
       return { user } satisfies ConnectionContext;
+    },
+
+    /**
+     * LCG-17: edits are stored a short pause after the last keystroke, so a Lesson
+     * approved right after an edit froze the older stored content as its Approved
+     * Version. The web app now calls POST /flush/<lesson id> (sealed with the
+     * session secret) before Submit and Approve, and this saves open copies at once.
+     */
+    async onRequest({ request, response }) {
+      const lessonId = SAVE_NOW_PATH.exec(request.url ?? '')?.[1];
+      if (!lessonId || request.method !== 'POST') return;
+      const seal = request.headers['x-lcg-seal'];
+      if (!isSealed(saveNowSealText(lessonId), typeof seal === 'string' ? seal : undefined, sessionSecret)) {
+        response.writeHead(403).end();
+      } else {
+        await saveNow(lessonId);
+        response.writeHead(204).end();
+      }
+      // Hocuspocus treats a rejection with no value as "handled"; it then sends nothing else.
+      throw null;
     },
 
     async connected({ documentName, socketId, connectionInstance }) {
@@ -110,6 +136,17 @@ export function createCollabServer({ db, sessionSecret, port = 1234, debounce = 
     ],
   });
 
+  async function saveNow(lessonId: string): Promise<void> {
+    const name = documentNameFor(lessonId);
+    const status = await findLessonStatus(db, lessonId);
+    if (!status || !isEditable(status)) return;
+    const editors = editorsSinceStore.get(name);
+    editorsSinceStore.delete(name);
+    for (const copy of openCopies(lessonId)) {
+      await saveLiveDocument(db, lessonId, Y.encodeStateAsUpdate(copy), [...(editors ?? [])]);
+    }
+  }
+
   const openCopies = (lessonId: string): Set<Y.Doc> => {
     const name = documentNameFor(lessonId);
     const copies = new Set<Y.Doc>([...(live.get(name)?.values() ?? [])].map((c) => c.document));
@@ -129,6 +166,7 @@ export function createCollabServer({ db, sessionSecret, port = 1234, debounce = 
       const state = await loadDocumentState(db, lessonId);
       if (state) for (const copy of copies) Y.applyUpdate(copy, state);
     },
+    saveNow,
     reconnectEditors(lessonId) {
       for (const connection of live.get(documentNameFor(lessonId))?.values() ?? []) connection.close();
     },

@@ -17,7 +17,7 @@ import {
 } from '@lcg/db/testing';
 import { LESSON_FRAGMENT } from '@lcg/lesson-schema';
 import { sampleLesson } from '@lcg/lesson-schema/testing';
-import { signSession } from '@lcg/session';
+import { sealPayload, signSession } from '@lcg/session';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import * as Y from 'yjs';
 import { createCollabServer, documentNameFor, followLessonChanges } from './server.js';
@@ -26,6 +26,7 @@ const SECRET = 'test-secret';
 let database: TestDatabase;
 let server: ReturnType<typeof createCollabServer>;
 let url: string;
+let httpUrl: string;
 let listener: LessonChangeListener;
 const lessonIds: Record<string, string> = {};
 
@@ -50,7 +51,9 @@ beforeAll(async () => {
   }
   const port = await freePort();
   url = `ws://127.0.0.1:${port}`;
-  server = createCollabServer({ db: database.db, sessionSecret: SECRET, port, debounce: 20 });
+  httpUrl = `http://127.0.0.1:${port}`;
+  // A realistic save delay, so tests show whether something waits for the debounced store.
+  server = createCollabServer({ db: database.db, sessionSecret: SECRET, port, debounce: 1000 });
   listener = await followLessonChanges(server, database.url);
   await server.listen();
 });
@@ -79,7 +82,7 @@ function open(lessonId: string, token: string) {
 const retitle = (document: Y.Doc, title: string) =>
   (document.getXmlFragment(LESSON_FRAGMENT).get(0) as Y.XmlElement).setAttribute('title', title);
 
-async function eventually(check: () => Promise<boolean>, timeoutMs = 3000): Promise<void> {
+async function eventually(check: () => Promise<boolean>, timeoutMs = 8000): Promise<void> {
   const until = Date.now() + timeoutMs;
   while (Date.now() < until) {
     if (await check()) return;
@@ -127,7 +130,7 @@ describe('collaboration server', () => {
     await eventually(async () => provider.authorizedScope === 'readonly');
     const approved = await readLessonContent(database.db, lessonId);
     retitle(document, 'Edited after approval');
-    await new Promise((r) => setTimeout(r, 300));
+    await new Promise((r) => setTimeout(r, 2000));
     expect(await readLessonContent(database.db, lessonId)).toEqual(approved);
 
     await changeStatus('in-review');
@@ -172,7 +175,7 @@ describe('collaboration server', () => {
     const before = await readLessonContent(database.db, lessonIds.L3!);
     // A crafted client bypasses the editor's structure guard and deletes the Launch Section.
     document.getXmlFragment(LESSON_FRAGMENT).delete(1, 1);
-    await new Promise((r) => setTimeout(r, 300));
+    await new Promise((r) => setTimeout(r, 2000));
     expect(await readLessonContent(database.db, lessonIds.L3!)).toEqual(before);
     provider.destroy();
   });
@@ -187,8 +190,26 @@ describe('collaboration server', () => {
     const { document, provider, synced } = open(lessonIds.L4!, signSession(database.editorId, SECRET));
     await synced;
     retitle(document, 'Should not stick');
-    await new Promise((r) => setTimeout(r, 300));
+    await new Promise((r) => setTimeout(r, 2000));
     expect((await readLessonContent(database.db, lessonIds.L4!))?.title).toBe(sampleLesson().title);
+    provider.destroy();
+  });
+
+  // LCG-17 regression. Found by: Phase 4 spec review (an approval could freeze content saved before the last edits).
+  it('LCG-17: saves open edits at once when asked, and refuses an unsealed request', async () => {
+    const { document, provider, synced } = open(lessonIds.L3!, signSession(database.editorId, SECRET));
+    await synced;
+    retitle(document, 'Edited just before approval');
+    await new Promise((r) => setTimeout(r, 100));
+
+    const refused = await fetch(`${httpUrl}/flush/${lessonIds.L3}`, { method: 'POST' });
+    expect(refused.status).toBe(403);
+    const flushed = await fetch(`${httpUrl}/flush/${lessonIds.L3}`, {
+      method: 'POST',
+      headers: { 'x-lcg-seal': sealPayload(`flush:${lessonIds.L3}`, SECRET) },
+    });
+    expect(flushed.status).toBe(204);
+    expect((await readLessonContent(database.db, lessonIds.L3!))?.title).toBe('Edited just before approval');
     provider.destroy();
   });
 });

@@ -3,6 +3,7 @@
 import { applyReviewAction, assignLesson, restoreVersion } from '@lcg/db';
 import type { ReviewAction } from '@lcg/domain';
 import { revalidatePath } from 'next/cache';
+import { saveLessonNow } from '@/server/collab';
 import { db } from '@/server/db';
 import { requireUser } from '@/server/session';
 
@@ -15,6 +16,8 @@ export async function reviewLessonAction(
   expectedTransitionCount: number,
 ): Promise<ActionResult> {
   const user = await requireUser();
+  // Submitting and approving freeze a Version; first save any edits still open in the editor.
+  if (action.type === 'submit' || action.type === 'approve') await saveLessonNow(lessonId);
   const result = await applyReviewAction(db, {
     lessonId,
     actor: { kind: 'user', id: user.id, role: user.role },
