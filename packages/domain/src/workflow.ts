@@ -1,3 +1,4 @@
+import { isSelfApproval } from './people.js';
 import { LESSON_STATUS_LABELS, type LessonStatus, type Role } from './vocabulary.js';
 
 /** Who is acting: a signed-in person, or the system (the generation worker). */
@@ -102,7 +103,7 @@ export function decide(status: LessonStatus, actor: Actor, action: LessonAction,
     ok: true,
     to: rule.to,
     flags: {
-      selfApproval: approving && context.editorIds.includes(actor.id),
+      selfApproval: approving && isSelfApproval(actor, context.editorIds),
       overFailingChecks: approving && context.failingChecks > 0,
     },
   };

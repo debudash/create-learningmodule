@@ -1,4 +1,5 @@
 import { lessonHistory, readVersion, workspaceLesson } from '@lcg/db';
+import { VERSION_REASON_LABELS } from '@lcg/domain';
 import { lessonToLines } from '@lcg/lesson-schema';
 import { diffArrays } from 'diff';
 import Link from 'next/link';
@@ -24,7 +25,7 @@ export default async function ComparePage({
   const versions = (await lessonHistory(db, lessonId)).versions;
   const label = (id: string) => {
     const version = versions.find((v) => v.id === id)!;
-    return `v${version.number} (${version.reason})`;
+    return `v${version.number} (${VERSION_REASON_LABELS[version.reason]})`;
   };
   const changes = diffArrays(lessonToLines(before), lessonToLines(after));
   const added = changes.filter((c) => c.added).reduce((n, c) => n + c.count!, 0);

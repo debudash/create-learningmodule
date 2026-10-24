@@ -4,7 +4,8 @@ import type { LessonActionType } from '@lcg/domain';
 import { useRouter } from 'next/navigation';
 import { useState, useTransition } from 'react';
 import { regenerateLessonAction } from '@/app/units/[unitId]/actions';
-import { assignLessonAction, reviewLessonAction, type ActionResult } from './actions';
+import type { ActionResult } from '@/server/action-result';
+import { assignLessonAction, reviewLessonAction } from './actions';
 
 interface Props {
   lessonId: string;
@@ -13,6 +14,8 @@ interface Props {
   actions: LessonActionType[];
   assignee: { id: string; name: string } | null;
   userId: string;
+  /** People an Approver can assign the Lesson to (empty for Editors). */
+  colleagues: { id: string; name: string }[];
   /** This Approver edited the Lesson; approving it will be recorded as Self-Approval. */
   selfApproval: boolean;
 }
@@ -23,7 +26,7 @@ const PRIMARY = 'rounded-lg bg-accent px-3 py-1.5 text-sm font-medium text-white
 const SECONDARY = 'rounded-lg border border-line px-3 py-1.5 text-sm font-medium hover:border-accent disabled:opacity-50';
 
 /** The workflow buttons for one Lesson: only what this person may do now. */
-export function WorkflowBar({ lessonId, transitionCount, actions, assignee, userId, selfApproval }: Props) {
+export function WorkflowBar({ lessonId, transitionCount, actions, assignee, userId, colleagues, selfApproval }: Props) {
   const router = useRouter();
   const [dialog, setDialog] = useState<Dialog>();
   const [text, setText] = useState('');
@@ -31,10 +34,10 @@ export function WorkflowBar({ lessonId, transitionCount, actions, assignee, user
   const [pending, startTransition] = useTransition();
   const can = (action: LessonActionType) => actions.includes(action);
 
-  const run = (act: () => Promise<ActionResult | { ok: true; message: string }>) =>
+  const run = (act: () => Promise<ActionResult>) =>
     startTransition(async () => {
       const result = await act();
-      setMessage(result.ok ? ('message' in result ? result.message : undefined) : result.message);
+      setMessage(result.message);
       if (result.ok) {
         setDialog(undefined);
         setText('');
@@ -45,12 +48,27 @@ export function WorkflowBar({ lessonId, transitionCount, actions, assignee, user
   return (
     <div className="flex flex-col items-end gap-2">
       <div className="flex flex-wrap justify-end gap-2">
-        {assignee?.id === userId ? (
-          <button type="button" className={SECONDARY} disabled={pending} onClick={() => run(() => assignLessonAction(lessonId, false))}>
-            Release
+        {colleagues.length > 0 ? (
+          <select
+            aria-label="Assignee"
+            value={assignee?.id ?? ''}
+            disabled={pending}
+            onChange={(e) => run(() => assignLessonAction(lessonId, e.target.value || null))}
+            className="rounded-lg border border-line bg-paper-raised px-2 py-1.5 text-sm"
+          >
+            <option value="">Unassigned</option>
+            {colleagues.map((person) => (
+              <option key={person.id} value={person.id}>
+                {person.name}
+              </option>
+            ))}
+          </select>
+        ) : assignee?.id === userId ? (
+          <button type="button" className={SECONDARY} disabled={pending} onClick={() => run(() => assignLessonAction(lessonId, null))}>
+            Unclaim
           </button>
         ) : (
-          <button type="button" className={SECONDARY} disabled={pending} onClick={() => run(() => assignLessonAction(lessonId, true))}>
+          <button type="button" className={SECONDARY} disabled={pending} onClick={() => run(() => assignLessonAction(lessonId, userId))}>
             {assignee ? `Take over from ${assignee.name}` : 'Claim'}
           </button>
         )}
@@ -126,7 +144,7 @@ export function WorkflowBar({ lessonId, transitionCount, actions, assignee, user
                 )
               }
             >
-              {dialog === 'request-changes' ? 'Send back' : dialog === 'reopen' ? 'Reopen' : 'Regenerate'}
+              {dialog === 'request-changes' ? 'Request changes' : dialog === 'reopen' ? 'Reopen' : 'Regenerate'}
             </button>
           </div>
         </div>

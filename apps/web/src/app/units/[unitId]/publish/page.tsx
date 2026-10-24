@@ -1,5 +1,5 @@
 import { listReleases, publishSummary, unitBoard } from '@lcg/db';
-import { publishability } from '@lcg/domain';
+import { mayPublish, publishability } from '@lcg/domain';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { db } from '@/server/db';
@@ -26,7 +26,7 @@ export default async function PublishPage({ params }: { params: Promise<{ unitId
       <h1 className="mt-1 font-serif text-3xl font-semibold">Publish the Unit</h1>
       <p className="mt-2 text-ink-soft">
         Publishing freezes a Unit Release of every Lesson&apos;s Approved Version for teachers. Later edits never change a
-        Release; publish again to release them.
+        Release; publish again to include them.
       </p>
 
       <section className="mt-6 rounded-xl border border-line bg-paper-raised p-5">
@@ -44,7 +44,7 @@ export default async function PublishPage({ params }: { params: Promise<{ unitId
           {board.unit.hasUnpublishedChanges && <li className="text-eld">Changed since the last Release.</li>}
         </ul>
         <div className="mt-4">
-          {user.role === 'approver' ? (
+          {mayPublish({ kind: 'user', id: user.id, role: user.role }) ? (
             <PublishButton unitId={unitId} disabled={!ready.ok} />
           ) : (
             <p className="text-sm text-ink-soft">Only an Approver can publish a Unit.</p>

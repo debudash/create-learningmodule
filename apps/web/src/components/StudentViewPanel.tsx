@@ -1,4 +1,4 @@
-import { inlineToNodes, studentView, type Lesson } from '@lcg/lesson-schema';
+import { choiceLetter, inlineToNodes, studentView, type Lesson } from '@lcg/lesson-schema';
 
 /** Renders inline Markdown (**bold**, *italic*) as React elements. */
 function Inline({ text }: { text: string }) {
@@ -54,7 +54,7 @@ export function StudentViewPanel({ lesson }: { lesson: Lesson }) {
                     <ol className="mt-2 space-y-1">
                       {block.choices.map((choice, j) => (
                         <li key={j}>
-                          {String.fromCharCode(65 + j)}. <Inline text={choice} />
+                          {choiceLetter(j)}. <Inline text={choice} />
                         </li>
                       ))}
                     </ol>

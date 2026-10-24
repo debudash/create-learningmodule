@@ -1,10 +1,11 @@
 'use client';
 
 import { useState, useTransition } from 'react';
+import type { ActionResult } from '@/server/action-result';
 import { publishUnitAction } from './actions';
 
 export function PublishButton({ unitId, disabled }: { unitId: string; disabled: boolean }) {
-  const [message, setMessage] = useState<{ ok: boolean; message: string }>();
+  const [message, setMessage] = useState<ActionResult>();
   const [pending, startTransition] = useTransition();
   return (
     <div className="flex items-center gap-3">

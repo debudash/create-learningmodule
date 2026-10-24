@@ -1,21 +1,11 @@
 'use client';
 
 import type { LessonHistory } from '@lcg/db';
-import { LESSON_STATUS_LABELS, type LessonStatus } from '@lcg/domain';
+import { LESSON_STATUS_LABELS, VERSION_REASON_LABELS } from '@lcg/domain';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, useTransition } from 'react';
 import { restoreVersionAction } from './actions';
-
-const REASON_LABELS: Record<string, string> = {
-  generated: 'Generated',
-  regenerated: 'Regenerated',
-  replaced: 'Before regenerating',
-  submitted: 'Submitted',
-  approved: 'Approved',
-  published: 'Published',
-  restored: 'Restored',
-};
 
 const when = (date: Date) =>
   new Date(date).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
@@ -28,6 +18,8 @@ export function HistoryPanel({ lessonId, history, canRestore }: { lessonId: stri
   const [pending, startTransition] = useTransition();
   const toggle = (id: string) =>
     setCompare((ids) => (ids.includes(id) ? ids.filter((x) => x !== id) : [...ids.slice(-1), id]));
+  const original = history.versions.findLast((v) => v.reason === 'generated' || v.reason === 'regenerated');
+  const approved = history.versions.find((v) => v.reason === 'approved');
   const [newer, older] = [...compare].sort(
     (a, b) => history.versions.findIndex((v) => v.id === a) - history.versions.findIndex((v) => v.id === b),
   );
@@ -44,6 +36,14 @@ export function HistoryPanel({ lessonId, history, canRestore }: { lessonId: stri
           )}
         </div>
         <p className="text-xs text-ink-faint">Tick two to compare them.</p>
+        {original && approved && (
+          <Link
+            href={`/lessons/${lessonId}/compare?from=${original.id}&to=${approved.id}`}
+            className="mt-1 block text-xs text-accent hover:underline"
+          >
+            Compare the AI&apos;s draft with the Approved Version
+          </Link>
+        )}
         <ul className="mt-1 space-y-1">
           {history.versions.map((version) => (
             <li key={version.id} className="flex items-center gap-2">
@@ -54,7 +54,7 @@ export function HistoryPanel({ lessonId, history, canRestore }: { lessonId: stri
                 aria-label={`Compare version ${version.number}`}
               />
               <span className="flex-1">
-                v{version.number} {REASON_LABELS[version.reason] ?? version.reason}
+                v{version.number} {VERSION_REASON_LABELS[version.reason]}
                 <span className="block text-xs text-ink-faint">
                   {version.actorName ?? 'Generated'} · {when(version.createdAt)}
                 </span>
@@ -86,7 +86,7 @@ export function HistoryPanel({ lessonId, history, canRestore }: { lessonId: stri
         <ul className="mt-1 space-y-2">
           {history.events.map((event, i) => (
             <li key={i}>
-              {LESSON_STATUS_LABELS[event.toStatus as LessonStatus]}
+              {LESSON_STATUS_LABELS[event.toStatus]}
               <span className="text-ink-faint"> · {event.actorName ?? 'Generation'} · {when(event.createdAt)}</span>
               {event.selfApproval && <span className="ml-1 rounded bg-eld-soft px-1 text-xs text-eld">Self-Approval</span>}
               {event.overFailingChecks && <span className="ml-1 rounded bg-danger-soft px-1 text-xs text-danger">Over failing checks</span>}

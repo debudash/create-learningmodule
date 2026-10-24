@@ -124,6 +124,8 @@ export interface WorkspaceLesson {
   assignee: { id: string; name: string } | null;
   /** People who edited the Lesson since it was last generated. */
   editorIds: string[];
+  /** When the Lesson is Changes Requested: who asked, and why. */
+  changesRequested: { by: string | null; reason: string | null } | null;
   unit: { id: string; title: string; grade: number; unitNumber: number };
   arc: { name: string };
 }
@@ -136,6 +138,14 @@ export async function workspaceLesson(db: Executor, lessonId: string): Promise<W
       unit: { id: units.id, title: units.title, grade: units.grade, unitNumber: units.unitNumber },
       arc: { name: arcs.name },
       assigneeName: users.name,
+      changesReason: sql<string | null>`(
+        SELECT ${workflowEvents.reason} FROM ${workflowEvents}
+        WHERE ${workflowEvents.lessonId} = ${lessons.id} AND ${workflowEvents.toStatus} = 'changes-requested'
+        ORDER BY ${workflowEvents.createdAt} DESC LIMIT 1)`,
+      changesBy: sql<string | null>`(
+        SELECT u.name FROM ${workflowEvents} e JOIN users u ON u.id = e.actor_id
+        WHERE e.lesson_id = ${lessons.id} AND e.to_status = 'changes-requested'
+        ORDER BY e.created_at DESC LIMIT 1)`,
     })
     .from(lessons)
     .innerJoin(units, eq(units.id, lessons.unitId))
@@ -154,6 +164,8 @@ export async function workspaceLesson(db: Executor, lessonId: string): Promise<W
     outline: lesson.outline,
     assignee: lesson.assigneeId && row.assigneeName ? { id: lesson.assigneeId, name: row.assigneeName } : null,
     editorIds: lesson.editorIds,
+    changesRequested:
+      lesson.status === 'changes-requested' ? { by: row.changesBy, reason: row.changesReason } : null,
     unit: row.unit,
     arc: row.arc,
   };

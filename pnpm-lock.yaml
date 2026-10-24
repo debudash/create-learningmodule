@@ -82,7 +82,7 @@ importers:
         specifier: workspace:*
         version: link:../../packages/lesson-schema
       '@lcg/newsela-format':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../../packages/newsela-format
       '@lcg/outline':
         specifier: workspace:*

@@ -3,11 +3,10 @@
 import { applyReviewAction, assignLesson, restoreVersion } from '@lcg/db';
 import type { ReviewAction } from '@lcg/domain';
 import { revalidatePath } from 'next/cache';
+import type { ActionResult } from '@/server/action-result';
 import { saveLessonNow } from '@/server/collab';
 import { db } from '@/server/db';
-import { requireUser } from '@/server/session';
-
-export type ActionResult = { ok: true } | { ok: false; message: string };
+import { currentActor } from '@/server/session';
 
 /** Submit, approve, request changes or reopen, as the signed-in person. */
 export async function reviewLessonAction(
@@ -15,31 +14,24 @@ export async function reviewLessonAction(
   action: ReviewAction,
   expectedTransitionCount: number,
 ): Promise<ActionResult> {
-  const user = await requireUser();
+  const actor = await currentActor();
   // Submitting and approving freeze a Version; first save any edits still open in the editor.
   if (action.type === 'submit' || action.type === 'approve') await saveLessonNow(lessonId);
-  const result = await applyReviewAction(db, {
-    lessonId,
-    actor: { kind: 'user', id: user.id, role: user.role },
-    action,
-    expectedTransitionCount,
-  });
+  const result = await applyReviewAction(db, { lessonId, actor, action, expectedTransitionCount });
   revalidatePath(`/lessons/${lessonId}`);
   return result.ok ? { ok: true } : { ok: false, message: result.message };
 }
 
-/** Claims the Lesson for the signed-in person, or releases it. */
-export async function assignLessonAction(lessonId: string, claim: boolean): Promise<ActionResult> {
-  const user = await requireUser();
-  await assignLesson(db, { lessonId, assigneeId: claim ? user.id : null });
+/** Sets the Lesson's Assignee: yourself, nobody, or (for Approvers) a colleague. */
+export async function assignLessonAction(lessonId: string, assigneeId: string | null): Promise<ActionResult> {
+  const result = await assignLesson(db, { lessonId, assigneeId, actor: await currentActor() });
   revalidatePath(`/lessons/${lessonId}`);
-  return { ok: true };
+  return result;
 }
 
 /** Makes an earlier Lesson Version the current content again. */
 export async function restoreVersionAction(lessonId: string, versionId: string): Promise<ActionResult> {
-  const user = await requireUser();
-  const result = await restoreVersion(db, { lessonId, versionId, actor: { kind: 'user', id: user.id, role: user.role } });
+  const result = await restoreVersion(db, { lessonId, versionId, actor: await currentActor() });
   revalidatePath(`/lessons/${lessonId}`);
   return result;
 }

@@ -1,5 +1,5 @@
-import { lessonHistory, workspaceLesson } from '@lcg/db';
-import { availableActions, isEditable } from '@lcg/domain';
+import { lessonHistory, listUsers, workspaceLesson } from '@lcg/db';
+import { availableActions, isEditable, isSelfApproval } from '@lcg/domain';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { StatusBadge } from '@/components/StatusBadge';
@@ -15,8 +15,7 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
   if (!lesson) notFound();
   const history = await lessonHistory(db, lesson.id);
   const actor = { kind: 'user' as const, id: user.id, role: user.role };
-  const changesRequested =
-    lesson.status === 'changes-requested' ? history.events.find((e) => e.toStatus === 'changes-requested') : undefined;
+  const colleagues = user.role === 'approver' ? (await listUsers(db)).map(({ id, name }) => ({ id, name })) : [];
 
   return (
     <div>
@@ -40,12 +39,13 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
           actions={availableActions(lesson.status, actor)}
           assignee={lesson.assignee}
           userId={user.id}
-          selfApproval={user.role === 'approver' && lesson.editorIds.includes(user.id)}
+          colleagues={colleagues}
+          selfApproval={isSelfApproval(actor, lesson.editorIds)}
         />
       </div>
-      {changesRequested && (
+      {lesson.changesRequested && (
         <div className="mb-4 rounded-md border border-danger/30 bg-danger-soft px-4 py-3 text-sm text-danger">
-          <strong>Changes requested</strong> by {changesRequested.actorName}: “{changesRequested.reason}”
+          <strong>Changes requested</strong> by {lesson.changesRequested.by}: “{lesson.changesRequested.reason}”
         </div>
       )}
       {lesson.status === 'approved' && (

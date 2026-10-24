@@ -27,3 +27,4 @@ export {
   type LiveGenerationLimits,
 } from './generation-policy.js';
 export { publishability, type Publishability } from './release.js';
+export { isSelfApproval, mayAssign, mayPublish, VERSION_REASON_LABELS } from './people.js';

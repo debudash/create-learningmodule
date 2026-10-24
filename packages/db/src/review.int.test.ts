@@ -1,5 +1,5 @@
 import { sampleLesson } from '@lcg/lesson-schema/testing';
-import { and, asc, eq } from 'drizzle-orm';
+import { eq } from 'drizzle-orm';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { readLessonContent, replaceLessonContent } from './documents.js';
 import { captureVersion } from './generation.js';
@@ -142,11 +142,7 @@ describe('publishing a Unit', () => {
     expect(releases.map((r) => r.number)).toEqual([2, 1]);
     const latest = await releaseExport(database.db, releases[0]!.id);
     expect(latest!.lessons[2]!.lesson.title).toBe('Edited after release');
-    const [unit] = await database.db
-      .select({ flag: units.hasUnpublishedChanges })
-      .from(units)
-      .where(and(eq(units.id, unitId)))
-      .orderBy(asc(units.id));
+    const [unit] = await database.db.select({ flag: units.hasUnpublishedChanges }).from(units).where(eq(units.id, unitId));
     expect(unit!.flag).toBe(false);
   });
 });

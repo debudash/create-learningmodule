@@ -1,6 +1,6 @@
 'use client';
 
-import type { Block } from '@lcg/lesson-schema';
+import { choiceLetter, type Block } from '@lcg/lesson-schema';
 import { NodeViewWrapper, type NodeViewProps } from '@tiptap/react';
 import type { ReactNode } from 'react';
 import { CodesInput, Label, SmallButton, TextArea, TextInput } from './fields';
@@ -73,7 +73,7 @@ export function PulseCheckView(view: NodeViewProps) {
                 onChange={() => setChoice(i, { correct: true })}
                 aria-label="Correct answer"
               />
-              <span className="w-5 text-sm font-semibold text-ink-soft">{String.fromCharCode(65 + i)}.</span>
+              <span className="w-5 text-sm font-semibold text-ink-soft">{choiceLetter(i)}.</span>
               <TextInput value={choice.text} disabled={readOnly} placeholder="Answer choice" onChange={(text) => setChoice(i, { text })} />
               {!readOnly && attrs.choices.length > 2 && (
                 <SmallButton

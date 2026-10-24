@@ -24,7 +24,7 @@ export function GuidanceEditor({ unitId, initialText }: { unitId: string; initia
           onClick={() =>
             startTransition(async () => {
               const result = await saveGuidanceAction(unitId, text);
-              setMessage(result.message);
+              setMessage(result.message ?? 'Saved.');
               if (result.ok) setSaved(text);
             })
           }

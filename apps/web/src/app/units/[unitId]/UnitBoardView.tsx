@@ -1,18 +1,13 @@
 'use client';
 
 import type { BoardLesson } from '@lcg/db';
-import { hasOpenableContent, LESSON_STATUS_LABELS, type LessonStatus, type Role } from '@lcg/domain';
+import { availableActions, hasOpenableContent, LESSON_STATUS_LABELS, type LessonStatus, type Role } from '@lcg/domain';
 import { LESSON_TYPE_LABELS } from '@lcg/lesson-schema';
 import Link from 'next/link';
 import { useEffect, useState, useTransition } from 'react';
 import { StatusBadge } from '@/components/StatusBadge';
-import {
-  approveLessonsAction,
-  cancelGenerationAction,
-  retryLessonAction,
-  startGenerationAction,
-  type ActionResult,
-} from './actions';
+import type { ActionResult } from '@/server/action-result';
+import { approveLessonsAction, cancelGenerationAction, retryLessonAction, startGenerationAction } from './actions';
 
 interface Props {
   unitId: string;
@@ -22,11 +17,11 @@ interface Props {
   user: { id: string; role: Role };
 }
 
-type Filter = 'all' | 'needs-approval' | 'changes-requested' | 'mine';
+type Filter = 'all' | 'in-review' | 'changes-requested' | 'mine';
 
 const FILTERS: { id: Filter; label: string; matches: (lesson: BoardLesson, userId: string) => boolean }[] = [
   { id: 'all', label: 'All', matches: () => true },
-  { id: 'needs-approval', label: 'Needs approval', matches: (l) => l.status === 'in-review' },
+  { id: 'in-review', label: 'In Review', matches: (l) => l.status === 'in-review' },
   { id: 'changes-requested', label: 'Changes Requested', matches: (l) => l.status === 'changes-requested' },
   { id: 'mine', label: 'Assigned to me', matches: (l, userId) => l.assigneeId === userId },
 ];
@@ -62,7 +57,9 @@ export function UnitBoardView({ unitId, arcs, initialLessons, initialCost, user 
   const [selected, setSelected] = useState<string[]>([]);
   const active = lessons.some((l) => ACTIVE.includes(l.status));
   const matches = FILTERS.find((f) => f.id === filter)!.matches;
-  const canBulkApprove = user.role === 'approver';
+  const actor = { kind: 'user' as const, ...user };
+  const approvable = (lesson: BoardLesson) => availableActions(lesson.status, actor).includes('approve');
+  const canBulkApprove = availableActions('in-review', actor).includes('approve');
 
   useEffect(() => setLessons(initialLessons), [initialLessons]);
   useEffect(() => {
@@ -213,7 +210,7 @@ export function UnitBoardView({ unitId, arcs, initialLessons, initialCost, user 
                 <li key={lesson.id} className="flex items-center">
                   {canBulkApprove && (
                     <span className="w-8 pl-3">
-                      {lesson.status === 'in-review' && (
+                      {approvable(lesson) && (
                         <input
                           type="checkbox"
                           aria-label={`Select ${lesson.key}`}

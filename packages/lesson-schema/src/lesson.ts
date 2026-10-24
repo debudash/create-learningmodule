@@ -24,6 +24,16 @@ export type Audience = z.infer<typeof audience>;
 
 export const TEACHER_MOVES = ['say', 'ask', 'teach'] as const;
 
+/** How each teacher move is labelled wherever a Lesson is shown. */
+export const TEACHER_MOVE_LABELS: Record<(typeof TEACHER_MOVES)[number], string> = {
+  say: 'Say',
+  ask: 'Ask',
+  teach: 'Teach',
+};
+
+/** "A", "B", "C"... for Pulse Check choices. */
+export const choiceLetter = (index: number) => String.fromCharCode(65 + index);
+
 export const blockSchema = z.discriminatedUnion('type', [
   /** Instructions students follow ("Directions: ..."). */
   z.object({ type: z.literal('directions'), text }),

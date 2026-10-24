@@ -1,6 +1,4 @@
-import type { Block, Lesson } from './lesson.js';
-
-const MOVE_LABELS = { say: 'Say', ask: 'Ask', teach: 'Teach' } as const;
+import { choiceLetter, TEACHER_MOVE_LABELS, type Block, type Lesson } from './lesson.js';
 
 function blockLines(block: Block): string[] {
   switch (block.type) {
@@ -9,7 +7,7 @@ function blockLines(block: Block): string[] {
     case 'paragraph':
       return [block.audience === 'teacher' ? `(Teacher) ${block.text}` : block.text];
     case 'teacher-script':
-      return [`${MOVE_LABELS[block.move]}: ${block.text}`];
+      return [`${TEACHER_MOVE_LABELS[block.move]}: ${block.text}`];
     case 'sample-response':
       return [`Sample response: ${block.text}`];
     case 'teacher-note':
@@ -20,7 +18,7 @@ function blockLines(block: Block): string[] {
       return [
         `Pulse Check (${block.standards.join(', ')}): ${block.stem}`,
         ...block.choices.map(
-          (c, i) => `  ${String.fromCharCode(65 + i)}. ${c.text} (${c.correct ? 'Correct' : 'Incorrect'}: ${c.rationale})`,
+          (c, i) => `  ${choiceLetter(i)}. ${c.text} (${c.correct ? 'Correct' : 'Incorrect'}: ${c.rationale})`,
         ),
       ];
     case 'eld-panel':
@@ -32,7 +30,7 @@ function blockLines(block: Block): string[] {
 
 /**
  * The whole Lesson as readable lines (Teacher View), one fact per line, for
- * comparing Lesson Versions and for giving a Lesson to a reviewer.
+ * comparing Lesson Versions and for giving a Lesson to the AI Review.
  */
 export function lessonToLines(lesson: Lesson): string[] {
   const { header } = lesson;

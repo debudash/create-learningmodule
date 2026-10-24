@@ -1,4 +1,5 @@
 import { findUser, type User } from '@lcg/db';
+import type { Actor } from '@lcg/domain';
 import { SESSION_COOKIE, sessionSecret, signSession, verifySession } from '@lcg/session';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
@@ -34,4 +35,10 @@ export async function startSession(userId: string): Promise<void> {
 
 export async function endSession(): Promise<void> {
   (await cookies()).delete(SESSION_COOKIE);
+}
+
+/** The signed-in person as the workflow rules see them. */
+export async function currentActor(): Promise<Extract<Actor, { kind: 'user' }>> {
+  const user = await requireUser();
+  return { kind: 'user', id: user.id, role: user.role };
 }

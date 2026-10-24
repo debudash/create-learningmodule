@@ -1,13 +1,15 @@
 import {
-  LESSON_MINUTES,
-  sectionMinutes,
-  studentView,
   type Activity,
   type Block,
+  choiceLetter,
   type Lesson,
+  LESSON_MINUTES,
   type LessonType,
+  sectionMinutes,
   type StudentBlock,
   type StudentLesson,
+  studentView,
+  TEACHER_MOVE_LABELS,
 } from '@lcg/lesson-schema';
 import { getStandard } from '@lcg/standards';
 import {
@@ -70,7 +72,6 @@ const OBJECTIVE_TITLES: Record<
   'foundational-skills': 'Foundational Skills',
 };
 
-const MOVE_LABELS = { say: 'Say:', ask: 'Ask:', teach: 'Teach:' } as const;
 
 /**
  * Converts a Lesson to the shape of Newsela's published lesson object, so a Unit Release could be
@@ -252,7 +253,7 @@ function teacherBlock(block: Block): NewselaNode[] {
     case 'teacher-script':
       return [
         paragraph([
-          text(MOVE_LABELS[block.move], [strong]),
+          text(`${TEACHER_MOVE_LABELS[block.move]}:`, [strong]),
           text(' ', [teal]),
           ...inline(block.text, [teal]),
         ]),
@@ -353,7 +354,7 @@ function pulseCheck(
   const cell = [
     paragraph(inline(stem)),
     ...choices.flatMap((choice, i) => [
-      paragraph([text(`${String.fromCharCode(65 + i)}. `), ...inline(choice.text)]),
+      paragraph([text(`${choiceLetter(i)}. `), ...inline(choice.text)]),
       ...(choice.rationale ? [paragraph(choice.rationale)] : []),
     ]),
   ];

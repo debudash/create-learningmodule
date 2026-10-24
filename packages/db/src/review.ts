@@ -1,4 +1,15 @@
-import { isEditable, parseReviewAction, publishability, type Actor, type ReviewAction } from '@lcg/domain';
+import {
+  isEditable,
+  mayAssign,
+  mayPublish,
+  parseReviewAction,
+  publishability,
+  type Actor,
+  type LessonActionType,
+  type LessonStatus,
+  type ReviewAction,
+  type VersionReason,
+} from '@lcg/domain';
 import type { Lesson, LessonType } from '@lcg/lesson-schema';
 import { and, asc, count, desc, eq, inArray, max } from 'drizzle-orm';
 import type { Database, Executor } from './client.js';
@@ -89,13 +100,22 @@ export async function approveLessons(
   return result;
 }
 
-/** Makes a person the Lesson's Assignee, or clears it. Anyone may claim or release; live editing makes overlap harmless. */
-export async function assignLesson(db: Executor, input: { lessonId: string; assigneeId: string | null }): Promise<void> {
+/** Sets a Lesson's Assignee, as the rules allow this person (see mayAssign). */
+export async function assignLesson(
+  db: Executor,
+  input: { lessonId: string; assigneeId: string | null; actor: Actor & { kind: 'user' } },
+): Promise<{ ok: true } | { ok: false; message: string }> {
+  const [lesson] = await db.select({ assigneeId: lessons.assigneeId }).from(lessons).where(eq(lessons.id, input.lessonId));
+  if (!lesson) return { ok: false, message: 'No such Lesson.' };
+  if (!mayAssign(input.actor, input.assigneeId, lesson.assigneeId)) {
+    return { ok: false, message: 'Only an Approver can assign a Lesson to someone else or clear their claim.' };
+  }
   await db.update(lessons).set({ assigneeId: input.assigneeId }).where(eq(lessons.id, input.lessonId));
+  return { ok: true };
 }
 
 export interface LessonHistory {
-  versions: { id: string; number: number; reason: string; actorName: string | null; createdAt: Date }[];
+  versions: { id: string; number: number; reason: VersionReason; actorName: string | null; createdAt: Date }[];
   attempts: {
     createdAt: Date;
     model: string;
@@ -108,9 +128,9 @@ export interface LessonHistory {
     guidanceVersion: number | null;
   }[];
   events: {
-    action: string;
-    fromStatus: string | null;
-    toStatus: string;
+    action: LessonActionType;
+    fromStatus: LessonStatus | null;
+    toStatus: LessonStatus;
     reason: string | null;
     actorName: string | null;
     selfApproval: boolean;
@@ -164,7 +184,11 @@ export async function lessonHistory(db: Executor, lessonId: string): Promise<Les
     .leftJoin(users, eq(users.id, workflowEvents.actorId))
     .where(eq(workflowEvents.lessonId, lessonId))
     .orderBy(desc(workflowEvents.createdAt));
-  return { versions, attempts: attempts.map((a) => ({ ...a, costUsd: Number(a.costUsd) })), events };
+  return {
+    versions,
+    attempts: attempts.map((a) => ({ ...a, costUsd: Number(a.costUsd) })),
+    events: events.map((e) => ({ ...e, action: e.action as LessonActionType })),
+  };
 }
 
 /** One Lesson Version's content, if it belongs to the Lesson. */
@@ -207,7 +231,7 @@ export type PublishResult = { ok: true; releaseNumber: number } | { ok: false; m
  * that points at each Lesson's latest Approved Version. Later edits never change it.
  */
 export async function publishUnit(db: Database, input: { unitId: string; actor: Actor & { kind: 'user' } }): Promise<PublishResult> {
-  if (input.actor.role !== 'approver') return { ok: false, message: 'Only an Approver can publish a Unit.' };
+  if (!mayPublish(input.actor)) return { ok: false, message: 'Only an Approver can publish a Unit.' };
   return db.transaction(async (tx) => {
     const unitLessons = await tx
       .select({ id: lessons.id, key: lessons.key, status: lessons.status })
