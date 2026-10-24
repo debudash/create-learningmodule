@@ -1,0 +1,5551 @@
+{
+ "mutations": [],
+ "queries": [
+  {
+   "dehydratedAt": 1784652256872,
+   "state": {
+    "data": {
+     "id": "c8rixdmuclpwnemm0e824v7e",
+     "anchor_text_cards": [
+      {
+       "id": "crqvaw8f4scxoev58xsnoy55",
+       "type": "off-platform-text",
+       "title": "Look Both Ways",
+       "image": {
+        "url": "https://images.newsela.com/core/images/crqvaw8f4scxoev58xsnoy55.jpg?auto=compress&ar=428:240&max-w=856&max-h=480&fit=crop&crop=faces",
+        "fit": "crop",
+        "crop": "faces"
+       },
+       "author": "Jason Reynolds",
+       "href": {
+        "student": "",
+        "teacher": ""
+       },
+       "group_name": "anchor_text",
+       "label": "Novel"
+      }
+     ],
+     "breadcrumbs": {
+      "student": [
+       {
+        "label": "Home",
+        "href": "/"
+       },
+       {
+        "label": "ELA Core 6th Grade",
+        "href": "/student/course/cmkfw4elj004k8a90yvyfyfb8"
+       },
+       {
+        "label": "Lesson 9"
+       }
+      ],
+      "teacher": [
+       {
+        "label": "Home",
+        "href": "/"
+       },
+       {
+        "label": "ELA Core 6th Grade",
+        "href": "/course/cmkfw4elj004k8a90yvyfyfb8"
+       },
+       {
+        "label": "Unit 1",
+        "href": "/course/cmkfw4elj004k8a90yvyfyfb8/unit/ck73kftqkdhaojqgqft3acmy"
+       },
+       {
+        "label": "Lesson 9"
+       }
+      ]
+     },
+     "connections": [
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "Students build knowledge of what the ordinary moments of characters in the anchor text reveal about the power of storytelling.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Knowledge-Building"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "Students deepen their understanding of how characters express their voice.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Enduring Understanding"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "In an upcoming writing lesson, students will study and write about differences in voice.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Future Lessons"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "Students continue to identify and reflect on moments that reveal identity, choice, and belonging, all of which they will express during their Author’s Chair presentation.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Unit Performance Task"
+      }
+     ],
+     "differentiators": [],
+     "materials": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Look Both Ways",
+              "type": "text",
+              "marks": [
+               {
+                "type": "em"
+               }
+              ]
+             },
+             {
+              "text": ", by Jason Reynolds",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Unit 1 Lesson 9 Student Edition",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "objectives": {
+      "student": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Compare characters from the stories in ",
+             "type": "text"
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": ", focusing on how characters express their voice.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Content",
+        "audience": "student"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Compare character voice and perspective using compare/contrast connectors and evidence-based comparison frames (Compared to . . .  , I can tell . . . because . . .).",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Language",
+        "audience": "student"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Practice reading fluently as a class and with a partner.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Foundational Skills",
+        "audience": "student"
+       }
+      ],
+      "teacher": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will compare characters from the stories in ",
+             "type": "text"
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": ", focusing on how characters express their voice.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Content",
+        "audience": "teacher"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will compare character voice and perspective using compare/contrast connectors and evidence-based comparison frames (Compared to . . .  , I can tell . . . because . . . ).",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Language",
+        "audience": "teacher"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will practice reading fluently as a class and with a partner.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Foundational Skills",
+        "audience": "teacher"
+       }
+      ]
+     },
+     "resource_cards": {
+      "student": [],
+      "teacher": []
+     },
+     "routines": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Turn and Talk",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Fluency Practice",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Give One, Get One",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Quick Write",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "sections": {
+      "student": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "notes_section"
+           },
+           "content": [
+            {
+             "text": "Turn and Talk",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " ",
+             "type": "text"
+            },
+            {
+             "text": "Turn and talk",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " with a partner about the following: What have you noticed about school buses falling from the sky in ",
+             "type": "text"
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": "? List all the moments in the book so far when this image has appeared.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What might the bus symbolize?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Based on what you’ve read so far in ",
+                 "type": "text"
+                },
+                {
+                 "text": "Look Both Ways",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": ", what central idea or theme do you think Jason Reynolds is developing? What details from the stories we’ve read support that idea?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Launch",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 1,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "reading"
+           },
+           "content": [
+            {
+             "text": "Fluency Practice",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Listen to an excerpt from “How to Look (Both) Both Ways,” starting with “Fatima crashed onto the sidewalk . . .” on p. 66 to “No miles an hour” on p. 67. Carefully monitor intonation, emphasis, and rate.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What is happening in the paragraph?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "How is Fatima feeling? How do you know?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Now partner-read the passage.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Partner A reads. Partner B provides feedback. ",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Partner B reads. Partner A provides feedback. ",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Explain to a partner one thing you noticed when you read the passage more than once.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Literacy Lab",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 2,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Part A: Model Comparing and Contrasting Characters",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Open your book to “How to Look (Both) Both Ways.” Reread pp. 66–68, where Fatima falls and encounters Benni. As you read, mark details that show how Fatima thinks differently from other characters we’ve read about. Pay attention to her lists and her internal dialogue.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Compare and Contrast Characters:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Compare: ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": "When you compare, you find similarities between two or more things.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Contrast:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " When you contrast, you find differences between two or more things.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Use sentence frames to compare Fatima to another character:",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Compared to [character name], who is ___________, Fatima is ____________.",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "I can tell that Fatima is [more/less] _________ than [character name] when she thinks/says, “______________.”",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "When Fatima ____________, it reminds me of [character name] because that character also ________________.",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Complete at least three compare/contrast statements using two or more of the frames.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What can we learn about Fatima’s motivations based on comparisons with other characters? Cite an example from the story.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "How does comparing Fatima to other characters inform our understanding of her voice, or her way of thinking or speaking?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "How do the specific details of Fatima’s character—her lists, her focus on constants and variables, her encounter with Benni—help develop the central idea or theme of ",
+                 "type": "text"
+                },
+                {
+                 "text": "Look Both Ways",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": "?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "\"The detail of _____ helps develop the central idea that _____ because _____.\"",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Pulse Check",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "After comparing Fatima to other characters in the story, which statement ",
+                   "type": "text"
+                  },
+                  {
+                   "text": "best",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  },
+                  {
+                   "text": " describes Fatima’s unique voice?",
+                   "type": "text"
+                  }
+                 ]
+                },
+                {
+                 "type": "ordered_list",
+                 "attrs": {
+                  "type": "A",
+                  "order": 1
+                 },
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Fatima’s voice is shown through her actions, like writing and falling down.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Fatima’s voice is shown through her lists and the way she thinks about constants and variables.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Fatima’s voice is shown by how she uses similar ways of speaking to her classmates’.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Fatima’s voice is shown only when she talks to other characters out loud.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Part B: Compare and Contrast Characters",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "notes_section"
+           },
+           "content": [
+            {
+             "text": "Give One, Get One",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Share the comparison statement you made between Fatima and an earlier character and ask for feedback. Then listen to a classmate’s comparison and give them feedback. Revise your comparison statement based on peer feedback.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What is one thing you realized about Fatima by sharing your comparison with a classmate?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What is one thing you realized about another character by sharing your comparison with a classmate?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Reflection",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Reflect on your ability to compare character voices using the ",
+                   "type": "text"
+                  },
+                  {
+                   "text": "Reflection",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  },
+                  {
+                   "text": " routine.",
+                   "type": "text"
+                  }
+                 ]
+                },
+                {
+                 "type": "bullet_list",
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Reflect on Fatima’s character. How confident do you feel comparing Fatima’s voice to another character’s voice using text evidence?",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Learning in Action",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 3,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "writing"
+           },
+           "content": [
+            {
+             "text": "Quick Write",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Respond to the following question:",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Why do you think Jason Reynolds chose to include the character Benni in this vignette? Is she a constant or a variable?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Look Back",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 4,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       }
+      ],
+      "teacher": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "This opening activates prior knowledge across multiple vignettes and introduces the concept of theme through symbolism (RL.6.2). Students may initially describe the falling bus literally; guide them to interpret it as a repeated image that conveys meaning. Push students to move from observation to inference by requiring a claim supported with text evidence (RL.6.1). This discussion sets the foundation for connecting character voice to the central idea later in the lesson.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "notes_section"
+           },
+           "content": [
+            {
+             "text": "Turn and Talk",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Ask different volunteers to summarize the four vignettes they have read in ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text"
+            },
+            {
+             "text": ".",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Turn and talk with a partner about the following: What have you noticed about school buses falling from the sky in ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              },
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            },
+            {
+             "text": "? List all the moments in the book so far when this image has appeared.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "After two minutes, prompt students to hypothesize on what Jason Reynolds may be symbolizing through the falling school bus.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What might the bus symbolize?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "A school bus falling from the sky is a very dramatic—and very unlikely— thing to happen. School buses are an ordinary thing, even in the book. Many kids ride school buses. For one to fall from the sky is strange. I think it symbolizes how unpredictable or scary things can make their way into ordinary moments.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Teach",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": ": Theme and Central Idea (RL.6.2)",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " You’ve identified what the school bus might symbolize. When an author repeats an image or idea like this across multiple stories, they’re often using it to develop a ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "central idea",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": " — the big idea the whole text explores. Another word for this in fiction is ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "theme",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": ": a message about life or human experience that the author develops through the characters and events.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Based on what you’ve read so far in ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "Look Both Ways",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": ", what central idea or theme do you think Jason Reynolds is developing? What details from the stories we’ve read support that idea?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "One central idea is that ordinary moments reveal something important about who people are and how they face uncertainty. The school bus falling from the sky appears in every story, contrasting the ordinary (kids walking home) with the unexpected (something dramatic breaking into a routine moment). This detail helps convey the theme that real life is unpredictable, even in the most everyday situations.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " As we study Fatima today, keep this central idea in mind. We’re going to look at how the details of her story, specifically her lists and her way of thinking, help develop this same theme.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Connection to Today’s Learning",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " School buses show up as ordinary objects that students ride and as fantasy objects that fall from the sky. As you have mentioned, they can work as symbols in a few ways. The school bus falling from the sky is a unique image that helps convey Jason Reynolds's voice. Today, we’re going to compare Fatima to a character from an earlier story, and we’re going to investigate her voice—her character voice, or the distinct ways she speaks and thinks in the story.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Launch",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will turn and talk to discuss the text’s recurring idea of school buses falling from the sky.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 1,
+        "estimated_time_in_minutes": [
+         5,
+         5
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "reading"
+           },
+           "content": [
+            {
+             "text": "Fluency Practice",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Integrated ELD Instructions"
+           },
+           "content": [
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "purpose"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Turn fluency practice into meaning-making: Students use rereading to notice voice, emotion, and implied thinking.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Language Focus",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Quoting/paraphrasing short phrases for evidence",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Voice descriptors (self-conscious, cautious, blunt, observant)",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "say"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Emotion + evidence (She feels ___ because ___)",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“Fatima seems ___ because the text says/shows ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“When I reread, I noticed ___, which changes my understanding because ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“The phrase ‘___’ reveals her voice as ___.”",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "watch"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students describe only plot (“she fell”) → Prompt: What does the wording reveal about her feelings?",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students label emotion without evidence → Prompt: Which phrase makes you think that?",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students use at least one short quote/phrase.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students connect rereading to a stronger inference.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students name a voice trait (not just “sad”).",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Listen to an excerpt from “How to Look (Both) Both Ways,” starting with “Fatima crashed onto the sidewalk . . . ” on p. 66 to “ No miles an hour” on p. 67. Carefully monitor intonation, emphasis, and rate.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "ordered_list",
+           "attrs": {
+            "type": null,
+            "order": 1
+           },
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " As I read, pay attention to the pace at which I read. What do I do with my voice to maintain a steady pace? As you listen, track how my reading reflects what is happening in the paragraph.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Identify the Gist:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " Briefly discuss the gist of the passage.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What is happening in the paragraph?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Fatima has fallen on the sidewalk and scraped her knees. She needs a moment to collect herself, but the bus pulls up next to her.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " How is Fatima feeling? How do you know?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Fatima feels self-conscious. She says she knows the bus is going to move slower than she’d thought, at “ no miles an hour.” This will give the kids on the bus plenty of time to see her lying on the sidewalk, which Fatima doesn’t want.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Set a Purpose for a",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": "Second Read-Through:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " The second time we read, let’s focus on conveying how Fatima is feeling. What can I do to emphasize her state of mind and emotional state?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Discuss briefly and reaffirm or redirect student answers.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Class Echo Reads the Text:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " Read one sentence, and have the class repeat.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Partner Read:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Now partner-read the passage.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Partner A reads. Partner B provides feedback. ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Partner B reads. Partner A provides feedback. ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Tell students that the ability to read fluently will help them understand texts, even when they aren’t reading out loud.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Explain to a partner one thing you noticed when you read the passage more than once.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Model one possible result from fluent reading.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " When we reread the excerpt together, I understood the emotions the author implied that Fatima was feeling. The phrase “ like a wave of boiling water” seemed like a stronger description of the pain and embarrassment Fatima was experiencing when I concentrated on reading steadily and accurately.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Connection to Today’s Learning",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Today, we will compare Fatima to a character from a previous story. Being able to read fluently will help us understand the characters’ emotions and actions.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Literacy Lab",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will practice reading fluency to better understand characters.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 2,
+        "estimated_time_in_minutes": [
+         10,
+         10
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Part A: Model Comparing and Contrasting Characters (RL.6.1, RL.6.2, RL.6.3) (15 minutes)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "This portion of the lesson supports students in comparing and contrasting characters with a focus on voice (RL.6.3). Students often default to comparing actions or appearance; explicitly redirect them to analyze how characters think, speak, and interpret their experiences. Reinforce the use of structured sentence frames to support precise academic language and evidence-based reasoning. This work bridges character analysis to theme by showing how voice reflects deeper ideas in the text.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Integrated ELD Instructions"
+           },
+           "content": [
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "purpose"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Stabilize compare/contrast language so students can compare voice (how a character thinks/speaks) rather than only actions.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Language Focus",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Compare/contrast connectors (compared to, while, however)",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Evidence-based comparison frames (I can tell . . . when she thinks/says . . . )",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Precision language tied to “voice” (lists, short sentences, scientific lens)",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "say"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“Compared to ___, Fatima is ___ because ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“Both ___ and ___ are ___; however, Fatima’s voice is ___ because ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“I can tell Fatima is more/less ___ than ___ when she ___ (p. __).”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Invite students to review what they learned about summarizing at the beginning of Investigation 1, and ask volunteers to briefly summarize the main events in “How to Look (Both) Both Ways.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Next, guide further conversation about Fatima by providing compare-and-contrast sentence frames for students to use. (Ex. “Compared to [character name], who is ___, Fatima is ___; I can tell that Fatima is [more/less] ____ than [character name] when she thinks/says ___.”)",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "watch"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If comparisons focus on appearance only → Prompt: Compare how they think or speak, not just what they look like.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students compare without evidence → Prompt: What line or detail shows that?",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students produce 2+ comparisons using connectors.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students cite at least one phrase/scene as evidence.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students identify a voice feature (lists, routines, scientific terms).",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " As you make your comparisons, keep in mind what Fatima says about the reason she keeps her lists. She says, “Routine lessens risk,” and talks about her mom’s experiments. Fatima uses the words ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "constant",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": " and ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "variable",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": ". In a science experiment, the ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "constant",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": " is the thing that stays the same; it is the fixed value that does not change. The ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "variable",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": " is a symbol that represents an unknown value; this can change during the experiment. Think about this as you make your comparisons and investigate Fatima’s voice.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 4
+           },
+           "content": [
+            {
+             "text": "Teach: Compare and Contrast",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Open your book to “How to Look (Both) Both Ways.” Reread pp. 66–68, where Fatima falls and encounters Benni. As you read, mark details that show how Fatima thinks differently from other characters we’ve read about. Pay attention to her lists and her internal dialogue.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Direct students to the compare-and-contrast sentence frames. Remind them of the difference between comparing and contrasting.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Compare and Contrast Characters:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Compare: ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": "When you compare, you find similarities between two or more things.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Contrast:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " When you contrast, you find differences between two or more things.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Use sentence frames to compare Fatima to another character:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Compared to [character name], who is ___________, Fatima is ____________.",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "I can tell that Fatima is [more/less] _________ than [character name] when she thinks/says, “______________.”",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "When Fatima ____________, it reminds me of [character name] because that character also ________________.",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Complete at least three compare/contrast statements using two or more of the frames.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Character Study",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Explain to the class that by comparing Fatima to other characters, or studying her, a reader can learn about Fatima’s distinct motivations and voice.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What can we learn about Fatima’s motivations based on comparisons with other characters? Cite an example from the story.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "I can tell Fatima is concerned with getting home for different reasons than, for example, Jasmine and TJ or Pia; she is more interested in getting home safely and maintaining her independence in her parents’ eyes. She doesn’t want to tell her parents about Benni, and she doesn’t want to be noticed by the other kids.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " How does comparing Fatima to other characters inform our understanding of her voice, or her way of thinking or speaking?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Fatima is the only character to make a list so far in the story. This gives us a look into her head and tells us about what is important to her. It’s important to her to carefully notice things around her.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Additional Student Support: Compare/Contrast"
+           },
+           "content": [
+            {
+             "type": "table",
+             "content": [
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Situation",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Try this",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Struggling with: Identifying character traits",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Provide students with a character to compare Fatima to, and encourage them to list words to describe that character before jumping into a comparison. Bit is active, talkative, and social. Fatima is quiet and keeps to herself. I can tell Fatima is quieter than Bit when she doesn’t engage with Benni and just wants to get home.",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ready for extension: Analyzing character interactions",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ask:",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    },
+                    {
+                     "text": " Now that you’ve compared Fatima with other characters, what do you think might happen if Fatima interacted with another character from a previous story? Write a sentence or two imagining the interaction. Fatima walked to the crosswalk, her nose to her journal. Suddenly, a girl on a skateboard ran right into her and almost knocked her down! The skateboard went rolling across the sidewalk toward the street. “Sorry! Sorry, sorry! I didn’t see you there,” the girl said, barely looking at Fatima as she darted after her skateboard. Like me, Fatima thought, she just wants to get where she’s going. Connect to Central Idea (RL.6.2) Say: We’ve been comparing Fatima to other characters to understand her voice. Now let’s connect what we’ve learned about her to the central idea of the text. Ask: How do the specific details of Fatima’s character—her lists, her focus on constants and variables, her encounter with Benni—help develop the central idea or theme of ",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    },
+                    {
+                     "text": "Look Both Ways",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "em"
+                      },
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    },
+                    {
+                     "text": "? Fatima’s lists show that she tries to create order and predictability in her life. But Benni keeps appearing as something unpredictable—a variable she can’t control. These details help develop the theme that even when people try to maintain routine and control, life introduces unexpected elements. This connects to the central idea that ordinary moments always carry the possibility of surprise or change.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ready for extension: Provide students with this sentence frame to respond",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "\"The detail of _____ helps develop the central idea that _____ because _____.\" The detail of Fatima’ s lists helps develop the central idea that people seek control in unpredictable situations because she uses the lists to track what stays the same and what changes around her.",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Pulse Check (RL.6.3)",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "After comparing Fatima to other characters in the story, which statement ",
+                   "type": "text"
+                  },
+                  {
+                   "text": "best",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  },
+                  {
+                   "text": " describes Fatima’ s unique voice?",
+                   "type": "text"
+                  }
+                 ]
+                },
+                {
+                 "type": "ordered_list",
+                 "attrs": {
+                  "type": "A",
+                  "order": 1
+                 },
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Fatima’ s voice is shown through her actions, like writing and falling down.",
+                       "type": "text"
+                      }
+                     ]
+                    },
+                    {
+                     "type": "bullet_list",
+                     "content": [
+                      {
+                       "type": "list_item",
+                       "content": [
+                        {
+                         "type": "paragraph",
+                         "attrs": {
+                          "align": null
+                         },
+                         "content": [
+                          {
+                           "text": "Incorrect: Actions can show character, but they don’ t show Fatima’ s unique way of thinking and expressing herself.",
+                           "type": "text"
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Fatima’ s voice is shown through her lists and the way she thinks about constants and variables.",
+                       "type": "text"
+                      }
+                     ]
+                    },
+                    {
+                     "type": "bullet_list",
+                     "content": [
+                      {
+                       "type": "list_item",
+                       "content": [
+                        {
+                         "type": "paragraph",
+                         "attrs": {
+                          "align": null
+                         },
+                         "content": [
+                          {
+                           "text": "Correct: Fatima’ s lists and scientific thinking (constants and variables) show her unique voice. No other character thinks this way!",
+                           "type": "text",
+                           "marks": [
+                            {
+                             "type": "strong"
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Fatima’ s voice is shown by how she uses similar ways of speaking to her classmates’.",
+                       "type": "text"
+                      }
+                     ]
+                    },
+                    {
+                     "type": "bullet_list",
+                     "content": [
+                      {
+                       "type": "list_item",
+                       "content": [
+                        {
+                         "type": "paragraph",
+                         "attrs": {
+                          "align": null
+                         },
+                         "content": [
+                          {
+                           "text": "Incorrect: Each character has their own voice. Fatima’ s voice is different from her classmates’—she thinks and speaks in her own unique way.",
+                           "type": "text"
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Fatima’ s voice is shown only when she talks to other characters out loud .",
+                       "type": "text"
+                      }
+                     ]
+                    },
+                    {
+                     "type": "bullet_list",
+                     "content": [
+                      {
+                       "type": "list_item",
+                       "content": [
+                        {
+                         "type": "paragraph",
+                         "attrs": {
+                          "align": null
+                         },
+                         "content": [
+                          {
+                           "text": "Incorrect: Character voice includes thoughts and inner dialogue, too, not just spoken words. We hear Fatima’ s voice through her thinking, even when she’ s quiet.",
+                           "type": "text"
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Part B: Compare and Contrast Characters (RL.6.3, L.6.5, SL.6.1.d) (15 minutes)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Integrated ELD Instructions"
+           },
+           "content": [
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "purpose"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Support students in revising comparisons after peer exchange so the final statements reflect voice + evidence, not just “more/less.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Language Focus",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Revising comparisons for precision",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Peer response stems (I agree because . . .  , I want to add . . . )",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Evidence integration during revision",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "say"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“I heard you say ___. I agree because the text shows ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“I want to add ___ because the phrase ‘___’ reveals ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“A clearer comparison is: Compared to ___, Fatima ___ because ___.”",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "watch"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students repeat the same comparison each rotation → Prompt: What new detail did your partner add that you can include?",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If feedback is vague (“good”) → Prompt: Name one word/phrase that proves the comparison.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students revise at least one comparison after peer talk.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students add evidence (quote/paraphrase) during revision.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students clarify “voice” (thinking/speaking patterns).",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Have students reread the section where Fatima creates her lists and interacts with Benni (pp. 66– 70). Students should look for specific words, phrases, or actions that reveal her voice. Tell students that they’ll use these details as evidence in their comparisons.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Transition students to work independently on comparing Fatima to an earlier character. Remind students of the sentence frames they can use in their comparisons. Prompt students to include text evidence in their comparisons and to look for opportunities to show how Fatima’s voice differs from other characters’.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "notes_section"
+           },
+           "content": [
+            {
+             "text": "Give One, Get One",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Share the comparison statement you made between Fatima and an earlier character and ask for feedback. Then listen to a classmate’s comparison and give them feedback. Revise your comparison statement based on peer feedback.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What is one thing you realized about Fatima by sharing your comparison with a classmate?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "By comparing Pia to Fatima, I realized Fatima is not only very focused but also very cautious. She doesn’t seem to want to take risks.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What is one thing you realized about another character by sharing your comparison with a classmate?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Comparing TJ to Fatima made me realize that TJ seems introverted, like Fatima. And he is as observant as she is, too.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Allow students to circulate and share their responses as time allows.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Additional Student Support: Give One, Get One"
+           },
+           "content": [
+            {
+             "type": "table",
+             "content": [
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Situation",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Try this",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Struggling with: Discussing voice",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ask students to identify what words and phrases are unique to Fatima. Fatima is the only character who makes lists of things that stay the same or change. She is thoughtful and observant in this way. She notes “Difference” often in her lists, and she writes short and very to-the-point sentences.",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ready for extension: Using Fatima’s voice to describe another character",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ask:",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    },
+                    {
+                     "text": " How would Fatima describe one of her classmates in her list? Write a new list item briefly describing one other character. [Between 14 and 15]: Difference: a boy in a worn, too-big shirt stands in the middle of the sidewalk. He’s wearing a green jacket and looks like he wants to crawl into the bushes and disappear.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Teacher Tip",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Explain that a character’s voice is like their “verbal fingerprint.” It is what makes them sound like themself and no one else. Students may struggle to distinguish between a character’s voice and the author’s voice. Tell students to look at the narration describing an event versus dialogue of a character talking about or acting within the same event.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Reflection",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Reflect on your ability to compare character voices using the ",
+                   "type": "text"
+                  },
+                  {
+                   "text": "Reflection",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  },
+                  {
+                   "text": " routine.",
+                   "type": "text"
+                  }
+                 ]
+                },
+                {
+                 "type": "bullet_list",
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Reflect on Fatima’s character. How confident do you feel comparing Fatima’s voice to another character’s voice using text evidence?",
+                       "type": "text",
+                       "marks": [
+                        {
+                         "type": "textColor",
+                         "attrs": {
+                          "color": "#208095"
+                         }
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Learning in Action",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Part A: Model Comparing and Contrasting Characters (RL.6.1, RL.6.2, RL.6.3)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will use sentence frames to compare and contrast Fatima with a character from an earlier story.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Part B: Compare and Contrast Characters (RL.6.3, L.6.5, SL.6.1.d)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will independently compare and contrast Fatima with a character from an earlier story, focusing on how Fatima’s voice is expressed.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 3,
+        "estimated_time_in_minutes": [
+         30,
+         30
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "This closing task assesses students’ ability to connect character analysis to theme (RL.6.2). Students must move beyond retelling to explain Benni’s purpose as a “variable” and how she contributes to the text’s central idea. Prompt students to use interpretation language (represents, suggests, shows) and to clearly link evidence to reasoning (RL.6.1). This writing prepares students for future analytical writing about how characters develop meaning in a text.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "writing"
+           },
+           "content": [
+            {
+             "text": "Quick Write",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": ":",
+             "type": "text"
+            },
+            {
+             "text": " Respond to the following question:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": ":",
+                 "type": "text"
+                },
+                {
+                 "text": " Why do you think Jason Reynolds chose to include the character Benni in this vignette? Is she a constant or a variable?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "bullet_list",
+                   "content": [
+                    {
+                     "type": "list_item",
+                     "content": [
+                      {
+                       "type": "paragraph",
+                       "attrs": {
+                        "align": null
+                       },
+                       "content": [
+                        {
+                         "text": "Optional Sentence Starter:",
+                         "type": "text",
+                         "marks": [
+                          {
+                           "type": "textColor",
+                           "attrs": {
+                            "color": "#720780"
+                           }
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "“The character Benni is included in the story because ____.”",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "bullet_list",
+                   "content": [
+                    {
+                     "type": "list_item",
+                     "content": [
+                      {
+                       "type": "paragraph",
+                       "attrs": {
+                        "align": null
+                       },
+                       "content": [
+                        {
+                         "text": "Benni represents the unpredictability of life. For example, she appears with a closed umbrella when it’s raining. She is a variable in Fatima’s day, always different. Including her adds a sense of surprise, uncertainty, and humor.",
+                         "type": "text",
+                         "marks": [
+                          {
+                           "type": "textColor",
+                           "attrs": {
+                            "color": "#720780"
+                           }
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Look Back",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will complete a Quick Write answering the following question: Why do you think Jason Reynolds chose to include the character Benni in this vignette?",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 4,
+        "estimated_time_in_minutes": [
+         5,
+         5
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Provide the following instructions to students:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Update the character chart created in Lesson 3 for Fatima. In your Journal, make a list of the scenarios you have encountered in the stories so far (for example, supporting each other during times of challenge, dealing with chronic illness, self-preservation, wanting to belong, etc.). Include evidence to support your descriptions.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Homework",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "teacher",
+        "sequence": 5,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       }
+      ]
+     },
+     "subject": "ELA",
+     "standard_lists": [
+      {
+       "title": "California CCSS: Focus Standards",
+       "standards": [
+        {
+         "id": "ck0twjbdm0ps4i6p7jpdovgy1",
+         "code": "L.6.5.b",
+         "description": "Use the relationship between particular words (e.g., cause/effect, part/whole, item/category) to better understand each of the words."
+        },
+        {
+         "id": "ck0twilw30pgfi6p73gb0wnm6",
+         "code": "RL.6.1",
+         "description": "Cite textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text."
+        },
+        {
+         "id": "ck0twim550pgji6p7pqmnz6xt",
+         "code": "RL.6.2",
+         "description": "Determine a theme or central idea of a text and how it is conveyed through particular details; provide a summary of the text distinct from personal opinions or judgments."
+        },
+        {
+         "id": "ck0twimaf0pgli6p72ygpa39w",
+         "code": "RL.6.3",
+         "description": "Describe how a particular story’s or drama’s plot unfolds in a series of episodes as well as how the characters respond or change as the plot moves toward a resolution."
+        },
+        {
+         "id": "ck0twj3vy0poli6p7dxwrnox4",
+         "code": "SL.6.1.d",
+         "description": "Review the key ideas expressed and demonstrate understanding of multiple perspectives through reflection and paraphrasing."
+        }
+       ]
+      },
+      {
+       "title": "California CCSS: Supporting Standards",
+       "standards": [
+        {
+         "id": "ck0twj8s10pqwi6p7o62e7357",
+         "code": "L.6.3a",
+         "description": "Vary sentence patterns for meaning, reader/listener interest, and style."
+        },
+        {
+         "id": "ck0twjc3f0psfi6p7b1r3p655",
+         "code": "L.6.6",
+         "description": "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; gather vocabulary knowledge when considering a word or phrase important to comprehension or expression."
+        },
+        {
+         "id": "ck0twiomk0phmi6p7qhies2yu",
+         "code": "RL.6.10",
+         "description": "By the end of the year, read and comprehend literature, including stories, dramas, and poems, in the grades 6–8 text complexity band proficiently, with scaffolding as needed at the high end of the range."
+        },
+        {
+         "id": "ck0twj3d40podi6p72ljvbtil",
+         "code": "SL.6.1.c",
+         "description": "Pose and respond to specific questions with elaboration and detail by making comments that contribute to the topic, text, or issue under discussion."
+        },
+        {
+         "id": "ck0twized0pmii6p72lzaplwb",
+         "code": "W.6.4",
+         "description": "Produce clear and coherent writing in which the development, organization, and style are appropriate to task, purpose, and audience."
+        }
+       ]
+      },
+      {
+       "title": "ELD Standards",
+       "standards": [
+        {
+         "id": "cmmfkffp303ho1vn8v77qklfz",
+         "code": "ELD.PI.6.3.Br",
+         "description": "Negotiate with or persuade others in conversations using appropriate register (e.g., to reflect on multiple perspectives) using a variety of learned phrases, indirect reported speech (e.g., I heard you say X, and Gabriel just pointed out Y), as well as open responses."
+        },
+        {
+         "id": "cmmfkffm003he1vn8dgyy590s",
+         "code": "ELD.PI.6.3.Em",
+         "description": "Negotiate with or persuade others in conversations (e.g., to gain and hold the floor or ask for clarification) using basic learned phrases (e.g., I think..., Would you please repeat that?), as well as open responses."
+        },
+        {
+         "id": "cmmfkffni03hj1vn87lh4mj6h",
+         "code": "ELD.PI.6.3.Ex",
+         "description": "Negotiate with or persuade others in conversations (e.g., to provide counterarguments) using an expanded set of learned phrases (I agree with X, but...), as well as open responses."
+        },
+        {
+         "id": "cmmfkfg9j03jp1vn8b8od1ctd",
+         "code": "ELD.PI.6.6a.Br",
+         "description": "Explain ideas, phenomena, processes, and text relationships (e.g., compare/contrast, cause/effect, problem/solution) based on close reading of a variety of grade‐level texts and viewing of multimedia, with light support."
+        },
+        {
+         "id": "cmmfkffzz03ip1vn8mozuf3un",
+         "code": "ELD.PI.6.6a.Em",
+         "description": "Explain ideas, phenomena, processes, and text relationships (e.g., compare/contrast, cause/effect, problem/solution) based on close reading of a variety of grade‐level texts and viewing of multimedia, with substantial support."
+        },
+        {
+         "id": "cmmfkfg4r03j71vn89deiojfo",
+         "code": "ELD.PI.6.6a.Ex",
+         "description": "Explain ideas, phenomena, processes, and text relationships (e.g., compare/contrast, cause/effect, problem/solution) based on close reading of a variety of grade‐level texts and viewing of multimedia, with moderate support."
+        },
+        {
+         "id": "cmmfkfghm03kl1vn8d0ge75d5",
+         "code": "ELD.PI.6.7.Br",
+         "description": "Explain how well writers and speakers use specific language resources to present ideas or support arguments and provide detailed evidence (e.g., identifying the specific language used to present ideas and claims that are well supported and distinguishing them from those that are not), with light support."
+        },
+        {
+         "id": "cmmfkfgeg03k91vn8l54yu10f",
+         "code": "ELD.PI.6.7.Em",
+         "description": "Explain how well writers and speakers use language to support ideas and arguments with detailed evidence (e.g., identifying the precise vocabulary used to present evidence, or the phrasing used to signal a shift in meaning), with substantial support."
+        },
+        {
+         "id": "cmmfkfgg103kf1vn80427q0rw",
+         "code": "ELD.PI.6.7.Ex",
+         "description": "Explain how well writers and speakers use specific language to present ideas or support arguments and provide detailed evidence (e.g., showing the clarity of the phrasing used to present an argument), with moderate support."
+        }
+       ]
+      }
+     ],
+     "title": "Lesson 9: Look Both Ways, Vignette 4, How to Look (Both) Both Ways",
+     "type": "Reading",
+     "total_time_in_minutes": [
+      50,
+      50
+     ],
+     "vocabulary_lists": [
+      {
+       "title": "Vocabulary Addressed in Lesson",
+       "vocabulary": [
+        {
+         "word": "constant",
+         "definition": "a fixed value that does not change"
+        },
+        {
+         "word": "variable",
+         "definition": "a symbol that represents an unknown value"
+        }
+       ]
+      },
+      {
+       "title": "Vocabulary for Additional Support",
+       "vocabulary": []
+      }
+     ],
+     "essential_questions": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "text": "How do ordinary moments reveal who we are and how we belong?",
+          "type": "text"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "dataUpdateCount": 1,
+    "dataUpdatedAt": 1784652256872,
+    "error": null,
+    "errorUpdateCount": 0,
+    "errorUpdatedAt": 0,
+    "fetchFailureCount": 0,
+    "fetchFailureReason": null,
+    "fetchMeta": null,
+    "isInvalidated": false,
+    "status": "success",
+    "fetchStatus": "idle"
+   },
+   "queryKey": [
+    "lesson",
+    "page",
+    "{\"id\":\"c8rixdmuclpwnemm0e824v7e\"}"
+   ],
+   "queryHash": "[\"lesson\",\"page\",\"{\\\"id\\\":\\\"c8rixdmuclpwnemm0e824v7e\\\"}\"]"
+  }
+ ]
+}

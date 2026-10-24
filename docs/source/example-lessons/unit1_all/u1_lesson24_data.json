@@ -1,0 +1,5707 @@
+{
+ "mutations": [],
+ "queries": [
+  {
+   "dehydratedAt": 1784652259436,
+   "state": {
+    "data": {
+     "id": "cwyetc0czxsc07uoh2sqwmo6",
+     "anchor_text_cards": [
+      {
+       "id": "crqvaw8f4scxoev58xsnoy55",
+       "type": "off-platform-text",
+       "title": "Look Both Ways",
+       "image": {
+        "url": "https://images.newsela.com/core/images/crqvaw8f4scxoev58xsnoy55.jpg?auto=compress&ar=428:240&max-w=856&max-h=480&fit=crop&crop=faces",
+        "fit": "crop",
+        "crop": "faces"
+       },
+       "author": "Jason Reynolds",
+       "href": {
+        "student": "",
+        "teacher": ""
+       },
+       "group_name": "anchor_text",
+       "label": "Novel"
+      }
+     ],
+     "breadcrumbs": {
+      "student": [
+       {
+        "label": "Home",
+        "href": "/"
+       },
+       {
+        "label": "ELA Core 6th Grade",
+        "href": "/student/course/cmkfw4elj004k8a90yvyfyfb8"
+       },
+       {
+        "label": "Lesson 24"
+       }
+      ],
+      "teacher": [
+       {
+        "label": "Home",
+        "href": "/"
+       },
+       {
+        "label": "ELA Core 6th Grade",
+        "href": "/course/cmkfw4elj004k8a90yvyfyfb8"
+       },
+       {
+        "label": "Unit 1",
+        "href": "/course/cmkfw4elj004k8a90yvyfyfb8/unit/ck73kftqkdhaojqgqft3acmy"
+       },
+       {
+        "label": "Lesson 24"
+       }
+      ]
+     },
+     "connections": [
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "Students deepen their understanding of how authors use dialogue in stories.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Knowledge-Building"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "The way we speak and the words we use tell people about who we are and how we belong.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Enduring Understanding"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "Students continue to study narrative techniques: figurative language in Lesson 25 and pacing in Lesson 30. In Lesson 32, students read the poem “Thank You M’am” and study the author’s craft. In Lesson 33, students participate in an academic discussion about what makes a story meaningful and powerful.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Future Lessons"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "Students study how to incorporate dialogue into a narrative.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Unit Performance Task"
+      }
+     ],
+     "differentiators": [],
+     "materials": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Look Both Ways",
+              "type": "text",
+              "marks": [
+               {
+                "type": "em"
+               }
+              ]
+             },
+             {
+              "text": " by Jason Reynolds",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Unit 1 Lesson 24 Student Edition",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Narrative Techniques graphic organizer (from Lesson 23)",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "objectives": {
+      "student": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Analyze how dialogue reveals character relationships and contributes to the structure of a story.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Content",
+        "audience": "student"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Analyze how dialogue reveals relationships in “How a Boy Can Become a Grease Fire” by citing quoted evidence and using interpretation verbs (",
+             "type": "text"
+            },
+            {
+             "text": "implies",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": ", ",
+             "type": "text"
+            },
+            {
+             "text": "shows",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": ", ",
+             "type": "text"
+            },
+            {
+             "text": "communicates",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": ") and academic relationship vocabulary to explain how word choice (slang vs. formal English) shapes what readers learn about characters.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Language",
+        "audience": "student"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Identify and analyze uses of unconventional English, recognizing when these uses are appropriate and when they may not be.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Foundational Skills",
+        "audience": "student"
+       }
+      ],
+      "teacher": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will analyze how dialogue reveals character relationships and contributes to the structure of a story.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Content",
+        "audience": "teacher"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will analyze how dialogue reveals relationships in “How a Boy Can Become a Grease Fire” by citing quoted evidence and using interpretation verbs (",
+             "type": "text"
+            },
+            {
+             "text": "implies",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": ", ",
+             "type": "text"
+            },
+            {
+             "text": "shows",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": ", ",
+             "type": "text"
+            },
+            {
+             "text": "communicates",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": ") and academic relationship vocabulary to explain how word choice (slang vs. formal English) shapes what readers learn about characters.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Language",
+        "audience": "teacher"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will identify and analyze uses of unconventional English, recognizing when these uses are appropriate and when they may not be.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Foundational Skills",
+        "audience": "teacher"
+       }
+      ]
+     },
+     "resource_cards": {
+      "student": [
+       {
+        "id": "ctg0yq5l9h12xtls20d0pc1v",
+        "type": "pdf",
+        "title": "3-Column Chart",
+        "image": {
+         "url": "/images/generic-placeholder.png",
+         "fit": "crop",
+         "crop": "faces",
+         "alt_text": "A placeholder image.",
+         "credit": "Newsela Design"
+        },
+        "author": null,
+        "href": {
+         "student": "https://media.newsela.com/core/pdfs/ctg0yq5l9h12xtls20d0pc1v.pdf",
+         "teacher": "https://media.newsela.com/core/pdfs/ctg0yq5l9h12xtls20d0pc1v.pdf"
+        },
+        "audience": "student",
+        "group_name": "additional_resources",
+        "label": "Resource"
+       }
+      ],
+      "teacher": [
+       {
+        "id": "ctg0yq5l9h12xtls20d0pc1v",
+        "type": "pdf",
+        "title": "3-Column Chart",
+        "image": {
+         "url": "/images/generic-placeholder.png",
+         "fit": "crop",
+         "crop": "faces",
+         "alt_text": "A placeholder image.",
+         "credit": "Newsela Design"
+        },
+        "author": null,
+        "href": {
+         "student": "https://media.newsela.com/core/pdfs/ctg0yq5l9h12xtls20d0pc1v.pdf",
+         "teacher": "https://media.newsela.com/core/pdfs/ctg0yq5l9h12xtls20d0pc1v.pdf"
+        },
+        "audience": "teacher",
+        "group_name": "additional_resources",
+        "label": "Resource"
+       }
+      ]
+     },
+     "routines": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Think-Pair-Share",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Language Study",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Quick Write",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "sections": {
+      "student": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions: ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "Think about a conversation you have recently heard or participated in. It should be between real people, not from television or the internet. Write at least three lines of dialogue from the conversation. It doesn’t have to be exactly what was said, just what you remember.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What can you learn about the speakers based on what they said?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Dialogue is a narrative technique authors use to convey what characters say in a story. Dialogue is what characters say out loud, usually to other characters. Authors can also reveal what a character is thinking through internal thoughts (sometimes called internal monologue), which is different from dialogue. Dialogue can reveal things about a character’s personality, perspective, and emotions.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Launch",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 1,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "notes_section"
+           },
+           "content": [
+            {
+             "text": "Language Study",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Sometimes, dialogue reveals information about where they are from through accents and the vocabulary they use. Dialogue can also tell us about how the character wants to be viewed by their audience.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Are ",
+                 "type": "text"
+                },
+                {
+                 "text": "ain’t",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": ", ",
+                 "type": "text"
+                },
+                {
+                 "text": "like",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": ", and ",
+                 "type": "text"
+                },
+                {
+                 "text": "for real ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": "sayings we would use when writing an essay or giving a presentation in class?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "These are examples of slang. ",
+                 "type": "text"
+                },
+                {
+                 "text": "Slang",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": " is a word used to describe informal ways of speaking. It is often used by young people, and it changes often. What are some examples of slang you use with your friends?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What are some other examples of informal or colloquial English or slang in the dialogue in “How a Boy Can Become a Grease Fire”? What does this language tell you about the speaker?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Think about situations where you would use slang and situations where you would not. What is different about these situations?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions: ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "Discuss the difference between slang and more formal English, including when each is appropriate. Then look back through “How a Boy Can Become a Grease Fire” to find other examples of slang. Work together to define the words or phrases you find, and be ready to share them with the class.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What is the relationship between a slang term and its literal meaning?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Why is it important to know when to use slang and when not to?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Slang can be fun and appropriate when you consider your audience. It is a way to experiment with language and discover creative ways to convey meaning. In a formal situation, such as at school or at work, it is best to stick to formal English so that your meaning is clear. Formal English is useful because it is well-established and the meanings of words stay consistent. Saying someone did a “very good job” will mean the same thing in a few years that it does now; however, saying someone “slayed” means something different today than it did 50 years ago, and it may change again in just a few months. Slang changes quickly and falls out of style. Considering your audience will help ensure you use the most appropriate language for any given situation.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Since slang is apparent in speech patterns, it shows up in dialogue. Reynolds’s characters use a lot of slang. This tells us about the characters and how they view their audience, which is often their own peers. Today, we’ll investigate how Reynolds uses dialogue to convey information about his characters.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Literacy Lab",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 2,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Part A: Formal and Informal Dialogue: ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": ", “How a Boy Can Become a Grease Fire”",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions: ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "Writers use ",
+             "type": "text"
+            },
+            {
+             "text": "author’s",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " ",
+             "type": "text"
+            },
+            {
+             "text": "craft",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " to make purposeful choices in a narrative. One of those choices is dialogue. Review the definitions of both terms and then analyze a line of dialogue from “How a Boy Can Become a Grease Fire.”",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "author’s craft: ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": "the intentional structures and techniques used and choices made when composing a text ",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "dialogue:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " the words characters speak in a story",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“You don’t want Sandra thinking your elbows so dry that your arm is going to crack and break in half if you try to hug her, do you?”",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Reread this exchange closely. Note one phrase that shows Candace’s tone.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What words show this is informal language? What does this word choice reveal about Candace’s relationship with Gregory? Why might the author choose exaggerated language here?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Writers and speakers adjust language depending on audience and purpose. Informal language, slang, and variations of standard English are often appropriate in peer conversations. It’s not about whether it’s “right” or “wrong” but whether it fits the audience and purpose.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If Candace were speaking to a principal instead of Gregory, would she speak this line the same way? Why or why not?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Part B: Dialogue in “How a Boy Can Become a Grease Fire”",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 3
+           },
+           "content": [
+            {
+             "text": "Dialogue in “How a Boy Can Become a Grease Fire”",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions: ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "Work with your group to find important examples of dialogue in “How a Boy Can Become a Grease Fire.” Record each example in your graphic organizer, explain what it shows or suggests, and describe how the dialogue affects the story, the plot, or other characters.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Identify significant instances of the narrative technique of dialogue. Record the dialogue in your graphic organizer, and analyze the effect it has on the story. Think about the effect dialogue has on the plot or on other characters.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions: ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "Think of the following questions.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Who is speaking, and what is the purpose of the dialogue?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Does the dialogue move the plot along?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What does the dialogue make you think or feel?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "How does the dialogue reveal relationships between characters?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions: ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "Share examples from your graphic organizer and discuss what you learned about the story. Listen to how other students interpreted the same dialogue or details. If students have different interpretations, discuss why. Remember that more than one interpretation can be correct when students support their ideas with evidence from the text.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Reflection",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Reflect on your understanding of how dialogue in “How a Boy Can Become a Grease Fire” reveals relationships between characters or moves the plot forward using the ",
+                   "type": "text"
+                  },
+                  {
+                   "text": "Reflection",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  },
+                  {
+                   "text": " routine.",
+                   "type": "text"
+                  }
+                 ]
+                },
+                {
+                 "type": "bullet_list",
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "How confident are you in your ability to determine how dialogue functions in the story?",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Learning in Action",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 3,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "writing"
+           },
+           "content": [
+            {
+             "text": "Quick Write",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Complete a ",
+             "type": "text"
+            },
+            {
+             "text": "Quick Write",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " in response to the prompt.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "How does dialogue impact a reader’s understanding of a character?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Look Back",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 4,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       }
+      ],
+      "teacher": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will activate prior knowledge about dialogue by recalling conversations from their own lives. They should think about who is speaking, how they speak, and what those choices reveal about relationships or purpose. Encourage students to notice differences between formal and informal language and consider why speakers choose certain words. Formative observations here help gauge students’ readiness to analyze dialogue in text. This sets the context for exploring dialogue as an author’s craft.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Think about a conversation you have recently heard or participated in. It should be between real people, not from television or the internet. Write at least three lines of dialogue from the conversation. It doesn’t have to be exactly what was said, just what you remember.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Give students time to write their dialogue threads, offering guidance as needed.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What can you learn about the speakers based on what they said?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "I overheard a conversation between a father and son. The father was telling the son a joke. He asked, “Why don’t skeletons fight each other?” The son rolled his eyes and replied, “I don’t know . . . too bony?” His dad shot back, “Because they don’t have the guts!” The son groaned, but they both laughed, which makes me think they enjoy hanging out together.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 3
+           },
+           "content": [
+            {
+             "text": "Connection to Today’s Learning",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Dialogue is a narrative technique authors use to convey what characters say in a story. Dialogue is what characters say out loud, usually to other characters. Authors can also reveal what a character is thinking through internal thoughts (sometimes called internal monologue), which is different from dialogue. Dialogue can reveal things about a character’s personality, perspective, and emotions.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Launch",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will write lines of dialogue they have heard in recent conversations.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 1,
+        "estimated_time_in_minutes": [
+         5,
+         5
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "notes_section"
+           },
+           "content": [
+            {
+             "text": "Language Study",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Introduce the Idea:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " Write or project ain’t and like . . . for real, where all students can see them, and say them out loud.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "ordered_list",
+           "attrs": {
+            "type": null,
+            "order": 1
+           },
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Sometimes, dialogue reveals information about where they are from through accents and the vocabulary they use. Dialogue can also reveal how the character wants to be viewed by their audience.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Identify the Slang:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " Point out that slang words are colloquial, which means they are not used in formal situations, such as in essays and presentations in class.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Are ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "ain’t",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": ", ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "like",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": ", and ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "for real ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "sayings we would use when writing an essay or giving a presentation in class? ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "(No.)",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#720780"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " These are examples of slang. ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "Slang",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": " is a word used to describe informal ways of speaking. It is often used by young people, and it changes often. What are some examples of slang you use with your friends?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Pause as students share examples. Help students define the slang (ex. ain’t = “is/are not,” slay = “doing something really well or looking great,” etc.).",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What are some other examples of slang in the dialogue in “How a Boy Can Become a Grease Fire”? What does this language tell you about the speaker?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Remy says “smellin’.” He drops the g from the end of the word. This is a common way of speaking. It tells me the speaker is talking in an informal situation, with friends.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Think about situations where you would use slang and situations where you would not. What is different about these situations?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "I’d use slang with my friends, but not with my teachers. One situation is more serious than the other.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Invite students to discuss the differences between slang and more formal English, including when each is appropriate. Then have students look through “How a Boy Can Become a Grease Fire” to identify other instances of slang. Have students define the slang. Write down the words students identify.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions: ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "Discuss the difference between slang and more formal English, including when each is appropriate. Then look back through “How a Boy Can Become a Grease Fire” to find other examples of slang. Work together to define the words or phrases you find, and be ready to share them with the class.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Build Connections:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " Help students identify when it is appropriate to use slang.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What is the relationship between a slang term and its literal meaning?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "The slang is more informal and often a way to convey an idea that’s just more fun. Slang changes more frequently than the literal meanings of words.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Why is it important to know when to use slang and when not to?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Different audiences expect different levels of formality.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Integrated ELD Instructions"
+           },
+           "content": [
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "purpose"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Help students identify slang/colloquial language in dialogue and explain what it communicates about relationships and audience using quoted evidence and interpretation verbs.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "say"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Require students to label each example as slang or formal, then answer the question “What does this choice communicate about comfort, power, or closeness?”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Press for evidence: students must point to 1–3 exact words (dropped g, ain’t, for real, etc.).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Keep the focus on appropriateness: “Where does this fit? Where would it not fit, and why?”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "defensive/playful) with ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“The word/phrase ‘___’ is slang because ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“This choice shows the speaker is talking to ___ (peer/friend/adult) because ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“This dialogue communicates ___ (respect/teasing/comfort) through the phrase ‘___ .’”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“In a formal setting, the speaker would say ___ instead of ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": ", but not when ___. ’”",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "watch"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Validate home language and community language as legitimate language varieties, then bridge to audience awareness: “Different settings call for different language choices.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students correctly identify slang vs. formal English in an example.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students use an interpretation verb (implies/shows/communicates).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students support a claim with a quoted word/phrase.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Summarize what slang is, when it is appropriate to use it, and when more formal English should be used instead.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Slang can be fun and appropriate when you consider your audience. It is a way to experiment with language and discover creative ways to convey meaning. In a formal situation, such as at school or at work, it is best to stick to formal English so that your meaning is clear. Formal English is useful because it is well-established and the meanings of words stay consistent. Saying someone did a “very good job” will mean the same thing in a few years that it does now; however, saying someone “slayed” means something different today than it did 50 years ago, and it may change again in just a few months. Slang changes quickly and falls out of style. Considering your audience will help ensure you use the most appropriate language for any given situation.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Connection to Today’s Learning",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Since slang is apparent in speech patterns, it shows up in dialogue. Reynolds’s characters use a lot of slang. This tells about the characters and how they view their audience, often their peers. Today, we’ll investigate how Reynolds uses dialogue to convey information about his characters.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Literacy Lab",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will identify slang and consider how and why it is used.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 2,
+        "estimated_time_in_minutes": [
+         10,
+         10
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Part A: Formal and Informal Dialogue: ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": ", “How a Boy Can Become a Grease Fire” (L.6.1.e, L.6.3.b) ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "(15 minutes)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will analyze how dialogue reflects audience and purpose and evaluate how variations from standard English affect meaning and tone. They should identify not just which words are informal or exaggerated, but why the author chose them and how that choice reveals character relationships. Encourage connections to specific dialogue features, such as slang, exaggeration, or pacing, to reinforce understanding of how authors construct character through speech.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 4
+           },
+           "content": [
+            {
+             "text": "Teach: Dialogue and Audience",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Writers use ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            },
+            {
+             "text": "author’s",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              },
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            },
+            {
+             "text": " ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            },
+            {
+             "text": "craft",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              },
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            },
+            {
+             "text": " to make purposeful choices in a narrative. One of those choices is dialogue. Review the definitions of both terms, and then analyze a line of dialogue from “How a Boy Can Become a Grease Fire.”",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "author’s craft: ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": "the intentional structures and techniques used and choices made when composing a text ",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "dialogue:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " the words characters speak in a story",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Project this line. Ask the students to follow along as you read it aloud.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“You don’t want Sandra thinking your elbows so dry that your arm is going to crack and break in half if you try to hug her, do you?”",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will partner to do a ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": "Think-Pair-Share",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": ".",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Reread this exchange closely. Note one phrase that shows Candace’s tone.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What words show this is informal language? What does this word choice reveal about Candace’s relationship with Gregory? Why might the author choose exaggerated language here?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Candace says Gregory’s arm might “crack and break in half” to create humor and get Gregory to relax before he talks to Sandra. Her informal language shows they are close and comfortable with each other. The author chose exaggerated language to make it humorous and revealing about their relationship.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Writers and speakers adjust language depending on audience and purpose. Informal language, slang, and variations of standard English are often appropriate in peer conversations. It’s not about whether it’s “right” or “wrong” but whether it fits the audience and purpose.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " If Candace were speaking to a principal instead of Gregory, would she speak this line the same way? Why or why not?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Candace would use more formal language and avoid slang. She would speak more respectfully and carefully because the principal is an authority figure.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will have discussed how dialogue reflects audience and purpose and identified specific choices that reveal relationships or tone. They should consider not only what is said, but why the author chose informal, slang, or exaggerated language. Encourage students to connect their observations to text evidence and relationship dynamics, reinforcing analytical thinking. Formative responses will inform support in Part B, where students apply these insights in small-group analysis.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Integrated ELD Instructions"
+           },
+           "content": [
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "purpose"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Support students in explaining what makes dialogue effective by connecting word choice to relationship dynamics (comfort, conflict, power, belonging) using evidence-based explanation.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "say"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Invite students to use their own community language examples from Launch as “mentor texts,” then translate the same idea into more formal English to show code-switching as skill.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "After students answer “What makes dialogue effective?” require a “because” clause tied to relationship or audience.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Prompt students to name the relationship role (friend–friend, older–younger, leader–follower, outsider–insider).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "When students share, ask: “What would change if the audience changed?”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“Effective dialogue reveals ___ about the relationship because ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“When ___ says, ‘___,’ it shows ___ (loyalty, teasing, protection) because ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“If the audience were ___, the speaker might change the line to ___.”",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "watch"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "they show .”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students explain dialogue effectiveness with a relationship-based reason.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students include at least one quoted detail.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students distinguish audience/setting as a factor in word choice.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Teacher Tip",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "In the previous lesson, students learned how various narrative techniques can reveal a character’s perspective. In this lesson, the focus is on the narrative technique of dialogue. Students may need guidance to understand that aspects of a story, such as perspective, tone, and mood, can be achieved by multiple narrative techniques. Dialogue is one narrative technique that contributes to the overall effect of an author’s craft.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Additional Student Support: Identifying Slang"
+           },
+           "content": [
+            {
+             "type": "table",
+             "content": [
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Situation",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Try this",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Struggling with: Determining if a word is slang",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Because students often use slang frequently and casually, they may have difficulty identifying it in their own speech. To help students determine whether a word is slang, have them consider how they would react if they heard a teacher or older adult use the word. Often, young people find it embarrassing, or “cringe,” when an older person uses slang. Ex. “Recent slang (2020s) includes words like rizz, flex, and cringe.”",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ready for extension: Tracking slang use",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ask:",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    },
+                    {
+                     "text": " What is some slang you use in your everyday life? Where did it come from? Research the history of a popular slang term. Include an example of how to use the word. The term rizz is from the word charisma, which means “a lot of charm or character.” It has positive connotations. It comes from African American Vernacular English but was made popular on TikTok in 2021. An example is “He has no trouble talking to girls because he has so much rizz.”",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Part B: Dialogue in “How a Boy Can Become a Grease Fire” (RL.6.3, RL.6.5) ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "(15 minutes)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will transition from analyzing examples to identifying dialogue in “How a Boy Can Become a Grease Fire” independently or in groups. They should record examples, interpret the meaning, and explain how the dialogue affects the plot or relationships. Encourage attention to subtle cues, such as slang, tone, or exaggeration, and prompt students to justify interpretations with specific evidence. This activity allows the collection of formative data while deepening understanding of dialogue as a narrative technique.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Dialogue in “How a Boy Can Become a Grease Fire”",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Transition into investigating dialogue in “How a Boy Can Become a Grease Fire.” Place students into small groups, and instruct them to take out their ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": "Narrative Techniques graphic organizer",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": "s from Lesson 23.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions: ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "Work with your group to find important examples of dialogue in “How a Boy Can Become a Grease Fire.” Record each example in your graphic organizer, explain what it shows or suggests, and describe how the dialogue affects the story, the plot, or other characters.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Identify significant instances of the narrative technique of dialogue. Record the dialogue in your graphic organizer and analyze its effect on the story. Think about the effect dialogue has on the plot or on other characters.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Model how to fill in the graphic organizer.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " In our work today, the narrative technique is always dialogue. I’m looking for dialogue that moves the plot along or shows relationships between characters. As my first example, I’m going to use something Candace says to Gregory.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Read the section from the story after the friends spray Gregory with cologne. Candace explains that Gregory now needs lotion.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " In this dialogue, Candace is about to put lotion on Gregory. Under “My Interpretation,” I will write what I think of the dialogue; in this case, I will write why Candace is putting lotion on Gregory. In the last column, I will identify how the dialogue affects the story. It could be that the dialogue moves the plot along or tells us something about the relationship between the characters. It could be both, but I need to pick what I feel is most important. I think this dialogue moves the plot along because it comes before a new event.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Narrative Technique & Example",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "My Interpretation",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "The Effect That Narrative Technique Has on the Story",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Dialogue: “Now that you don’t stink, we gotta make sure you ain’t dry.”",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Candace wants to make sure Gregory is successful.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "It moves the plot forward because Candace is about to apply lotion to Gregory.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Write or project the following guiding questions for students to refer to as they work in their groups to identify more instances of significant dialogue in the story:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions: ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "Think of the following questions.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Who is speaking, and what is the purpose of the dialogue?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Does the dialogue move the plot along?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What does the dialogue make you think or feel?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "How does the dialogue reveal relationships between characters?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Narrative Technique & Example",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "My Interpretation",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "The Effect That Narrative Technique Has on the Story",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Dialogue: “Thank God,” Candace shouted. “ Because it might look like yours underneath!”",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "textColor",
+                     "attrs": {
+                      "color": "#720780"
+                     }
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Candace is defending Gregory against the boy on the bus.",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "textColor",
+                     "attrs": {
+                      "color": "#720780"
+                     }
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "This reveals how much Candace cares for Gregory and is willing to stand up for him.",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "textColor",
+                     "attrs": {
+                      "color": "#720780"
+                     }
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 4
+           },
+           "content": [
+            {
+             "text": "Review the Impact of Dialogue",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Lead a brief discussion summarizing students’ findings from the day. Have students share examples from their graphic organizers. If students identify the same dialogue but have different interpretations, ask them to consider why those interpretations might differ. Remind students that multiple interpretations can be correct if students support their ideas with evidence. In fact, good writing is open to a lot of different interpretations.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " ",
+             "type": "text"
+            },
+            {
+             "text": "Say these Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " ",
+             "type": "text"
+            },
+            {
+             "text": "Share examples from your graphic organizer and discuss what you learned about the story. Listen to how other students interpreted the same dialogue or details. If students have different interpretations, discuss why. Remember that more than one interpretation can be correct when students support their ideas with evidence from the text.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students should be able to reflect on how dialogue shapes understanding of character by identifying both what the dialogue shows and why it matters. They should explain how word choice, tone, or slang affects relationships or plot development, citing specific textual evidence. Encourage students to make metacognitive connections, considering how discussing multiple interpretations strengthens their analysis. Use responses to collect formative data on comprehension and evidence-based reasoning.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Integrated ELD Instructions"
+           },
+           "content": [
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "purpose"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Help students complete the dialogue-focused Narrative Techniques graphic organizer by writing clear interpretations and effects that explain how dialogue reveals relationships and moves the plot forward.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "say"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Encourage multiple valid interpretations: students can disagree, but must anchor in the quoted line and explain reasoning.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Require a consistent sentence pattern for “My Interpretation” and “Effect” so students don’t stay vague.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Push students to choose ONE primary effect per entry (relationship reveal OR plot movement), then justify with evidence.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "During share-out, ask: “What relationship detail did you infer that is not stated explicitly?”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“In this dialogue, ___ says, ‘___.’ This implies ___ because ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“This shows the relationship is ___ (supportive/teasing/unequal/loyal) because ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“This moves the plot forward because after this line, ___ happens.”",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "watch"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "implies/shows/communicates.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "what it changes: trust, tension, protection, embarrassment, belonging.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Organizer entries include a quote and an inference.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students use an interpretation verb and relationship vocabulary.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students identify a specific effect on relationship or plot (not a general statement).",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Additional Student Support: Analyzing Dialogue"
+           },
+           "content": [
+            {
+             "type": "table",
+             "content": [
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Situation",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Try this",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Struggling with: Accessing and recording dialogue evidence",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Provide accommodations that help students access the dialogue and demonstrate their thinking without lowering the analytical task. Allow students to listen to the passage while following along in the text, use text-to-speech with highlighting if available, or reread a short excerpt with a partner. Students may color-code speakers, underline quoted dialogue, or use sticky notes to mark important lines before transferring evidence to the graphic organizer. If writing is a barrier, allow students to orally explain their interpretation, dictate to a partner, or use speech-to-text before writing a final response.",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ready for extension: Analyzing dialogue",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ask:",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    },
+                    {
+                     "text": " Are there instances of dialogue in which the character says something different from what they mean? Find an example of dialogue that reveals something to the reader that the other characters don’t know. In “Call of Duty,” Bryson pretends like he doesn’t care that Slim kissed Ty on the cheek. When he talks about it, like when he says, “I just think it might be to mind your business,” he plays it cool like he isn’t interested at all. But his internal thoughts show that he is. This difference between what he says and what he thinks shows that he cares more than he says.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Reflection",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Reflect on your understanding of how dialogue in “How a Boy Can Become a Grease Fire” reveals relationships between characters or moves the plot forward using the ",
+                   "type": "text"
+                  },
+                  {
+                   "text": "Reflection",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  },
+                  {
+                   "text": " routine.",
+                   "type": "text"
+                  }
+                 ]
+                },
+                {
+                 "type": "bullet_list",
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "How confident are you in your ability to determine how dialogue functions in the story?",
+                       "type": "text",
+                       "marks": [
+                        {
+                         "type": "textColor",
+                         "attrs": {
+                          "color": "#208095"
+                         }
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Learning in Action",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Part A: Formal and Informal Dialogue (L.6.1.e, L.6.3.b)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will discuss what makes dialogue effective. Then, students will analyze dialogue from the vignette “How a Boy Can Become a Grease Fire.”",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Part B: Dialogue in “How a Boy Can Become a Grease Fire” (RL.6.3, RL.6.5)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will work in small groups to analyze dialogue from the vignette.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 3,
+        "estimated_time_in_minutes": [
+         30,
+         30
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "writing"
+           },
+           "content": [
+            {
+             "text": "Quick Write",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will reflect on how dialogue impacts understanding of character. They should identify not only what the dialogue shows but also why it strengthens the interpretation of relationships or the plot. Encourage connections to specific text examples and discussion of how multiple interpretations are possible. Formative data collected here will guide support for the continued study of narrative techniques in future lessons.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Have students complete a",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " Quick Write",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " in response to the following prompt. Collect formative data.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " ",
+             "type": "text"
+            },
+            {
+             "text": "Say these Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " ",
+             "type": "text"
+            },
+            {
+             "text": "Complete a ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            },
+            {
+             "text": "Quick Write",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            },
+            {
+             "text": " in response to the prompt.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " How does dialogue impact a reader’s understanding of a character?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "bullet_list",
+                   "content": [
+                    {
+                     "type": "list_item",
+                     "content": [
+                      {
+                       "type": "paragraph",
+                       "attrs": {
+                        "align": null
+                       },
+                       "content": [
+                        {
+                         "text": "Optional Sentence Starter:",
+                         "type": "text",
+                         "marks": [
+                          {
+                           "type": "textColor",
+                           "attrs": {
+                            "color": "#720780"
+                           }
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "“Dialogue impacts a reader’s understanding of a character by ____ .”",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "bullet_list",
+                   "content": [
+                    {
+                     "type": "list_item",
+                     "content": [
+                      {
+                       "type": "paragraph",
+                       "attrs": {
+                        "align": null
+                       },
+                       "content": [
+                        {
+                         "text": "Dialogue impacts a reader’s understanding of a character by informing the reader about the character. It can reveal things about their identity based on what they say and how they say it. If readers also know the character’s thoughts, it can show how their thoughts differ from what they say. Hearing a character’s dialogue is one way the reader learns who the character is and what they think.",
+                         "type": "text",
+                         "marks": [
+                          {
+                           "type": "textColor",
+                           "attrs": {
+                            "color": "#720780"
+                           }
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Look Back",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will complete a Quick Write in which they address how dialogue impacts a reader’s understanding of a character.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 4,
+        "estimated_time_in_minutes": [
+         5,
+         5
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Instruct students to update their ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": "Ordinary Moments",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " graphic organizers from Lesson 3 for Gregory and other characters in Vignette 9. Additionally, have students read “The Broom Dog” and take notes in their ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": "Journal",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " on the following prompt:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "As you read, annotate the text in The Broom Dog” for the following:",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What does the dialogue reveal about the relationship between Canton and Mr. Munch?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Homework",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "teacher",
+        "sequence": 5,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       }
+      ]
+     },
+     "subject": "ELA",
+     "standard_lists": [
+      {
+       "title": "California CCSS: Focus Standards",
+       "standards": [
+        {
+         "id": "ck0twj7h40pqai6p7i5seg5k3",
+         "code": "L.6.1.e",
+         "description": "Recognize variations from standard English in their own and others’ writing and speaking, and identify and use strategies to improve expression in conventional language."
+        },
+        {
+         "id": "ck0twimaf0pgli6p72ygpa39w",
+         "code": "RL.6.3",
+         "description": "Describe how a particular story’s or drama’s plot unfolds in a series of episodes as well as how the characters respond or change as the plot moves toward a resolution."
+        },
+        {
+         "id": "ck0twimya0pgvi6p7n3e4487u",
+         "code": "RL.6.5",
+         "description": "Analyze how a particular sentence, chapter, scene, or stanza fits into the overall structure of a text and contributes to the development of the theme, setting, or plot."
+        }
+       ]
+      },
+      {
+       "title": "California CCSS: Supporting Standards",
+       "standards": [
+        {
+         "id": "ck0twj91a0pr0i6p7kpkjnox8",
+         "code": "L.6.3.b",
+         "description": "Maintain consistency in style and tone."
+        },
+        {
+         "id": "ck0twiomk0phmi6p7qhies2yu",
+         "code": "RL.6.10",
+         "description": "By the end of the year, read and comprehend literature, including stories, dramas, and poems, in the grades 6–8 text complexity band proficiently, with scaffolding as needed at the high end of the range."
+        }
+       ]
+      },
+      {
+       "title": "ELD Standards",
+       "standards": [
+        {
+         "id": "cmmfkfhjf03ob1vn83cwrtz9a",
+         "code": "ELD.PI.6.12a.Br",
+         "description": "Use an expanded set of general academic words (e.g., affect, evidence, demonstrate, reluctantly), domain‐specific words (e.g., scene, setting, plot, point of view, fraction, cell membrane, democracy), synonyms, antonyms, and figurative language to create precision and shades of meaning while speaking and writing."
+        },
+        {
+         "id": "cmmfkfhcy03nn1vn8gtkoh954",
+         "code": "ELD.PI.6.12a.Em",
+         "description": "Use a select number of general academic words (e.g., author, chart) and domain‐specific words (e.g., scene, cell, fraction) to create some precision while speaking and writing."
+        },
+        {
+         "id": "cmmfkfhg403ny1vn8npy33181",
+         "code": "ELD.PI.6.12a.Ex",
+         "description": "Use a growing set of academic words (e.g., author, chart, global, affect), domain‐specific words (e.g., scene, setting, plot, point of view, fraction, cell membrane, democracy), synonyms, and antonyms to create precision and shades of meaning while speaking and writing."
+        },
+        {
+         "id": "cmmfkffp303ho1vn8v77qklfz",
+         "code": "ELD.PI.6.3.Br",
+         "description": "Negotiate with or persuade others in conversations using appropriate register (e.g., to reflect on multiple perspectives) using a variety of learned phrases, indirect reported speech (e.g., I heard you say X, and Gabriel just pointed out Y), as well as open responses."
+        },
+        {
+         "id": "cmmfkffm003he1vn8dgyy590s",
+         "code": "ELD.PI.6.3.Em",
+         "description": "Negotiate with or persuade others in conversations (e.g., to gain and hold the floor or ask for clarification) using basic learned phrases (e.g., I think..., Would you please repeat that?), as well as open responses."
+        },
+        {
+         "id": "cmmfkffni03hj1vn87lh4mj6h",
+         "code": "ELD.PI.6.3.Ex",
+         "description": "Negotiate with or persuade others in conversations (e.g., to provide counterarguments) using an expanded set of learned phrases (I agree with X, but...), as well as open responses."
+        },
+        {
+         "id": "cmmfkfgb703jw1vn8cfgdo4gg",
+         "code": "ELD.PI.6.6b.Br",
+         "description": "Express inferences and conclusions drawn based on close reading of grade‐level texts and viewing of multimedia using a variety of precise academic verbs (e.g., indicates that, influences)."
+        },
+        {
+         "id": "cmmfkfg1o03iw1vn8h04eqklj",
+         "code": "ELD.PI.6.6b.Em",
+         "description": "Express inferences and conclusions drawn based on close reading of grade‐level texts and viewing of multimedia using some frequently used verbs (e.g., shows that, based on)."
+        },
+        {
+         "id": "cmmfkfg6f03je1vn8cuvmfnv9",
+         "code": "ELD.PI.6.6b.Ex",
+         "description": "Express inferences and conclusions drawn based on close reading of grade‐level texts and viewing of multimedia using a variety of verbs (e.g., suggests that, leads to)."
+        }
+       ]
+      }
+     ],
+     "title": "Lesson 24: Look Both Ways, Vignette 9, How a Boy Can Become a Grease Fire",
+     "type": "Reading",
+     "total_time_in_minutes": [
+      50,
+      50
+     ],
+     "vocabulary_lists": [
+      {
+       "title": "Vocabulary Addressed in Lesson",
+       "vocabulary": [
+        {
+         "word": "slang",
+         "definition": "informal way of speaking, often used by young people, with meanings that often change"
+        },
+        {
+         "word": "colloquial",
+         "definition": "ordinary or familiar in conversation; an informal way of speaking"
+        }
+       ]
+      },
+      {
+       "title": "Vocabulary for Additional Support",
+       "vocabulary": [
+        {
+         "word": "author’s craft",
+         "definition": "the intentional structures and techniques used and choices made when composing a text"
+        },
+        {
+         "word": "dialogue",
+         "definition": "the words characters speak in a story"
+        }
+       ]
+      }
+     ],
+     "essential_questions": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "text": "How does sharing our stories help build community and empathy?",
+          "type": "text"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "dataUpdateCount": 1,
+    "dataUpdatedAt": 1784652259436,
+    "error": null,
+    "errorUpdateCount": 0,
+    "errorUpdatedAt": 0,
+    "fetchFailureCount": 0,
+    "fetchFailureReason": null,
+    "fetchMeta": null,
+    "isInvalidated": false,
+    "status": "success",
+    "fetchStatus": "idle"
+   },
+   "queryKey": [
+    "lesson",
+    "page",
+    "{\"id\":\"cwyetc0czxsc07uoh2sqwmo6\"}"
+   ],
+   "queryHash": "[\"lesson\",\"page\",\"{\\\"id\\\":\\\"cwyetc0czxsc07uoh2sqwmo6\\\"}\"]"
+  }
+ ]
+}

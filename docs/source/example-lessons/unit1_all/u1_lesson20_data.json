@@ -1,0 +1,5672 @@
+{
+ "mutations": [],
+ "queries": [
+  {
+   "dehydratedAt": 1784652258127,
+   "state": {
+    "data": {
+     "id": "cp1n6d0u0cgzrro46rzvpno9",
+     "anchor_text_cards": [
+      {
+       "id": "crqvaw8f4scxoev58xsnoy55",
+       "type": "off-platform-text",
+       "title": "Look Both Ways",
+       "image": {
+        "url": "https://images.newsela.com/core/images/crqvaw8f4scxoev58xsnoy55.jpg?auto=compress&ar=428:240&max-w=856&max-h=480&fit=crop&crop=faces",
+        "fit": "crop",
+        "crop": "faces"
+       },
+       "author": "Jason Reynolds",
+       "href": {
+        "student": "",
+        "teacher": ""
+       },
+       "group_name": "anchor_text",
+       "label": "Novel"
+      }
+     ],
+     "breadcrumbs": {
+      "student": [
+       {
+        "label": "Home",
+        "href": "/"
+       },
+       {
+        "label": "ELA Core 6th Grade",
+        "href": "/student/course/cmkfw4elj004k8a90yvyfyfb8"
+       },
+       {
+        "label": "Lesson 20"
+       }
+      ],
+      "teacher": [
+       {
+        "label": "Home",
+        "href": "/"
+       },
+       {
+        "label": "ELA Core 6th Grade",
+        "href": "/course/cmkfw4elj004k8a90yvyfyfb8"
+       },
+       {
+        "label": "Unit 1",
+        "href": "/course/cmkfw4elj004k8a90yvyfyfb8/unit/ck73kftqkdhaojqgqft3acmy"
+       },
+       {
+        "label": "Lesson 20"
+       }
+      ]
+     },
+     "connections": [
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "Students extend recent work with voice, word choice, and small-moment writing by noticing how details build theme, summary, and structure in literary texts about belonging.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Knowledge-Building"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "Stories about ordinary moments help readers discover larger ideas about identity, empathy, and community.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Enduring Understanding"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "Students will use stronger theme and structure analysis in later discussions and will carry clearer summarizing skills into reading and writing work.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Future Lessons"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "Students will need to understand how small moments build meaning so they can shape their own narratives in ",
+            "type": "text"
+           },
+           {
+            "text": "Ten Blocks and Beyond",
+            "type": "text",
+            "marks": [
+             {
+              "type": "em"
+             }
+            ]
+           },
+           {
+            "text": ".",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Unit Performance Task"
+      }
+     ],
+     "differentiators": [],
+     "materials": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Look Both Ways, ",
+              "type": "text",
+              "marks": [
+               {
+                "type": "em"
+               }
+              ]
+             },
+             {
+              "text": "by Jason Reynolds",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Unit 6.1 Lesson 41 Student Edition",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "objectives": {
+      "student": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Determine a theme or central idea of a literary text and explain how it is conveyed through particular details.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Content",
+        "audience": "student"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Provide an objective summary of a literary text.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Content",
+        "audience": "student"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Analyze how a particular sentence, scene, or section fits into the overall structure of a literary text and contributes to the development of theme.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Content",
+        "audience": "student"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Explain theme, summary, and structure using objective language, text details, and cause-effect phrases.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Language",
+        "audience": "student"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Reread closely to distinguish important details from less important details and track how ideas build across a literary passage.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Foundational Skills",
+        "audience": "student"
+       }
+      ],
+      "teacher": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will determine a theme or central idea of a literary text, and explain how it is conveyed through particular details, and provide an objective summary of a literary text. Students will analyze how a particular sentence, scene, or section fits into the overall structure of a literary text and contributes to the development of theme.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Content",
+        "audience": "teacher"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will explain theme, summary, and structure using objective language, text details, and cause-effect phrases.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Language",
+        "audience": "teacher"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will reread closely to distinguish important details from less important details and track how ideas build across a literary passage.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Foundational Skills",
+        "audience": "teacher"
+       }
+      ]
+     },
+     "resource_cards": {
+      "student": [],
+      "teacher": []
+     },
+     "routines": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Quick Write",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "sections": {
+      "student": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Today is a flex day. Your teacher will direct you to a unique learning experience that fits your needs.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Launch",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 1,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       }
+      ],
+      "teacher": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Today is a Flex Day. Based on your self-assessment and your recent work, I'll be meeting with small groups for a quick skill session while others work independently. Let's start by rating your confidence.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Instruct students to reflect on their ability to do each of the following using the Reflection routine.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 602
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Reflection",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 602
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Reflect on your ability to do each of the following using the Reflection routine.",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "em"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "bullet_list",
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "RL.6.2 (Finding Theme from Details):",
+                       "type": "text",
+                       "marks": [
+                        {
+                         "type": "strong"
+                        }
+                       ]
+                      },
+                      {
+                       "text": " “I can determine a theme or central idea in a literary passage by connecting important details.”",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "RL.6.2 (Writing an Objective Summary):",
+                       "type": "text",
+                       "marks": [
+                        {
+                         "type": "strong"
+                        }
+                       ]
+                      },
+                      {
+                       "text": " “I can write an objective summary that includes the most important events and leaves out my opinion.”",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "RL.6.5 (Analyzing Text Structure):",
+                       "type": "text",
+                       "marks": [
+                        {
+                         "type": "strong"
+                        }
+                       ]
+                      },
+                      {
+                       "text": " “I can explain how one part of a literary text fits into the whole and helps build meaning.”",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Connection to Today’s Learning:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Based on your confidence ratings in addition to how you’ve demonstrated your understanding in recent work, you’ll get individualized learning sessions so you get what you need today.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Launch",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students self-assess confidence on determining theme, writing an objective summary, and analyzing structure to help the teacher form huddles.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 1,
+        "estimated_time_in_minutes": [
+         5,
+         5
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Collect a quick visual of ratings.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Explain the plan:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Three 10–15-minute teacher huddles:",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Huddle 1:",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    },
+                    {
+                     "text": " RL.6.2 (Finding Theme from Details)",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Huddle 2: ",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    },
+                    {
+                     "text": "RL.6.2 (Writing an Objective Summary)",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Huddle 3: ",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    },
+                    {
+                     "text": "RL.6.5 (Analyzing Text Structure)",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students not in a huddle work independently by choosing either independent reading or knowledge-building work.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Then sort students using:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "1. their Reflection responses and",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "2. your data from recent formative assessments such as reading responses, summaries, annotations, and discussion notes.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 624
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Teacher Tip",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 624
+                ]
+               },
+               "content": [
+                {
+                 "type": "bullet_list",
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Because Flex Days are meant to be responsive to your students’ needs, you may find that you do not need to complete all three huddles suggested in this lesson, or you may find that there is a more appropriate target to focus on during this time. Feel free to focus this lesson on the skills or concepts your students need the most support with.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Flex Day huddles are meant to work best for both you and your students. In order to ensure that you can place these huddles anywhere within a unit, texts have not been selected for these huddles. You can use any text that your students are currently working with or you can bring in outside texts that add to the knowledge building for this unit.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Huddle 1 (RL.6.2) + Independent Choice Work",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " ",
+             "type": "text"
+            },
+            {
+             "text": "(10–15 minutes total)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Explain that you are first going to pull students for additional work on RL.6.2 (Finding Theme from Details). Pull students who rated 1–3 on RL.6.2 and/or have shown difficulty with moving from topic to theme, connecting multiple details, or stating a clear theme, based on recent work. All other students begin independent work (see “Independent Choice Work” below).",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Pull this group when students name only a topic like friendship or school instead of a message, choose one detail without connecting it to a larger idea, or write a theme statement that is too specific to one event and not broad enough to apply beyond the passage.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 3
+           },
+           "content": [
+            {
+             "text": "Independent Choice Work",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students not in responsive huddles choose one task and write a brief response.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Option 1:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Independent Reading",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "How does one important detail in your independent reading help reveal a bigger idea or theme?",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "In my book, a character keeps pretending he is fine even when he is upset. That detail helps reveal a bigger idea that people sometimes hide their feelings when they do not feel safe sharing them.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Option 2:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Knowledge Building",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "How can an ordinary moment in a story reveal a bigger message about belonging or identity? Cite one example from your reading or journal.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "An ordinary moment can reveal a bigger message when a small action shows what matters. In my reading, a character moving over to make room on the bench showed a bigger idea that belonging can begin with one simple act of welcome.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 3
+           },
+           "content": [
+            {
+             "text": "Huddle 1 — Finding Theme from Details",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " (RL.6.2)",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Use any short passage from ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text"
+            },
+            {
+             "text": " for this huddle. Students should have the text in front of them.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 4
+           },
+           "content": [
+            {
+             "text": "Reteach",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "A ",
+                 "type": "text"
+                },
+                {
+                 "text": "theme",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " is the message or insight a text develops about life, people, or choices.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "A ",
+                 "type": "text"
+                },
+                {
+                 "text": "topic",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " is just the subject, but a ",
+                 "type": "text"
+                },
+                {
+                 "text": "theme",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " says something about that subject.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Readers infer theme by putting together important details, patterns, and character actions.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " We are going to reread a short passage from the text and look for details that connect, not just details that stand alone. Then we’ll turn those connected details into a theme statement that says something meaningful about people or belonging.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 4
+           },
+           "content": [
+            {
+             "text": "Guided Practice",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Have students reread the passage and underline two details that seem connected by the same feeling, choice, or problem.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What idea, feeling, or problem keeps showing up in these details?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "These details both connect to the idea of wanting to belong. The character’s actions and reactions show that this feeling keeps coming up across the passage.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Have students look back at the two underlined details and say what they suggest together.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " When you put these details together, what do they suggest the text is saying about people, choices, or community?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Together, the details suggest that people may act tough or quiet when they are unsure whether they will be accepted. The text seems to be saying that belonging affects how people behave in small moments.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Have students turn that idea into one clear theme sentence.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Based on those details, what theme can you state in one sentence?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "One theme is that small acts of acceptance can change how a person feels about where they belong.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 4
+           },
+           "content": [
+            {
+             "text": "Quick Check",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Now you’re going to show that you can explain a theme using supporting detail. Use two details from the passage to support your thinking.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Using the given passage, state one theme and explain which two details helped you infer it.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "One theme is that people often reveal their need for belonging through small choices. I inferred that from the detail where the character hesitates before joining others and the detail where a small welcoming action changes the character’s mood.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Integrated ELD Instructions"
+           },
+           "content": [
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "purpose"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Support students in combining multiple literary details into a complete theme statement using precise academic language.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "say"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Invite students to connect the passage’s message to a familiar real-life situation from school, home, or community.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Prompt students to say, “This detail matters because…” before moving to a theme statement.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“You said ‘the theme is friendship’ — we can say: ‘The theme is that friendship can help people feel seen and less alone.’”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“You said ‘these details go together’ — we can say: ‘These details connect to show a larger message about belonging.’”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“These details connect because they both show ______.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“The text suggests that ______.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“One theme in this passage is ______ because ______ and ______.”",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "watch"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students give only a one-word topic, ask for a full sentence that explains what the text says about that topic.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students give a topic instead of a theme → Prompt: “What is the text saying about that topic in a full sentence?”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students choose random details that do not connect → Prompt: “Which two details show the same feeling, problem, or choice?”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students name a connected pattern across at least two details rather than listing isolated events.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students state a full theme sentence instead of a one-word topic or plot retelling.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 602
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Check for Understanding",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 602
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 602
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Circulate and spot-check:",
+                   "type": "text"
+                  }
+                 ]
+                },
+                {
+                 "type": "bullet_list",
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Students underline details that connect through a shared feeling, problem, or choice.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Students explain what those details suggest together.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Students write a quick-check response that states a theme and supports it with two relevant details.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Additional Student Support"
+           },
+           "content": [
+            {
+             "type": "table",
+             "content": [
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Situation",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Try this",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "If students need more support with moving from topic to theme",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Offer the frame: ",
+                     "type": "text"
+                    },
+                    {
+                     "text": "“The text is saying that ______ can ______.”",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "em"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Have students sort details into two columns labeled ",
+                     "type": "text"
+                    },
+                    {
+                     "text": "important to the bigger idea",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "em"
+                      }
+                     ]
+                    },
+                    {
+                     "text": " and ",
+                     "type": "text"
+                    },
+                    {
+                     "text": "interesting but not central",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "em"
+                      }
+                     ]
+                    },
+                    {
+                     "text": " before stating a theme.",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ready for extension",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ask students to generate two possible theme statements and decide which one is more strongly supported by the passage.",
+                     "type": "text"
+                    }
+                   ]
+                  },
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Invite students to explain how the same theme could connect to another scene, vignette, or independent reading text.",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Huddle 2 (RL.6.2) + Independent Choice Work",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " ",
+             "type": "text"
+            },
+            {
+             "text": "(10–15 minutes total)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Explain that you are next going to pull students for additional work on RL.6.2 (Writing an Objective Summary). Pull students who rated 1–3 on RL.6.2 and/or have shown difficulty with choosing the most important events, writing concisely, or keeping personal opinion out of a summary, based on recent work. All other students begin independent work (see “Independent Choice Work” below).",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Pull this group when students retell every detail in order, add comments like “I think or this part was sad,” or leave out one major event while including smaller details that do not matter to the whole passage.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 3
+           },
+           "content": [
+            {
+             "text": "Independent Choice Work",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students not in responsive huddles choose one task and write a brief response.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Option 1:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Independent Reading",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What are the most important events in the section you read today, and how could you summarize them in two or three sentences?",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "In the section I read, the character missed the bus, got help from a neighbor, and realized someone had been paying attention all along. A summary should include those big events and leave out the smaller details about every conversation.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Option 2:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Knowledge Building",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Why does an objective summary help readers focus on what matters most in a story about belonging or identity?",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "An objective summary helps readers focus on what matters most because it keeps the big events and leaves out extra opinions. That makes it easier to see how the story builds an idea about belonging or identity.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 3
+           },
+           "content": [
+            {
+             "text": "Huddle 2 — Writing an Objective Summary",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " (RL.6.2)",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Use any short passage from ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text"
+            },
+            {
+             "text": " for this huddle. Students should have the text in front of them.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 4
+           },
+           "content": [
+            {
+             "text": "Reteach",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "A ",
+                 "type": "text"
+                },
+                {
+                 "text": "summary",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " includes only the most important events or ideas.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "An ",
+                 "type": "text"
+                },
+                {
+                 "text": "objective summary",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " stays neutral and does not include personal opinions or extra commentary.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Strong summaries are short, clear, and focused on what matters to the text as a whole.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " We are going to reread a short passage from the text and separate the must-keep events from the extra details. Then we’ll turn those important parts into a short objective summary.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 4
+           },
+           "content": [
+            {
+             "text": "Guided Practice",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Have students reread the passage and mark the three biggest events or ideas.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Which events or ideas are essential to include if you only had two or three sentences to explain the passage?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "I would include the events that change the situation or show the main conflict. Those are the parts a reader needs in order to understand what happens overall.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Have students look at one detail that feels interesting but not essential.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Which interesting detail could you leave out of a summary, and why is it less important than other details?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "I could leave out a smaller description or side comment because it does not change the main event. It adds color, but it is not necessary for understanding the passage.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Have students combine the essential events into a short summary without opinion words.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " How can you turn the most important events into an objective summary instead of a full retelling?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "I can write only the major events in order and use neutral language. I should leave out my feelings and any extra details that are not central to the passage.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 4
+           },
+           "content": [
+            {
+             "text": "Quick Check",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Now you’re going to show that you can summarize the passage clearly and objectively. Keep only the important parts and leave out your opinion.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " In two or three sentences, write an objective summary of the same passage from the text.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "In this passage, the character faces a small but important social moment and has to decide how to respond. Another character’s action changes the situation, and by the end, the main character understands the moment differently. The passage shows how an ordinary interaction can shift a person’s sense of belonging.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Integrated ELD Instructions"
+           },
+           "content": [
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "purpose"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Support students in using concise, neutral language to summarize important literary events without adding opinion.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "say"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Invite students to orally summarize the passage as if explaining it to a family member who missed the reading, then tighten that oral version into school-based summary language.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Encourage students to use familiar storytelling patterns first, then revise toward concise academic English.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Prompt students to remove phrases such as “I think,” “I liked,” or “this was sad” and replace them with neutral verbs.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Help students orally rehearse the summary first using “first,” “next,” and “by the end” before writing.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“You said ‘my favorite part is when...’ — we can say: ‘An important event in the passage is when...’”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“You said ‘this part is really mean’ — we can say: ‘The character acts in a way that changes the conflict.’”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“An important event in the passage is ______.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“Another key event is ______.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“Overall, the passage shows ______.”",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "watch"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students include opinion or judgment language → Prompt: “Can you restate that using only what the text shows?”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students include too many minor details → Prompt: “If you could keep only three things, which ones are necessary to understand the passage?”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students include the major events or ideas and leave out minor descriptive details.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students use neutral, objective wording rather than opinion, evaluation, or personal reaction.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 602
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Check for Understanding",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 602
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Circulate and spot-check:",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "em"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "bullet_list",
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Students mark only the most important events or ideas.",
+                       "type": "text",
+                       "marks": [
+                        {
+                         "type": "textColor",
+                         "attrs": {
+                          "color": "#208095"
+                         }
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Students explain why one detail can be left out.",
+                       "type": "text",
+                       "marks": [
+                        {
+                         "type": "textColor",
+                         "attrs": {
+                          "color": "#208095"
+                         }
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Students write a quick-check response that is brief, objective, and focused on the passage as a whole.",
+                       "type": "text",
+                       "marks": [
+                        {
+                         "type": "textColor",
+                         "attrs": {
+                          "color": "#208095"
+                         }
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Additional Student Support"
+           },
+           "content": [
+            {
+             "type": "table",
+             "content": [
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Situation",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Try this",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "If students need more support with choosing the most important events:",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Have students finish the frame: ",
+                     "type": "text"
+                    },
+                    {
+                     "text": "“The three most important things are ______, ______, and ______.”",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "em"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ask students to cross out one interesting but nonessential detail before drafting the summary.",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ready for extension",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ask students to revise the summary once more to make it even shorter without losing any essential meaning.",
+                     "type": "text"
+                    }
+                   ]
+                  },
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Invite students to explain how the summary connects to a theme or bigger idea in the text.",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Huddle 3 (RL.6.5) + Independent Choice Work ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "(10–15 minutes total)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Explain that you are next going to pull students for additional work on RL.6.5 (Analyzing How Structure Builds). Pull students who rated 1–3 on RL.6.5 and/or have shown difficulty with noticing shifts, naming the purpose of a section, or explaining how one part contributes to the whole text, based on recent work. All other students begin independent work (see “Independent Choice Work” below).",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Pull this group when students can say what happened in a scene but not why it is placed there, describe beginning-middle-end without explaining function, or miss how a shift in time, perspective, or tension helps develop the text’s meaning.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 3
+           },
+           "content": [
+            {
+             "text": "Independent Choice Work",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students not in responsive huddles choose one task and write a brief response.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Option 1:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Independent Reading",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Choose one part of your independent reading from today. How does that section fit into the whole chapter or story?",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "The section I chose works like a turning point because it changes how the character sees the situation. It matters to the whole story because what happens after that moment feels different.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Option 2:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Knowledge Building",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "How can the way a writer organizes a small moment help reveal a bigger idea about community or belonging?",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "The way a writer organizes a small moment matters because the order can build tension, surprise, or reflection. When the important action comes after smaller details, the bigger idea about community can feel stronger.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 3
+           },
+           "content": [
+            {
+             "text": "Huddle 3 — Analyzing How Structure Builds",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " (RL.6.5)",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Use any short passage from ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text"
+            },
+            {
+             "text": " for this huddle. Students should have the text in front of them.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 4
+           },
+           "content": [
+            {
+             "text": "Reteach",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Structure",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " is how a text or a section is organized.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Readers ",
+                 "type": "text"
+                },
+                {
+                 "text": "analyze",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " structure by asking what job a part of the text is doing, not just what happens there.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "A sentence, scene, or section can introduce a conflict, build tension, shift focus, or help develop the theme.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " We are going to look at one part of the text and ask what job that part does in the passage. Then we’ll explain how that choice helps the whole text make meaning.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 4
+           },
+           "content": [
+            {
+             "text": "Guided Practice",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Have students reread the passage and bracket one section where the text shifts, builds, or changes direction.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Where do you notice a change or an important section, and what tells you that this part matters?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "I notice an important section where the feeling or action changes. It matters because the text starts doing something new there, like building tension or shifting the focus.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Have students identify the job that the bracketed section is doing.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Is this part introducing the situation, building the conflict, creating a turning point, or helping the ending, and how can you tell?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "This part works like a turning point because something changes in the character’s understanding or the situation. I can tell because the phrase “From that point on,” suggests the character is moving in a new direction.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Have students connect that section to the whole passage.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " How does this section contribute to the structure of the whole passage and help develop its meaning?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "This section contributes to the whole passage by setting up the next change and making the message clearer. Without it, the ending or bigger idea would not feel as strong.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 4
+           },
+           "content": [
+            {
+             "text": "Quick Check",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Now you’re going to show that you can explain the job a part of the text is doing. Focus on how that part helps the whole passage, not just what happens there.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Using the same passage, explain how another sentence, scene, or section contributes to the overall structure of the passage.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "The section where the situation shifts contributes to the overall structure by introducing [character]. It changes how the other characters interact and helps the whole passage move toward its bigger idea about belonging.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Integrated ELD Instructions"
+           },
+           "content": [
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "purpose"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Support students in naming the function of a literary section and explaining how structure contributes to overall meaning.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "say"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Invite students to compare the text’s organization to an event they have experienced, where a pause, shift, or key moment changed events.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Encourage students to gesture or map the passage to show beginning, build, and shift before putting the explanation into words.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Prompt students to complete the phrase “This part works like…” to name the function before explaining the effect.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“You said ‘this is the part where it changes’ — we can say: ‘This section creates a shift that moves the passage into a new stage.’”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“You said ‘it helps the story’ — we can say: ‘This section contributes to the overall structure by building the conflict and preparing the turning point.’”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“This section works like ______ because ______.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“The structure changes when ______.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“This part contributes to the whole passage by ______.”",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "watch"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students only retell events, redirect to the question “Why is this part placed here?”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students retell the section instead of naming its function → Prompt: “What job is this part doing in the passage?”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students notice a shift but cannot connect it to the whole → Prompt: “How would the passage change if this section were removed?”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students name a functional role such as introduction, build, turning point, or closing reflection.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students explain how the chosen part contributes to the whole passage rather than only describing the content of that part.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 602
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Check for Understanding",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 602
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Circulate and spot-check:",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "em"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "bullet_list",
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Students identify a section where the text shifts or builds.",
+                       "type": "text",
+                       "marks": [
+                        {
+                         "type": "textColor",
+                         "attrs": {
+                          "color": "#208095"
+                         }
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Students name the job that section is doing.",
+                       "type": "text",
+                       "marks": [
+                        {
+                         "type": "textColor",
+                         "attrs": {
+                          "color": "#208095"
+                         }
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Students write a quick-check response that explains how the section contributes to the whole passage.",
+                       "type": "text",
+                       "marks": [
+                        {
+                         "type": "textColor",
+                         "attrs": {
+                          "color": "#208095"
+                         }
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Additional Student Support"
+           },
+           "content": [
+            {
+             "type": "table",
+             "content": [
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Situation",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Try this",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "If students need more support with naming the function of a section",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Offer the frame: ",
+                     "type": "text"
+                    },
+                    {
+                     "text": "“This section works like a ______ because ______.”",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "em"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Have students divide the passage mentally into beginning, middle, and ending, then decide where the selected part fits.",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ready for extension",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ask students to compare two sections and explain how each one contributes differently to the overall structure.",
+                     "type": "text"
+                    }
+                   ]
+                  },
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Invite students to explain how the structure of the passage strengthens the theme or emotional impact.",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Learning in Action",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Teacher uses flexible grouping to provide targeted 10–15-minute huddles on theme, summary, and structure using a short literary passage; other students engage in independent reading or knowledge-building tasks.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 2,
+        "estimated_time_in_minutes": [
+         40,
+         40
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students complete a brief reflection based on what they did today. Invite 2–3 students to share.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "writing"
+           },
+           "content": [
+            {
+             "text": "Quick Write",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Option A (students who attended one or more huddles):",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Re-rate your confidence for RL.6.2 and RL.6.5. What specifically improved?",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Before, I was a 2 on RL.6.2, and now I’m a 4 because I can tell the difference between a topic and a theme. I also improved on RL.6.5 because I can explain what job a section is doing in the passage instead of only saying what happened.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Option B (students who did independent reading or knowledge building):",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What are you learning about on the unit topic from today’s reading or work? Cite one detail.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "I’m learning that ordinary moments can reveal belonging in a big way. In my reading, one small invitation changed how a character felt about being part of the group, and that detail helped show the story’s bigger message.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Look Back",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students reflect on growth in confidence or new learning from huddle work or independent work.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 3,
+        "estimated_time_in_minutes": [
+         5,
+         5
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students read their independent reading book for 20 minutes and complete a reading log entry.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Homework",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "teacher",
+        "sequence": 4,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       }
+      ]
+     },
+     "subject": "ELA",
+     "standard_lists": [
+      {
+       "title": "California CCSS: Focus Standards",
+       "standards": [
+        {
+         "id": "ck0twim550pgji6p7pqmnz6xt",
+         "code": "RL.6.2",
+         "description": "Determine a theme or central idea of a text and how it is conveyed through particular details; provide a summary of the text distinct from personal opinions or judgments."
+        },
+        {
+         "id": "ck0twimya0pgvi6p7n3e4487u",
+         "code": "RL.6.5",
+         "description": "Analyze how a particular sentence, chapter, scene, or stanza fits into the overall structure of a text and contributes to the development of the theme, setting, or plot."
+        }
+       ]
+      },
+      {
+       "title": "California CCSS: Supporting Standards",
+       "standards": [
+        {
+         "id": "ck0twj2v30po4i6p77e1h1kxu",
+         "code": "SL.6.1.a",
+         "description": "Come to discussions prepared, having read or studied required material; explicitly draw on that preparation by referring to evidence on the topic, text, or issue to probe and reflect on ideas under discussion."
+        },
+        {
+         "id": "ck0twj35b0po9i6p7tga5kk4v",
+         "code": "SL.6.1.b",
+         "description": "Follow rules for collegial discussions, set specific goals and deadlines, and define individual roles as needed."
+        },
+        {
+         "id": "ck0twj3d40podi6p72ljvbtil",
+         "code": "SL.6.1.c",
+         "description": "Pose and respond to specific questions with elaboration and detail by making comments that contribute to the topic, text, or issue under discussion."
+        },
+        {
+         "id": "ck0twj3vy0poli6p7dxwrnox4",
+         "code": "SL.6.1.d",
+         "description": "Review the key ideas expressed and demonstrate understanding of multiple perspectives through reflection and paraphrasing."
+        },
+        {
+         "id": "ck0twized0pmii6p72lzaplwb",
+         "code": "W.6.4",
+         "description": "Produce clear and coherent writing in which the development, organization, and style are appropriate to task, purpose, and audience."
+        }
+       ]
+      },
+      {
+       "title": "ELD Standards",
+       "standards": [
+        {
+         "id": "cmmfkfffk03gn1vn8aycdok7j",
+         "code": "ELD.PI.6.1.Br",
+         "description": "Contribute to class, group, and partner discussions by following turn‐taking rules, asking relevant questions, affirming others, adding relevant information and evidence, paraphrasing key ideas, building on responses, and providing useful feedback."
+        },
+        {
+         "id": "cmmfkffc503g81vn8tih6mh1z",
+         "code": "ELD.PI.6.1.Em",
+         "description": "Engage in conversational exchanges and express ideas on familiar topics by asking and answering yes‐no and wh‐ questions and responding using simple phrases."
+        },
+        {
+         "id": "cmmfkffdq03gd1vn8ipjb6do7",
+         "code": "ELD.PI.6.1.Ex",
+         "description": "Contribute to class, group, and partner discussions by following turn‐taking rules, asking relevant questions, affirming others, adding relevant information, and paraphrasing key ideas."
+        },
+        {
+         "id": "cmmfkfg9j03jp1vn8b8od1ctd",
+         "code": "ELD.PI.6.6a.Br",
+         "description": "Explain ideas, phenomena, processes, and text relationships (e.g., compare/contrast, cause/effect, problem/solution) based on close reading of a variety of grade‐level texts and viewing of multimedia, with light support."
+        },
+        {
+         "id": "cmmfkffzz03ip1vn8mozuf3un",
+         "code": "ELD.PI.6.6a.Em",
+         "description": "Explain ideas, phenomena, processes, and text relationships (e.g., compare/contrast, cause/effect, problem/solution) based on close reading of a variety of grade‐level texts and viewing of multimedia, with substantial support."
+        },
+        {
+         "id": "cmmfkfg4r03j71vn89deiojfo",
+         "code": "ELD.PI.6.6a.Ex",
+         "description": "Explain ideas, phenomena, processes, and text relationships (e.g., compare/contrast, cause/effect, problem/solution) based on close reading of a variety of grade‐level texts and viewing of multimedia, with moderate support."
+        }
+       ]
+      }
+     ],
+     "title": "Lesson 20: Flex Day: Skill-Based Huddles, Day 1",
+     "type": "Flex Day",
+     "total_time_in_minutes": [
+      50,
+      50
+     ],
+     "vocabulary_lists": [
+      {
+       "title": "Vocabulary Addressed in Lesson",
+       "vocabulary": [
+        {
+         "word": "theme",
+         "definition": "a message or insight the text develops about life or people"
+        },
+        {
+         "word": "summary",
+         "definition": "a short retelling of the most important parts without extra opinion"
+        },
+        {
+         "word": "structure",
+         "definition": "the way a text or part of a text is organized"
+        }
+       ]
+      },
+      {
+       "title": "Vocabulary for Additional Support",
+       "vocabulary": [
+        {
+         "word": "objective",
+         "definition": "based on the text and free of personal opinion"
+        },
+        {
+         "word": "shift",
+         "definition": "a change in time, focus, feeling, or action"
+        },
+        {
+         "word": "detail",
+         "definition": "a specific piece of information from the text"
+        }
+       ]
+      }
+     ],
+     "essential_questions": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "text": "How do ordinary moments reveal who we are and how we belong?",
+          "type": "text"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "dataUpdateCount": 1,
+    "dataUpdatedAt": 1784652258127,
+    "error": null,
+    "errorUpdateCount": 0,
+    "errorUpdatedAt": 0,
+    "fetchFailureCount": 0,
+    "fetchFailureReason": null,
+    "fetchMeta": null,
+    "isInvalidated": false,
+    "status": "success",
+    "fetchStatus": "idle"
+   },
+   "queryKey": [
+    "lesson",
+    "page",
+    "{\"id\":\"cp1n6d0u0cgzrro46rzvpno9\"}"
+   ],
+   "queryHash": "[\"lesson\",\"page\",\"{\\\"id\\\":\\\"cp1n6d0u0cgzrro46rzvpno9\\\"}\"]"
+  }
+ ]
+}

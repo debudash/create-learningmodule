@@ -1,0 +1,4717 @@
+{
+ "mutations": [],
+ "queries": [
+  {
+   "dehydratedAt": 1784652258183,
+   "state": {
+    "data": {
+     "id": "c8vmy7st5yasip7xpak3qjjh",
+     "anchor_text_cards": [
+      {
+       "id": "crqvaw8f4scxoev58xsnoy55",
+       "type": "off-platform-text",
+       "title": "Look Both Ways",
+       "image": {
+        "url": "https://images.newsela.com/core/images/crqvaw8f4scxoev58xsnoy55.jpg?auto=compress&ar=428:240&max-w=856&max-h=480&fit=crop&crop=faces",
+        "fit": "crop",
+        "crop": "faces"
+       },
+       "author": "Jason Reynolds",
+       "href": {
+        "student": "",
+        "teacher": ""
+       },
+       "group_name": "anchor_text",
+       "label": "Novel"
+      }
+     ],
+     "breadcrumbs": {
+      "student": [
+       {
+        "label": "Home",
+        "href": "/"
+       },
+       {
+        "label": "ELA Core 6th Grade",
+        "href": "/student/course/cmkfw4elj004k8a90yvyfyfb8"
+       },
+       {
+        "label": "Lesson 17"
+       }
+      ],
+      "teacher": [
+       {
+        "label": "Home",
+        "href": "/"
+       },
+       {
+        "label": "ELA Core 6th Grade",
+        "href": "/course/cmkfw4elj004k8a90yvyfyfb8"
+       },
+       {
+        "label": "Unit 1",
+        "href": "/course/cmkfw4elj004k8a90yvyfyfb8/unit/ck73kftqkdhaojqgqft3acmy"
+       },
+       {
+        "label": "Lesson 17"
+       }
+      ]
+     },
+     "connections": [
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "How do point of view and character development work together to shape a story?",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Knowledge-Building"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "Stories about ordinary moments help us see who we are and how we belong.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Enduring Understanding"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "Future writing lessons will return to the topic of narrative writing, including Lessons 27 and 30.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Future Lessons"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "This lesson involves further investigation of developing voice and point of view in narrative writing, which is the main focus of the performance task.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Unit Performance Task"
+      }
+     ],
+     "differentiators": [],
+     "materials": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Look Both Ways",
+              "type": "text",
+              "marks": [
+               {
+                "type": "em"
+               }
+              ]
+             },
+             {
+              "text": ", by Jason Reynolds",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Unit 1 Lesson 17 Student Edition ",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Performance Task Handout",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "objectives": {
+      "student": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Write original narrative scenes involving yourself and a favorite character from ",
+             "type": "text"
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": ", with a focus on point of view and character development.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Content",
+        "audience": "student"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Justify narrative point of view and character choices by using reasoning frames (“I chose . . . because . . .”), perspective language (“From my point of view . . .”), and narrative transitions to plan and draft an original scene that fits what you know about a ",
+             "type": "text"
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " character.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Language",
+        "audience": "student"
+       }
+      ],
+      "teacher": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will write original narrative scenes involving themselves and a favorite character from ",
+             "type": "text"
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": ", with a focus on point of view and character development.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Content",
+        "audience": "teacher"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will justify narrative point of view and character choices by using reasoning frames (“I chose . . . because . . .”), perspective language (“From my point of view . . .”), and narrative transitions to plan and draft an original scene that fits what they know about a ",
+             "type": "text"
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " character.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Language",
+        "audience": "teacher"
+       }
+      ]
+     },
+     "resource_cards": {
+      "student": [],
+      "teacher": [
+       {
+        "id": "cxl6nameyiwcn401xeryyd57",
+        "type": "pdf",
+        "title": "6.1 Performance Task",
+        "image": {
+         "url": "/images/generic-placeholder.png",
+         "fit": "crop",
+         "crop": "faces",
+         "alt_text": "A placeholder image.",
+         "credit": "Newsela Design"
+        },
+        "author": null,
+        "href": {
+         "student": "https://media.newsela.com/core/pdfs/cxl6nameyiwcn401xeryyd57.pdf",
+         "teacher": "https://media.newsela.com/core/pdfs/cxl6nameyiwcn401xeryyd57.pdf"
+        },
+        "audience": "teacher",
+        "group_name": "additional_resources",
+        "label": "Resource",
+        "file_size": "81 KB"
+       }
+      ]
+     },
+     "routines": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Think-Pair-Share",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Language Study",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Quick Write",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "sections": {
+      "student": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "notes_section"
+           },
+           "content": [
+            {
+             "text": "Think-Pair-Share",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions: ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "Think about this question. Then share your answer with a partner. Be ready to explain your thinking to the class.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Which character from ",
+                 "type": "text"
+                },
+                {
+                 "text": "Look Both Ways",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": " would you most want to sit next to at lunch or spend recess with, and why?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Launch",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 1,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "notes_section"
+           },
+           "content": [
+            {
+             "text": "Language Study",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Think about what makes a narrative story different from other kinds of texts. As a class, discuss why an author might choose to write a narrative and what readers learn or experience when they read one.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "The genre of",
+                 "type": "text"
+                },
+                {
+                 "text": " Look Both Ways",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": " is a narrative story. This means it tells a series of fictional accounts, or stories that are not real. Authors often write narratives to entertain, but also to help readers connect with characters and ideas on a personal level.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Read the paragraph and think about how the narrator’s point of view shapes what we learn about the characters.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What is the narrator’s point of view in this paragraph? How does the paragraph develop this point of view?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "How does the narrator of this paragraph use what we know about the characters to continue their story?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Literacy Lab",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 2,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Part A: Developing Point of View",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Think of the character you selected during the Launch. Then develop questions you would like to ask that character. Use what you know about the character to write thoughtful questions.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Write the name of your character in the middle of a piece of paper, or draw a quick picture of what you imagine them to look like. Then write some questions you would like to ask the character around their name or image. If you have time, also think about why you chose those questions and how you think the character might answer them.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What will your point of view be within your story? How did writing these questions help you better understand your own point of view and how you’ll interact with the character you chose?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What kinds of details might you use in your story to help show who you are, who the other character is, and how you both belong in the story?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Reflection",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Reflect on your understanding of the upcoming activity and the questions you want to ask your favorite character from ",
+                   "type": "text"
+                  },
+                  {
+                   "text": "Look Both Ways",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "em"
+                    }
+                   ]
+                  },
+                  {
+                   "text": " using the ",
+                   "type": "text"
+                  },
+                  {
+                   "text": "Reflection",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  },
+                  {
+                   "text": " routine.",
+                   "type": "text"
+                  }
+                 ]
+                },
+                {
+                 "type": "bullet_list",
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "How confident are you in your ability to figure out your own point of view in this type of story?",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Part B: Begin Writing",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Begin writing your story. Aim to complete one paragraph today. You may write more if you have time.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Spend about 20 minutes beginning to write your story. Work to complete one paragraph, but it’s great if you can write more. Focus on three things: your purpose for writing (are you informing or entertaining?), your own point of view (are you the narrator, or are you creating one?), and what you know about your chosen character from ",
+                 "type": "text"
+                },
+                {
+                 "text": "Look Both Ways",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": ".",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Checklist",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Review your drafts. Check if the writing:",
+                   "type": "text"
+                  }
+                 ]
+                },
+                {
+                 "type": "bullet_list",
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Establishes a clear point of view for the narrator.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Uses what we know about the character from ",
+                       "type": "text"
+                      },
+                      {
+                       "text": "Look Both Ways",
+                       "type": "text",
+                       "marks": [
+                        {
+                         "type": "em"
+                        }
+                       ]
+                      },
+                      {
+                       "text": ".",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Demonstrates a purpose of entertainment and/or connection with a character’s point of view.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Includes at least one narrative transition to sequence events.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Learning in Action",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 3,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "writing"
+           },
+           "content": [
+            {
+             "text": "Quick Write",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Your unit performance task will be to write a personal narrative. Think about today’s activity, and then write a brief response to the prompt.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What parts of the unit performance task do you think you’ll need the most practice with based on how today’s activity went, and why?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Look Back",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 4,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       }
+      ],
+      "teacher": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "notes_section"
+           },
+           "content": [
+            {
+             "text": "Think-Pair-Share",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "This routine will activate engagement and character recall from ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text"
+            },
+            {
+             "text": " while informally assessing which characters students understand well enough to write about. The goal is not just preference, but justified choice based on character traits and experiences. Encourage students to reference specific moments or qualities from the text to ground their responses. This sets a foundation for W.6.3 (narrative development) by prompting students to begin thinking about character motivation and connection.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Prompt students to perform a ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": "Think-Pair-Share",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " using the following prompt.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions: ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "Think about this question. Then share your answer with a partner. Be ready to explain your thinking to the class.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Which character from ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "Look Both Ways",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": " would you most want to sit next to at lunch or spend recess with, and why?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "I would most want to have lunch with Pia, because she’s really confident and cool, but she’s also kind of sad and needs more friends.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 3
+           },
+           "content": [
+            {
+             "text": "Connection to Today’s Learning",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Today, you’re going to work on ideas for your own original story about you and one of the characters from ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "Look Both Ways",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": ". It will be important to use what you know about the character to help you develop your ideas. The purpose of today’s writing is to draft an original narrative scene that will entertain readers while showing what you know about a character from ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "Look Both Ways",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": ". Your audience is your classmates and teacher. This writing will help prepare you for the unit performance task, where you will write a full personal narrative.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Launch",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will choose a character from the anchor text whom they would like to have lunch or spend recess with and discuss why they made that choice.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 1,
+        "estimated_time_in_minutes": [
+         5,
+         5
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "notes_section"
+           },
+           "content": [
+            {
+             "text": "Language Study",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "This section activates students’ understanding of the narrative genre and the author’s purpose while preparing them to write their own narratives. Students should connect how the point of view shapes storytelling and how authors use what readers already know about characters to build meaning. Emphasize that students will apply these same techniques—point of view, character knowledge, and voice—in their own writing.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions: ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "Think about what makes a narrative story different from other kinds of texts. As a class, discuss why an author might choose to write a narrative and what readers learn or experience when they read one.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " The genre of",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": " Look Both Ways",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": " is a narrative story. This means it tells a series of fictional accounts, or stories that are not real. Authors often write narratives to entertain, but also to help readers connect with characters and ideas on a personal level.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What is the author’s purpose when writing a narrative story? How do you feel as a reader after finishing a narrative story?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "The author’s purpose in writing a narrative story is usually to entertain or to have the reader connect with a character or an idea on a personal level. After I finish reading a narrative story, I feel satisfied if it has a good ending, but also kind of sad that it’s over. Sometimes, I also feel like I want to know what happens to the characters next.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Explain to students that they are going to begin writing a narrative story from their own point of view that includes one of the characters they’ve read about in ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text"
+            },
+            {
+             "text": ". Share that they will need to use what they know about the character and their point of view to help them develop their own stories. Display or share a copy of the paragraph from “The Low Cuts Strike Again” that begins “For the record, Bit, John John, Francy, and Trista weren’t the only free-lunchers” as a model where all students can see it.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Lead a class discussion about how the model paragraph uses point of view and what we know about the four characters to introduce the story.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Read the paragraph and think about how the narrator’s point of view shapes what we learn about the characters.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What is the narrator’s point of view in this paragraph? How does the paragraph develop this point of view?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "The narrator’s point of view seems to be someone who knows the four friends but doesn’t know any of their thoughts like the narrator sometimes does in ",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    },
+                    {
+                     "text": "Look Both Ways",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "em"
+                      },
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    },
+                    {
+                     "text": ". The paragraph develops the point of view by talking about the friends needing free lunch and comparing that to other students in the school.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " How does the narrator of this paragraph use what we know about the characters to continue their story?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "We know that Bit, John John, Francy, and Trista don’t have a lot of money. The narrator uses this paragraph to compare the four friends to a lot of other students at their school and to talk about the very important ways they are different. We already know that the Low Cuts receive free lunches, but in this paragraph, we also learn that they each have a parent who is a cancer survivor. This becomes very important to the rest of the story.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Integrated ELD Instructions"
+           },
+           "content": [
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "purpose"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Help students name and justify a narrator point of view and keep it consistent while they use a model paragraph to plan their own original story with a ",
+                 "type": "text"
+                },
+                {
+                 "text": "Look Both Ways",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": " character.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "say"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Invite students to use identity/community language they already use in real life (friends, lunch table groups), then translate it into story terms (narrator, POV, character traits).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Anchor students in one clear narrator role: “I” as narrator OR “I” as a created character (still first person).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "During the model paragraph discussion, require students to state: (1) POV, (2) what the narrator knows/doesn’t know, (3) one detail that proves it.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Push students to connect POV to character knowledge: “What do we already know about Bit/Trista/etc., and how does the narrator reveal it?”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Expand vague statements (“It’s third person”) into precise language (“The narrator describes the group and compares them to others but doesn’t enter their private thoughts in this paragraph”).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Upgrade “because” explanations by adding narrative transitions (“At first . . . , Then . . . , As a result . . .”).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“The point of view is ___ because the narrator ___ (describes/knows/does not know) ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“From the narrator’s point of view, the characters seem ___, which the text shows when it says ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“At first, the paragraph makes me think ___. Then it reveals ___.”",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "watch"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students confuse narrator vs. character → Prompt: “Is the speaker in the story (‘I’) or describing from outside? Point to one line that proves it.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students can’t cite evidence → Prompt: “Quote 2–6 words that show what the narrator knows (or doesn’t know).”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students accurately name POV and what the narrator can/can’t know.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students cite one short phrase as evidence.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students explain how POV shapes what the reader learns about the character(s).",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Connection to Today’s Learning",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Today, you’re going to write your own story about you and your favorite character from ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "Look Both Ways",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": ". It can show them acting as they did in the book or in a new way, as long as that new way uses and builds upon what you know about them from the book.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Literacy Lab",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will discuss prior knowledge of narrative story as a genre and examine a model paragraph of a narrative story in order to prepare to write their own.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 2,
+        "estimated_time_in_minutes": [
+         10,
+         10
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Part A: Developing Point of View (W.6.3.a, W.6.3.b) (10 minutes)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "This activity helps students bridge character knowledge with narrative planning by generating questions that reveal both what they know about the character and their own narrator perspective. Emphasize that strong narratives require a clear point of view and purposeful interaction between characters. Guide students to move beyond simple questions and instead develop questions that reflect curiosity, emotion, or relationship-building, which will later translate into more authentic narrative scenes (W.6.3a).",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions: ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "Think of the character you selected during the Launch. Then, develop questions you would like to ask that character. Use what you know about the character to write thoughtful questions.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Write the name of your character in the middle of a piece of paper, or draw a quick picture of what you imagine them to look like. Then write some questions you would like to ask the character around their name or image. If you have time, also think about why you chose those questions and how you think the character might answer them.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Questions for Pia: When did you start skating? Do you get hurt a lot? Did your mom ever try to get you to stop skating? How did it feel the day your sister died? Do you still feel that way sometimes? I chose these questions because I want to know how she and her mom handled things after her sister died.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What will your point of view be within your story? How did writing these questions help you better understand your own point of view and how you’ll interact with the character you chose?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "In this story, I’m another kid from Pia’s school who wants to be her friend because I think she’s really cool and also sad. I’m not really sure how to talk to her, and I might make her mad before I finally make friends with her. Asking the questions helped me develop that point of view because I started by asking what I was curious about, then thought about why I’d be so curious and how she might react to someone being that interested in her life.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What kinds of details might you use in your story to help show who you are, who the other character is, and how you both belong in the story?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "I would add details like how I’m nervous talking to Pia and how she’s acting kind of annoyed at me. Maybe I’m sweating, and she’s looking at me kind of sideways. But then I ask her a really good question that shows I know about skateboards. Her face would change, and she might even pay more attention.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students should leave this section with a clear narrator role and a set of purposeful questions that shape their story direction. Check that students can explain how their questions reflect their point of view and anticipated interaction with the character. This ensures they are prepared to begin drafting with intentional voice, perspective, and character alignment, rather than disconnected ideas.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Integrated ELD Instructions"
+           },
+           "content": [
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "purpose"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Support students in generating questions that reveal both (a) what they know about the chosen character and (b) the narrator’s stance, so their planned interaction naturally builds a consistent point of view.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Allow students to use their own community language (slang, idioms) in brainstorming, then guide them to decide when to keep it for voice vs. revise for clarity.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "say"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Require 2 question types: (1) character-based (fits what we know from the book), (2) relationship-based (shows how students will interact: curious, nervous, protective, admiring, etc.).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "After students draft questions, have them label each as “Shows what I want to know” or “Shows how I feel.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ensure students choose a POV stance sentence before writing: “In my story, I am ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Turn question lists into POV statements: “These questions suggest my narrator is ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Add precision verbs: reveals, suggests, implies, demonstrates.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“I chose ___ (character) because ___. This suggests my narrator values ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“One question I asked is ___. This reveals I am ___ (curious/nervous/admiring) because ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "“In my story, my point of view is ___, so I will notice ___ and describe it as ___.”",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "watch"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If questions are generic (“How are you?”) → Prompt: “Make it story-specific: mention a detail from their vignette or a repeated image.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If POV is unclear → Prompt: “Finish: ‘In my story, I am . . .’ and add one reason: ‘because . . .’”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students draft at least 3 character-specific questions grounded in the book.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students state a clear narrator role (“I am a new student/myself/a friend”).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students explain how at least one question reveals their narrator POV.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Teacher Tip",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Remind students that they can be “themselves” in this story, or they can become a new character. Either way, they should think about how they know the character from ",
+                   "type": "text"
+                  },
+                  {
+                   "text": "Look Both Ways",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "em"
+                    }
+                   ]
+                  },
+                  {
+                   "text": ", what their unique point of view is, and how they will interact with the character they have chosen.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Additional Student Support: Developing Point of View"
+           },
+           "content": [
+            {
+             "type": "table",
+             "content": [
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Situation",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Try this",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Struggling with: Thinking of questions to ask their characters",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "To activate students’ knowledge of what they know about their chosen character, ask them why they chose that character in the first place, and help them think of what else they would like to know. Ex. “What do you already know about your character that made you want to talk to them? What drew you to them? What else would you like to know?”",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ready for extension: Thinking of a dialogue with their characters",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Say:",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    },
+                    {
+                     "text": " Try answering one of your questions from your character’s point of view. Then come up with another question based on how you think the character would answer. “So how long have you been skating?” I asked. “What are you, with the school paper or something?” she snapped back, annoyed. “I’m sorry! You’re just a really interesting person, and I want to get to know you better,” I said. “That’s actually kind of nice,” she said, softening her tone.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Reflection",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Reflect on your understanding of the upcoming activity and the questions you want to ask your favorite character from ",
+                   "type": "text"
+                  },
+                  {
+                   "text": "Look Both Ways",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "em"
+                    }
+                   ]
+                  },
+                  {
+                   "text": " using the ",
+                   "type": "text"
+                  },
+                  {
+                   "text": "Reflection",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  },
+                  {
+                   "text": " routine.",
+                   "type": "text"
+                  }
+                 ]
+                },
+                {
+                 "type": "bullet_list",
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "How confident are you in your ability to figure out your own point of view in this type of story?",
+                       "type": "text",
+                       "marks": [
+                        {
+                         "type": "textColor",
+                         "attrs": {
+                          "color": "#208095"
+                         }
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Part B: Begin Writing (W.6.3.a, W.6.3.b) (20 minutes)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Allow students to use the remaining time available for Learning in Action to begin writing their stories. Set the expectation that students will complete only one paragraph today, but they are welcome to write as much as time allows.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Begin writing your story. Aim to complete one paragraph today. You may write more if you have time.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Spend about 20 minutes beginning to write your story. Work to complete one paragraph, but it’s great if you can write more. Focus on three things: your purpose for writing (are you informing or entertaining?), your own point of view (are you the narrator, or are you creating one?), and what you know about your chosen character from ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "Look Both Ways",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": ".",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "“Hey!” I said, probably sounding too enthusiastic. “Hey,” Pia responded, much less so. “So . . . how long have you been skating?” I asked. I had planned to nod at her skateboard when I asked that, so it didn’t sound like I was spying on her or anything, but she didn’t have it today for some reason. Oh, no. Sure enough, she glared at me as I’d asked about something way too personal. “What are you, from the school paper?” I just wanted to be her friend, and I’d messed it up already.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "As students draft, they should prioritize clarity of point of view, consistency of character portrayal, and basic narrative structure over length. Students should demonstrate an emerging ability to sequence events, include relevant details, and reflect their narrator’s perspective (W.6.3, W.6.4). Look for evidence that students are using what they know about the character to guide dialogue and actions. This draft serves as an early step in the writing process (W.6.5), so focus feedback on strengthening ideas and coherence rather than perfection.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Lesson 17 Writing Rubric: Narrative Paragraph — Character Study",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Writing prompt: Write a narrative paragraph in first person about a time you encountered or interacted with a favorite character from Look Both Ways. Use vivid details and sensory language to show how the moment reveals something about your identity or sense of belonging.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": "center"
+                 },
+                 "content": [
+                  {
+                   "text": "Criteria",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": "center"
+                 },
+                 "content": [
+                  {
+                   "text": "1 — Beginning",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": "center"
+                 },
+                 "content": [
+                  {
+                   "text": "2 — Developing",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": "center"
+                 },
+                 "content": [
+                  {
+                   "text": "3 — Proficient",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Focus & Meaning",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "(W.6.3.a)",
+                   "type": "text"
+                  }
+                 ]
+                },
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Show, Don't Tell",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "em"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "The paragraph tells the reader what the character is like without showing through specific details, actions, or dialogue. The focus on character is vague or unclear.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "The paragraph introduces the character and includes some details, but relies more on telling than showing. At least one specific detail is present but not fully developed.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "The paragraph clearly establishes the character and shows what they are like through specific details, actions, thoughts, or sensory language. The reader understands the character without being told directly.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Development (Details & Pacing)",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "(W.6.3.b)",
+                   "type": "text"
+                  }
+                 ]
+                },
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Details That Show Character",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "em"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "The paragraph lacks specific narrative details. Events or observations are listed without development, and pacing is unclear.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "The paragraph includes some details, but they are general or underdeveloped. Pacing is uneven — some moments are rushed and others overly slow.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "The paragraph uses vivid, specific details to develop the character observation. Pacing moves the reader naturally through the moment, slowing down on the most revealing details and moving quickly through background.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Integrated ELD Instructions"
+           },
+           "content": [
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "purpose"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Help students begin drafting with a consistent narrator voice by using narrative transitions and reasoning frames to justify character choices and interactions as they write their first paragraph.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "say"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Encourage students to draw on authentic school moments (lunch line, hallway, recess) to make the interaction believable, then tie it back to the chosen character’s established traits.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Set a “paragraph minimum”: 1 setting detail + 1 action + 1 line of dialogue + 1 inner thought.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Require one narrative transition to guide sequence (at first/then/after that).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Require one reasoning line that shows purposeful choice: “I chose ___ because ___” (can be in planning notes or embedded as narrator reflection).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Expand flat verbs (said, went) into vivid alternatives where appropriate (muttered, blurted, drifted, stomped).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Strengthen POV with sensory + internal reaction (“My stomach tightened” / “I pretended . . .”).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Transitions: “At first, ___; then ___; after that, ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Reasoning: “I chose to ___ because ___.” / “I reacted by ___ because ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Perspective: “From my point of view, ___ seemed ___.”",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "watch"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If writing becomes out of character → Prompt: “Which detail from ",
+                 "type": "text"
+                },
+                {
+                 "text": "Look Both Ways",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": " supports this action/voice? Adjust to match what we know.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If paragraph is dialogue-only → Prompt: “Add one inner thought and one body/sensory detail to show POV.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students use at least one narrative transition to sequence events.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students include at least one inner thought that reveals POV.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students’ character voices are consistent with a known trait/detail from the text.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Checklist (W.6.3)",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Review your drafts. Check if the writing:",
+                   "type": "text"
+                  }
+                 ]
+                },
+                {
+                 "type": "bullet_list",
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Establishes a clear point of view for the narrator.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Uses what we know about the character from ",
+                       "type": "text"
+                      },
+                      {
+                       "text": "Look Both Ways",
+                       "type": "text",
+                       "marks": [
+                        {
+                         "type": "em"
+                        }
+                       ]
+                      },
+                      {
+                       "text": ".",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Demonstrates a purpose of entertainment and/or connection with a character’s point of view.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Includes at least one narrative transition to sequence events.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Learning in Action",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Part A: Developing Point of View (W.6.3.a, W.6.3.b)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will develop questions they would like to ask their chosen characters and imagine how they would respond by reflecting on what their questions reveal",
+             "type": "text"
+            },
+            {
+             "text": " ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "about the character, including their own point of view in the story and how they will interact.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Part B: Begin Writing (W.6.3.a, W.6.3.b)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will begin to write original stories based on the questions they developed and additional brainstorming.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 3,
+        "estimated_time_in_minutes": [
+         30,
+         30
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "writing"
+           },
+           "content": [
+            {
+             "text": "Quick Write",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "This routine supports metacognition and writing development by helping students identify strengths and areas for growth as they prepare for the unit performance task. Encourage honest, specific reflection tied to today’s writing experience, particularly around point of view, organization, and character development. This aligns with W.6.5 by reinforcing that writing improves through reflection and revision.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Remind students that their unit performance task will be to write a personal narrative. Instruct them to reflect on today’s activity by writing a brief response to the following prompt.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions: ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "Your unit performance task will be to write a personal narrative. Think about today’s activity, and then write a brief response to the prompt.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What parts of the unit performance task do you think you’ll need the most practice with based on how today’s activity went, and why?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "bullet_list",
+                   "content": [
+                    {
+                     "type": "list_item",
+                     "content": [
+                      {
+                       "type": "paragraph",
+                       "attrs": {
+                        "align": null
+                       },
+                       "content": [
+                        {
+                         "text": "Optional Sentence Starter:",
+                         "type": "text",
+                         "marks": [
+                          {
+                           "type": "textColor",
+                           "attrs": {
+                            "color": "#720780"
+                           }
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "“The part of the task I will need the most practice with is ____.”",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "bullet_list",
+                   "content": [
+                    {
+                     "type": "list_item",
+                     "content": [
+                      {
+                       "type": "paragraph",
+                       "attrs": {
+                        "align": null
+                       },
+                       "content": [
+                        {
+                         "text": "The part of the task I will need the most practice with is organizing my ideas. I have a lot of thoughts, but they come at me all at once, and it’s hard for me to keep track of them. That makes it hard to know which ones will flow well together. I had a lot of ideas about how my character should talk to Pia, but I had to pick just one to focus on.",
+                         "type": "text",
+                         "marks": [
+                          {
+                           "type": "textColor",
+                           "attrs": {
+                            "color": "#720780"
+                           }
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Look Back",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will reflect on which parts of the writing process they will need the most practice with as they look ahead to the unit performance task.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 4,
+        "estimated_time_in_minutes": [
+         5,
+         5
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Provide the following instructions to students:",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Reread your paragraph. Add at least one new detail (a thought, a description, or a line of dialogue), and fix any parts that are hard to follow.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Homework",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "teacher",
+        "sequence": 5,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       }
+      ]
+     },
+     "subject": "ELA",
+     "standard_lists": [
+      {
+       "title": "California CCSS: Focus Standards",
+       "standards": [
+        {
+         "id": "ck0twix6y0plki6p76lxjh6j3",
+         "code": "W.6.3.a",
+         "description": "Engage and orient the reader by establishing a context and introducing a narrator and/or characters; organize an event sequence that unfolds naturally and logically."
+        },
+        {
+         "id": "ck0twixmh0plqi6p7y06qoso6",
+         "code": "W.6.3.b",
+         "description": "Use narrative techniques, such as dialogue, pacing, and description, to develop experiences, events, and/or characters."
+        },
+        {
+         "id": "ck0twiztf0pmqi6p720ahiula",
+         "code": "W.6.5",
+         "description": "With some guidance and support from peers and adults, develop and strengthen writing as needed by planning, revising, editing, rewriting, or trying a new approach."
+        }
+       ]
+      },
+      {
+       "title": "California CCSS: Supporting Standards",
+       "standards": [
+        {
+         "id": "ck0twjc3f0psfi6p7b1r3p655",
+         "code": "L.6.6",
+         "description": "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; gather vocabulary knowledge when considering a word or phrase important to comprehension or expression."
+        },
+        {
+         "id": "ck0twj2au0pnui6p7ejnije45",
+         "code": "W.6.10",
+         "description": "Write routinely over extended time frames (time for research, reflection, and revision) and shorter time frames (a single sitting or a day or two) for a range of discipline-specific tasks, purposes, and audiences."
+        },
+        {
+         "id": "ck0twized0pmii6p72lzaplwb",
+         "code": "W.6.4",
+         "description": "Produce clear and coherent writing in which the development, organization, and style are appropriate to task, purpose, and audience."
+        },
+        {
+         "id": "ck0twj1mf0pnji6p7a8mpr1ki",
+         "code": "W.6.9.a",
+         "description": "Apply grade 6 Reading standards to literature (e.g., “Compare and contrast texts in different forms or genres [e.g., stories and poems; historical novels and fantasy stories] in terms of their approaches to similar themes and topics”)."
+        }
+       ]
+      },
+      {
+       "title": "ELD Standards",
+       "standards": [
+        {
+         "id": "cmmfkfffk03gn1vn8aycdok7j",
+         "code": "ELD.PI.6.1.Br",
+         "description": "Contribute to class, group, and partner discussions by following turn‐taking rules, asking relevant questions, affirming others, adding relevant information and evidence, paraphrasing key ideas, building on responses, and providing useful feedback."
+        },
+        {
+         "id": "cmmfkffc503g81vn8tih6mh1z",
+         "code": "ELD.PI.6.1.Em",
+         "description": "Engage in conversational exchanges and express ideas on familiar topics by asking and answering yes‐no and wh‐ questions and responding using simple phrases."
+        },
+        {
+         "id": "cmmfkffdq03gd1vn8ipjb6do7",
+         "code": "ELD.PI.6.1.Ex",
+         "description": "Contribute to class, group, and partner discussions by following turn‐taking rules, asking relevant questions, affirming others, adding relevant information, and paraphrasing key ideas."
+        },
+        {
+         "id": "cmmfkfh0e03mi1vn8y1rqr89r",
+         "code": "ELD.PI.6.10a.Br",
+         "description": "Write longer and more detailed literary and informational texts (e.g., an argument for protecting the rainforests) collaboratively (e.g., with peers) and independently using appropriate text organization and growing understanding of register."
+        },
+        {
+         "id": "cmmfkfgu903ly1vn8gnu35075",
+         "code": "ELD.PI.6.10a.Em",
+         "description": "Write short literary and informational texts (e.g., an argument for protecting the rainforests) collaboratively (e.g., with peers) and independently."
+        },
+        {
+         "id": "cmmfkfgx903m71vn829mz9i88",
+         "code": "ELD.PI.6.10a.Ex",
+         "description": "Write longer literary and informational texts (e.g., an argument for protecting the rainforests) collaboratively (e.g., with peers) and independently using appropriate text organization."
+        },
+        {
+         "id": "cmmfkffp303ho1vn8v77qklfz",
+         "code": "ELD.PI.6.3.Br",
+         "description": "Negotiate with or persuade others in conversations using appropriate register (e.g., to reflect on multiple perspectives) using a variety of learned phrases, indirect reported speech (e.g., I heard you say X, and Gabriel just pointed out Y), as well as open responses."
+        },
+        {
+         "id": "cmmfkffm003he1vn8dgyy590s",
+         "code": "ELD.PI.6.3.Em",
+         "description": "Negotiate with or persuade others in conversations (e.g., to gain and hold the floor or ask for clarification) using basic learned phrases (e.g., I think..., Would you please repeat that?), as well as open responses."
+        },
+        {
+         "id": "cmmfkffni03hj1vn87lh4mj6h",
+         "code": "ELD.PI.6.3.Ex",
+         "description": "Negotiate with or persuade others in conversations (e.g., to provide counterarguments) using an expanded set of learned phrases (I agree with X, but...), as well as open responses."
+        }
+       ]
+      }
+     ],
+     "title": "Lesson 17: Look Both Ways, Narrative Writing, Part 3",
+     "type": "Writing",
+     "total_time_in_minutes": [
+      50,
+      50
+     ],
+     "vocabulary_lists": [
+      {
+       "title": "Vocabulary Addressed in Lesson",
+       "vocabulary": []
+      },
+      {
+       "title": "Vocabulary for Additional Support",
+       "vocabulary": []
+      }
+     ],
+     "essential_questions": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "text": "How do ordinary moments reveal who we are and how we belong?",
+          "type": "text"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "dataUpdateCount": 1,
+    "dataUpdatedAt": 1784652258183,
+    "error": null,
+    "errorUpdateCount": 0,
+    "errorUpdatedAt": 0,
+    "fetchFailureCount": 0,
+    "fetchFailureReason": null,
+    "fetchMeta": null,
+    "isInvalidated": false,
+    "status": "success",
+    "fetchStatus": "idle"
+   },
+   "queryKey": [
+    "lesson",
+    "page",
+    "{\"id\":\"c8vmy7st5yasip7xpak3qjjh\"}"
+   ],
+   "queryHash": "[\"lesson\",\"page\",\"{\\\"id\\\":\\\"c8vmy7st5yasip7xpak3qjjh\\\"}\"]"
+  }
+ ]
+}

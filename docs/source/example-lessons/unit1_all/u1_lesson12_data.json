@@ -1,0 +1,5933 @@
+{
+ "mutations": [],
+ "queries": [
+  {
+   "dehydratedAt": 1784652256960,
+   "state": {
+    "data": {
+     "id": "crx9arvhgskr0u78j3g641t6",
+     "anchor_text_cards": [
+      {
+       "id": "crqvaw8f4scxoev58xsnoy55",
+       "type": "off-platform-text",
+       "title": "Look Both Ways",
+       "image": {
+        "url": "https://images.newsela.com/core/images/crqvaw8f4scxoev58xsnoy55.jpg?auto=compress&ar=428:240&max-w=856&max-h=480&fit=crop&crop=faces",
+        "fit": "crop",
+        "crop": "faces"
+       },
+       "author": "Jason Reynolds",
+       "href": {
+        "student": "",
+        "teacher": ""
+       },
+       "group_name": "anchor_text",
+       "label": "Novel"
+      }
+     ],
+     "breadcrumbs": {
+      "student": [
+       {
+        "label": "Home",
+        "href": "/"
+       },
+       {
+        "label": "ELA Core 6th Grade",
+        "href": "/student/course/cmkfw4elj004k8a90yvyfyfb8"
+       },
+       {
+        "label": "Lesson 12"
+       }
+      ],
+      "teacher": [
+       {
+        "label": "Home",
+        "href": "/"
+       },
+       {
+        "label": "ELA Core 6th Grade",
+        "href": "/course/cmkfw4elj004k8a90yvyfyfb8"
+       },
+       {
+        "label": "Unit 1",
+        "href": "/course/cmkfw4elj004k8a90yvyfyfb8/unit/ck73kftqkdhaojqgqft3acmy"
+       },
+       {
+        "label": "Lesson 12"
+       }
+      ]
+     },
+     "connections": [
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "Students develop their understanding of how to reveal information about characters using personal voice.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Knowledge-Building"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "Readers learn about characters through how they behave in situations.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Enduring Understanding"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "In Lesson 16, students will investigate voice as they study vignette 7, “Satchmo’s Master Plan.”",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Future Lessons"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "Students plan for narrative writing, with a focus on voice.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Unit Performance Task"
+      }
+     ],
+     "differentiators": [],
+     "materials": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Look Both Ways",
+              "type": "text",
+              "marks": [
+               {
+                "type": "em"
+               }
+              ]
+             },
+             {
+              "text": ", by Jason Reynolds",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Unit 1 Lesson 12 Student Edition",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "objectives": {
+      "student": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Study stages 1–4 of the Self-Regulated Strategy Development (SRSD) protocol to prepare for narrative writing.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Content",
+        "audience": "student"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Plan and explain a narrative paragraph using first-person voice by using precise descriptive language, first-person perspective markers, and justification frames (“I chose this because . . .”) to show how an ordinary moment reveals identity/voice.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Language",
+        "audience": "student"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Practice using commas, parentheses, and dashes to separate nonrestrictive information in sentences.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Foundational Skills",
+        "audience": "student"
+       }
+      ],
+      "teacher": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will study stages 1–4 of the Self-Regulated Strategy Development (SRSD) protocol to prepare for narrative writing.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Content",
+        "audience": "teacher"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will plan and explain a narrative paragraph using first-person voice by using precise descriptive language, first-person perspective markers, and justification frames (“I chose this because . . .”) to show how an ordinary moment reveals identity/voice.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Language",
+        "audience": "teacher"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will practice using commas, parentheses, and dashes to separate nonrestrictive information in sentences.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Foundational Skills",
+        "audience": "teacher"
+       }
+      ]
+     },
+     "resource_cards": {
+      "student": [],
+      "teacher": []
+     },
+     "routines": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Turn and Talk",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "sections": {
+      "student": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Different characters sound different, in the same way that you and your friends do not speak exactly the same. You have a unique voice. The way that Jason Reynolds writes is different from the way any other writer writes. Listen to two excerpts from ",
+             "type": "text"
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " that show how Reynolds gives his characters a voice, too.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What differences do you notice in how these characters speak?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Launch",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 1,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 3
+           },
+           "content": [
+            {
+             "text": "Grammar Usage",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Writers sometimes include extra information in their sentences. While these can be informative, the sentence would still make sense without it. Today, we’ll practice using punctuation to convey that extra information clearly.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "“Maria who is nervous keeps checking the clock.”",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Do we need the words “who is nervous”",
+                 "type": "text"
+                },
+                {
+                 "text": " ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": "to know who or what this sentence is about?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "“Maria, who is nervous, keeps checking the clock.”",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Here are other examples of nonrestrictive clauses.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "The short student, unable to see the board, asked for a seat up front.",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Oliver Twist",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "em"
+                      }
+                     ]
+                    },
+                    {
+                     "text": ", a classic novel, was written by Charles Dickens.",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "My new lamp, a gift from my Aunt Bessie, is blue and bright.",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Talk with a partner to create your own sentences with nonessential clauses. Be creative!",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Now rewrite and correct the following sentences using commas.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Sentence 1:",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "The bell a loud and sudden noise rings early.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Sentence 2:",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "The school building which is very old creaks in the morning.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Literacy Lab",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 2,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Part A: Modeled Writing",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Refer to the “How to Look (Both) Both Ways” vignette in ",
+             "type": "text"
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": ". Independently read the paragraph that begins “Pay attention, or you’ll lose your life!” and ends with “Not at all.”",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 4
+           },
+           "content": [
+            {
+             "text": "Stages 1 and 2: Develop Background Knowledge and Discuss It",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What do we learn about Fatima in this passage?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What words or phrases teach us about the character’s voice?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What have you learned from the vignettes about how authors build characters’ voices?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What you need to decide before writing:",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "What moment are you describing?",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Who is having the moment?",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "What does the person do or say in the moment?",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "How does that show their voice and identity?",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Who is having the moment?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What does the person do or say in the moment?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "How does that show their voice and identity?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Reflection",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Think about how a character’s voice is developed in a text. Reflect on your understanding using the ",
+                   "type": "text"
+                  },
+                  {
+                   "text": "Reflection",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  },
+                  {
+                   "text": " routine.",
+                   "type": "text"
+                  }
+                 ]
+                },
+                {
+                 "type": "bullet_list",
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "How confident are you in your ability to describe how a character’s voice is developed in a text?",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Part B: Students Memorize Steps",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 3
+           },
+           "content": [
+            {
+             "text": "Memorize It and Plan",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": " ",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Use the remaining time to memorize the framework. You can create a mnemonic device, chat, or sound to help you remember the frame. After you memorize the steps of the framework, plan your own narrative paragraph.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What you need to decide before writing:",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "What moment are you describing?",
+                     "type": "text"
+                    }
+                   ]
+                  },
+                  {
+                   "type": "bullet_list",
+                   "content": [
+                    {
+                     "type": "list_item",
+                     "content": [
+                      {
+                       "type": "paragraph",
+                       "attrs": {
+                        "align": null
+                       },
+                       "content": [
+                        {
+                         "text": "“The moment I’m describing is ____.”",
+                         "type": "text"
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Who is having the moment?",
+                     "type": "text"
+                    }
+                   ]
+                  },
+                  {
+                   "type": "bullet_list",
+                   "content": [
+                    {
+                     "type": "list_item",
+                     "content": [
+                      {
+                       "type": "paragraph",
+                       "attrs": {
+                        "align": null
+                       },
+                       "content": [
+                        {
+                         "text": "“This moment is happening to ____.”",
+                         "type": "text"
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "What does the person do or say in the moment?",
+                     "type": "text"
+                    }
+                   ]
+                  },
+                  {
+                   "type": "bullet_list",
+                   "content": [
+                    {
+                     "type": "list_item",
+                     "content": [
+                      {
+                       "type": "paragraph",
+                       "attrs": {
+                        "align": null
+                       },
+                       "content": [
+                        {
+                         "text": "“In the moment, ____ says/does ____.”",
+                         "type": "text"
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "How does that show their voice and identity?",
+                     "type": "text"
+                    }
+                   ]
+                  },
+                  {
+                   "type": "bullet_list",
+                   "content": [
+                    {
+                     "type": "list_item",
+                     "content": [
+                      {
+                       "type": "paragraph",
+                       "attrs": {
+                        "align": null
+                       },
+                       "content": [
+                        {
+                         "text": "“This reveals that [person] is ____.”",
+                         "type": "text"
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Checklist",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "As you work on your paragraph plans, make sure to:",
+                   "type": "text"
+                  }
+                 ]
+                },
+                {
+                 "type": "bullet_list",
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Identify moments.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Name who the moment happens to.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Describe what a character does or says in the moment.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Explain what this reveals about the character.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Write answers to the questions, ",
+                       "type": "text"
+                      },
+                      {
+                       "text": "not ",
+                       "type": "text",
+                       "marks": [
+                        {
+                         "type": "strong"
+                        }
+                       ]
+                      },
+                      {
+                       "text": "complete paragraphs.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Learning in Action",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 3,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "notes_section"
+           },
+           "content": [
+            {
+             "text": "Turn and Talk",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Reflect on questions you still have about developing your voice in your narrative writing.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What other questions do you still have about yourself and your moment? What do you need to do to make sure readers connect to your writing?",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Look Back",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 4,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       }
+      ],
+      "teacher": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "The launch should help students recognize that voice is what makes each character distinct, setting the foundation for narrative writing. Students should focus on how differences in word choice, tone, and detail reflect identity. Emphasize that voice is not just how something is said, but what a character chooses to notice and how they interpret experiences, preparing students to apply this thinking to their own writing.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": " ",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Different characters sound different, in the same way that you and your friends do not speak exactly the same. You have a unique voice. The way that Jason Reynolds writes is different from the way any other writer writes. Listen to two excerpts from ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              },
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            },
+            {
+             "text": " that show how Reynolds gives his characters a voice, too.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Read two excerpts from ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text"
+            },
+            {
+             "text": " to demonstrate differences in voice (e.g., Jasmine’s description of her parents’ separation, TJ’s hypothesis of boogers, or Bit’s calculations of what to charge for candy).",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What differences do you notice in how these characters speak?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Fatima is very precise in her language. She follows all the rules of grammar. Ty’s story has more figurative language.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 3
+           },
+           "content": [
+            {
+             "text": "Connection to Today’s Learning",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Your voice is different from anyone else’s. As you write today, think about what makes your voice unique.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Launch",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will identify what differentiates one character’s voice from another’s.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 1,
+        "estimated_time_in_minutes": [
+         5,
+         5
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "This section builds students’ control over sentence clarity and style by practicing how to set off nonrestrictive information. Reinforce that punctuation choices are not just about correctness—they shape voice, pacing, and emphasis in writing. Students should begin to see how adding or removing extra details can subtly influence how a reader experiences a sentence.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "notes_section"
+           },
+           "content": [
+            {
+             "text": "Grammar Usage",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Writers sometimes include extra information in their sentences. While these can be informative, the sentence would still make sense without them. Today, we’ll practice using punctuation to convey that extra information clearly.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Write this sentence: “Maria who is nervous keeps checking the clock.”",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Do we need the words “who is nervous”",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": " ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  },
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "to know who or what this sentence is about? ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "text": "(No. It is about Maria checking the clock.)",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#720780"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Explain that if you can remove information and be left with a sentence that still makes sense, the information needs to be set off with commas. This is called a nonrestrictive or nonessential clause.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Write this sentence, using commas around the nonrestrictive clause: “Maria, who is nervous, keeps checking the clock.”",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Here are other examples of nonrestrictive clauses.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "The short student, unable to see the board, asked for a seat up front.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Oliver Twist",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "em"
+                      },
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    },
+                    {
+                     "text": ", a classic novel, was written by Charles Dickens.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "My new lamp, a gift from my Aunt Bessie, is blue and bright.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Talk with a partner to create your own sentences with nonessential clauses. Be creative!",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students Practice:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Now rewrite and correct the following sentences using commas.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Sentence 1:",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "The bell a loud and sudden noise rings early. (The bell, a loud and sudden noise, rings early.)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Sentence 2:",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "The school building which is very old creaks in the morning. (The school building, which is very old, creaks in the morning.)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Transition: ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": "Explain to students that they can use nonrestrictive clauses when they write their descriptive paragraphs.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Integrated ELD Instructions"
+           },
+           "content": [
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "purpose"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Support students in using nonrestrictive information correctly so their sentences sound clear, deliberate, and “voice-driven,” rather than confusing or run-on.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "say"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Invite students to use a detail from their own life (a habit, a nervous tell) as the nonrestrictive clause to make the sentence feel authentic.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "After correcting punctuation, ask students to read both versions aloud (with and without the clause) to hear meaning and pacing.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Prompt students to name the extra information and why it is “extra.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Connect to narrative voice: extra details can reveal personality (humor, attitude, observation).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Recast student edits into a rule: “Because the sentence still makes sense without it, we set it off with commas.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Press for effect: “What does the extra detail add about mood or character?”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "This part is extra information because ___.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "The commas show the reader when to ___ (pause/add detail).",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "watch"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If I remove “___,” the sentence still ___.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students omit one comma → Prompt: Nonrestrictive information needs two commas, one before and one after.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students confuse restrictive vs. nonrestrictive → Prompt: Ask yourself, “Do we need it to know which person/thing?”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students correctly punctuate a nonrestrictive clause.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students can explain why the info is nonessential.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students read the sentence with an intentional pause.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Literacy Lab",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will practice using punctuation to set off extra information in a sentence.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 2,
+        "estimated_time_in_minutes": [
+         10,
+         10
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Part A: Modeled Writing (W.6.3.a) (15 minutes)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "In this modeled writing sequence, students are introduced to Stages 1–3 of SRSD, focusing on how writers plan before drafting. The emphasis is on understanding how ordinary moments can reveal identity through voice. Guide students to notice how the planning questions (moment, who, action, revelation) directly shape the final paragraph and how first-person narration, imagery, and pacing work together to convey voice.  ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Refer to the “How to Look (Both) Both Ways” vignette in ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            },
+            {
+             "text": "Look Both Ways",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              },
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            },
+            {
+             "text": ". Independently read the paragraph that begins “Pay attention, or you’ll lose your life!” and ends with “Not at all.”",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 4
+           },
+           "content": [
+            {
+             "text": "Stages 1 and 2: Develop Background Knowledge and Discuss It",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Check student comprehension of the passage by asking the following questions.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What do we learn about Fatima in this passage?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Fatima notices small details, like the spit that flies from the kid’s mouth. She is detail-oriented and has a vivid imagination.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What words or phrases teach us about the character’s voice?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "“. . . thick ropes of hair sprouting from his head like antennae.”",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Explain that readers need to build background before they can understand a character’s voice. Lead a brief discussion on what students have learned from the vignettes and other stories about how authors build a character’s voice.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What have you learned from the vignettes about how authors build characters’ voices?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "The vignettes show the differences among characters’ voices. The characters’ voices are used when they explain the world from their perspectives. Word choice, dialogue style, inner thoughts, actions, and personality can all help an author build a character’s voice.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Explain to students that they will write their own descriptive paragraphs. Tell students that before they can write, they will need to make some decisions.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What you need to decide before writing:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "What moment are you describing?",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Who is having the moment?",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "What does the person do or say in the moment?",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "How does that show their voice and identity?",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " The answers to these questions will depend on what you want to write about. Let’s look at the answers for the passage about Fatima. Fatima describes the moment after she falls down. Fatima is having the moment. Fatima is on the ground, observing the people on the bus. This moment shows how observant she is. It reveals what she notices in a moment of pain and embarrassment.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Stage 3: Model It",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Now, I want to write my own paragraph. I need to answer these questions for myself.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Write where all students can see:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Who is having the moment? (I am writing about myself.)",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What does the person do or say in the moment? (I am tired after a long day, and I drop my keys somewhere in the grocery store and stand at the checkout without moving.)",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "How does that show their voice and identity? (Time slows down when a stressful thing happens; I freeze and try to retrace my steps.)",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " I’m going to use this information to write a short paragraph.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Write where all students can see:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "People continued to swirl around me, and I felt like one leaf caught up in a gust of wind. I wished I could retrace my steps. Where had I dropped my keys? The sounds of people and the glare of bright lights swept me up and up and up until I felt as light as air itself. I started rewinding my grocery trip in my mind. I followed myself through the aisles: bread, milk, canned peaches. I could remember every detail except where I left my keys!",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " Now let’s check to make sure that I covered all the questions I decided on before writing.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "By the end of this section, students should understand how a writer moves from planning to drafting using SRSD. Check that students can identify how specific craft moves (imagery, repetition, pacing) reveal something about the narrator’s identity. If needed, reinforce that effective narrative writing goes beyond describing events to showing how the writer experiences and interprets the moment. You may choose to have students go through the paragraph and ensure that you’ve covered all the questions in your model writing.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Integrated ELD Instructions"
+           },
+           "content": [
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "purpose"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Help students see how the teacher’s model paragraph uses first-person voice + imagery + pacing to reveal identity during an ordinary moment.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "say"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Invite students to identify one “signature noticing” they do (sounds, numbers, jokes, lists) as a voice marker they can borrow for their own planning.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "After modeling, ask students to label (1) one sensory/imagery detail, (2) one sentence that shows emotion, and (3) one repetition/pacing move.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Tie each label to what it reveals about the narrator (freeze response, anxious thinking, self-critique, etc.).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Remind students: voice = what you notice + how you say it.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Recast: “So the repetition of ‘No keys’ indicates ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Prompt sentence expansion: “This shows ___ because ___.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "The detail ___ reveals ___ because ___.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "In first person, the narrator focuses on ___, which suggests ___.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "The repetition/short sentence creates ___, indicating ___.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "watch"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students summarize the event only → Prompt: What does the wording reveal about the narrator?",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If students just say “It’s descriptive” → Prompt: Name one sense or image and what it shows.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students identify a specific craft move (image, repetition, pacing).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students connect the move to identity/voice (how the narrator reacts).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students use first-person language accurately in discussion.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Teacher Tip",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Encourage students to make mistakes at this early stage of the writing process. Remind them that nothing is set in stone; if they pick one idea and decide they don’t like it, they can change it later.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Additional Student Support: Generating Ideas"
+           },
+           "content": [
+            {
+             "type": "table",
+             "content": [
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Situation",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Try this",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Struggling with: Picking a moment",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Brainstorm a list of ordinary moments and reactions with students, and invite them to choose one from the list. Ex. catching the bus and realizing your shoe is untied; eating lunch and spilling ketchup on your shirt; playing a game with friends and finding something valuable in the grass",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ready for extension: Developing a voice",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ask:",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    },
+                    {
+                     "text": " Make a list of two or three feelings you’d like to try to get across in your writing. What are some images you could use to convey those feelings? To get across a feeling of sadness, I could use images of solitary objects, like a tree on top of a hill.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Reflection",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Think about how a character’s voice is developed in a text. Reflect on your understanding using the ",
+                   "type": "text"
+                  },
+                  {
+                   "text": "Reflection",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  },
+                  {
+                   "text": " routine.",
+                   "type": "text"
+                  }
+                 ]
+                },
+                {
+                 "type": "bullet_list",
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "How confident are you in your ability to describe how a character’s voice is developed in a text?",
+                       "type": "text",
+                       "marks": [
+                        {
+                         "type": "textColor",
+                         "attrs": {
+                          "color": "#208095"
+                         }
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 2
+           },
+           "content": [
+            {
+             "text": "Part B: Students Memorize Steps (Stage 4 of SRSD) (W.6.3.a) (15 minutes)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "This section focuses on Stage 4 of SRSD (Memorize It and Plan), supporting students in internalizing the planning framework. Students should translate the planning questions into clear, first-person statements that reflect their own experiences. Emphasize that strong plans include a specific moment and a clear idea of what that moment reveals about identity or voice, setting up successful drafting.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students use the remaining time to memorize the framework the teacher used to prepare and plan for a personal narrative paragraph.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 3
+           },
+           "content": [
+            {
+             "text": "Stage 4: Memorize It and Plan",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": " ",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Use the remaining time to memorize the framework. You can create a mnemonic device, a chat, or a sound to help you remember the frame. After you memorize the steps of the framework, plan your own narrative paragraph.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Provide sentence frames for students as needed.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "What you need to decide before writing:",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "bullet_list",
+               "content": [
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "What moment are you describing?",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "bullet_list",
+                   "content": [
+                    {
+                     "type": "list_item",
+                     "content": [
+                      {
+                       "type": "paragraph",
+                       "attrs": {
+                        "align": null
+                       },
+                       "content": [
+                        {
+                         "text": "“The moment I’m describing is ____.”",
+                         "type": "text"
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Who is having the moment?",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "bullet_list",
+                   "content": [
+                    {
+                     "type": "list_item",
+                     "content": [
+                      {
+                       "type": "paragraph",
+                       "attrs": {
+                        "align": null
+                       },
+                       "content": [
+                        {
+                         "text": "“This moment is happening to ____.”",
+                         "type": "text"
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "What does the person do or say in the moment?",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "bullet_list",
+                   "content": [
+                    {
+                     "type": "list_item",
+                     "content": [
+                      {
+                       "type": "paragraph",
+                       "attrs": {
+                        "align": null
+                       },
+                       "content": [
+                        {
+                         "text": "“In the moment, ____ says/does ____.”",
+                         "type": "text"
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "How does that show their voice and identity?",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "bullet_list",
+                   "content": [
+                    {
+                     "type": "list_item",
+                     "content": [
+                      {
+                       "type": "paragraph",
+                       "attrs": {
+                        "align": null
+                       },
+                       "content": [
+                        {
+                         "text": "“This reveals that [person] is ____.”",
+                         "type": "text"
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "list_item",
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "The moment I’m describing is one morning when my sister drove us to school. I am having the moment. In the moment, I start to fall asleep, but then I jerk awake because I forgot my science fair project. This reveals that I can be forgetful.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#720780"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students should leave this section with a complete and focused plan for their narrative paragraph. Review whether students have identified all four elements (moment, who, action, revelation) and whether their ideas are specific and meaningful rather than broad or general. Use this as a checkpoint to ensure students are ready to draft with a clear sense of purpose and voice.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Scoring Rubric",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Criterion",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "1 – Developing",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "2 – Approaching",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "3 – Meets",
+                   "type": "text",
+                   "marks": [
+                    {
+                     "type": "strong"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "W.6.3.a: Establish context (moment + who)",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Moment is unclear, too broad, or missing; person is not clearly identified.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Moment and person are identified but may be general, vague, or lack focus.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Moment is specific and focused; person is clearly identified, establishing a clear situation for the narrative.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "W.6.3a: Develop the action",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Action is missing, unclear, or not connected to the moment.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Action is present but may be simple, loosely connected, or lacking detail.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Action is clearly described and directly connected to the moment, showing what happens in a focused way.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "W.6.3a: Offer a revelation (what it shows about identity/voice)",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Revelation is missing, unclear, or too general (e.g., “I learned something”).",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Revelation is present but vague or only partially explains what the moment shows about identity/voice.",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 156
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Revelation clearly explains what the moment shows about identity or voice (e.g., a specific trait, habit, or way of thinking).",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Integrated ELD Instructions"
+           },
+           "content": [
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "purpose"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Support students in planning their own paragraphs by turning the SRSD planning list (moment, who, action, revelation) into precise, voice-consistent sentences using first-person markers and justification.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "say"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Encourage students to borrow a voice tool from a character they connect with (Fatima’s precision, Ty’s imagery) and apply it to their own authentic moment.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Require students to add one “voice move” to their plan: a repeated word, a list, a metaphor, or a specific noticing detail.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Push for specificity: not “I was scared,” but “My hands went cold; I counted breaths.”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Have students explain one choice using “I chose this because . . .”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Recast vague plans into vivid ones by adding a sensory detail or a concrete action.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Prompt justification: “Why that moment? What does it reveal?”",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "The moment I’m describing is ___, and I chose it because ___.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "In the moment, I ___, which shows ___ about me.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "One detail I will add is ___ to reveal my voice.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "watch"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If plans are too big (“the worst day ever”) → Prompt: Zoom in to one small scene—30 seconds.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "If revelations are generic (“I learned a lesson”) → Prompt: Name the identity trait/value: cautious, loyal, impatient, proud.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students complete all four planning parts (moment, who, action, revelation).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students use at least one first-person marker (I, my, me).",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Students justify a choice using “I chose this because . . .”",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Additional Student Support: Stage 4"
+           },
+           "content": [
+            {
+             "type": "table",
+             "content": [
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Situation",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_header",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Try this",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Struggling with: Articulating how moments reveal voice",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Have students brainstorm a list of events that taught them something about themselves or someone else. Ex. “When my mom went to school while working full-time, it showed me how determined she is. When my brother brought home an injured cat, it revealed how kind he is, even though he tries to hide it.”",
+                     "type": "text"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "type": "table_row",
+               "content": [
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   227
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ready for extension: Developing voice",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "type": "table_cell",
+                 "attrs": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "colwidth": [
+                   397
+                  ]
+                 },
+                 "content": [
+                  {
+                   "type": "paragraph",
+                   "attrs": {
+                    "align": null
+                   },
+                   "content": [
+                    {
+                     "text": "Ask:",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "strong"
+                      }
+                     ]
+                    },
+                    {
+                     "text": " What would the same moment sound like from a different character’s perspective? Write how the moment might be different if it happened to someone else. If my sister wrote about the moment, she would probably write about how frustrated with me she was when she had to turn around to get my science fair project. It would reveal how she can be kind even if she is annoyed.",
+                     "type": "text",
+                     "marks": [
+                      {
+                       "type": "textColor",
+                       "attrs": {
+                        "color": "#208095"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Checklist",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "As you work on your paragraph plans, make sure to:",
+                   "type": "text"
+                  }
+                 ]
+                },
+                {
+                 "type": "bullet_list",
+                 "content": [
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Identify moments.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Name who the moment happens to.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Describe what a character does or says in the moment.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Explain what this reveals about the character.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "type": "list_item",
+                   "content": [
+                    {
+                     "type": "paragraph",
+                     "attrs": {
+                      "align": null
+                     },
+                     "content": [
+                      {
+                       "text": "Write answers to the questions, ",
+                       "type": "text"
+                      },
+                      {
+                       "text": "not ",
+                       "type": "text",
+                       "marks": [
+                        {
+                         "type": "strong"
+                        }
+                       ]
+                      },
+                      {
+                       "text": "complete paragraphs.",
+                       "type": "text"
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Learning in Action",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Part A: Modeled Writing (W.6.3.a)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will participate as the teacher models stages 1–2 of SRSD to identify how a writer builds character identity and then will observe as the teacher writes an original paragraph.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Part B: Students Memorize Steps (W.6.3.a)",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will complete stage 4 of SRSD by memorizing the steps of what the teacher did to prepare and plan in order to identify the what/who/action/revelation they will show in an upcoming personal narrative.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 3,
+        "estimated_time_in_minutes": [
+         30,
+         30
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "routine_heading",
+           "attrs": {
+            "icon": "notes_section"
+           },
+           "content": [
+            {
+             "text": "Turn and Talk",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "This routine encourages students to think about their own developing voice as writers. Students should consider not only what they plan to write, but also how they will make their writing engaging and authentic for a reader. Prompt them to reflect on how specific details, perspective, and language choices contribute to voice.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Say these Directions:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " Reflect on questions you still have about developing your voice in your narrative writing.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#208095"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Ask:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  }
+                 ]
+                },
+                {
+                 "text": " What other questions do you still have about yourself and your moment? What do you need to do to make sure readers connect to your writing?",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#208095"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Optional Sentence Starters:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#720780"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "“I’m still wondering about ____.”",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#720780"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "“One question I have is ____.”",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#720780"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "“I need to make sure I ____ to help readers connect to my writing.”",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              },
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#720780"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "I’m still wondering about how to express a feeling in my writing. I need to make sure my readers feel an emotion to connect to my writing.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "textColor",
+               "attrs": {
+                "color": "#720780"
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Look Back",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will complete a Turn-and-Talk routine about developing their personal voice.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 4,
+        "estimated_time_in_minutes": [
+         5,
+         5
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Instruct students to take notes in their ",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": "Journal",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            },
+            {
+             "text": " on the following prompt:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Begin to draft a personal narrative paragraph using the plans you made in class today.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Homework",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "teacher",
+        "sequence": 5,
+        "estimated_time_in_minutes": [
+         0,
+         0
+        ]
+       }
+      ]
+     },
+     "subject": "ELA",
+     "standard_lists": [
+      {
+       "title": "California CCSS: Focus Standards",
+       "standards": [
+        {
+         "id": "ck0twj7vl0pqhi6p77s7rloxb",
+         "code": "L.6.2.a",
+         "description": "Use punctuation (commas, parentheses, dashes) to set off nonrestrictive/parenthetical elements."
+        },
+        {
+         "id": "ck0twix6y0plki6p76lxjh6j3",
+         "code": "W.6.3.a",
+         "description": "Engage and orient the reader by establishing a context and introducing a narrator and/or characters; organize an event sequence that unfolds naturally and logically."
+        }
+       ]
+      },
+      {
+       "title": "California CCSS: Supporting Standards",
+       "standards": [
+        {
+         "id": "ck0twjc3f0psfi6p7b1r3p655",
+         "code": "L.6.6",
+         "description": "Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; gather vocabulary knowledge when considering a word or phrase important to comprehension or expression."
+        },
+        {
+         "id": "ck0twj2au0pnui6p7ejnije45",
+         "code": "W.6.10",
+         "description": "Write routinely over extended time frames (time for research, reflection, and revision) and shorter time frames (a single sitting or a day or two) for a range of discipline-specific tasks, purposes, and audiences."
+        },
+        {
+         "id": "ck0twized0pmii6p72lzaplwb",
+         "code": "W.6.4",
+         "description": "Produce clear and coherent writing in which the development, organization, and style are appropriate to task, purpose, and audience."
+        }
+       ]
+      },
+      {
+       "title": "ELD Standards",
+       "standards": [
+        {
+         "id": "cmmfkfh0e03mi1vn8y1rqr89r",
+         "code": "ELD.PI.6.10a.Br",
+         "description": "Write longer and more detailed literary and informational texts (e.g., an argument for protecting the rainforests) collaboratively (e.g., with peers) and independently using appropriate text organization and growing understanding of register."
+        },
+        {
+         "id": "cmmfkfgu903ly1vn8gnu35075",
+         "code": "ELD.PI.6.10a.Em",
+         "description": "Write short literary and informational texts (e.g., an argument for protecting the rainforests) collaboratively (e.g., with peers) and independently."
+        },
+        {
+         "id": "cmmfkfgx903m71vn829mz9i88",
+         "code": "ELD.PI.6.10a.Ex",
+         "description": "Write longer literary and informational texts (e.g., an argument for protecting the rainforests) collaboratively (e.g., with peers) and independently using appropriate text organization."
+        },
+        {
+         "id": "cmmfkffp303ho1vn8v77qklfz",
+         "code": "ELD.PI.6.3.Br",
+         "description": "Negotiate with or persuade others in conversations using appropriate register (e.g., to reflect on multiple perspectives) using a variety of learned phrases, indirect reported speech (e.g., I heard you say X, and Gabriel just pointed out Y), as well as open responses."
+        },
+        {
+         "id": "cmmfkffm003he1vn8dgyy590s",
+         "code": "ELD.PI.6.3.Em",
+         "description": "Negotiate with or persuade others in conversations (e.g., to gain and hold the floor or ask for clarification) using basic learned phrases (e.g., I think..., Would you please repeat that?), as well as open responses."
+        },
+        {
+         "id": "cmmfkffni03hj1vn87lh4mj6h",
+         "code": "ELD.PI.6.3.Ex",
+         "description": "Negotiate with or persuade others in conversations (e.g., to provide counterarguments) using an expanded set of learned phrases (I agree with X, but...), as well as open responses."
+        },
+        {
+         "id": "cmmfkfgb703jw1vn8cfgdo4gg",
+         "code": "ELD.PI.6.6b.Br",
+         "description": "Express inferences and conclusions drawn based on close reading of grade‐level texts and viewing of multimedia using a variety of precise academic verbs (e.g., indicates that, influences)."
+        },
+        {
+         "id": "cmmfkfg1o03iw1vn8h04eqklj",
+         "code": "ELD.PI.6.6b.Em",
+         "description": "Express inferences and conclusions drawn based on close reading of grade‐level texts and viewing of multimedia using some frequently used verbs (e.g., shows that, based on)."
+        },
+        {
+         "id": "cmmfkfg6f03je1vn8cuvmfnv9",
+         "code": "ELD.PI.6.6b.Ex",
+         "description": "Express inferences and conclusions drawn based on close reading of grade‐level texts and viewing of multimedia using a variety of verbs (e.g., suggests that, leads to)."
+        }
+       ]
+      }
+     ],
+     "title": "Lesson 12: Look Both Ways, Narrative Writing, Part 2",
+     "type": "Writing",
+     "total_time_in_minutes": [
+      50,
+      50
+     ],
+     "vocabulary_lists": [
+      {
+       "title": "Vocabulary Addressed in Lesson",
+       "vocabulary": []
+      },
+      {
+       "title": "Vocabulary for Additional Support",
+       "vocabulary": []
+      }
+     ],
+     "essential_questions": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "text": "How do ordinary moments reveal who we are and how we belong?",
+          "type": "text"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "dataUpdateCount": 1,
+    "dataUpdatedAt": 1784652256960,
+    "error": null,
+    "errorUpdateCount": 0,
+    "errorUpdatedAt": 0,
+    "fetchFailureCount": 0,
+    "fetchFailureReason": null,
+    "fetchMeta": null,
+    "isInvalidated": false,
+    "status": "success",
+    "fetchStatus": "idle"
+   },
+   "queryKey": [
+    "lesson",
+    "page",
+    "{\"id\":\"crx9arvhgskr0u78j3g641t6\"}"
+   ],
+   "queryHash": "[\"lesson\",\"page\",\"{\\\"id\\\":\\\"crx9arvhgskr0u78j3g641t6\\\"}\"]"
+  }
+ ]
+}

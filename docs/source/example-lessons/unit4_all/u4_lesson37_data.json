@@ -1,0 +1,1657 @@
+{
+ "mutations": [],
+ "queries": [
+  {
+   "dehydratedAt": 1784652288830,
+   "state": {
+    "data": {
+     "id": "c31yvi0i6n1c5sjzj5594l63",
+     "anchor_text_cards": [],
+     "breadcrumbs": {
+      "student": [
+       {
+        "label": "Home",
+        "href": "/"
+       },
+       {
+        "label": "ELA Core 6th Grade",
+        "href": "/student/course/cmkfw4elj004k8a90yvyfyfb8"
+       },
+       {
+        "label": "Lesson 37"
+       }
+      ],
+      "teacher": [
+       {
+        "label": "Home",
+        "href": "/"
+       },
+       {
+        "label": "ELA Core 6th Grade",
+        "href": "/course/cmkfw4elj004k8a90yvyfyfb8"
+       },
+       {
+        "label": "Unit 4",
+        "href": "/course/cmkfw4elj004k8a90yvyfyfb8/unit/c0rwxfse5262agf59dprt4ll"
+       },
+       {
+        "label": "Lesson 37"
+       }
+      ]
+     },
+     "connections": [
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "N/A",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Knowledge-Building"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "N/A",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Enduring Understanding"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "Assessment results will inform differentiated small-group instruction in upcoming lessons.",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Future Lessons"
+      },
+      {
+       "body": {
+        "type": "doc",
+        "content": [
+         {
+          "type": "paragraph",
+          "attrs": {
+           "align": null
+          },
+          "content": [
+           {
+            "text": "Shared Stories, Shared Lessons",
+            "type": "text"
+           }
+          ]
+         }
+        ]
+       },
+       "title": "Unit Performance Task"
+      }
+     ],
+     "differentiators": [],
+     "materials": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Unit 4: Investigation 2 Assessment",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Highlighter",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "Pencil",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "objectives": {
+      "student": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Demonstrate mastery of grade-level skills and concepts by applying their knowledge and critical thinking in a summative assessment environment.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Content",
+        "audience": "student"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Interpret academic vocabulary and complex sentence structures within assessment stems to identify precise relationships between ideas.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Language",
+        "audience": "student"
+       }
+      ],
+      "teacher": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will demonstrate mastery of grade-level skills and concepts by applying their knowledge and critical thinking in a summative assessment environment.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Content",
+        "audience": "teacher"
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will interpret academic vocabulary and complex sentence structures within assessment stems to identify precise relationships between ideas.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Language",
+        "audience": "teacher"
+       }
+      ]
+     },
+     "resource_cards": {
+      "student": [],
+      "teacher": [
+       {
+        "id": "c9kdd50ix9ml4qxcx2wknu2e",
+        "type": "pdf",
+        "title": "6.4 Investigation 2 Assessment (Teacher Edition)",
+        "image": {
+         "url": "/images/generic-placeholder.png",
+         "fit": "crop",
+         "crop": "faces",
+         "alt_text": "A placeholder image.",
+         "credit": "Newsela Design"
+        },
+        "author": null,
+        "href": {
+         "student": "https://media.newsela.com/core/pdfs/c9kdd50ix9ml4qxcx2wknu2e.pdf",
+         "teacher": "https://media.newsela.com/core/pdfs/c9kdd50ix9ml4qxcx2wknu2e.pdf"
+        },
+        "audience": "teacher",
+        "group_name": "additional_resources",
+        "label": "Resource",
+        "file_size": "263 KB"
+       },
+       {
+        "id": "crfimcw803zuml4ukaytijnb",
+        "type": "pdf",
+        "title": "6.4 Investigation 2 Assessment",
+        "image": {
+         "url": "/images/generic-placeholder.png",
+         "fit": "crop",
+         "crop": "faces",
+         "alt_text": "A placeholder image.",
+         "credit": "Newsela Design"
+        },
+        "author": null,
+        "href": {
+         "student": "https://media.newsela.com/core/pdfs/crfimcw803zuml4ukaytijnb.pdf",
+         "teacher": "https://media.newsela.com/core/pdfs/crfimcw803zuml4ukaytijnb.pdf"
+        },
+        "audience": "teacher",
+        "group_name": "additional_resources",
+        "label": "Resource",
+        "file_size": "154 KB"
+       }
+      ]
+     },
+     "routines": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "bullet_list",
+        "content": [
+         {
+          "type": "list_item",
+          "content": [
+           {
+            "type": "paragraph",
+            "attrs": {
+             "align": null
+            },
+            "content": [
+             {
+              "text": "No routines/protocols are used today",
+              "type": "text"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "sections": {
+      "student": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Today you will demonstrate what you have learned during the first investigation of this unit. Your goal is to see how well you can apply your skills to new texts.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Launch",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 1,
+        "estimated_time_in_minutes": [
+         5,
+         5
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 3
+           },
+           "content": [
+            {
+             "text": "Assessment Time!",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Learning in Action",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 2,
+        "estimated_time_in_minutes": [
+         40,
+         40
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Reflection",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Which part of the assessment was most challenging? What is your next step for improving that skill?",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Look Back",
+        "purpose": {
+         "type": "doc",
+         "content": []
+        },
+        "audience": "student",
+        "sequence": 3,
+        "estimated_time_in_minutes": [
+         5,
+         5
+        ]
+       }
+      ],
+      "teacher": [
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Establish the Testing Environment:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Say: ",
+                 "type": "text"
+                },
+                {
+                 "text": "Today you will demonstrate what you have learned during the first investigation of this unit. Your goal is to see how well you can apply your skills to new texts.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "textColor",
+                   "attrs": {
+                    "color": "#45818e"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 3
+           },
+           "content": [
+            {
+             "text": "TEI Format Guide & Rubric",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "How to complete the TEI formats:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Multiple Choice (MC): ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  },
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": "For these items, choose the one answer that best matches the question. Read all four choices carefully before selecting your answer.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Fill-in-the-Blank (FITB):",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  },
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": " For these items, you will write the word you hear on the line provided. Listen carefully as the word is read, then used in a sentence, then repeated. Spell the word as accurately as you can.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Multiple Select (MS):",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  },
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": " \"For these items, there is more than one correct answer. The question will usually tell you to 'Select ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": "two",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  },
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": "' or ask 'Which ",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": "three",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  },
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": " statements...' If you only pick one, the item will not be fully correct.\"",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Sorting/Matching:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  },
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": " \"You will see a list of details and two categories (Passage 1 and Passage 2). You must click and drag each detail into the correct box based on which author emphasized that point. Note: Some details might fit both, but choose the primary emphasis.\"",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Sequencing/Ordering:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  },
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": " \"For the timeline or logical flow questions, you must drag the events into the correct chronological order as described in the text. Pay close attention to transition words like 'subsequently' or 'initially'.\"",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Launch",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "The teacher will establish the testing environment for students to take their assessment.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 1,
+        "estimated_time_in_minutes": [
+         5,
+         5
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 3
+           },
+           "content": [
+            {
+             "text": "Assessment Time!",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Provide students with access to the ",
+             "type": "text"
+            },
+            {
+             "text": "Unit 4 Investigation 2 Assessment",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              }
+             ]
+            },
+            {
+             "text": " and walk them through the expectations.",
+             "type": "text"
+            }
+           ]
+          },
+          {
+           "type": "heading",
+           "attrs": {
+            "align": null,
+            "level": 3
+           },
+           "content": [
+            {
+             "text": "Active Monitoring Notes",
+             "type": "text",
+             "marks": [
+              {
+               "type": "strong"
+              },
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "During the assessment, look for:",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "bullet_list",
+           "content": [
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "TEI Troubleshooting:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  },
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": " Watch for students who try to select only one choice in a Multiple Select item instead of selecting multiple options, or those who struggle to \"drop\" items in the Sorting task.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Pacing:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  },
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": " Ensure students without extended time accommodations have moved on to Passage 2 by the halfway mark, as the comparison items at the end require knowledge of both texts.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "list_item",
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Spelling Administration:",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "strong"
+                  },
+                  {
+                   "type": "em"
+                  }
+                 ]
+                },
+                {
+                 "text": " For the spelling items, maintain a neutral pace and follow the administration sequence exactly: read the word, read the sentence, repeat the word, and pause for students to write.",
+                 "type": "text",
+                 "marks": [
+                  {
+                   "type": "em"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "collapsible",
+           "attrs": {
+            "label": "Integrated ELD Instructions"
+           },
+           "content": [
+            {
+             "type": "callout",
+             "attrs": {
+              "variant": "purpose"
+             },
+             "content": [
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "To provide equitable access to complex literary texts and multi-step assessment items, ensuring that linguistic barriers do not impede a student's ability to demonstrate mastery of standards.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "For students requiring offline accommodations, provide a human reader. The reader must deliver the text, stems, and options at a measured, neutral pace without using inflection or tone to emphasize correct answers or suggest meaning.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "For students with Extended Time, provide a quiet transition for them to continue working while others move to the Look Back.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Focus facilitation on stems with dense academic wording, especially items asking students to identify what best supports an idea, how the author most effectively develops contrasting perspectives, or what a word most nearly means in context.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Encourage students to annotate passages in any language.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Affirm that English Learners bring cross-linguistic knowledge that supports comprehension of complex texts.",
+                 "type": "text"
+                }
+               ]
+              },
+              {
+               "type": "paragraph",
+               "attrs": {
+                "align": null
+               },
+               "content": [
+                {
+                 "text": "Remind students: You know more than you think. Trust your reading.",
+                 "type": "text"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "paragraph",
+             "attrs": {
+              "align": null
+             },
+             "content": [
+              {
+               "text": "🛠️ TEACHER MOVES",
+               "type": "text",
+               "marks": [
+                {
+                 "type": "strong"
+                },
+                {
+                 "type": "textColor",
+                 "attrs": {
+                  "color": "#bf360c"
+                 }
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "paragraph",
+             "attrs": {
+              "align": null
+             },
+             "content": [
+              {
+               "text": "Allow students to point, gesture, or sketch to show a character’s shift in feeling or a contrast in perspective before answering.",
+               "type": "text",
+               "marks": [
+                {
+                 "type": "textColor",
+                 "attrs": {
+                  "color": "#bf360c"
+                 }
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "paragraph",
+             "attrs": {
+              "align": null
+             },
+             "content": [
+              {
+               "text": "Allow students to give a brief gist of the texts in their home language or in a mix of English and their home language to verify general understanding before they attempt items.",
+               "type": "text",
+               "marks": [
+                {
+                 "type": "textColor",
+                 "attrs": {
+                  "color": "#bf360c"
+                 }
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "paragraph",
+             "attrs": {
+              "align": null
+             },
+             "content": [
+              {
+               "text": "If a student is confused by the phrase ",
+               "type": "text",
+               "marks": [
+                {
+                 "type": "textColor",
+                 "attrs": {
+                  "color": "#bf360c"
+                 }
+                }
+               ]
+              },
+              {
+               "text": "best supports",
+               "type": "text",
+               "marks": [
+                {
+                 "type": "em"
+                },
+                {
+                 "type": "textColor",
+                 "attrs": {
+                  "color": "#bf360c"
+                 }
+                }
+               ]
+              },
+              {
+               "text": ", clarify that it means the detail that gives the strongest proof for the idea named in the question.",
+               "type": "text",
+               "marks": [
+                {
+                 "type": "textColor",
+                 "attrs": {
+                  "color": "#bf360c"
+                 }
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "paragraph",
+             "attrs": {
+              "align": null
+             },
+             "content": [
+              {
+               "text": "If a student is confused by the phrase ",
+               "type": "text",
+               "marks": [
+                {
+                 "type": "textColor",
+                 "attrs": {
+                  "color": "#bf360c"
+                 }
+                }
+               ]
+              },
+              {
+               "text": "most nearly means",
+               "type": "text",
+               "marks": [
+                {
+                 "type": "em"
+                },
+                {
+                 "type": "textColor",
+                 "attrs": {
+                  "color": "#bf360c"
+                 }
+                }
+               ]
+              },
+              {
+               "text": " ",
+               "type": "text",
+               "marks": [
+                {
+                 "type": "textColor",
+                 "attrs": {
+                  "color": "#bf360c"
+                 }
+                }
+               ]
+              },
+              {
+               "text": "as it is used in the sentence",
+               "type": "text",
+               "marks": [
+                {
+                 "type": "em"
+                },
+                {
+                 "type": "textColor",
+                 "attrs": {
+                  "color": "#bf360c"
+                 }
+                }
+               ]
+              },
+              {
+               "text": ", clarify that they should use the context of that specific sentence, not just a memorized definition.",
+               "type": "text",
+               "marks": [
+                {
+                 "type": "textColor",
+                 "attrs": {
+                  "color": "#bf360c"
+                 }
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "paragraph",
+             "attrs": {
+              "align": null
+             },
+             "content": [
+              {
+               "text": "If a student is stuck on a prompt, ask them to whisper-read the prompt aloud. Hearing the language, especially complex syntax, often helps students decode the requirement.",
+               "type": "text",
+               "marks": [
+                {
+                 "type": "textColor",
+                 "attrs": {
+                  "color": "#bf360c"
+                 }
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "paragraph",
+             "attrs": {
+              "align": null
+             },
+             "content": [
+              {
+               "text": "Prompt: Tell me which words in the question matter most: character, theme, perspective, detail, or meaning. Start there.",
+               "type": "text",
+               "marks": [
+                {
+                 "type": "textColor",
+                 "attrs": {
+                  "color": "#bf360c"
+                 }
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "paragraph",
+             "attrs": {
+              "align": null
+             },
+             "content": [
+              {
+               "text": "Prompt: Before choosing, say to yourself: What changed for this character, and which line or detail proves it?",
+               "type": "text",
+               "marks": [
+                {
+                 "type": "textColor",
+                 "attrs": {
+                  "color": "#bf360c"
+                 }
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "paragraph",
+             "attrs": {
+              "align": null
+             },
+             "content": [
+              {
+               "text": "If a student's written response or oral clarification includes dialectal variations, validate the linguistic diversity as a transferable skill.",
+               "type": "text",
+               "marks": [
+                {
+                 "type": "textColor",
+                 "attrs": {
+                  "color": "#bf360c"
+                 }
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Learning in Action",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students complete the assessment. The teacher actively monitors for engagement and technical \"stuck points\" with Technology-Enhanced Items (TEIs) like multi-select, sorting and sequencing.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 2,
+        "estimated_time_in_minutes": [
+         40,
+         40
+        ]
+       },
+       {
+        "body": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Have students complete the Reflection after they have completed the assessment.",
+             "type": "text",
+             "marks": [
+              {
+               "type": "em"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "type": "table",
+           "content": [
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_header",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "routine_heading",
+                 "attrs": {
+                  "icon": "cfu"
+                 },
+                 "content": [
+                  {
+                   "text": "Reflection",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "type": "table_row",
+             "content": [
+              {
+               "type": "table_cell",
+               "attrs": {
+                "colspan": 1,
+                "rowspan": 1,
+                "colwidth": [
+                 720
+                ]
+               },
+               "content": [
+                {
+                 "type": "paragraph",
+                 "attrs": {
+                  "align": null
+                 },
+                 "content": [
+                  {
+                   "text": "Which part of the assessment was most challenging? What is your next step for improving that skill?",
+                   "type": "text"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        "title": "Look Back",
+        "purpose": {
+         "type": "doc",
+         "content": [
+          {
+           "type": "paragraph",
+           "attrs": {
+            "align": null
+           },
+           "content": [
+            {
+             "text": "Students will self-assess their ability to demonstrate the skills assessed.",
+             "type": "text"
+            }
+           ]
+          }
+         ]
+        },
+        "audience": "teacher",
+        "sequence": 3,
+        "estimated_time_in_minutes": [
+         5,
+         5
+        ]
+       }
+      ]
+     },
+     "subject": "ELA",
+     "standard_lists": [
+      {
+       "title": "California CCSS: Focus Standards",
+       "standards": [
+        {
+         "id": "ck0twj7h40pqai6p7i5seg5k3",
+         "code": "L.6.1.e",
+         "description": "Recognize variations from standard English in their own and others’ writing and speaking, and identify and use strategies to improve expression in conventional language."
+        },
+        {
+         "id": "ck0twj7vl0pqhi6p77s7rloxb",
+         "code": "L.6.2.a",
+         "description": "Use punctuation (commas, parentheses, dashes) to set off nonrestrictive/parenthetical elements."
+        },
+        {
+         "id": "ck0twj9z90prgi6p78ah9tovi",
+         "code": "L.6.4.a",
+         "description": "Use context (e.g., the overall meaning of a sentence or paragraph; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase."
+        },
+        {
+         "id": "ck0twja850prki6p733bosqfv",
+         "code": "L.6.4.b",
+         "description": "Use common, grade-appropriate Greek or Latin affixes and roots as clues to the meaning of a word (e.g., audience, auditory, audible)."
+        },
+        {
+         "id": "ck0twjb740ps1i6p7hzfbyp35",
+         "code": "L.6.5.a",
+         "description": "Interpret figures of speech (e.g., personification) in context."
+        },
+        {
+         "id": "ck0twim550pgji6p7pqmnz6xt",
+         "code": "RL.6.2",
+         "description": "Determine a theme or central idea of a text and how it is conveyed through particular details; provide a summary of the text distinct from personal opinions or judgments."
+        },
+        {
+         "id": "ck0twimaf0pgli6p72ygpa39w",
+         "code": "RL.6.3",
+         "description": "Describe how a particular story’s or drama’s plot unfolds in a series of episodes as well as how the characters respond or change as the plot moves toward a resolution."
+        },
+        {
+         "id": "ck0tz7a6g1v0hi6p7a954xwxn",
+         "code": "RL.6.4",
+         "description": "Determine the meaning of words and phrases as they are used in a text, including figurative and connotative meanings; analyze the impact of a specific word choice on meaning and tone."
+        },
+        {
+         "id": "ck0twimya0pgvi6p7n3e4487u",
+         "code": "RL.6.5",
+         "description": "Analyze how a particular sentence, chapter, scene, or stanza fits into the overall structure of a text and contributes to the development of the theme, setting, or plot."
+        },
+        {
+         "id": "ck0twin2v0pgxi6p7kjq0ffdw",
+         "code": "RL.6.6",
+         "description": "Explain how an author develops the point of view of the narrator or speaker in a text."
+        },
+        {
+         "id": "ck0twinv90phbi6p7op9cij02",
+         "code": "RL.6.9",
+         "description": "Compare and contrast texts in different forms or genres (e.g., stories and poems; historical novels and fantasy stories) in terms of their approaches to similar themes and topics."
+        },
+        {
+         "id": "ck0twj0w50pn7i6p79z00dqpy",
+         "code": "W.6.8",
+         "description": "Gather relevant information from multiple print and digital sources; assess the credibility of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and providing basic bibliographic information for sources."
+        }
+       ]
+      }
+     ],
+     "title": "Lesson 37: Unit 4, Investigation 2 Assessment",
+     "type": "End Unit Assessment",
+     "total_time_in_minutes": [
+      50,
+      50
+     ],
+     "vocabulary_lists": [],
+     "essential_questions": {
+      "type": "doc",
+      "content": [
+       {
+        "type": "paragraph",
+        "content": [
+         {
+          "text": "How does ",
+          "type": "text"
+         },
+         {
+          "text": "The Lightning Thief ",
+          "type": "text",
+          "marks": [
+           {
+            "type": "em"
+           }
+          ]
+         },
+         {
+          "text": "build on—and transform—traditional mythic ideas?",
+          "type": "text"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "dataUpdateCount": 1,
+    "dataUpdatedAt": 1784652288830,
+    "error": null,
+    "errorUpdateCount": 0,
+    "errorUpdatedAt": 0,
+    "fetchFailureCount": 0,
+    "fetchFailureReason": null,
+    "fetchMeta": null,
+    "isInvalidated": false,
+    "status": "success",
+    "fetchStatus": "idle"
+   },
+   "queryKey": [
+    "lesson",
+    "page",
+    "{\"id\":\"c31yvi0i6n1c5sjzj5594l63\"}"
+   ],
+   "queryHash": "[\"lesson\",\"page\",\"{\\\"id\\\":\\\"c31yvi0i6n1c5sjzj5594l63\\\"}\"]"
+  }
+ ]
+}
