@@ -81,4 +81,11 @@ export {
   saveAiReview,
   type ReviewContext,
 } from './checks.js';
-export { recordSuggestion, resolveSuggestion, type ResolveResult, type SuggestionRequest } from './suggestions.js';
+export {
+  prepareSuggestion,
+  recordSuggestion,
+  resolveSuggestion,
+  type PreparedSuggestion,
+  type ResolveResult,
+  type SuggestionRecord,
+} from './suggestions.js';

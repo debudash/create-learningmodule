@@ -5,7 +5,7 @@ import {
   parseReviewAction,
   publishability,
   type Actor,
-  type AiEditAction,
+  type AiSuggestionAction,
   type LessonActionType,
   type LessonStatus,
   type ReviewAction,
@@ -140,7 +140,7 @@ export interface LessonHistory {
     createdAt: Date;
   }[];
   /** Accepted AI Suggestions, with who accepted them (story 124). */
-  suggestions: { action: AiEditAction; activityId: string; actorName: string; resolvedAt: Date }[];
+  suggestions: { action: AiSuggestionAction; activityId: string; actorName: string; resolvedAt: Date }[];
 }
 
 /** Everything that happened to a Lesson, newest first, for the workspace's History tab. */

@@ -57,7 +57,7 @@ describe('runRuleChecks', () => {
       activity.standards = activity.standards.filter((code) => code !== 'L.6.4.b');
     }
     expect(resultsOf(lesson, 'focus-standards-taught')).toMatchObject([
-      { outcome: 'fail', message: 'No Activity is tagged with the Focus Standard L.6.4.b.' },
+      { outcome: 'fail', message: 'No Activity is tagged with the Focus Standard L.6.4.b.', location: 'lia-part-a' },
     ]);
   });
 
@@ -85,7 +85,7 @@ describe('runRuleChecks', () => {
 
   it('requires a Pulse Check in the Lesson Types whose examples have one', () => {
     expect(resultsOf(withoutPulseChecks(sampleLesson()), 'pulse-check')).toMatchObject([
-      { outcome: 'fail', message: 'Spark Lessons need at least one Pulse Check.' },
+      { outcome: 'fail', message: 'Spark Lessons need at least one Pulse Check.', location: 'lia-part-a' },
     ]);
     const reading = { ...sampleLesson(), lessonType: 'core-reading' as const };
     expect(resultsOf(withoutPulseChecks(reading), 'pulse-check')).toMatchObject([{ outcome: 'fail' }]);

@@ -1,5 +1,5 @@
 {
-  "id": "c211c556-8d4e-4490-b86c-c8a8da44761a",
+  "id": "b396403e-ac9a-4410-8f33-bf715d139336",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -27,6 +27,12 @@
           "primaryKey": false,
           "notNull": true
         },
+        "outcome": {
+          "name": "outcome",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
         "model": {
           "name": "model",
           "type": "text",
@@ -35,12 +41,6 @@
         },
         "mode": {
           "name": "mode",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "outcome": {
-          "name": "outcome",
           "type": "text",
           "primaryKey": false,
           "notNull": true

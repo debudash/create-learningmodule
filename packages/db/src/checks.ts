@@ -5,6 +5,7 @@ import type { OutlineLesson } from '@lcg/outline';
 import { and, asc, desc, eq, inArray, sql } from 'drizzle-orm';
 import type { Executor } from './client.js';
 import { parseStoredContent } from './documents.js';
+import { modelCallValues } from './model-calls.js';
 import { aiReviews, lessonDocuments, lessons, qualityCheckResults, units } from './schema.js';
 
 /** The Outline facts the rule checks compare a Lesson with. */
@@ -65,15 +66,8 @@ export async function saveAiReview(db: Executor, review: AiReviewRecord): Promis
     await tx.insert(aiReviews).values({
       lessonId: review.lessonId,
       contentDigest: review.contentDigest,
-      model: review.call.model,
-      mode: review.call.mode,
       outcome: review.results ? 'reviewed' : review.failure,
-      inputTokens: review.call.usage.inputTokens,
-      outputTokens: review.call.usage.outputTokens,
-      cacheReadTokens: review.call.usage.cacheReadTokens,
-      cacheWriteTokens: review.call.usage.cacheWriteTokens,
-      costUsd: review.call.costUsd.toFixed(4),
-      durationMs: review.call.durationMs,
+      ...modelCallValues(review.call),
     });
     if (review.results) {
       await replaceCheckResults(tx, review.lessonId, 'ai-review', review.results, review.contentDigest);

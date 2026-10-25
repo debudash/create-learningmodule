@@ -22,7 +22,7 @@ interface Props {
   onPresenceChange?: (people: Presence[]) => void;
   /** The editor, once it exists (to apply accepted AI Suggestions). */
   onEditorReady?: (editor: Editor | null) => void;
-  /** An Activity's "Ask AI" was pressed. */
+  /** An Activity's "AI Suggestion" button was pressed. */
   onRequestSuggestion?: (activityId: string) => void;
 }
 

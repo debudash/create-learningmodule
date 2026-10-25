@@ -44,7 +44,7 @@ export function ActivityView({ node, updateAttributes, editor, getPos, deleteNod
         </label>
         {!readOnly && (
           <>
-            <SmallButton onClick={() => requestSuggestion(editor, node.attrs.id)}>Ask AI</SmallButton>
+            <SmallButton onClick={() => requestSuggestion(editor, node.attrs.id)}>AI Suggestion</SmallButton>
             <SmallButton onClick={() => moveNode(editor, getPos() ?? 0, -1)}>Up</SmallButton>
             <SmallButton onClick={() => moveNode(editor, getPos() ?? 0, 1)}>Down</SmallButton>
             <SmallButton tone="danger" onClick={deleteNode}>

@@ -1,4 +1,4 @@
-import { AI_EDIT_ACTIONS, LESSON_STATUSES, ROLES, VERSION_REASONS, type CheckId } from '@lcg/domain';
+import { AI_SUGGESTION_ACTIONS, LESSON_STATUSES, ROLES, VERSION_REASONS, type CheckId } from '@lcg/domain';
 import { LESSON_TYPES, type Activity } from '@lcg/lesson-schema';
 import type { AnchorText, OutlineLesson, ResolvedIssue } from '@lcg/outline';
 import { sql } from 'drizzle-orm';
@@ -26,6 +26,18 @@ const bytea = customType<{ data: Uint8Array; driverData: Buffer }>({
 
 const id = () => uuid('id').primaryKey().default(sql`gen_random_uuid()`);
 const createdAt = () => timestamp('created_at', { withTimezone: true }).notNull().defaultNow();
+
+/** What a model call used and cost (an AI Review or AI Suggestion call; see modelCallValues). */
+const modelCallColumns = () => ({
+  model: text('model').notNull(),
+  mode: text('mode', { enum: ['live', 'replay', 'fake'] }).notNull(),
+  inputTokens: integer('input_tokens').notNull().default(0),
+  outputTokens: integer('output_tokens').notNull().default(0),
+  cacheReadTokens: integer('cache_read_tokens').notNull().default(0),
+  cacheWriteTokens: integer('cache_write_tokens').notNull().default(0),
+  costUsd: numeric('cost_usd', { precision: 10, scale: 4 }).notNull().default('0'),
+  durationMs: integer('duration_ms').notNull(),
+});
 
 export const users = pgTable('users', {
   id: id(),
@@ -245,15 +257,8 @@ export const aiReviews = pgTable(
       .references(() => lessons.id, { onDelete: 'cascade' }),
     /** Digest of the content reviewed. */
     contentDigest: text('content_digest').notNull(),
-    model: text('model').notNull(),
-    mode: text('mode', { enum: ['live', 'replay', 'fake'] }).notNull(),
     outcome: text('outcome', { enum: ['reviewed', 'unreadable', 'unavailable'] }).notNull(),
-    inputTokens: integer('input_tokens').notNull().default(0),
-    outputTokens: integer('output_tokens').notNull().default(0),
-    cacheReadTokens: integer('cache_read_tokens').notNull().default(0),
-    cacheWriteTokens: integer('cache_write_tokens').notNull().default(0),
-    costUsd: numeric('cost_usd', { precision: 10, scale: 4 }).notNull().default('0'),
-    durationMs: integer('duration_ms').notNull(),
+    ...modelCallColumns(),
     createdAt: createdAt(),
   },
   (t) => [index('ai_reviews_lesson').on(t.lessonId, t.createdAt)],
@@ -270,7 +275,7 @@ export const aiSuggestions = pgTable(
     actorId: uuid('actor_id')
       .notNull()
       .references(() => users.id),
-    action: text('action', { enum: AI_EDIT_ACTIONS }).notNull(),
+    action: text('action', { enum: AI_SUGGESTION_ACTIONS }).notNull(),
     /** The Editor's instruction (Rewrite) or the failing check (Fix with AI). */
     instruction: text('instruction'),
     activityId: text('activity_id').notNull(),
@@ -280,14 +285,7 @@ export const aiSuggestions = pgTable(
     /** failed: the reply was unusable or unavailable; it is kept for its cost. */
     outcome: text('outcome', { enum: ['pending', 'accepted', 'rejected', 'failed'] }).notNull(),
     failureReason: text('failure_reason'),
-    model: text('model').notNull(),
-    mode: text('mode', { enum: ['live', 'replay', 'fake'] }).notNull(),
-    inputTokens: integer('input_tokens').notNull().default(0),
-    outputTokens: integer('output_tokens').notNull().default(0),
-    cacheReadTokens: integer('cache_read_tokens').notNull().default(0),
-    cacheWriteTokens: integer('cache_write_tokens').notNull().default(0),
-    costUsd: numeric('cost_usd', { precision: 10, scale: 4 }).notNull().default('0'),
-    durationMs: integer('duration_ms').notNull(),
+    ...modelCallColumns(),
     createdAt: createdAt(),
     resolvedAt: timestamp('resolved_at', { withTimezone: true }),
   },

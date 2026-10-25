@@ -9,3 +9,13 @@
 export function asData(text: string): string {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
+
+/** Undoes asData in every string of a value the model wrote back (an Activity). */
+export function fromData<T>(value: T): T {
+  if (typeof value === 'string') return value.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&') as T;
+  if (Array.isArray(value)) return value.map(fromData) as T;
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, fromData(v)])) as T;
+  }
+  return value;
+}

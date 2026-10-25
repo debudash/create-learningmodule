@@ -1,25 +1,21 @@
 import type { GenerationContext, ReviewContext } from '@lcg/db';
 import { readRecording, writeRecording } from '@lcg/fixtures';
 import {
+  clientFromSettings,
   createFakeClient,
-  createLiveClient,
-  createReplayClient,
+  DEFAULT_MODEL,
+  DEFAULT_REVIEW_MODEL,
   llmSettingsFromEnv,
   placeholderOutput,
   type LlmClient,
   type LlmResult,
 } from '@lcg/generation';
 
-/** The mode, and a live client for a model, as the environment configures them (ADR 0005). */
-async function liveOrReplay(env: NodeJS.ProcessEnv, model: string): Promise<LlmClient | 'fake'> {
-  const settings = llmSettingsFromEnv(env);
-  if (settings.mode === 'fake') return 'fake';
-  if (settings.mode === 'replay') return createReplayClient(replayLookup);
-  return createLiveClient({
-    model,
-    effort: settings.effort,
-    tracing: settings.tracing,
-    ...(settings.record ? { onResult: (request, result) => writeRecording(request.key, result) } : {}),
+/** Live or replay as the environment sets them (ADR 0005); LLM_RECORD=true saves live results for replay. */
+function liveOrReplay(env: NodeJS.ProcessEnv, model: string): Promise<LlmClient | 'fake'> {
+  return clientFromSettings(llmSettingsFromEnv(env), model, {
+    replay: replayLookup,
+    onResult: (request, result) => writeRecording(request.key, result),
   });
 }
 
@@ -31,7 +27,7 @@ async function liveOrReplay(env: NodeJS.ProcessEnv, model: string): Promise<LlmC
  * - fake: placeholder Lessons built from the Outline, for working offline.
  */
 export async function modelsFromEnv(env = process.env): Promise<(context: GenerationContext) => LlmClient> {
-  const client = await liveOrReplay(env, env.LLM_MODEL ?? 'claude-sonnet-5-5');
+  const client = await liveOrReplay(env, env.LLM_MODEL ?? DEFAULT_MODEL);
   if (client !== 'fake') return () => client;
   return (context) => createFakeClient(() => JSON.stringify(placeholderOutput(context.outline)));
 }
@@ -47,7 +43,7 @@ function replayLookup(key: string): LlmResult | undefined {
  * "taught" for every Focus Standard.
  */
 export async function reviewModelsFromEnv(env = process.env): Promise<(context: ReviewContext) => LlmClient> {
-  const client = await liveOrReplay(env, env.LLM_REVIEW_MODEL ?? 'claude-haiku-5-5');
+  const client = await liveOrReplay(env, env.LLM_REVIEW_MODEL ?? DEFAULT_REVIEW_MODEL);
   if (client !== 'fake') return () => client;
   return (context) =>
     createFakeClient(() =>

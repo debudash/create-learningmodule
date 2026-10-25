@@ -24,13 +24,13 @@ interface Props {
   /** The latest AI Review results. */
   aiChecks: QualityCheckResult[];
   lastReview?: LastAiReview;
-  /** AI Suggestions are offered (never on Approved Lessons). */
-  aiTools: boolean;
+  /** AI Suggestions are offered (only on Lessons that can be edited, story 125). */
+  canSuggest: boolean;
 }
 
 type View = 'teacher' | 'student';
 
-export function Workspace({ lessonId, token, user, outline, history, facts, aiChecks, lastReview, aiTools }: Props) {
+export function Workspace({ lessonId, token, user, outline, history, facts, aiChecks, lastReview, canSuggest }: Props) {
   const [view, setView] = useState<View>('teacher');
   const [lesson, setLesson] = useState<Lesson>();
   const [people, setPeople] = useState<Presence[]>([]);
@@ -101,7 +101,7 @@ export function Workspace({ lessonId, token, user, outline, history, facts, aiCh
             onLessonChange={onLessonChange}
             onPresenceChange={setPeople}
             onEditorReady={setEditor}
-            {...(aiTools ? { onRequestSuggestion } : {})}
+            {...(canSuggest ? { onRequestSuggestion } : {})}
           />
         </div>
         {view === 'student' && lesson && <StudentViewPanel lesson={lesson} />}
@@ -138,7 +138,7 @@ export function Workspace({ lessonId, token, user, outline, history, facts, aiCh
             facts={facts}
             aiResults={aiChecks}
             {...(lastReview ? { lastReview } : {})}
-            {...(aiTools
+            {...(canSuggest
               ? { onFix: (activityId: string, message: string) => setSuggestion({ activityId, action: 'fix', instruction: message }) }
               : {})}
           />

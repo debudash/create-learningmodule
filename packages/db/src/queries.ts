@@ -66,7 +66,7 @@ export interface UnitBoard {
   unit: typeof units.$inferSelect;
   arcs: (typeof arcs.$inferSelect)[];
   lessons: BoardLesson[];
-  /** What generating, reviewing and AI editing this Unit has cost so far (live calls only), in US dollars. */
+  /** What generating, reviewing and AI Suggestions for this Unit has cost so far (live calls only), in US dollars. */
   aiCostUsd: number;
 }
 

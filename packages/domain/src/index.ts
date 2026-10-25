@@ -40,10 +40,10 @@ export {
   type QualityCheckResult,
 } from './quality.js';
 export {
-  AI_EDIT_ACTIONS,
-  AI_EDIT_LABELS,
-  mayUseAiTools,
+  AI_SUGGESTION_ACTIONS,
+  AI_SUGGESTION_LABELS,
   needsInstruction,
-  parseAiEditAction,
-  type AiEditAction,
-} from './ai-editing.js';
+  parseAiSuggestionAction,
+  type AiSuggestionAction,
+  type SuggestionDecision,
+} from './ai-suggestions.js';

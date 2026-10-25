@@ -4,6 +4,7 @@ export { addUsage, costOf, NO_USAGE, type TokenUsage } from './cost.js';
 export {
   createFakeClient,
   createLiveClient,
+  callModel,
   createReplayClient,
   NoRecordingError,
   type Effort,
@@ -11,6 +12,7 @@ export {
   type LlmClient,
   type LlmRequest,
   type LlmResult,
+  type ModelCall,
 } from './llm.js';
 export {
   generationOutputJsonSchema,
@@ -40,6 +42,17 @@ export {
   reviewKey,
   reviewLesson,
   toCheckResults,
-  type ReviewFailure, type AiReview, type ModelCall, type ReviewInput, type ReviewResult } from './review.js';
-export { placeholderEdit, suggestActivityEdit, type EditRequest, type EditResult } from './edit.js';
-export { llmSettingsFromEnv, type LlmMode, type LlmSettings } from './settings.js';
+  type AiReview,
+  type ReviewFailure,
+  type ReviewInput,
+  type ReviewResult,
+} from './review.js';
+export { placeholderSuggestion, suggestActivityChange, suggestionKey, type SuggestionRequest, type SuggestionResult } from './suggestion.js';
+export {
+  clientFromSettings,
+  DEFAULT_MODEL,
+  DEFAULT_REVIEW_MODEL,
+  llmSettingsFromEnv,
+  type LlmMode,
+  type LlmSettings,
+} from './settings.js';

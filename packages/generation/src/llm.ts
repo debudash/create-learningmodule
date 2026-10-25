@@ -1,5 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
-import { NO_USAGE, type TokenUsage } from './cost.js';
+import { costOf, NO_USAGE, type TokenUsage } from './cost.js';
 
 /** One structured call to the model. */
 export interface LlmRequest {
@@ -125,4 +125,28 @@ export function createFakeClient(respond: (request: LlmRequest) => string): LlmC
       return { text: respond(request), model: 'fake', stopReason: 'end_turn', usage: NO_USAGE, durationMs: 0 };
     },
   };
+}
+
+/** What one model call used and cost, for the record (AI Reviews and AI Suggestions). */
+export interface ModelCall {
+  model: string;
+  mode: LlmClient['mode'];
+  usage: TokenUsage;
+  costUsd: number;
+  durationMs: number;
+}
+
+/**
+ * Makes one call and keeps what it used. The result is absent when replay mode
+ * has no recording of the call; that call cost nothing.
+ */
+export async function callModel(client: LlmClient, request: LlmRequest): Promise<{ result?: LlmResult; call: ModelCall }> {
+  try {
+    const result = await client.complete(request);
+    const call = { model: result.model, mode: client.mode, usage: result.usage, costUsd: costOf(result.model, result.usage), durationMs: result.durationMs };
+    return { result, call };
+  } catch (error) {
+    if (!(error instanceof NoRecordingError)) throw error;
+    return { call: { model: client.model, mode: client.mode, usage: NO_USAGE, costUsd: 0, durationMs: 0 } };
+  }
 }

@@ -1,10 +1,10 @@
-import { NO_USAGE, type EditResult } from '@lcg/generation';
+import { NO_USAGE, type SuggestionResult } from '@lcg/generation';
 import { sampleLesson } from '@lcg/lesson-schema/testing';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { replaceLessonContent } from './documents.js';
 import { unitBoard } from './queries.js';
 import { lessonHistory } from './review.js';
-import { recordSuggestion, resolveSuggestion } from './suggestions.js';
+import { prepareSuggestion, recordSuggestion, resolveSuggestion } from './suggestions.js';
 import { freshDatabase, importSampleUnit, setLessonStatus, setLessonStatusById, type TestDatabase } from './testing.js';
 
 let database: TestDatabase;
@@ -17,7 +17,7 @@ const partB = sampleLesson()
   .sections.flatMap((s) => s.activities)
   .find((a) => a.id === 'lia-part-b')!;
 const live = { model: 'claude-sonnet-5-5', mode: 'live' as const, usage: { ...NO_USAGE, outputTokens: 100_000 }, costUsd: 1, durationMs: 900 };
-const suggested: EditResult = {
+const suggested: SuggestionResult = {
   ok: true,
   activity: { ...partB, blocks: [...partB.blocks, { type: 'sample-response', text: 'A modern city.' }] },
   call: live,
@@ -31,8 +31,28 @@ beforeAll(async () => {
 });
 afterAll(() => database.close());
 
-const record = (result: EditResult = suggested) =>
+const record = (result: SuggestionResult = suggested) =>
   recordSuggestion(database.db, { lessonId, actor: editor(), action: 'add-sample-response', before: partB, result });
+
+describe('asking for an AI Suggestion', () => {
+  it('prepares the request with the stored Lesson as context and a recording key', async () => {
+    const prepared = await prepareSuggestion(database.db, { lessonId, activity: partB, action: 'add-eld' });
+    expect(prepared).toMatchObject({
+      ok: true,
+      key: 'g6-u4/L3/suggestion-add-eld-lia-part-b',
+      request: { action: 'add-eld', activity: { id: 'lia-part-b' }, lesson: { title: sampleLesson().title } },
+    });
+  });
+
+  it('refuses unknown actions, Activities not in the Lesson, and Rewrite without an instruction', async () => {
+    const ask = (input: Partial<Parameters<typeof prepareSuggestion>[1]>) =>
+      prepareSuggestion(database.db, { lessonId, activity: partB, action: 'add-eld', ...input });
+    expect(await ask({ action: 'delete-everything' })).toMatchObject({ ok: false });
+    expect(await ask({ activity: { ...partB, id: 'not-here' } })).toMatchObject({ ok: false, message: expect.stringMatching(/not in this Lesson/) });
+    expect(await ask({ activity: { title: 'not an Activity' } })).toMatchObject({ ok: false });
+    expect(await ask({ action: 'rewrite', instruction: '  ' })).toMatchObject({ ok: false, message: expect.stringMatching(/what you want changed/) });
+  });
+});
 
 describe('AI Suggestions', () => {
   it('records each suggestion with its cost, counted in the Unit cost', async () => {
@@ -70,6 +90,10 @@ describe('AI Suggestions', () => {
   it('refuses to accept a suggestion once the Lesson is Approved', async () => {
     const { id } = await record();
     await setLessonStatusById(database.db, lessonId, 'approved');
+    expect(await prepareSuggestion(database.db, { lessonId, activity: partB, action: 'add-eld' })).toMatchObject({
+      ok: false,
+      message: expect.stringMatching(/Approved/),
+    });
     expect(await resolveSuggestion(database.db, { suggestionId: id, actor: editor(), outcome: 'accepted' })).toMatchObject({
       ok: false,
       message: expect.stringMatching(/Approved/),

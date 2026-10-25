@@ -1,7 +1,7 @@
 'use client';
 
 import type { LessonHistory } from '@lcg/db';
-import { AI_EDIT_LABELS, LESSON_STATUS_LABELS, VERSION_REASON_LABELS } from '@lcg/domain';
+import { AI_SUGGESTION_LABELS, LESSON_STATUS_LABELS, VERSION_REASON_LABELS } from '@lcg/domain';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, useTransition } from 'react';
@@ -102,7 +102,7 @@ export function HistoryPanel({ lessonId, history, canRestore }: { lessonId: stri
           <ul className="mt-1 space-y-1">
             {history.suggestions.map((suggestion, i) => (
               <li key={i}>
-                {AI_EDIT_LABELS[suggestion.action]}
+                {AI_SUGGESTION_LABELS[suggestion.action]}
                 <span className="text-ink-faint">
                   {' '}
                   · {suggestion.activityId} · {suggestion.actorName} · {when(suggestion.resolvedAt)}

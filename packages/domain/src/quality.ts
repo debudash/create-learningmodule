@@ -123,7 +123,9 @@ function focusStandardsTaught(lesson: Lesson, outline: CheckOutlineFacts): Quali
   const tagged = new Set(lesson.sections.flatMap((s) => s.activities.flatMap((a) => a.standards)));
   const missing = outline.focusStandards.filter((code) => !tagged.has(code));
   if (missing.length === 0) return [rule('focus-standards-taught', 'pass', 'Every Focus Standard is taught by an Activity.')];
-  return missing.map((code) => rule('focus-standards-taught', 'fail', `No Activity is tagged with the Focus Standard ${code}.`));
+  return missing.map((code) =>
+    rule('focus-standards-taught', 'fail', `No Activity is tagged with the Focus Standard ${code}.`, mainActivityId(lesson)),
+  );
 }
 
 /** Every standard code is a real one, and every Activity tag is one of the Lesson's standards. */
@@ -170,7 +172,15 @@ function pulseCheck(lesson: Lesson): QualityCheckResult[] {
   const has = lesson.sections.some((s) => s.activities.some((a) => a.blocks.some((b) => b.type === 'pulse-check')));
   return has
     ? [rule('pulse-check', 'pass', 'The Lesson checks understanding with a Pulse Check.')]
-    : [rule('pulse-check', 'fail', `${LESSON_TYPE_LABELS[lesson.lessonType]} Lessons need at least one Pulse Check.`)];
+    : [rule('pulse-check', 'fail', `${LESSON_TYPE_LABELS[lesson.lessonType]} Lessons need at least one Pulse Check.`, mainActivityId(lesson))];
+}
+
+/**
+ * Where a Lesson-wide gap is best fixed: the first Learning in Action Activity,
+ * so "Fix with AI" has an Activity to work on (story 120).
+ */
+function mainActivityId(lesson: Lesson): string | undefined {
+  return lesson.sections.find((s) => s.kind === 'learning-in-action')?.activities[0]?.id;
 }
 
 function eldSupport(lesson: Lesson): QualityCheckResult[] {

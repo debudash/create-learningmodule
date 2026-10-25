@@ -1,8 +1,12 @@
-import type { Effort } from './llm.js';
+import { createLiveClient, createReplayClient, type Effort, type LiveClientOptions, type LlmClient, type LlmResult } from './llm.js';
 
 export type LlmMode = 'live' | 'replay' | 'fake';
 const MODES: readonly LlmMode[] = ['live', 'replay', 'fake'];
 const EFFORTS: readonly Effort[] = ['low', 'medium', 'high', 'xhigh', 'max'];
+
+/** The models used when the environment names none (ADR 0005). */
+export const DEFAULT_MODEL = 'claude-sonnet-5-5';
+export const DEFAULT_REVIEW_MODEL = 'claude-haiku-5-5';
 
 /** How the environment configures model calls (ADR 0005), shared by the worker and the web app. */
 export interface LlmSettings {
@@ -27,4 +31,24 @@ export function llmSettingsFromEnv(env: Record<string, string | undefined>): Llm
     tracing: env.LANGSMITH_TRACING === 'true',
     record: env.LLM_RECORD === 'true',
   };
+}
+
+/**
+ * The client for live or replay mode, or 'fake' for the caller to answer itself
+ * (fake answers depend on what is asked). Live calls use `model`; replay serves
+ * recordings from `replay`.
+ */
+export async function clientFromSettings(
+  settings: LlmSettings,
+  model: string,
+  options: { replay: (key: string) => LlmResult | undefined; onResult?: LiveClientOptions['onResult'] },
+): Promise<LlmClient | 'fake'> {
+  if (settings.mode === 'fake') return 'fake';
+  if (settings.mode === 'replay') return createReplayClient(options.replay);
+  return createLiveClient({
+    model,
+    effort: settings.effort,
+    tracing: settings.tracing,
+    ...(settings.record && options.onResult ? { onResult: options.onResult } : {}),
+  });
 }

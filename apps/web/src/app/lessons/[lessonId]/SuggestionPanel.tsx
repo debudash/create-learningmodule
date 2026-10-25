@@ -1,23 +1,23 @@
 'use client';
 
-import { AI_EDIT_ACTIONS, AI_EDIT_LABELS, needsInstruction, type AiEditAction } from '@lcg/domain';
+import { AI_SUGGESTION_ACTIONS, AI_SUGGESTION_LABELS, needsInstruction, type AiSuggestionAction, type SuggestionDecision } from '@lcg/domain';
 import { activityToLines, type Activity, type ReplaceActivityResult } from '@lcg/lesson-schema';
 import { useState, useTransition } from 'react';
 import { LineDiff, lineChanges } from '@/components/LineDiff';
 import { acceptSuggestion } from './accept-suggestion';
-import { resolveSuggestionAction, suggestEditAction } from './actions';
+import { resolveSuggestionAction, requestSuggestionAction } from './actions';
 
 /** What the Editor asked the AI about: an Activity, and for Fix with AI the check to fix. */
 export interface SuggestionTarget {
   activityId: string;
-  action?: AiEditAction;
+  action?: AiSuggestionAction;
   instruction?: string;
 }
 
 type Proposal = { suggestionId: string; before: Activity; after: Activity };
 
 /** Fix with AI starts from a Quality Check, so it is not offered from the menu. */
-const MENU_ACTIONS = AI_EDIT_ACTIONS.filter((a) => a !== 'fix');
+const MENU_ACTIONS = AI_SUGGESTION_ACTIONS.filter((a) => a !== 'fix');
 
 /**
  * An AI Suggestion for one Activity, seen only by the person who asked (story 123):
@@ -39,7 +39,7 @@ export function SuggestionPanel({
   apply: (before: Activity, after: Activity) => ReplaceActivityResult;
   onClose: () => void;
 }) {
-  const [action, setAction] = useState<AiEditAction>(target.action ?? 'rewrite');
+  const [action, setAction] = useState<AiSuggestionAction>(target.action ?? 'rewrite');
   const [instruction, setInstruction] = useState(target.instruction ?? '');
   const [proposal, setProposal] = useState<Proposal>();
   const [message, setMessage] = useState<string>();
@@ -49,12 +49,12 @@ export function SuggestionPanel({
     startTransition(async () => {
       if (!activity) return;
       setMessage(undefined);
-      const result = await suggestEditAction(lessonId, activity, action, needsInstruction(action) ? instruction : undefined);
+      const result = await requestSuggestionAction(lessonId, activity, action, needsInstruction(action) ? instruction : undefined);
       if (result.ok) setProposal(result);
       else setMessage(result.message);
     });
 
-  const resolve = (outcome: 'accepted' | 'rejected') =>
+  const resolve = (outcome: SuggestionDecision) =>
     startTransition(async () => {
       if (!proposal) return;
       const result =
@@ -71,9 +71,9 @@ export function SuggestionPanel({
 
   if (!activity) {
     return (
-      <Frame onClose={onClose}>
+      <PanelFrame onClose={onClose}>
         <p className="text-ink-soft">That Activity is no longer in the Lesson.</p>
-      </Frame>
+      </PanelFrame>
     );
   }
 
@@ -81,7 +81,7 @@ export function SuggestionPanel({
   const close = proposal ? () => resolve('rejected') : onClose;
 
   return (
-    <Frame onClose={close} title={activity.title}>
+    <PanelFrame onClose={close} title={activity.title}>
       {proposal ? (
         <Preview proposal={proposal} />
       ) : (
@@ -94,7 +94,7 @@ export function SuggestionPanel({
               {MENU_ACTIONS.map((a) => (
                 <label key={a} className="flex items-center gap-2">
                   <input type="radio" name="ai-action" checked={action === a} onChange={() => setAction(a)} />
-                  {AI_EDIT_LABELS[a]}
+                  {AI_SUGGESTION_LABELS[a]}
                 </label>
               ))}
             </fieldset>
@@ -129,7 +129,7 @@ export function SuggestionPanel({
           </button>
         )}
       </div>
-    </Frame>
+    </PanelFrame>
   );
 }
 
@@ -145,7 +145,7 @@ function Preview({ proposal }: { proposal: Proposal }) {
   );
 }
 
-function Frame({ title, onClose, children }: { title?: string; onClose: () => void; children: React.ReactNode }) {
+function PanelFrame({ title, onClose, children }: { title?: string; onClose: () => void; children: React.ReactNode }) {
   return (
     <section aria-label="AI Suggestion">
       <div className="mb-3 flex items-start justify-between gap-2 border-b border-line pb-2">

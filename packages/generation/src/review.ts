@@ -3,8 +3,7 @@ import { lessonToLines, type Lesson } from '@lcg/lesson-schema';
 import type { OutlineLesson } from '@lcg/outline';
 import { getStandard } from '@lcg/standards';
 import { z } from 'zod';
-import { costOf, NO_USAGE, type TokenUsage } from './cost.js';
-import { NoRecordingError, type LlmClient, type LlmResult } from './llm.js';
+import { callModel, type LlmClient, type ModelCall } from './llm.js';
 import { toOutputJsonSchema } from './output.js';
 import { asData } from './prompt-text.js';
 
@@ -36,15 +35,6 @@ export interface ReviewInput {
   lesson: Lesson;
   outline: OutlineLesson;
   anchorTextTitle: string;
-}
-
-/** What one model call used and cost, for the record (AI Reviews and AI Suggestions). */
-export interface ModelCall {
-  model: string;
-  mode: LlmClient['mode'];
-  usage: TokenUsage;
-  costUsd: number;
-  durationMs: number;
 }
 
 /**
@@ -94,31 +84,14 @@ export async function reviewLesson(client: LlmClient, input: ReviewInput, key: s
     `</lesson>`,
   ].join('\n');
 
-  let result: LlmResult;
-  try {
-    result = await client.complete({
-      key,
-      system: [{ type: 'text', text: REVIEW_INSTRUCTIONS }],
-      messages: [{ role: 'user', content: request }],
-      schema: toOutputJsonSchema(aiReviewSchema),
-      maxTokens: 8000,
-    });
-  } catch (error) {
-    if (!(error instanceof NoRecordingError)) throw error;
-    return {
-      ok: false,
-      failure: 'unavailable',
-      reason: 'Replay mode has no recorded AI Review of this content.',
-      call: { model: client.model, mode: client.mode, usage: NO_USAGE, costUsd: 0, durationMs: 0 },
-    };
-  }
-  const call: ModelCall = {
-    model: result.model,
-    mode: client.mode,
-    usage: result.usage,
-    costUsd: costOf(result.model, result.usage),
-    durationMs: result.durationMs,
-  };
+  const { result, call } = await callModel(client, {
+    key,
+    system: [{ type: 'text', text: REVIEW_INSTRUCTIONS }],
+    messages: [{ role: 'user', content: request }],
+    schema: toOutputJsonSchema(aiReviewSchema),
+    maxTokens: 8000,
+  });
+  if (!result) return { ok: false, failure: 'unavailable', reason: 'Replay mode has no recorded AI Review of this content.', call };
   let parsed: AiReview;
   try {
     parsed = aiReviewSchema.parse(JSON.parse(result.text));
