@@ -1,4 +1,5 @@
 import {
+  beginGenerating,
   cancelGeneration,
   lessonChecks,
   failStalledGenerations,
@@ -210,6 +211,24 @@ describe('stalled generations', () => {
     expect(after7!.status).toBe('generating');
     const board = await unitBoard(database.db, unitId);
     expect(board!.lessons.find((l) => l.key === 'L6')!.failureReason).toMatch(/stopped/);
+  });
+
+  // LCG-29, found by the first live trial: a retry that started late was failed by the sweep while it ran.
+  it('LCG-29: counts a retry starting as a sign of life, so the sweep leaves it alone', async () => {
+    const [l9] = await lessonsByKey(['L9']);
+    jobs.length = 0;
+    await startGeneration(database.db, { unitId, lessonIds: [l9!.id], actor: editor(), enqueue });
+    const job = jobs.shift()!;
+    expect(await beginGenerating(database.db, job)).toBe(true);
+    // The first attempt failed long ago (here: the laptop slept); the retry starts now.
+    await database.db
+      .update(schema.lessons)
+      .set({ updatedAt: new Date(Date.now() - 60 * 60 * 1000) })
+      .where(eq(schema.lessons.id, l9!.id));
+
+    expect(await beginGenerating(database.db, job)).toBe(true);
+    expect(await failStalledGenerations(database.db, { olderThanMinutes: 30 })).toBe(0);
+    expect((await lessonsByKey(['L9']))[0]!.status).toBe('generating');
   });
 });
 

@@ -251,7 +251,14 @@ export async function beginGenerating(db: Database, job: Pick<GenerationJob, 'le
       .where(eq(lessons.id, job.lessonId))
       .for('update');
     if (!row?.jobEnqueuedAt || row.jobEnqueuedAt.toISOString() !== job.queuedAt) return false;
-    if (row.status === 'generating') return true; // a retry of this job after a failed attempt
+    if (row.status === 'generating') {
+      // LCG-29: a retry of this job after a failed attempt returned here without
+      // touching the Lesson, so a retry that started long after the first attempt
+      // (the machine had slept) looked stalled and the sweep failed the Lesson while
+      // the retry ran. Starting a retry now counts as a sign of life.
+      await tx.update(lessons).set({ updatedAt: sql`now()` }).where(eq(lessons.id, job.lessonId));
+      return true;
+    }
     if (row.status !== 'queued') return false;
     const result = await transitionLesson(tx, {
       lessonId: job.lessonId,

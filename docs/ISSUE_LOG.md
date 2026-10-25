@@ -32,3 +32,4 @@ Every bug fixed in this project: one entry per issue, fixed test-first in its ow
 | LCG-26 | Phase 6 spec review | An AI Suggestion was recorded as accepted before it was applied | `c80e90c` |
 | LCG-27 | Browser re-check, Phase 6 | Accepting an AI Suggestion set off an endless re-render | `6f274e7` |
 | LCG-28 | First live trial | The API refused every Lesson: the whole generation output was too large to compile as a structured-output grammar | `7e32d69` |
+| LCG-29 | First live trial | A retry that started late (the machine had slept) was failed by the stall sweep while it ran | (this commit) |
