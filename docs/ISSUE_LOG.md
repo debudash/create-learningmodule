@@ -35,4 +35,4 @@ Every bug fixed in this project: one entry per issue, fixed test-first in its ow
 | LCG-29 | First live trial | A retry that started late (the machine had slept) was failed by the stall sweep while it ran | `7f0e797` |
 | LCG-30 | First live trial | A generation result that arrived after the Lesson was failed was stored anyway, leaving content in a Generation Failed Lesson | `9b04ee1` |
 | LCG-31 | First live trial | The AI Review judged every Lesson against the Unit's anchor text, so Lessons reading the Outline's other texts failed | `084cdc7` |
-| LCG-32 | First live trial | The Student View check failed Lessons whose teacher asks aloud the question students read | (this commit) |
+| LCG-32 | First live trial | The Student View check failed Lessons whose teacher asks aloud the question students read | `5a26121` |
