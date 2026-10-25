@@ -53,7 +53,7 @@ export async function startGenerationAction(unitId: string, scope: 'trial' | 'al
     ok: true,
     message:
       `${result.queued} Lesson${result.queued === 1 ? '' : 's'} queued for generation.` +
-      (result.waiting > 0 ? ` ${result.waiting} Flex Day${result.waiting === 1 ? ' waits' : 's wait'} for its Arc.` : ''),
+      (result.waiting > 0 ? ` ${result.waiting} Flex Day${result.waiting === 1 ? ' waits for its Arc' : 's wait for their Arcs'}.` : ''),
   };
 }
 
