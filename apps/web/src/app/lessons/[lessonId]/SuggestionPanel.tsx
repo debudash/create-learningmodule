@@ -4,6 +4,7 @@ import { AI_EDIT_ACTIONS, AI_EDIT_LABELS, needsInstruction, type AiEditAction } 
 import { activityToLines, type Activity, type ReplaceActivityResult } from '@lcg/lesson-schema';
 import { useState, useTransition } from 'react';
 import { LineDiff, lineChanges } from '@/components/LineDiff';
+import { acceptSuggestion } from './accept-suggestion';
 import { resolveSuggestionAction, suggestEditAction } from './actions';
 
 /** What the Editor asked the AI about: an Activity, and for Fix with AI the check to fix. */
@@ -14,8 +15,6 @@ export interface SuggestionTarget {
 }
 
 type Proposal = { suggestionId: string; before: Activity; after: Activity };
-
-const CHANGED = 'This Activity has changed since the suggestion was made. Reject it and ask again.';
 
 /** Fix with AI starts from a Quality Check, so it is not offered from the menu. */
 const MENU_ACTIONS = AI_EDIT_ACTIONS.filter((a) => a !== 'fix');
@@ -58,17 +57,15 @@ export function SuggestionPanel({
   const resolve = (outcome: 'accepted' | 'rejected') =>
     startTransition(async () => {
       if (!proposal) return;
-      // Someone may have changed the Activity since; accepting would undo their change.
-      if (outcome === 'accepted' && JSON.stringify(activity) !== JSON.stringify(proposal.before)) {
-        setMessage(CHANGED);
-        return;
-      }
-      const result = await resolveSuggestionAction(proposal.suggestionId, outcome);
+      const result =
+        outcome === 'accepted'
+          ? await acceptSuggestion({
+              apply: () => apply(proposal.before, proposal.after),
+              record: () => resolveSuggestionAction(proposal.suggestionId, 'accepted'),
+              undo: () => apply(proposal.after, proposal.before),
+            })
+          : await resolveSuggestionAction(proposal.suggestionId, 'rejected');
       if (!result.ok) return setMessage(result.message);
-      if (outcome === 'accepted') {
-        const applied = apply(proposal.before, proposal.after);
-        if (!applied.ok) return setMessage(applied.reason === 'changed' ? CHANGED : 'The Activity is no longer in the Lesson.');
-      }
       onClose();
     });
 
