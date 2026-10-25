@@ -64,7 +64,7 @@ What is tested, how, and when. Principles come from the Testing Decisions in [PR
 - The collaboration server refuses an update to an Approved Lesson and accepts it after Reopen.
 
 ### End-to-end (Playwright)
-Run with `pnpm test:e2e` against the stack in Docker Compose (`LLM_MODE=fake docker compose up -d`) on a freshly seeded database (`pnpm db:reset`). Written so far: `e2e/ai-suggestion.spec.ts` (step 4, plus a refused accept after a colleague's change).
+Run with `pnpm test:e2e` against the stack in Docker Compose (`LLM_MODE=fake docker compose up -d`) on a freshly seeded database (`pnpm db:reset`). Written: `e2e/unit-workflow.spec.ts` (steps 1, 2, 5 and 6: import with every Blocking issue resolved, generate all 47 Lessons, submit and approve one by hand and see it read-only, submit the rest, bulk approve, publish and download the Release) and `e2e/ai-suggestion.spec.ts` (steps 3 and 4: two people in one Lesson, an AI Suggestion private until accepted, and a refused accept after a colleague's change).
 
 1. Sign in as an Editor; import the sample Outline; resolve the Outline Issues; confirm.
 2. Generate in replay mode; watch the board reach Draft.
