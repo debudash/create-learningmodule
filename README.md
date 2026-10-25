@@ -9,6 +9,10 @@ Lesson Studio turns an instructional designer's Unit Outline into a full Unit of
 5. **Improve with AI.** On any Activity, ask for an AI Suggestion: rewrite with an instruction, add ELD support, simplify, add a support table, sample response or Pulse Check. Failing checks offer "Fix with AI". You see a private before/after and accept or reject it.
 6. **Approve and publish.** Lessons move Draft, In Review, Approved (or Changes Requested), with Versions, History and Self-Approval flags. Approvers can bulk approve. Publishing freezes a Unit Release, downloadable as JSON or in Newsela's lesson format.
 
+## Try it
+
+The hosted demo is at **https://lesson-studio.up.railway.app**: pick a person to sign in (no password). It replays the recorded live run of the sample Unit, so all 47 Lessons are there to review.
+
 ## Run it
 
 Requirements: Docker Desktop. Node 22 and pnpm are only needed for tests and scripts.
@@ -112,4 +116,4 @@ This project was built with Claude Code. The design interview, phase plan, revie
 - **Publishing produces an export** in Newsela's lesson format. It does not post into Newsela's product.
 - **AI Suggestions work on one whole Activity,** not a selected passage (decision 45).
 - **Stored check results can lag a rule change:** when a Rule-Based check changes, results already stored refresh on the Lesson's next edit; the editor always shows current results.
-- **Hosting:** runs locally in Docker. The image is ready for Fly.io (ADR 0011) but is not deployed.
+- **The hosted copy runs in replay mode:** https://lesson-studio.up.railway.app shows the recorded run, so AI Suggestions and AI Reviews of edited text are unavailable there (ADR 0012).

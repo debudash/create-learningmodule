@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: superseded by 0012
 ---
 
 # Host on Fly.io as one app with three process groups and Neon Postgres, after local sign-off
