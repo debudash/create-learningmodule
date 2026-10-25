@@ -1,5 +1,5 @@
 import { checkFactsOf, currentFailingChecks, latestAiReview, lessonChecks, lessonHistory, listUsers, workspaceLesson } from '@lcg/db';
-import { availableActions, isEditable, isSelfApproval } from '@lcg/domain';
+import { availableActions, isEditable, isSelfApproval, mayUseAiTools } from '@lcg/domain';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { StatusBadge } from '@/components/StatusBadge';
@@ -64,6 +64,7 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
         user={{ name: user.name }}
         outline={lesson.outline}
         facts={checkFactsOf(lesson.outline)}
+        aiTools={mayUseAiTools(lesson.status)}
         aiChecks={aiChecks.map(({ createdAt: _createdAt, current: _current, ...result }) => result)}
         {...(lastReview ? { lastReview } : {})}
         history={<HistoryPanel lessonId={lesson.id} history={history} canRestore={isEditable(lesson.status)} />}

@@ -1,5 +1,5 @@
-import { LESSON_STATUSES, ROLES, VERSION_REASONS, type CheckId } from '@lcg/domain';
-import { LESSON_TYPES } from '@lcg/lesson-schema';
+import { AI_EDIT_ACTIONS, LESSON_STATUSES, ROLES, VERSION_REASONS, type CheckId } from '@lcg/domain';
+import { LESSON_TYPES, type Activity } from '@lcg/lesson-schema';
 import type { AnchorText, OutlineLesson, ResolvedIssue } from '@lcg/outline';
 import { sql } from 'drizzle-orm';
 import {
@@ -259,18 +259,40 @@ export const aiReviews = pgTable(
   (t) => [index('ai_reviews_lesson').on(t.lessonId, t.createdAt)],
 );
 
-export const aiSuggestions = pgTable('ai_suggestions', {
-  id: id(),
-  lessonId: uuid('lesson_id')
-    .notNull()
-    .references(() => lessons.id, { onDelete: 'cascade' }),
-  actorId: uuid('actor_id')
-    .notNull()
-    .references(() => users.id),
-  action: text('action').notNull(),
-  outcome: text('outcome', { enum: ['pending', 'accepted', 'rejected'] }).notNull(),
-  createdAt: createdAt(),
-});
+/** Every AI Suggestion asked for, what it proposed, what it cost, and whether it was taken. */
+export const aiSuggestions = pgTable(
+  'ai_suggestions',
+  {
+    id: id(),
+    lessonId: uuid('lesson_id')
+      .notNull()
+      .references(() => lessons.id, { onDelete: 'cascade' }),
+    actorId: uuid('actor_id')
+      .notNull()
+      .references(() => users.id),
+    action: text('action', { enum: AI_EDIT_ACTIONS }).notNull(),
+    /** The Editor's instruction (Rewrite) or the failing check (Fix with AI). */
+    instruction: text('instruction'),
+    activityId: text('activity_id').notNull(),
+    /** The Activity as the Editor saw it, and the AI's replacement (absent when the reply was unusable). */
+    before: jsonb('before').$type<Activity>().notNull(),
+    after: jsonb('after').$type<Activity>(),
+    /** failed: the reply was unusable or unavailable; it is kept for its cost. */
+    outcome: text('outcome', { enum: ['pending', 'accepted', 'rejected', 'failed'] }).notNull(),
+    failureReason: text('failure_reason'),
+    model: text('model').notNull(),
+    mode: text('mode', { enum: ['live', 'replay', 'fake'] }).notNull(),
+    inputTokens: integer('input_tokens').notNull().default(0),
+    outputTokens: integer('output_tokens').notNull().default(0),
+    cacheReadTokens: integer('cache_read_tokens').notNull().default(0),
+    cacheWriteTokens: integer('cache_write_tokens').notNull().default(0),
+    costUsd: numeric('cost_usd', { precision: 10, scale: 4 }).notNull().default('0'),
+    durationMs: integer('duration_ms').notNull(),
+    createdAt: createdAt(),
+    resolvedAt: timestamp('resolved_at', { withTimezone: true }),
+  },
+  (t) => [index('ai_suggestions_lesson').on(t.lessonId, t.createdAt)],
+);
 
 export const unitReleases = pgTable(
   'unit_releases',

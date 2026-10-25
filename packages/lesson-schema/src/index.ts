@@ -9,7 +9,7 @@ export {
   targetMinutes,
   type PlannedSection,
 } from './section-plan.js';
-export { documentToLesson, lessonToDocument, type DocumentToLessonResult } from './convert.js';
+export { activityToNode, documentToLesson, lessonToDocument, type DocumentToLessonResult } from './convert.js';
 export { inlineToNodes, nodesToInline } from './inline.js';
 export {
   BLOCK_TYPE_OF_NODE,
@@ -38,4 +38,4 @@ export {
   yStateToLesson,
 } from './ydoc.js';
 export { LessonStructureGuard, STRUCTURE_CHANGE_META, structureSignature } from './structure-guard.js';
-export { lessonToLines } from './lesson-text.js';
+export { activityToLines, lessonToLines } from './lesson-text.js';

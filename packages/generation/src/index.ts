@@ -40,4 +40,6 @@ export {
   reviewKey,
   reviewLesson,
   toCheckResults,
-  type ReviewFailure, type AiReview, type ReviewCall, type ReviewInput, type ReviewResult } from './review.js';
+  type ReviewFailure, type AiReview, type ModelCall, type ReviewInput, type ReviewResult } from './review.js';
+export { placeholderEdit, suggestActivityEdit, type EditRequest, type EditResult } from './edit.js';
+export { llmSettingsFromEnv, type LlmMode, type LlmSettings } from './settings.js';

@@ -33,7 +33,8 @@ function sectionToNode(section: Section): JSONContent {
   };
 }
 
-function activityToNode(activity: Activity): JSONContent {
+/** One Activity as an editor node, for replacing an Activity in place (an accepted AI Suggestion). */
+export function activityToNode(activity: Activity): JSONContent {
   return {
     type: 'activity',
     attrs: {

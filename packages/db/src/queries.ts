@@ -4,7 +4,7 @@ import type { OutlineLesson } from '@lcg/outline';
 import { and, asc, count, desc, eq, sql, sum } from 'drizzle-orm';
 import { checkCounts } from './checks.js';
 import type { Executor } from './client.js';
-import { aiReviews, arcs, generationAttempts, guidanceVersions, lessons, units, users, workflowEvents } from './schema.js';
+import { aiReviews, aiSuggestions, arcs, generationAttempts, guidanceVersions, lessons, units, users, workflowEvents } from './schema.js';
 
 export interface UnitSummary {
   id: string;
@@ -66,7 +66,7 @@ export interface UnitBoard {
   unit: typeof units.$inferSelect;
   arcs: (typeof arcs.$inferSelect)[];
   lessons: BoardLesson[];
-  /** What generating and reviewing this Unit has cost so far (live calls only), in US dollars. */
+  /** What generating, reviewing and AI editing this Unit has cost so far (live calls only), in US dollars. */
   aiCostUsd: number;
 }
 
@@ -110,6 +110,11 @@ export async function unitBoard(db: Executor, unitId: string): Promise<UnitBoard
     .innerJoin(lessons, eq(lessons.id, aiReviews.lessonId))
     .where(and(eq(lessons.unitId, unitId), eq(aiReviews.mode, 'live')));
   const counts = await checkCounts(db, lessonRows.map((l) => l.id));
+  const [suggestionCost] = await db
+    .select({ total: sum(aiSuggestions.costUsd) })
+    .from(aiSuggestions)
+    .innerJoin(lessons, eq(lessons.id, aiSuggestions.lessonId))
+    .where(and(eq(lessons.unitId, unitId), eq(aiSuggestions.mode, 'live')));
   return {
     unit,
     arcs: arcRows,
@@ -119,7 +124,7 @@ export async function unitBoard(db: Executor, unitId: string): Promise<UnitBoard
       waitingForArc: lesson.status === 'queued' && lesson.lessonType === 'flex-day' && jobEnqueuedAt === null,
       failureReason: lesson.status === 'generation-failed' ? failureReason : null,
     })),
-    aiCostUsd: Number(generationCost?.total ?? 0) + Number(reviewCost?.total ?? 0),
+    aiCostUsd: [generationCost, reviewCost, suggestionCost].reduce((total, c) => total + Number(c?.total ?? 0), 0),
   };
 }
 

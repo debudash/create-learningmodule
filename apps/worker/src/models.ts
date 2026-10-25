@@ -4,33 +4,22 @@ import {
   createFakeClient,
   createLiveClient,
   createReplayClient,
+  llmSettingsFromEnv,
   placeholderOutput,
-  type Effort,
   type LlmClient,
   type LlmResult,
 } from '@lcg/generation';
 
-export type LlmMode = 'live' | 'replay' | 'fake';
-const MODES: readonly LlmMode[] = ['live', 'replay', 'fake'];
-const EFFORTS: readonly Effort[] = ['low', 'medium', 'high', 'xhigh', 'max'];
-
-/** Reads one of a fixed set of values from the environment, refusing anything else. */
-function choice<T extends string>(name: string, value: string | undefined, allowed: readonly T[], fallback: T): T {
-  if (value === undefined || value === '') return fallback;
-  if ((allowed as readonly string[]).includes(value)) return value as T;
-  throw new Error(`${name} must be one of ${allowed.join(', ')}; got "${value}"`);
-}
-
 /** The mode, and a live client for a model, as the environment configures them (ADR 0005). */
 async function liveOrReplay(env: NodeJS.ProcessEnv, model: string): Promise<LlmClient | 'fake'> {
-  const mode = choice('LLM_MODE', env.LLM_MODE, MODES, 'replay');
-  if (mode === 'fake') return 'fake';
-  if (mode === 'replay') return createReplayClient(replayLookup);
+  const settings = llmSettingsFromEnv(env);
+  if (settings.mode === 'fake') return 'fake';
+  if (settings.mode === 'replay') return createReplayClient(replayLookup);
   return createLiveClient({
     model,
-    effort: choice('LLM_EFFORT', env.LLM_EFFORT, EFFORTS, 'medium'),
-    tracing: env.LANGSMITH_TRACING === 'true',
-    ...(env.LLM_RECORD === 'true' ? { onResult: (request, result) => writeRecording(request.key, result) } : {}),
+    effort: settings.effort,
+    tracing: settings.tracing,
+    ...(settings.record ? { onResult: (request, result) => writeRecording(request.key, result) } : {}),
   });
 }
 

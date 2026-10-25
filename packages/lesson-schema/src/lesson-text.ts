@@ -1,4 +1,4 @@
-import { choiceLetter, TEACHER_MOVE_LABELS, type Block, type Lesson } from './lesson.js';
+import { choiceLetter, TEACHER_MOVE_LABELS, type Activity, type Block, type Lesson } from './lesson.js';
 
 function blockLines(block: Block): string[] {
   switch (block.type) {
@@ -45,10 +45,15 @@ export function lessonToLines(lesson: Lesson): string[] {
     ...lesson.sections.flatMap((section) => [
       `## ${section.title}`,
       `Purpose: ${section.purpose}`,
-      ...section.activities.flatMap((activity) => [
-        `### ${activity.title} (${activity.minutes} min; ${activity.standards.join(', ') || 'no standards'}${activity.routine ? `; ${activity.routine}` : ''})`,
-        ...activity.blocks.flatMap(blockLines),
-      ]),
+      ...section.activities.flatMap(activityToLines),
     ]),
+  ];
+}
+
+/** One Activity as readable lines, for previewing an AI Suggestion before and after. */
+export function activityToLines(activity: Activity): string[] {
+  return [
+    `### ${activity.title} (${activity.minutes} min; ${activity.standards.join(', ') || 'no standards'}${activity.routine ? `; ${activity.routine}` : ''})`,
+    ...activity.blocks.flatMap(blockLines),
   ];
 }

@@ -6,6 +6,7 @@ import { z } from 'zod';
 import { costOf, NO_USAGE, type TokenUsage } from './cost.js';
 import { NoRecordingError, type LlmClient, type LlmResult } from './llm.js';
 import { toOutputJsonSchema } from './output.js';
+import { asData } from './prompt-text.js';
 
 /** What the AI Review returns (GLOSSARY: Quality Check, AI Review). */
 export const aiReviewSchema = z.object({
@@ -37,8 +38,8 @@ export interface ReviewInput {
   anchorTextTitle: string;
 }
 
-/** What one AI Review call used and cost, for the record. */
-export interface ReviewCall {
+/** What one model call used and cost, for the record (AI Reviews and AI Suggestions). */
+export interface ModelCall {
   model: string;
   mode: LlmClient['mode'];
   usage: TokenUsage;
@@ -53,8 +54,8 @@ export interface ReviewCall {
 export type ReviewFailure = 'unreadable' | 'unavailable';
 
 export type ReviewResult =
-  | { ok: true; results: QualityCheckResult[]; call: ReviewCall }
-  | { ok: false; failure: ReviewFailure; reason: string; call: ReviewCall };
+  | { ok: true; results: QualityCheckResult[]; call: ModelCall }
+  | { ok: false; failure: ReviewFailure; reason: string; call: ModelCall };
 
 /**
  * The recording key of a review: one per Lesson content, so a replayed verdict
@@ -111,7 +112,7 @@ export async function reviewLesson(client: LlmClient, input: ReviewInput, key: s
       call: { model: client.model, mode: client.mode, usage: NO_USAGE, costUsd: 0, durationMs: 0 },
     };
   }
-  const call: ReviewCall = {
+  const call: ModelCall = {
     model: result.model,
     mode: client.mode,
     usage: result.usage,
@@ -132,18 +133,6 @@ function officialText(code: string): string {
   const standard = getStandard(code);
   if (!standard) throw new Error(`Focus Standard ${code} is not in the standards dataset.`);
   return standard.text;
-}
-
-/**
- * Text people wrote, made safe to place inside a prompt tag.
- *
- * LCG-24: Lesson and Outline text went into the review's tags as written, so a
- * Lesson containing "</lesson>" could end its tag and address the reviewer
- * directly, for example to pass its own review. Escaping the tag characters keeps
- * every word visible to the model but leaves no way to close a tag.
- */
-function asData(text: string): string {
-  return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
 const STANDARD_OUTCOME ={ taught: 'pass', partly: 'warn', 'not-taught': 'fail' } as const;

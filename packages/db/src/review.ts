@@ -5,6 +5,7 @@ import {
   parseReviewAction,
   publishability,
   type Actor,
+  type AiEditAction,
   type LessonActionType,
   type LessonStatus,
   type ReviewAction,
@@ -17,6 +18,7 @@ import { readLessonContent, replaceLessonContent } from './documents.js';
 import { captureVersion } from './generation.js';
 import { recordEditors } from './lessons.js';
 import {
+  aiSuggestions,
   generationAttempts,
   guidanceVersions,
   lessons,
@@ -137,6 +139,8 @@ export interface LessonHistory {
     overFailingChecks: boolean;
     createdAt: Date;
   }[];
+  /** Accepted AI Suggestions, with who accepted them (story 124). */
+  suggestions: { action: AiEditAction; activityId: string; actorName: string; resolvedAt: Date }[];
 }
 
 /** Everything that happened to a Lesson, newest first, for the workspace's History tab. */
@@ -184,10 +188,22 @@ export async function lessonHistory(db: Executor, lessonId: string): Promise<Les
     .leftJoin(users, eq(users.id, workflowEvents.actorId))
     .where(eq(workflowEvents.lessonId, lessonId))
     .orderBy(desc(workflowEvents.createdAt));
+  const suggestions = await db
+    .select({
+      action: aiSuggestions.action,
+      activityId: aiSuggestions.activityId,
+      actorName: users.name,
+      resolvedAt: aiSuggestions.resolvedAt,
+    })
+    .from(aiSuggestions)
+    .innerJoin(users, eq(users.id, aiSuggestions.actorId))
+    .where(and(eq(aiSuggestions.lessonId, lessonId), eq(aiSuggestions.outcome, 'accepted')))
+    .orderBy(desc(aiSuggestions.resolvedAt));
   return {
     versions,
     attempts: attempts.map((a) => ({ ...a, costUsd: Number(a.costUsd) })),
     events: events.map((e) => ({ ...e, action: e.action as LessonActionType })),
+    suggestions: suggestions.map((s) => ({ ...s, resolvedAt: s.resolvedAt! })),
   };
 }
 

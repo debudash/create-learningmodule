@@ -19,8 +19,22 @@ CREATE TABLE IF NOT EXISTS "ai_suggestions" (
 	"lesson_id" uuid NOT NULL,
 	"actor_id" uuid NOT NULL,
 	"action" text NOT NULL,
+	"instruction" text,
+	"activity_id" text NOT NULL,
+	"before" jsonb NOT NULL,
+	"after" jsonb,
 	"outcome" text NOT NULL,
-	"created_at" timestamp with time zone DEFAULT now() NOT NULL
+	"failure_reason" text,
+	"model" text NOT NULL,
+	"mode" text NOT NULL,
+	"input_tokens" integer DEFAULT 0 NOT NULL,
+	"output_tokens" integer DEFAULT 0 NOT NULL,
+	"cache_read_tokens" integer DEFAULT 0 NOT NULL,
+	"cache_write_tokens" integer DEFAULT 0 NOT NULL,
+	"cost_usd" numeric(10, 4) DEFAULT '0' NOT NULL,
+	"duration_ms" integer NOT NULL,
+	"created_at" timestamp with time zone DEFAULT now() NOT NULL,
+	"resolved_at" timestamp with time zone
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "arcs" (
@@ -307,6 +321,7 @@ EXCEPTION
 END $$;
 --> statement-breakpoint
 CREATE INDEX IF NOT EXISTS "ai_reviews_lesson" ON "ai_reviews" USING btree ("lesson_id","created_at");--> statement-breakpoint
+CREATE INDEX IF NOT EXISTS "ai_suggestions_lesson" ON "ai_suggestions" USING btree ("lesson_id","created_at");--> statement-breakpoint
 CREATE UNIQUE INDEX IF NOT EXISTS "arcs_unit_key" ON "arcs" USING btree ("unit_id","key");--> statement-breakpoint
 CREATE INDEX IF NOT EXISTS "generation_attempts_lesson" ON "generation_attempts" USING btree ("lesson_id","created_at");--> statement-breakpoint
 CREATE UNIQUE INDEX IF NOT EXISTS "guidance_unit_version" ON "guidance_versions" USING btree ("unit_id","version");--> statement-breakpoint

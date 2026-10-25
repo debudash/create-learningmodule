@@ -1,13 +1,16 @@
 'use client';
 
-import { LESSON_MINUTES, SECTION_TITLES, lessonMinutes, sectionMinutes, type Lesson } from '@lcg/lesson-schema';
+import { LESSON_MINUTES, SECTION_TITLES, lessonMinutes, sectionMinutes, type Activity, type Lesson } from '@lcg/lesson-schema';
 import type { CheckOutlineFacts, QualityCheckResult } from '@lcg/domain';
 import type { LastAiReview } from '@lcg/db';
 import type { OutlineLesson } from '@lcg/outline';
+import type { Editor } from '@tiptap/react';
 import { useCallback, useState, type ReactNode } from 'react';
 import { StudentViewPanel } from '@/components/StudentViewPanel';
+import { replaceActivity } from '@/editor/ai-suggestions';
 import { LessonEditor, type Presence } from '@/editor/LessonEditor';
 import { ChecksPanel } from './ChecksPanel';
+import { SuggestionPanel, type SuggestionTarget } from './SuggestionPanel';
 
 interface Props {
   lessonId: string;
@@ -21,16 +24,23 @@ interface Props {
   /** The latest AI Review results. */
   aiChecks: QualityCheckResult[];
   lastReview?: LastAiReview;
+  /** AI Suggestions are offered (never on Approved Lessons). */
+  aiTools: boolean;
 }
 
 type View = 'teacher' | 'student';
 
-export function Workspace({ lessonId, token, user, outline, history, facts, aiChecks, lastReview }: Props) {
+export function Workspace({ lessonId, token, user, outline, history, facts, aiChecks, lastReview, aiTools }: Props) {
   const [view, setView] = useState<View>('teacher');
   const [lesson, setLesson] = useState<Lesson>();
   const [people, setPeople] = useState<Presence[]>([]);
   const [tab, setTab] = useState<'outline' | 'checks' | 'history'>('outline');
   const onLessonChange = useCallback((next: Lesson | undefined) => next && setLesson(next), []);
+  const [editor, setEditor] = useState<Editor | null>(null);
+  const [suggestion, setSuggestion] = useState<SuggestionTarget>();
+  const onRequestSuggestion = useCallback((activityId: string) => setSuggestion({ activityId }), []);
+  const activityOf = (id: string): Activity | undefined =>
+    lesson?.sections.flatMap((s) => s.activities).find((a) => a.id === id);
 
   return (
     <div className="grid grid-cols-[12rem_minmax(0,1fr)_20rem] gap-6">
@@ -90,6 +100,8 @@ export function Workspace({ lessonId, token, user, outline, history, facts, aiCh
             user={user}
             onLessonChange={onLessonChange}
             onPresenceChange={setPeople}
+            onEditorReady={setEditor}
+            {...(aiTools ? { onRequestSuggestion } : {})}
           />
         </div>
         {view === 'student' && lesson && <StudentViewPanel lesson={lesson} />}
@@ -108,7 +120,16 @@ export function Workspace({ lessonId, token, user, outline, history, facts, aiCh
             </button>
           ))}
         </div>
-        {tab === 'history' ? (
+        {suggestion ? (
+          <SuggestionPanel
+            key={`${suggestion.activityId}-${suggestion.action ?? ''}-${suggestion.instruction ?? ''}`}
+            lessonId={lessonId}
+            target={suggestion}
+            activity={activityOf(suggestion.activityId)}
+            apply={(activity) => (editor ? replaceActivity(editor, activity) : false)}
+            onClose={() => setSuggestion(undefined)}
+          />
+        ) : tab === 'history' ? (
           history
         ) : tab === 'checks' ? (
           <ChecksPanel
@@ -117,6 +138,9 @@ export function Workspace({ lessonId, token, user, outline, history, facts, aiCh
             facts={facts}
             aiResults={aiChecks}
             {...(lastReview ? { lastReview } : {})}
+            {...(aiTools
+              ? { onFix: (activityId: string, message: string) => setSuggestion({ activityId, action: 'fix', instruction: message }) }
+              : {})}
           />
         ) : (
           <>

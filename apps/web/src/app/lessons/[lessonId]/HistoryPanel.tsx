@@ -1,7 +1,7 @@
 'use client';
 
 import type { LessonHistory } from '@lcg/db';
-import { LESSON_STATUS_LABELS, VERSION_REASON_LABELS } from '@lcg/domain';
+import { AI_EDIT_LABELS, LESSON_STATUS_LABELS, VERSION_REASON_LABELS } from '@lcg/domain';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, useTransition } from 'react';
@@ -10,7 +10,7 @@ import { restoreVersionAction } from './actions';
 const when = (date: Date) =>
   new Date(date).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
 
-/** The Lesson's story: Versions (compare, restore), workflow events and Generation Attempts. */
+/** The Lesson's story: Versions (compare, restore), workflow events, accepted AI Suggestions and Generation Attempts. */
 export function HistoryPanel({ lessonId, history, canRestore }: { lessonId: string; history: LessonHistory; canRestore: boolean }) {
   const router = useRouter();
   const [compare, setCompare] = useState<string[]>([]);
@@ -95,6 +95,23 @@ export function HistoryPanel({ lessonId, history, canRestore }: { lessonId: stri
           ))}
         </ul>
       </section>
+
+      {history.suggestions.length > 0 && (
+        <section>
+          <h3 className="font-medium">Accepted AI Suggestions</h3>
+          <ul className="mt-1 space-y-1">
+            {history.suggestions.map((suggestion, i) => (
+              <li key={i}>
+                {AI_EDIT_LABELS[suggestion.action]}
+                <span className="text-ink-faint">
+                  {' '}
+                  · {suggestion.activityId} · {suggestion.actorName} · {when(suggestion.resolvedAt)}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {history.attempts.length > 0 && (
         <section>

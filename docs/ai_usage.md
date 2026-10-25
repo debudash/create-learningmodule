@@ -9,7 +9,7 @@ Two kinds of AI use in this project: AI inside the product, and AI used to build
 | Lesson generation | Claude Sonnet | Outline row and neighbours, Arc and Unit context, official standards text, one Units 1–3 example Lesson, Generation Guidance | Lesson JSON (validated, repaired once if invalid) | Editors write the Guidance, preview the prompt, run trial batches, Regenerate with instructions; every Lesson is reviewed before approval |
 | Lesson Digest | Same call | The generated Lesson | Short summary for Flex Days | None needed (internal) |
 | AI Review | Claude | The Lesson and its Focus Standards' official text | Per-standard verdict with reason; anchor-text usage | Informs; never blocks approval |
-| AI editing | Claude Sonnet | Selected blocks and Lesson context | Replacement blocks as an AI Suggestion | Accepted or rejected by the requesting Editor; recorded in history |
+| AI editing | Claude Sonnet | One Activity, the action (and the Editor's instruction or the failing check), and the Lesson as context | A replacement Activity as an AI Suggestion | Accepted or rejected by the requesting Editor; recorded in history |
 
 Safeguards:
 - The ELD description check at import is deterministic word matching against the official text, not a model call, so it is free, instant and repeatable.

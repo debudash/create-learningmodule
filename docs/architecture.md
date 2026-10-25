@@ -282,17 +282,20 @@ sequenceDiagram
   participant G as generation
   participant LLM as Anthropic
 
-  E->>ED: select block, choose "Add ELD support"
-  ED->>API: POST suggestion {action, blocks as Lesson JSON, lessonId}
-  API->>G: suggest(action, blocks, Lesson context)
-  G->>LLM: messages.create
-  LLM-->>G: replacement blocks
-  G-->>API: validated blocks
-  API-->>ED: suggestion
-  ED->>ED: show before/after locally (not shared)
+  E->>ED: "Ask AI" on an Activity (or "Fix with AI" on a check), choose "Add ELD support"
+  ED->>API: suggestEditAction {lessonId, Activity as Lesson JSON, action, instruction?}
+  API->>API: actor, action and Activity valid; Lesson editable (not Approved)
+  API->>G: suggestActivityEdit(Lesson context, Activity, action)
+  G->>LLM: one structured call (schema: Activity)
+  LLM-->>G: replacement Activity
+  G-->>API: validated (same id, asked-for block added)
+  API->>API: record ai_suggestions row (pending, with cost)
+  API-->>ED: before / after
+  ED->>ED: show line diff in the side panel (only to this Editor)
   E->>ED: accept
-  ED->>ED: apply as normal Yjs edit (syncs to others)
-  ED->>API: record outcome (accepted)
+  ED->>ED: refuse if the Activity changed since the request
+  ED->>API: resolveSuggestionAction(accepted)
+  ED->>ED: replace the Activity as an ordinary Yjs edit (syncs to others)
 ```
 
 ### 3.6 Publishing a Unit

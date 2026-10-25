@@ -1,6 +1,6 @@
 import { NO_CHECKS, type CheckCounts, type CheckOutlineFacts, type QualityCheckResult } from '@lcg/domain';
 import type { Lesson } from '@lcg/lesson-schema';
-import type { ReviewCall, ReviewFailure } from '@lcg/generation';
+import type { ModelCall, ReviewFailure } from '@lcg/generation';
 import type { OutlineLesson } from '@lcg/outline';
 import { and, asc, desc, eq, inArray, sql } from 'drizzle-orm';
 import type { Executor } from './client.js';
@@ -82,7 +82,7 @@ export async function saveAiReview(db: Executor, review: AiReviewRecord): Promis
 }
 
 /** One AI Review call, with its results or why it has none. */
-export type AiReviewRecord = { lessonId: string; contentDigest: string; call: ReviewCall } & (
+export type AiReviewRecord = { lessonId: string; contentDigest: string; call: ModelCall } & (
   | { results: QualityCheckResult[]; failure?: never }
   | { results?: never; failure: ReviewFailure }
 );

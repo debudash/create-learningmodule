@@ -23,12 +23,15 @@ export function ChecksPanel({
   facts,
   aiResults,
   lastReview,
+  onFix,
 }: {
   lessonId: string;
   lesson: Lesson | undefined;
   facts: CheckOutlineFacts;
   aiResults: QualityCheckResult[];
   lastReview?: LastAiReview;
+  /** Fix with AI, for results that point at an Activity (story 120). */
+  onFix?: (activityId: string, message: string) => void;
 }) {
   const ruleResults = useMemo(() => (lesson ? runRuleChecks(lesson, facts) : []), [lesson, facts]);
   const [message, setMessage] = useState<string>();
@@ -41,7 +44,7 @@ export function ChecksPanel({
       <p className="text-ink-soft">
         {describeCounts(counts)}. Checks inform the Approver; they never block approval.
       </p>
-      <ResultList results={notPassing} empty="Nothing needs attention." />
+      <ResultList results={notPassing} empty="Nothing needs attention." {...(onFix ? { onFix } : {})} />
 
       <section>
         <div className="flex items-center justify-between">
@@ -64,7 +67,7 @@ export function ChecksPanel({
           {reviewStatus(lastReview)}
           {message && ` ${message}`}
         </p>
-        <ResultList results={aiResults} empty="No AI Review results yet." />
+        <ResultList results={aiResults} empty="No AI Review results yet." {...(onFix ? { onFix } : {})} />
       </section>
 
       <details>
@@ -83,7 +86,15 @@ function reviewStatus(review: LastAiReview | undefined): string {
   return `Last reviewed ${new Date(review.at).toLocaleString('en-US')}.`;
 }
 
-function ResultList({ results, empty }: { results: QualityCheckResult[]; empty: string }) {
+function ResultList({
+  results,
+  empty,
+  onFix,
+}: {
+  results: QualityCheckResult[];
+  empty: string;
+  onFix?: (activityId: string, message: string) => void;
+}) {
   if (results.length === 0) return <p className="mt-1 text-xs text-ink-faint">{empty}</p>;
   return (
     <ul className="mt-2 space-y-2">
@@ -98,6 +109,15 @@ function ResultList({ results, empty }: { results: QualityCheckResult[]; empty: 
             <span className="text-xs font-medium text-ink-soft">{CHECK_LABELS[result.checkId]}</span>
             <span className="mt-0.5 block text-sm">{result.message}</span>
           </button>
+          {onFix && result.location && result.outcome !== 'pass' && (
+            <button
+              type="button"
+              onClick={() => onFix(result.location!, result.message)}
+              className="mt-0.5 text-xs text-accent hover:underline"
+            >
+              Fix with AI
+            </button>
+          )}
         </li>
       ))}
     </ul>

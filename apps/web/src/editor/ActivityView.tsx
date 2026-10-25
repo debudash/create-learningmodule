@@ -4,6 +4,7 @@ import { NodeViewContent, NodeViewWrapper, type NodeViewProps } from '@tiptap/re
 import { useState } from 'react';
 import { CodesInput, SmallButton, TextInput } from './fields';
 import { BLOCK_CHOICES } from './block-menu';
+import { requestSuggestion } from './ai-suggestions';
 import { moveNode } from './move';
 
 /** A timed Activity: title, minutes, standards and routine, then its blocks. */
@@ -43,6 +44,7 @@ export function ActivityView({ node, updateAttributes, editor, getPos, deleteNod
         </label>
         {!readOnly && (
           <>
+            <SmallButton onClick={() => requestSuggestion(editor, node.attrs.id)}>Ask AI</SmallButton>
             <SmallButton onClick={() => moveNode(editor, getPos() ?? 0, -1)}>Up</SmallButton>
             <SmallButton onClick={() => moveNode(editor, getPos() ?? 0, 1)}>Down</SmallButton>
             <SmallButton tone="danger" onClick={deleteNode}>

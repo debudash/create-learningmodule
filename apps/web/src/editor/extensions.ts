@@ -11,6 +11,7 @@ import {
 } from '@lcg/lesson-schema';
 import { Extension, ReactNodeViewRenderer, type AnyExtension } from '@tiptap/react';
 import { ActivityView } from './ActivityView';
+import { AiSuggestionRequests } from './ai-suggestions';
 import { EldPanelView, PulseCheckView, SupportTableView, TextReferenceView } from './FormBlockViews';
 import { BlockMoveShortcuts } from './move';
 import { HeaderView } from './HeaderView';
@@ -38,5 +39,5 @@ const MarkShortcuts = Extension.create({
 });
 
 export function lessonEditorExtensions(): AnyExtension[] {
-  return [...lessonDocumentExtensions.map((ext) => VIEWS.get(ext) ?? ext), LessonStructureGuard, MarkShortcuts, BlockMoveShortcuts];
+  return [...lessonDocumentExtensions.map((ext) => VIEWS.get(ext) ?? ext), LessonStructureGuard, MarkShortcuts, BlockMoveShortcuts, AiSuggestionRequests];
 }

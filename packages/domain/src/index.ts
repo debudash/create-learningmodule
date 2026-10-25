@@ -39,3 +39,11 @@ export {
   type CheckOutlineFacts,
   type QualityCheckResult,
 } from './quality.js';
+export {
+  AI_EDIT_ACTIONS,
+  AI_EDIT_LABELS,
+  mayUseAiTools,
+  needsInstruction,
+  parseAiEditAction,
+  type AiEditAction,
+} from './ai-editing.js';

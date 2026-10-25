@@ -5,6 +5,7 @@ import Collaboration from '@tiptap/extension-collaboration';
 import CollaborationCursor from '@tiptap/extension-collaboration-cursor';
 import { EditorContent, useEditor, type Editor } from '@tiptap/react';
 import { useEffect } from 'react';
+import { onSuggestionRequest } from './ai-suggestions';
 import { colorFor, useCollaboration, type Collaboration as Session } from './collaboration';
 import { lessonEditorExtensions } from './extensions';
 
@@ -19,6 +20,10 @@ interface Props {
   user: { name: string };
   onLessonChange?: (lesson: Lesson | undefined) => void;
   onPresenceChange?: (people: Presence[]) => void;
+  /** The editor, once it exists (to apply accepted AI Suggestions). */
+  onEditorReady?: (editor: Editor | null) => void;
+  /** An Activity's "Ask AI" was pressed. */
+  onRequestSuggestion?: (activityId: string) => void;
 }
 
 /** The collaborative Lesson editor. Shows nothing until the stored document has synced. */
@@ -36,7 +41,14 @@ export function LessonEditor(props: Props) {
   );
 }
 
-function BoundEditor({ session, user, onLessonChange, onPresenceChange }: Props & { session: Session }) {
+function BoundEditor({
+  session,
+  user,
+  onLessonChange,
+  onPresenceChange,
+  onEditorReady,
+  onRequestSuggestion,
+}: Props & { session: Session }) {
   // The collaboration server decides, and re-decides whenever the Lesson's status changes (LCG-8).
   const canEdit = !session.readOnly;
   const editor = useEditor({
@@ -53,6 +65,11 @@ function BoundEditor({ session, user, onLessonChange, onPresenceChange }: Props 
   useEffect(() => {
     editor?.setEditable(canEdit);
   }, [editor, canEdit]);
+
+  useEffect(() => {
+    onEditorReady?.(editor);
+    if (editor) onSuggestionRequest(editor, onRequestSuggestion);
+  }, [editor, onEditorReady, onRequestSuggestion]);
 
   useLessonUpdates(editor, onLessonChange);
   usePresence(session, onPresenceChange);
