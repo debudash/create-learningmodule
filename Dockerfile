@@ -18,4 +18,4 @@ ENV NEXT_PUBLIC_COLLAB_URL=$NEXT_PUBLIC_COLLAB_URL
 RUN DATABASE_URL=postgres://build-placeholder/lcg pnpm --filter @lcg/web build
 
 ENV NODE_ENV=production
-CMD ["pnpm", "--filter", "@lcg/web", "start"]
+CMD ["sh", "docker/start.sh"]

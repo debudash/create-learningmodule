@@ -28,6 +28,8 @@ export interface CollabOptions {
   db: Database;
   sessionSecret: string;
   port?: number;
+  /** Address to listen on; "::" also accepts IPv6 (Railway's private network). */
+  address?: string;
   /** Milliseconds of quiet before a document is stored. */
   debounce?: number;
 }
@@ -56,7 +58,7 @@ interface ConnectionContext {
  * session token, serves and stores Lesson documents, opens Approved Lessons
  * read-only, and remembers who edited each Lesson.
  */
-export function createCollabServer({ db, sessionSecret, port = 1234, debounce = 2000 }: CollabOptions): CollabServer {
+export function createCollabServer({ db, sessionSecret, port = 1234, address, debounce = 2000 }: CollabOptions): CollabServer {
   const editorsSinceStore = new Map<string, Set<string>>();
   // Live connections per document, with the document each is attached to. Hocuspocus
   // can unload a document while a new connection is attaching to it (the connection
@@ -66,6 +68,7 @@ export function createCollabServer({ db, sessionSecret, port = 1234, debounce = 
 
   const server = Server.configure({
     port,
+    ...(address ? { address } : {}),
     quiet: true,
     debounce,
     maxDebounce: debounce * 5,
