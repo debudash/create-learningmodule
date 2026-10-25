@@ -7,7 +7,7 @@ import type { OutlineLesson } from '@lcg/outline';
 import type { Editor } from '@tiptap/react';
 import { useCallback, useState, type ReactNode } from 'react';
 import { StudentViewPanel } from '@/components/StudentViewPanel';
-import { replaceActivity } from '@/editor/ai-suggestions';
+import { applySuggestion } from '@/editor/ai-suggestions';
 import { LessonEditor, type Presence } from '@/editor/LessonEditor';
 import { ChecksPanel } from './ChecksPanel';
 import { SuggestionPanel, type SuggestionTarget } from './SuggestionPanel';
@@ -126,7 +126,7 @@ export function Workspace({ lessonId, token, user, outline, history, facts, aiCh
             lessonId={lessonId}
             target={suggestion}
             activity={activityOf(suggestion.activityId)}
-            apply={(activity) => (editor ? replaceActivity(editor, activity) : false)}
+            apply={(before, after) => (editor ? applySuggestion(editor, before, after) : { ok: false, reason: 'missing' })}
             onClose={() => setSuggestion(undefined)}
           />
         ) : tab === 'history' ? (

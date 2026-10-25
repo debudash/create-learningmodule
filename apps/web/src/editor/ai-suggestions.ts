@@ -1,4 +1,4 @@
-import { activityToNode, type Activity } from '@lcg/lesson-schema';
+import { replaceActivity, type Activity, type ReplaceActivityResult } from '@lcg/lesson-schema';
 import { Extension, type Editor } from '@tiptap/react';
 
 /**
@@ -20,21 +20,11 @@ export function onSuggestionRequest(editor: Editor, request: ((activityId: strin
 }
 
 /**
- * Applies an accepted AI Suggestion: replaces the Activity with the same id, as
- * one ordinary edit that syncs to everyone. Returns false if it is no longer there.
+ * Applies an accepted AI Suggestion as one ordinary edit that syncs to everyone,
+ * unless the Activity has changed or gone since the suggestion was made (LCG-25).
  */
-export function replaceActivity(editor: Editor, activity: Activity): boolean {
-  let found: { pos: number; size: number } | undefined;
-  editor.state.doc.descendants((node, pos) => {
-    if (found) return false;
-    if (node.type.name === 'activity' && node.attrs.id === activity.id) {
-      found = { pos, size: node.nodeSize };
-      return false;
-    }
-    return node.type.name !== 'activity';
-  });
-  if (!found) return false;
-  const replacement = editor.schema.nodeFromJSON(activityToNode(activity));
-  editor.view.dispatch(editor.state.tr.replaceWith(found.pos, found.pos + found.size, replacement).scrollIntoView());
-  return true;
+export function applySuggestion(editor: Editor, before: Activity, after: Activity): ReplaceActivityResult {
+  const result = replaceActivity(editor.state, before, after);
+  if (result.ok) editor.view.dispatch(result.tr.scrollIntoView());
+  return result;
 }

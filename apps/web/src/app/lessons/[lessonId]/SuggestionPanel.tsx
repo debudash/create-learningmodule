@@ -1,7 +1,7 @@
 'use client';
 
 import { AI_EDIT_ACTIONS, AI_EDIT_LABELS, needsInstruction, type AiEditAction } from '@lcg/domain';
-import { activityToLines, type Activity } from '@lcg/lesson-schema';
+import { activityToLines, type Activity, type ReplaceActivityResult } from '@lcg/lesson-schema';
 import { useState, useTransition } from 'react';
 import { LineDiff, lineChanges } from '@/components/LineDiff';
 import { resolveSuggestionAction, suggestEditAction } from './actions';
@@ -14,6 +14,8 @@ export interface SuggestionTarget {
 }
 
 type Proposal = { suggestionId: string; before: Activity; after: Activity };
+
+const CHANGED = 'This Activity has changed since the suggestion was made. Reject it and ask again.';
 
 /** Fix with AI starts from a Quality Check, so it is not offered from the menu. */
 const MENU_ACTIONS = AI_EDIT_ACTIONS.filter((a) => a !== 'fix');
@@ -34,8 +36,8 @@ export function SuggestionPanel({
   target: SuggestionTarget;
   /** The Activity as it is in the editor now (undefined if it was deleted). */
   activity: Activity | undefined;
-  /** Puts the accepted Activity into the document; false if it could not. */
-  apply: (activity: Activity) => boolean;
+  /** Puts the accepted Activity into the document, unless it changed or went since the suggestion. */
+  apply: (before: Activity, after: Activity) => ReplaceActivityResult;
   onClose: () => void;
 }) {
   const [action, setAction] = useState<AiEditAction>(target.action ?? 'rewrite');
@@ -58,12 +60,15 @@ export function SuggestionPanel({
       if (!proposal) return;
       // Someone may have changed the Activity since; accepting would undo their change.
       if (outcome === 'accepted' && JSON.stringify(activity) !== JSON.stringify(proposal.before)) {
-        setMessage('This Activity has changed since the suggestion was made. Reject it and ask again.');
+        setMessage(CHANGED);
         return;
       }
       const result = await resolveSuggestionAction(proposal.suggestionId, outcome);
       if (!result.ok) return setMessage(result.message);
-      if (outcome === 'accepted' && !apply(proposal.after)) return setMessage('The Activity is no longer in the Lesson.');
+      if (outcome === 'accepted') {
+        const applied = apply(proposal.before, proposal.after);
+        if (!applied.ok) return setMessage(applied.reason === 'changed' ? CHANGED : 'The Activity is no longer in the Lesson.');
+      }
       onClose();
     });
 

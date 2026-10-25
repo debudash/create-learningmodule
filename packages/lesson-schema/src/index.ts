@@ -39,3 +39,4 @@ export {
 } from './ydoc.js';
 export { LessonStructureGuard, STRUCTURE_CHANGE_META, structureSignature } from './structure-guard.js';
 export { activityToLines, lessonToLines } from './lesson-text.js';
+export { replaceActivity, type ReplaceActivityResult } from './replace-activity.js';
