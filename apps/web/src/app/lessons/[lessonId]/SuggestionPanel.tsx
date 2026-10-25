@@ -54,20 +54,27 @@ export function SuggestionPanel({
       else setMessage(result.message);
     });
 
-  const resolve = (outcome: SuggestionDecision) =>
+  const resolve = (outcome: SuggestionDecision) => {
+    if (!proposal) return;
+    // LCG-27: accepting dispatched the editor change from inside a React transition,
+    // where Tiptap's node views render synchronously, and React re-rendered without
+    // end ("Maximum update depth exceeded"). The change is now applied here, in the
+    // click handler, before the transition starts; only the wait for the server
+    // happens inside it.
+    const done =
+      outcome === 'accepted'
+        ? acceptSuggestion({
+            apply: () => apply(proposal.before, proposal.after),
+            record: () => resolveSuggestionAction(proposal.suggestionId, 'accepted'),
+            undo: () => apply(proposal.after, proposal.before),
+          })
+        : resolveSuggestionAction(proposal.suggestionId, 'rejected');
     startTransition(async () => {
-      if (!proposal) return;
-      const result =
-        outcome === 'accepted'
-          ? await acceptSuggestion({
-              apply: () => apply(proposal.before, proposal.after),
-              record: () => resolveSuggestionAction(proposal.suggestionId, 'accepted'),
-              undo: () => apply(proposal.after, proposal.before),
-            })
-          : await resolveSuggestionAction(proposal.suggestionId, 'rejected');
+      const result = await done;
       if (!result.ok) return setMessage(result.message);
       onClose();
     });
+  };
 
   if (!activity) {
     return (
