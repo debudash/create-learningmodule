@@ -262,7 +262,7 @@ The tool ships with a pre-generated sample Unit (Grade 6, Unit 4, *The Lightning
 
 ### Generation
 
-- Model: Anthropic Claude Sonnet via the official TypeScript SDK, called directly with no agent framework. Generation of one Lesson is one structured call with schema-validated JSON output plus at most one repair call.
+- Model: Anthropic Claude Sonnet via the official TypeScript SDK, called directly with no agent framework. Generation of one Lesson is one call returning JSON validated against the Lesson schema (the schema is given in the prompt; see ADR 0005's amendment) plus at most one repair call.
 - Prompt caching covers the locked instructions, Unit context and example Lessons, which are identical across a Unit.
 - Example Lessons come only from Newsela's published Units 1–3 (one per Lesson Type, selected in advance). Published Unit 4 is the Answer Key and never enters a prompt.
 - Each Lesson's context includes its Arc, the Performance Task, and the Outline rows (not the generated content) of the previous and next Lessons. Flex Days are queued only when every Lesson in their Arc has content, and include those Lessons' Digests.

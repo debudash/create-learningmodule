@@ -216,18 +216,18 @@ sequenceDiagram
     W->>DB: Lesson → Generating
     DB-->>UI: progress event
     W->>G: buildPrompt(Lesson, Unit, Arc, neighbours, standards, guidance)
-    G->>LLM: messages.create (cached prefix + Lesson part)
-    LLM-->>G: Lesson JSON
-    G->>G: validate; repair once if invalid
+    G->>LLM: one streamed call (cached prefix with the JSON Schema + Lesson part)
+    LLM-->>G: Lesson JSON + Digest
+    G->>G: validate against the Lesson schema; repair once if invalid
     G-->>W: content + Generation Attempt + Lesson Digest
-    W->>DB: BEGIN; write document, Version "generated", attempt, digest; Lesson → Draft
+    W->>DB: BEGIN; if still Generating: write document, Version "generated", attempt, digest; Lesson → Draft (a late result keeps only its attempt, LCG-30)
     W->>DB: enqueue AI Review job; if Arc complete, enqueue its Flex Days
     W->>DB: COMMIT
     DB-->>UI: progress event
   end
 ```
 
-On error the job is retried with backoff; when retries are exhausted the Lesson becomes Generation Failed with the reason recorded on the attempt.
+On error the job is retried with backoff; when retries are exhausted the Lesson becomes Generation Failed with the reason recorded on the attempt. A sweep fails Lessons whose current attempt has been silent for 30 minutes; a retry starting counts as activity (LCG-29). The whole-Lesson schema is given in the prompt rather than as a structured-output grammar, which the API refuses at this size (LCG-28).
 
 ### 3.3 Co-editing a Lesson
 
