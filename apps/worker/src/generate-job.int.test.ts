@@ -12,7 +12,7 @@ import {
   type GenerationJob,
 } from '@lcg/db';
 import { freshDatabase, importSampleUnit, type TestDatabase } from '@lcg/db/testing';
-import { createFakeClient, NO_USAGE, placeholderOutput, type LlmRequest } from '@lcg/generation';
+import { createFakeClient, NO_USAGE, placeholderOutput, PROMPT_VERSION, type LlmRequest } from '@lcg/generation';
 import { and, asc, eq, inArray } from 'drizzle-orm';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { handleGenerateJob, type GenerateJobDeps } from './generate-job.js';
@@ -81,7 +81,7 @@ describe('generating a Unit', () => {
     const versions = await database.db.select().from(schema.lessonVersions).where(eq(schema.lessonVersions.lessonId, l36.id));
     expect(versions.map((v) => [v.number, v.reason])).toEqual([[1, 'generated']]);
     const attempts = await database.db.select().from(schema.generationAttempts).where(eq(schema.generationAttempts.lessonId, l36.id));
-    expect(attempts).toMatchObject([{ outcome: 'succeeded', mode: 'fake', promptVersion: 1 }]);
+    expect(attempts).toMatchObject([{ outcome: 'succeeded', mode: 'fake', promptVersion: PROMPT_VERSION }]);
 
     expect(prompts.get('F5')!.messages[0]!.content).toContain('<arc_lessons_taught>');
     expect(prompts.get('F5')!.messages[0]!.content).toContain('Placeholder for L41.');
