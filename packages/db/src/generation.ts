@@ -324,8 +324,18 @@ export async function captureVersion(
 export async function completeGeneration(
   db: Database,
   input: { lessonId: string; lesson: Lesson; digest: LessonDigest; attempt: GenerationAttemptInput; enqueue: EnqueueGeneration },
-): Promise<void> {
-  await db.transaction(async (tx) => {
+): Promise<'stored' | 'discarded'> {
+  return db.transaction(async (tx) => {
+    // LCG-30: a result that arrived after the Lesson stopped Generating (the stall
+    // sweep had failed it) was stored anyway, with a Version and checks, while the
+    // refused finish-generating transition was ignored, leaving content in a
+    // Generation Failed Lesson. The Lesson is now locked and checked first; a late
+    // result keeps only its attempt, so its cost is still counted.
+    const [current] = await tx.select({ status: lessons.status }).from(lessons).where(eq(lessons.id, input.lessonId)).for('update');
+    if (current?.status !== 'generating') {
+      await recordAttempt(tx, input.lessonId, input.attempt);
+      return 'discarded';
+    }
     const [previous] = await tx.select({ n: count() }).from(lessonVersions).where(eq(lessonVersions.lessonId, input.lessonId));
     await replaceLessonContent(tx, input.lessonId, input.lesson);
     await captureVersion(tx, {
@@ -341,6 +351,7 @@ export async function completeGeneration(
       .returning({ unitId: lessons.unitId });
     await transitionLesson(tx, { lessonId: input.lessonId, actor: { kind: 'system' }, action: { type: 'finish-generating' } });
     await enqueueReadyLessons(tx, row!.unitId, input.enqueue);
+    return 'stored';
   });
 }
 

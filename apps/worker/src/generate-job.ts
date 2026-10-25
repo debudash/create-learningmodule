@@ -49,14 +49,14 @@ export async function handleGenerateJob(
       recordingKey(context),
     );
     if (result.ok) {
-      await completeGeneration(deps.db, {
+      const stored = await completeGeneration(deps.db, {
         lessonId: job.lessonId,
         lesson: result.lesson,
         digest: result.digest,
         attempt: { ...attemptBase, record: result.record },
         enqueue: deps.enqueue,
       });
-      await deps.requestReview?.(job.lessonId);
+      if (stored === 'stored') await deps.requestReview?.(job.lessonId);
       return;
     }
     record = result.record;

@@ -33,3 +33,4 @@ Every bug fixed in this project: one entry per issue, fixed test-first in its ow
 | LCG-27 | Browser re-check, Phase 6 | Accepting an AI Suggestion set off an endless re-render | `6f274e7` |
 | LCG-28 | First live trial | The API refused every Lesson: the whole generation output was too large to compile as a structured-output grammar | `7e32d69` |
 | LCG-29 | First live trial | A retry that started late (the machine had slept) was failed by the stall sweep while it ran | `7f0e797` |
+| LCG-30 | First live trial | A generation result that arrived after the Lesson was failed was stored anyway, leaving content in a Generation Failed Lesson | (this commit) |

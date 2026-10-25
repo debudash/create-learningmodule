@@ -12,7 +12,7 @@ import {
   type EnqueueGeneration,
   type GenerationJob,
 } from '@lcg/db';
-import { freshDatabase, importSampleUnit, type TestDatabase } from '@lcg/db/testing';
+import { freshDatabase, importSampleUnit, setLessonStatusById, type TestDatabase } from '@lcg/db/testing';
 import { createFakeClient, NO_USAGE, placeholderOutput, PROMPT_VERSION, type LlmRequest } from '@lcg/generation';
 import { and, asc, eq, inArray } from 'drizzle-orm';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
@@ -229,6 +229,36 @@ describe('stalled generations', () => {
     expect(await beginGenerating(database.db, job)).toBe(true);
     expect(await failStalledGenerations(database.db, { olderThanMinutes: 30 })).toBe(0);
     expect((await lessonsByKey(['L9']))[0]!.status).toBe('generating');
+  });
+
+  // LCG-30, found by the first live trial: a late result was saved into a Lesson already marked failed.
+  it('LCG-30: keeps the cost of a result that arrives after the Lesson stopped Generating, but not its content', async () => {
+    const [l12] = await lessonsByKey(['L12']);
+    jobs.length = 0;
+    await startGeneration(database.db, { unitId, lessonIds: [l12!.id], actor: editor(), enqueue });
+    const job = jobs.shift()!;
+    const reviews: string[] = [];
+    const slow: GenerateJobDeps = {
+      ...deps(),
+      requestReview: async (lessonId) => void reviews.push(lessonId),
+      // While the model works, the sweep gives the Lesson up.
+      clientFor: (context) => ({
+        mode: 'fake',
+        model: 'fake',
+        async complete() {
+          await setLessonStatusById(database.db, l12!.id, 'generation-failed');
+          return { text: JSON.stringify(placeholderOutput(context.outline)), model: 'fake', stopReason: 'end_turn', usage: NO_USAGE, durationMs: 0 };
+        },
+      }),
+    };
+
+    await handleGenerateJob(slow, job, { finalAttempt: true });
+
+    expect((await lessonsByKey(['L12']))[0]!.status).toBe('generation-failed');
+    expect(await readLessonContent(database.db, l12!.id)).toBeUndefined();
+    const attempts = await database.db.select().from(schema.generationAttempts).where(eq(schema.generationAttempts.lessonId, l12!.id));
+    expect(attempts).toMatchObject([{ outcome: 'succeeded' }]);
+    expect(reviews).toEqual([]);
   });
 });
 
