@@ -1,5 +1,7 @@
 # The whole stack, locally: `docker compose up --build`.
-# LLM_MODE (replay by default) can be set from the shell: `LLM_MODE=fake docker compose up`.
+# LLM_MODE (replay by default) and LLM_RECORD can be set from the shell:
+# `LLM_MODE=fake docker compose up`, or `LLM_MODE=live LLM_RECORD=true docker compose up` to
+# call Anthropic and save the results for replay.
 x-app: &app
   build: .
   image: newsela-lcg
@@ -7,6 +9,7 @@ x-app: &app
   environment: &app-env
     DATABASE_URL: postgres://lcg:lcg@postgres:5432/lcg
     LLM_MODE: ${LLM_MODE:-replay}
+    LLM_RECORD: ${LLM_RECORD:-false}
 
 services:
   postgres:
@@ -60,6 +63,9 @@ services:
     <<: *app
     working_dir: /app/apps/worker
     command: ["pnpm", "exec", "tsx", "src/main.ts"]
+    # Recordings of live runs land in the repository, where replay mode reads them.
+    volumes:
+      - ./fixtures/recordings:/app/fixtures/recordings
     depends_on:
       setup:
         condition: service_completed_successfully

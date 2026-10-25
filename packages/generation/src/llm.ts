@@ -1,14 +1,14 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { costOf, NO_USAGE, type TokenUsage } from './cost.js';
 
-/** One structured call to the model. */
+/** One call to the model. */
 export interface LlmRequest {
   /** Stable name of this call for recording and replay, e.g. "g6-u4/L22/attempt-1". */
   key: string;
   system: Anthropic.Beta.BetaTextBlockParam[];
   messages: Anthropic.Beta.BetaMessageParam[];
-  /** JSON Schema the reply must follow (structured outputs). */
-  schema: Record<string, unknown>;
+  /** JSON Schema the reply must follow (structured outputs), where the schema is small enough to compile. */
+  schema?: Record<string, unknown>;
   maxTokens: number;
 }
 
@@ -64,7 +64,10 @@ export async function createLiveClient(options: LiveClientOptions): Promise<LlmC
         fallbacks: 'default',
         system: request.system,
         messages: request.messages,
-        output_config: { effort: options.effort, format: { type: 'json_schema', schema: request.schema } },
+        output_config: {
+          effort: options.effort,
+          ...(request.schema ? { format: { type: 'json_schema' as const, schema: request.schema } } : {}),
+        },
       });
       const message = await stream.finalMessage();
       const result: LlmResult = {

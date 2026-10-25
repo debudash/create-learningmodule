@@ -2,10 +2,10 @@ import type Anthropic from '@anthropic-ai/sdk';
 import { LESSON_TYPE_LABELS, SECTION_PLANS, SECTION_TITLES, type LessonType } from '@lcg/lesson-schema';
 import type { AnchorText, OutlineLesson } from '@lcg/outline';
 import { getStandard, type Standard } from '@lcg/standards';
-import type { LessonDigest } from './output.js';
+import { generationOutputJsonSchema, type LessonDigest } from './output.js';
 
 /** Bumped whenever the locked instructions change, and recorded with each Generation Attempt. */
-export const PROMPT_VERSION = 1;
+export const PROMPT_VERSION = 2;
 
 /**
  * The locked part of the prompt (PRD "Generation Guidance and prompt control"):
@@ -78,13 +78,25 @@ export interface LessonPrompt {
 const cached = { cache_control: { type: 'ephemeral' as const } };
 
 /**
+ * How to write the reply: the Lesson and its Digest as one JSON object. The schema
+ * is given here rather than as a structured-output grammar, which the API refuses
+ * for a schema this size (LCG-28); the reply is validated against it after.
+ */
+function outputFormat(): string {
+  return `Reply with one JSON object and nothing else: no code fence, no commentary. It must match this JSON Schema exactly:
+${JSON.stringify(generationOutputJsonSchema())}`;
+}
+
+/**
  * Builds the prompt for one Lesson. Ordered for prompt caching: the locked
  * instructions and Unit context are identical across a Unit, the example is
  * identical across a Lesson Type, and only the final user message varies.
  */
 export function buildLessonPrompt(input: LessonPromptInput): LessonPrompt {
   const parts = {
-    locked: LOCKED_INSTRUCTIONS,
+    locked: `${LOCKED_INSTRUCTIONS}
+
+${outputFormat()}`,
     unit: unitContext(input),
     example: exampleSection(input.example),
     lesson: lessonRequest(input),

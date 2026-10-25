@@ -41,7 +41,7 @@ describe('buildLessonPrompt', () => {
   const system = prompt.system.map((b) => b.text).join('\n');
 
   it('orders the prompt for caching: locked, Unit, example, then the Lesson', () => {
-    expect(prompt.system[0]!.text).toBe(LOCKED_INSTRUCTIONS);
+    expect(prompt.system[0]!.text.startsWith(LOCKED_INSTRUCTIONS)).toBe(true);
     expect(prompt.system[1]!.text).toContain('Keep Launch activities playful.');
     expect(prompt.system[1]).toHaveProperty('cache_control');
     expect(prompt.system[2]!.text).toContain('EXAMPLE LESSON BODY');
@@ -117,6 +117,15 @@ describe('generateLesson', () => {
     expect(result.ok).toBe(true);
     expect(result.record.outcome).toBe('succeeded');
     expect(calls.map((c) => c.key)).toEqual(['u4/L3/first']);
+  });
+
+  // LCG-28, found by the first live trial: the API refused every Lesson ("The compiled grammar is too large").
+  it('LCG-28: asks for the Lesson as JSON described in the prompt, not as a structured-output grammar', async () => {
+    const { calls, client: fake } = client(['Here is the Lesson:\n```json\n' + valid + '\n```']);
+    const result = await generateLesson(fake, input('L3'), 'u4/L3');
+    expect(calls[0]!.schema).toBeUndefined();
+    expect(calls[0]!.system.map((b) => b.text).join('\n')).toContain(JSON.stringify(generationOutputJsonSchema()));
+    expect(result.ok).toBe(true);
   });
 
   it('repairs once, telling the model what was wrong', async () => {

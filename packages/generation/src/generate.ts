@@ -4,7 +4,6 @@ import type { OutlineLesson } from '@lcg/outline';
 import { addUsage, costOf, NO_USAGE, type TokenUsage } from './cost.js';
 import type { LlmClient, LlmRequest, LlmResult } from './llm.js';
 import {
-  generationOutputJsonSchema,
   generationOutputSchema,
   type GenerationOutput,
   type LessonDigest,
@@ -46,7 +45,11 @@ export async function generateLesson(
   key: string,
 ): Promise<GenerationResult> {
   const prompt = buildLessonPrompt(input);
-  const schema = generationOutputJsonSchema();
+  // LCG-28: the whole generation output was sent as a structured-output schema,
+  // and the API refused every Lesson ("The compiled grammar is too large"): one
+  // Section's block types compile, a whole Lesson does not. The schema now goes in
+  // the prompt (buildLessonPrompt), and the reply is checked against it here, with
+  // the repair call for anything that does not validate.
   // LCG-12: attempts were recorded with the requested model and priced from the
   // total at the end, so a refusal fallback's answer was priced as the requested
   // model and a call that threw lost the spend of the calls before it. Each call is
@@ -87,7 +90,6 @@ export async function generateLesson(
     key: `${key}/first`,
     system: prompt.system,
     messages: [{ role: 'user', content: prompt.user }],
-    schema,
     maxTokens: MAX_TOKENS,
   });
   if ('outcome' in first) return { ok: false, record: first };
@@ -108,7 +110,6 @@ export async function generateLesson(
         content: `That Lesson does not match the Lesson schema:\n${checked.problems.map((p) => `- ${p}`).join('\n')}\n\nReturn the complete corrected JSON.`,
       },
     ],
-    schema,
     maxTokens: MAX_TOKENS,
   });
   if ('outcome' in repair) return { ok: false, record: repair };
@@ -134,13 +135,20 @@ function stopProblem(result: LlmResult): string | undefined {
   return undefined;
 }
 
+/** The JSON object in a reply, without any code fence or words around it. */
+function jsonObjectIn(text: string): string {
+  const start = text.indexOf('{');
+  const end = text.lastIndexOf('}');
+  return start >= 0 && end > start ? text.slice(start, end + 1) : text;
+}
+
 type Checked = { ok: true; output: GenerationOutput } | { ok: false; problems: string[] };
 
 /** Parses and validates the model's output, keeping the Outline's standards and Lesson Type authoritative. */
 function check(text: string, outline: OutlineLesson): Checked {
   let parsed: unknown;
   try {
-    parsed = JSON.parse(text);
+    parsed = JSON.parse(jsonObjectIn(text));
   } catch {
     return { ok: false, problems: ['The output is not valid JSON.'] };
   }
