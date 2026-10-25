@@ -4,16 +4,20 @@ How to run the system locally today, how it will be hosted later, and the produc
 
 ## 1. Local (the supported path)
 
-Requirements: Docker Desktop, Node 22, pnpm.
+Requirements: Docker Desktop; Node 22 and pnpm only for running tests and scripts.
+
+Every service runs in Docker Compose: one image (`Dockerfile`, as on Fly per ADR 0011) started as `web`, `collab` and `worker`, plus Postgres and a one-shot `setup` service.
 
 | Command | What it does |
 |---|---|
 | `cp .env.example .env` | Local settings (no secrets needed for the demo) |
-| `pnpm db:up` | Starts Postgres in Docker Compose |
-| `pnpm db:reset` | Drops, migrates and seeds the database (demo users, sample Unit 4, Lesson 3 as a Draft) |
-| `pnpm dev` | Starts `web` (http://localhost:3000), `collab` (ws://localhost:1234) and the generation `worker`, with hot reload |
-| `docker compose up` | Planned: the whole stack in containers |
-| `pnpm check` | Lint, typecheck, unit, integration and end-to-end tests |
+| `docker compose up --build` | Builds the image and starts Postgres, `setup` (migrations; seeds the demo into an empty database), `web` (http://localhost:3000), `collab` (ws://localhost:1234) and the generation `worker` |
+| `LLM_MODE=fake docker compose up -d` | The same with placeholder Lessons and AI output (offline work, end-to-end tests); `LLM_MODE=live` calls Anthropic |
+| `pnpm db:reset` | Drops, migrates and seeds the database again (runs on the host against the Compose Postgres) |
+| `pnpm check` | Lint, typecheck, unit and integration tests (on the host) |
+| `pnpm test:e2e` | Playwright end-to-end tests against the running containers (fake mode, freshly reset database) |
+
+Rebuild the image (`docker compose up --build`) after code changes; there is no hot reload in the containers.
 
 ### Environment
 

@@ -1,8 +1,8 @@
 import { defineConfig } from '@playwright/test';
 
 /**
- * End-to-end tests against the running stack: web on :3000, collab on :1234 and
- * the worker, all with LLM_MODE=fake, on a freshly seeded database (pnpm db:reset).
+ * End-to-end tests against the stack in Docker Compose (LLM_MODE=fake docker compose up -d):
+ * web on :3000, collab on :1234 and the worker, on a freshly seeded database (pnpm db:reset).
  * See docs/test_plan.md.
  */
 export default defineConfig({

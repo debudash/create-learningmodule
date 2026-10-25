@@ -1,3 +1,13 @@
+# The whole stack, locally: `docker compose up --build`.
+# LLM_MODE (replay by default) can be set from the shell: `LLM_MODE=fake docker compose up`.
+x-app: &app
+  build: .
+  image: newsela-lcg
+  env_file: .env
+  environment: &app-env
+    DATABASE_URL: postgres://lcg:lcg@postgres:5432/lcg
+    LLM_MODE: ${LLM_MODE:-replay}
+
 services:
   postgres:
     image: postgres:16-alpine
@@ -14,6 +24,45 @@ services:
       interval: 2s
       timeout: 3s
       retries: 30
+
+  # Applies migrations, and seeds the demo into an empty database; then exits.
+  setup:
+    <<: *app
+    working_dir: /app/packages/db
+    command: ["pnpm", "exec", "tsx", "src/setup.ts"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  web:
+    <<: *app
+    environment:
+      <<: *app-env
+      # The web server reaches the collaboration server inside the Compose network.
+      COLLAB_URL: ws://collab:1234
+    ports:
+      - "3000:3000"
+    depends_on:
+      setup:
+        condition: service_completed_successfully
+
+  collab:
+    <<: *app
+    working_dir: /app/apps/collab
+    command: ["pnpm", "exec", "tsx", "src/main.ts"]
+    ports:
+      - "1234:1234"
+    depends_on:
+      setup:
+        condition: service_completed_successfully
+
+  worker:
+    <<: *app
+    working_dir: /app/apps/worker
+    command: ["pnpm", "exec", "tsx", "src/main.ts"]
+    depends_on:
+      setup:
+        condition: service_completed_successfully
 
 volumes:
   pgdata:
