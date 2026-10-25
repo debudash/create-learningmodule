@@ -128,6 +128,22 @@ describe('generateLesson', () => {
     expect(result.ok).toBe(true);
   });
 
+  it('reads a block typed as a teacher move ("teach", "say", "ask") as that teacher script, without a repair', async () => {
+    const withMoves = sampleLesson();
+    const blocks = withMoves.sections[0]!.activities[0]!.blocks as unknown as Record<string, unknown>[];
+    blocks.push({ type: 'teach', text: 'Model how to find the root.' }, { type: 'ask', text: 'What does the root mean?' });
+    const reply = JSON.stringify({ lesson: withMoves, digest: placeholderOutput(lesson('L3')).digest });
+    const { calls, client: fake } = client([reply]);
+    const result = await generateLesson(fake, input('L3'), 'u4/L3');
+    expect(result).toMatchObject({ ok: true, record: { outcome: 'succeeded' } });
+    expect(calls).toHaveLength(1);
+    if (!result.ok) return;
+    expect(result.lesson.sections[0]!.activities[0]!.blocks.slice(-2)).toEqual([
+      { type: 'teacher-script', move: 'teach', text: 'Model how to find the root.' },
+      { type: 'teacher-script', move: 'ask', text: 'What does the root mean?' },
+    ]);
+  });
+
   it('repairs once, telling the model what was wrong', async () => {
     const broken = JSON.stringify({ lesson: { ...sampleLesson(), sections: [] }, digest: {} });
     const { calls, client: fake } = client([broken, valid]);

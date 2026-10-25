@@ -1,5 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
-import type { Lesson } from '@lcg/lesson-schema';
+import { TEACHER_MOVES, type Lesson } from '@lcg/lesson-schema';
 import type { OutlineLesson } from '@lcg/outline';
 import { addUsage, costOf, NO_USAGE, type TokenUsage } from './cost.js';
 import type { LlmClient, LlmRequest, LlmResult } from './llm.js';
@@ -152,13 +152,30 @@ function check(text: string, outline: OutlineLesson): Checked {
   } catch {
     return { ok: false, problems: ['The output is not valid JSON.'] };
   }
-  const withOutline = applyOutline(parsed, outline);
+  const withOutline = applyOutline(teacherMovesAsScripts(parsed), outline);
   const result = generationOutputSchema.safeParse(withOutline);
   if (result.success) return { ok: true, output: result.data };
   return { ok: false, problems: result.error.issues.map((i) => `${i.path.join('.') || 'output'}: ${i.message}`) };
 }
 
 /** The Outline decides the Lesson Type and the standards lists; the model writes everything else. */
+/**
+ * The first live run's most common slip: a teacher script written with its move
+ * as the block type ({"type": "teach", "text": ...}, 17 of 49 first replies).
+ * Read such a block as the teacher script it plainly is, instead of paying for a
+ * repair call.
+ */
+function teacherMovesAsScripts(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(teacherMovesAsScripts);
+  if (!value || typeof value !== 'object') return value;
+  const entries = Object.entries(value).map(([k, v]) => [k, teacherMovesAsScripts(v)] as const);
+  const object = Object.fromEntries(entries) as Record<string, unknown>;
+  if (typeof object.type === 'string' && (TEACHER_MOVES as readonly string[]).includes(object.type) && typeof object.text === 'string') {
+    return { type: 'teacher-script', move: object.type, text: object.text };
+  }
+  return object;
+}
+
 function applyOutline(parsed: unknown, outline: OutlineLesson): unknown {
   if (!parsed || typeof parsed !== 'object' || !('lesson' in parsed)) return parsed;
   const lesson = (parsed as { lesson: Record<string, unknown> }).lesson;
