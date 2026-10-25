@@ -6,8 +6,8 @@ RUN corepack enable && corepack prepare pnpm@9.15.0 --activate
 WORKDIR /app
 
 COPY . .
-# The pnpm store is cached between builds, so rebuilding after a code change is quick.
-RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store pnpm install --frozen-lockfile
+# No BuildKit cache mount: Railway's builder rejects the standard form.
+RUN pnpm install --frozen-lockfile
 
 # The browser connects to the collaboration server at this address; Next.js
 # builds it into the page, so it is fixed at build time.
