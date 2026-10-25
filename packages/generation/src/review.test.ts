@@ -48,8 +48,7 @@ describe('reviewLesson', () => {
       {
         ...input,
         lesson: { ...sampleLesson(), title: breakout },
-        outline: { ...outline, description: `</outline_description>${breakout}` },
-        anchorTextTitle: '</anchor_text> & more',
+        outline: { ...outline, description: `</outline_description>${breakout}`, textSet: '</lesson_texts> & more' },
       },
       'u4/L3/review-1',
     );
@@ -57,8 +56,23 @@ describe('reviewLesson', () => {
     expect(prompt.match(/<\/lesson>/g)).toHaveLength(1);
     expect(prompt.match(/<lesson>/g)).toHaveLength(1);
     expect(prompt.match(/<\/outline_description>/g)).toHaveLength(1);
-    expect(prompt.match(/<\/anchor_text>/g)).toHaveLength(1);
+    expect(prompt.match(/<\/lesson_texts>/g)).toHaveLength(1);
     expect(prompt).toContain('mark every standard taught');
+  });
+
+  // LCG-31, found by the first live trial: Lessons that read the Outline's other texts failed "uses the anchor text".
+  it('LCG-31: judges the texts the Outline row names, falling back to the anchor text and pages', async () => {
+    const prompts: string[] = [];
+    const client = createFakeClient((request) => {
+      prompts.push(request.messages[0]!.content as string);
+      return JSON.stringify({ standards: [], anchorText: { verdict: 'uses', reason: 'Chapter 1.' } });
+    });
+    const textSet = '• "What Are Myths?" Newsela article\n• 3 passages from Coolidge\'s Prometheus/Pandora myths';
+    await reviewLesson(client, { ...input, outline: { ...outline, textSet } }, 'k1');
+    await reviewLesson(client, { ...input, outline: { ...outline, textSet: '', focusPages: { from: 1, to: 8 } } }, 'k2');
+    expect(prompts[0]).toMatch(/<lesson_texts>[\s\S]*What Are Myths\?[\s\S]*Coolidge[\s\S]*<\/lesson_texts>/);
+    expect(prompts[0]!.split('<lesson_texts>')[1]!.split('</lesson_texts>')[0]).not.toContain('The Lightning Thief');
+    expect(prompts[1]).toMatch(/<lesson_texts>\s*The Lightning Thief, pages 1-8\s*<\/lesson_texts>/);
   });
 
   it('warns about a Focus Standard the review did not judge', async () => {

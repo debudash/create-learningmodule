@@ -27,7 +27,7 @@ export const CHECK_LABELS = {
   'eld-support': 'ELD support',
   'student-view': 'Student View',
   'ai-standard': 'AI Review: standard',
-  'ai-anchor-text': 'AI Review: anchor text',
+  'ai-anchor-text': "AI Review: the Lesson's texts",
 } as const;
 
 export type CheckId = keyof typeof CHECK_LABELS;
