@@ -116,6 +116,17 @@ describe('runRuleChecks', () => {
     ]);
   });
 
+  // LCG-32, found by the first live trial: a teacher asking the question students read was flagged as a leak.
+  it('LCG-32: lets the questions a teacher asks aloud match what students read', () => {
+    const lesson = sampleLesson();
+    const activity = lesson.sections[1]!.activities[0]!;
+    const question = 'What problem is this passage trying to explain?';
+    activity.blocks.push({ type: 'directions', text: question }, { type: 'teacher-script', move: 'ask', text: question });
+    expect(resultsOf(lesson, 'student-view')).toMatchObject([{ outcome: 'pass' }]);
+    activity.blocks.push({ type: 'directions', text: 'The fire was stolen to help people survive.' }, { type: 'sample-response', text: 'The fire was stolen to help people survive.' });
+    expect(resultsOf(lesson, 'student-view')).toMatchObject([{ outcome: 'fail', location: activity.id }]);
+  });
+
   it('fails when teacher-only text, such as a Pulse Check rationale, reaches the Student View', () => {
     const lesson = sampleLesson();
     const activity = lesson.sections.flatMap((s) => s.activities).find((a) => a.blocks.some((b) => b.type === 'pulse-check'))!;

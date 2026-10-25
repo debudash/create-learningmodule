@@ -199,8 +199,9 @@ const LEAK_MIN_LENGTH = 20;
 
 /**
  * Nothing written for teachers reaches the Student View: no teacher-only block's
- * text (scripts, sample responses, notes, ELD panels, support tables) and no
- * Pulse Check answer or rationale.
+ * text (Say and Teach scripts, sample responses, notes, ELD panels, support
+ * tables) and no Pulse Check rationale. Questions the teacher asks aloud are
+ * meant for students, so they may match what students read.
  */
 function studentViewClean(lesson: Lesson): QualityCheckResult[] {
   const visible = JSON.stringify(studentView(lesson));
@@ -215,6 +216,10 @@ function studentViewClean(lesson: Lesson): QualityCheckResult[] {
 
 function teacherOnlyTexts(block: Block): string[] {
   if (block.type === 'pulse-check') return block.choices.map((c) => c.rationale);
+  // LCG-32: a teacher's "Ask" is a question put to the class, and it usually
+  // repeats the question students read in their directions; counting it as
+  // teacher-only material failed Lessons for asking what students were reading.
+  if (block.type === 'teacher-script' && block.move === 'ask') return [];
   return TEACHER_ONLY_BLOCKS.has(block.type) ? stringsIn(block) : [];
 }
 
