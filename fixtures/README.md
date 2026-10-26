@@ -23,3 +23,5 @@ enters a prompt or a generation fixture.
   - the title says Unit 4 where the filenames say Unit 3.
 
 It is Grade 6, Unit 4, L1 to L4, so generating it in replay mode serves the recorded Lessons.
+
+`outlines/g6-u4-demo-no-L3.csv` is the same short demo without L3, so it imports L1, L2 and L4. L3 is the hand-written demo Lesson and has no recording, so this is the version to use for generating in replay mode (for example, on the hosted copy). It shows the same Blocking issues and ELD warnings.
