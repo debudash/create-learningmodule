@@ -207,7 +207,7 @@ sequenceDiagram
   API->>API: refuse a proposal whose seal does not match (LCG-13)
   API->>O: apply resolutions
   O-->>API: confirmed import (no Blocking issues)
-  API->>DB: BEGIN; insert Unit, Arcs, Lessons (Outlined), Guidance v1; COMMIT
+  API->>DB: BEGIN, insert Unit, Arcs, Lessons (Outlined), Guidance v1, COMMIT
   Note over API,DB: no jobs yet: generation is started separately
   API-->>UI: redirect to the Unit board
 ```
@@ -226,16 +226,16 @@ sequenceDiagram
   participant UI as Unit board
 
   E->>API: start generation (all / trial of 3 / selection)
-  API->>DB: BEGIN; Lessons → Queued; enqueue one job per non-Flex Lesson (in the same transaction); COMMIT
+  API->>DB: BEGIN, Lessons → Queued, enqueue one job per non-Flex Lesson (in the same transaction), COMMIT
   loop up to N concurrent jobs
     W->>Q: fetch job
     W->>DB: Lesson → Generating (a retry refreshes the Lesson, LCG-29)
     W->>G: buildPrompt(Lesson, Unit, Arc, neighbours, standards, guidance)
     G->>LLM: one streamed call (cached prefix with the JSON Schema + Lesson part)
     LLM-->>G: Lesson JSON + Digest
-    G->>G: validate against the Lesson schema; repair once if invalid
+    G->>G: validate against the Lesson schema, repair once if invalid
     G-->>W: content + Generation Attempt + Lesson Digest
-    W->>DB: BEGIN; if still Generating: write document, Version "generated", attempt, digest, checks; Lesson → Draft; enqueue Flex Days whose Arc is complete; COMMIT
+    W->>DB: BEGIN, if still Generating: write document, Version "generated", attempt, digest, checks, Lesson → Draft, enqueue Flex Days whose Arc is complete, COMMIT
     Note over W,DB: a late result keeps only its attempt (LCG-30)
     W->>DB: enqueue the AI Review job
   end
@@ -283,12 +283,12 @@ sequenceDiagram
 
   P->>API: approve (expected transition count)
   API->>C: save now (open edits reach the database first, LCG-17)
-  API->>DB: BEGIN; lock the Lesson row
+  API->>DB: BEGIN, lock the Lesson row
   API->>API: refuse if the transition count changed (stale view)
-  API->>DB: count current failing checks; read the Lesson's editors
+  API->>DB: count current failing checks, read the Lesson's editors
   API->>D: decide(status, actor, approve, context)
   D-->>API: Approved (+ selfApproval?, overFailingChecks?)
-  API->>DB: update status, transition count; insert event; insert Version "approved"; NOTIFY lesson_status; COMMIT
+  API->>DB: update status, transition count, insert event, insert Version "approved", NOTIFY lesson_status, COMMIT
   DB-->>C: lesson_status
   C-->>P: open editors reconnect read-only
 ```
@@ -333,7 +333,7 @@ sequenceDiagram
   API->>DB: load Lessons + their latest Approved Versions
   API->>D: publishability(Lessons), mayPublish(actor)
   D-->>API: ok (all Approved) / refusal naming what is waiting
-  API->>DB: BEGIN; insert Unit Release + entries → Approved Versions; Unit latest Release, no Unpublished Changes; COMMIT
+  API->>DB: BEGIN, insert Unit Release + entries → Approved Versions, Unit latest Release, no Unpublished Changes, COMMIT
   API-->>P: Release n (download JSON, or Newsela format)
 ```
 
